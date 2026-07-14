@@ -1,0 +1,99 @@
+.cmc-page {
+  padding: 60px 20px;
+  background-color: #f8fafc;
+  min-height: 100vh;
+}
+
+.cmc-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.cmc-page .page-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #1e3a8a;
+  margin-bottom: 40px;
+  font-weight: 700;
+}
+
+.cmc-content-box {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  border-top: 4px solid #b91c1c;
+  line-height: 1.7;
+  color: #334155;
+}
+
+.cmc-intro {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+.parties-section {
+  background: #f1f5f9;
+  padding: 20px;
+  border-left: 4px solid #2563eb;
+  margin-bottom: 40px;
+  border-radius: 4px;
+}
+
+.parties-section p {
+  margin-bottom: 5px;
+}
+
+.parties-section .and-text {
+  font-style: italic;
+  color: #64748b;
+  margin: 10px 0;
+}
+
+.section-heading {
+  font-size: 1.5rem;
+  color: #1e293b;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 10px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.sub-heading {
+  font-size: 1.2rem;
+  color: #475569;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.cmc-list {
+  list-style-type: disc;
+  padding-left: 25px;
+  margin-bottom: 20px;
+}
+
+.cmc-list li {
+  margin-bottom: 8px;
+}
+
+.cmc-list strong {
+  color: #1e293b;
+}
+
+.sub-section {
+  padding-left: 15px;
+}
+
+@media (max-width: 768px) {
+  .cmc-page {
+    padding: 40px 15px;
+  }
+  
+  .cmc-content-box {
+    padding: 25px;
+  }
+  
+  .cmc-page .page-title {
+    font-size: 2rem;
+  }
+}

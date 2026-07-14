@@ -1,0 +1,726 @@
+<!-- wp:pagelayer/pl_post_props {"post_title":"Check Valves","post_status":"publish","post_date":"2025-04-19 16:02:47","post_author":"1","post_name":"check-valves","featured_image":0,"post_excerpt":"","post_password":"","comment_status":"","ping_status":"","post_sticky":"","post_parent":0,"menu_order":0,"post_category":"","post_tags":"","pagelayer-id":"rqi4365"} /-->
+<!-- wp:pagelayer/pl_row {"col_gap":"10","content_pos":"default","row_bg_type":"slider","parallax_img":"https://www.gmdalui.co.in/beta/wp-content/plugins/pagelayer/images/default-image.png","overlay_type":"color","overlay_color":"#3a444731","overlay_transperancy":"0.5","overlay_hover_delay":"400","row_shape_top_color":"#fff","row_shape_top_width":"100","row_shape_top_height":"100","row_shape_bottom_color":"#fff","row_shape_bottom_width":"100","row_shape_bottom_height":"100","ele_bg_type":"image","ele_bg_img":533,"ele_bg_attachment":"scroll","ele_bg_posx":"left","ele_bg_posy":"top","ele_bg_repeat":"no-repeat","ele_bg_size":"cover","ele_bg_hover_delay":"400","ele_padding":"30px,0px,30px,0px","tmpAtts":{"parallax_img-url":"https://www.gmdalui.co.in/beta/wp-content/plugins/pagelayer/images/default-image.png","parallax_img-no-image-set":1,"ele_bg_img-full-url":"https://www.gmdalui.co.in/beta/wp-content/uploads/2025/04/service5.jpg","ele_bg_img-thumbnail-url":"https://www.gmdalui.co.in/beta/wp-content/uploads/2025/04/service5-150x150.jpg","ele_bg_img-medium-url":"https://www.gmdalui.co.in/beta/wp-content/uploads/2025/04/service5-300x168.jpg","ele_bg_img-medium_large-url":"https://www.gmdalui.co.in/beta/wp-content/uploads/2025/04/service5.jpg","ele_bg_img-large-url":"https://www.gmdalui.co.in/beta/wp-content/uploads/2025/04/service5.jpg","ele_bg_img-1536x1536-url":"https://www.gmdalui.co.in/beta/wp-content/uploads/2025/04/service5.jpg","ele_bg_img-2048x2048-url":"https://www.gmdalui.co.in/beta/wp-content/uploads/2025/04/service5.jpg","ele_bg_img-url":"https://www.gmdalui.co.in/beta/wp-content/uploads/2025/04/service5.jpg","ele_bg_img-alt":"service5","ele_bg_img-title":"service5","ele_bg_img-link":"https://www.gmdalui.co.in/beta/service5/"},"stretch":"auto","row_width":"500px","width_content":"auto","fixed_width":"500px","row_height":"default","parallax_align":"center","parallax_id_size":"full","bg_slider_speed":2000,"overlay_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","overlay_gradient_hover":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#CCC","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"pagelayer-id":"xwx9520"} -->
+<!-- wp:pagelayer/pl_col {"widget_space":"15","overlay_hover_delay":"400","ele_bg_hover_delay":"400","ele_margin":"58px,0px,0px,0px","ele_padding":"15%,0%,15%,0%","parallax_align":"center","parallax_id_size":"full","bg_slider_speed":2000,"overlay_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","overlay_transperancy":0.5,"overlay_gradient_hover":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","overlay_transperancy_hover":0.5,"ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#CCC","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"pagelayer-id":"arl7085"} -->
+<!-- wp:pagelayer/pl_heading {"align":"center","color":"#8a4f50ff","heading_typo":{"font-size":"35","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"CHECK VALVES","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#CCC","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"fadeInDown","pagelayer-id":"d6i5741"} -->CHECK VALVES<!-- /wp:pagelayer/pl_heading -->
+<!-- /wp:pagelayer/pl_col -->
+<!-- /wp:pagelayer/pl_row -->
+<!-- wp:pagelayer/pl_row {"stretch":"auto","col_gap":10,"width_content":"auto","row_height":"default","overlay_hover_delay":400,"row_shape_top_color":"#227bc3","row_shape_top_width":100,"row_shape_top_height":100,"row_shape_bottom_color":"#e44993","row_shape_bottom_width":100,"row_shape_bottom_height":100,"pagelayer-id":"lzn920"} -->
+<!-- wp:pagelayer/pl_col {"widget_space":15,"overlay_hover_delay":400,"pagelayer-id":"dlx1996"} -->
+<!-- wp:pagelayer/pl_heading {"align":"left","color":"#8a4f50ff","heading_typo":{"font-size":"25","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"Introduction","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#CCC","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"fadeInUp","pagelayer-id":"3bn4723"} -->Introduction<!-- /wp:pagelayer/pl_heading -->
+<!-- /wp:pagelayer/pl_col -->
+<!-- /wp:pagelayer/pl_row -->
+<!-- wp:pagelayer/pl_row {"stretch":"auto","col_gap":10,"width_content":"auto","row_height":"default","overlay_hover_delay":400,"row_shape_top_color":"#227bc3","row_shape_top_width":100,"row_shape_top_height":100,"row_shape_bottom_color":"#e44993","row_shape_bottom_width":100,"row_shape_bottom_height":100,"pagelayer-id":"mbc7274"} -->
+<!-- wp:pagelayer/pl_col {"widget_space":15,"overlay_hover_delay":400,"pagelayer-id":"o016102"} -->
+<!-- wp:pagelayer/pl_heading {"text":"\u003cp\u003eNon-return valves, also known as check valves, are crucial for preventing backflow and ensuring smooth operation in piping systems. They allow \u003cbr\u003efluid to flow in one direction while closing to prevent reverse flow, protecting equipment and maintaining system efficiency.\u003c/p\u003e","heading_state":"normal","color":"#000000ff","animation":"fadeInUp","animation_delay":600,"pagelayer-id":"tnm3967"} --><p>Non-return valves, also known as check valves, are crucial for preventing backflow and ensuring smooth operation in piping systems. They allow <br>fluid to flow in one direction while closing to prevent reverse flow, protecting equipment and maintaining system efficiency.</p><!-- /wp:pagelayer/pl_heading -->
+<!-- /wp:pagelayer/pl_col -->
+<!-- /wp:pagelayer/pl_row -->
+<!-- wp:pagelayer/pl_row {"stretch":"auto","col_gap":10,"width_content":"auto","row_height":"default","overlay_hover_delay":400,"row_shape_top_color":"#227bc3","row_shape_top_width":100,"row_shape_top_height":100,"row_shape_bottom_color":"#e44993","row_shape_bottom_width":100,"row_shape_bottom_height":100,"pagelayer-id":"fws2996"} -->
+<!-- wp:pagelayer/pl_col {"widget_space":15,"overlay_hover_delay":400,"pagelayer-id":"xbb8378"} -->
+<!-- wp:pagelayer/pl_heading {"align":"left","color":"#8a4f50ff","heading_typo":{"font-size":"25","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"Applications","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#CCC","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"fadeInUp","pagelayer-id":"rsw5264"} -->Applications<!-- /wp:pagelayer/pl_heading -->
+<!-- /wp:pagelayer/pl_col -->
+<!-- /wp:pagelayer/pl_row -->
+<!-- wp:pagelayer/pl_row {"stretch":"auto","col_gap":10,"width_content":"auto","row_height":"default","overlay_hover_delay":400,"row_shape_top_color":"#227bc3","row_shape_top_width":100,"row_shape_top_height":100,"row_shape_bottom_color":"#e44993","row_shape_bottom_width":100,"row_shape_bottom_height":100,"pagelayer-id":"14r9959"} -->
+<!-- wp:pagelayer/pl_col {"widget_space":15,"overlay_hover_delay":400,"pagelayer-id":"z6e4138"} -->
+<!-- wp:pagelayer/pl_heading {"text":"\u003cp\u003eWATER SYSTEMS : Prevents backflow in municipal and industrial water pipelines.\u003cbr\u003e 
+SEWAGE SYSTEMS : Ensures protection against backflow in sewage and wastewater treatment. \u003cbr\u003e
+OIL AND GAS : Safeguards equipment from reverse flow in oil and gas pipelines. \u003cbr\u003e
+CHEMICAL PROCESSES : Protects process systems from contamination and reverse flow .\u003c/p\u003e","heading_state":"normal","color":"#011216ff","animation":"fadeInUp","animation_delay":600,"pagelayer-id":"aui8385"} --><p>WATER SYSTEMS : Prevents backflow in municipal and industrial water pipelines.<br> 
+SEWAGE SYSTEMS : Ensures protection against backflow in sewage and wastewater treatment. <br>
+OIL AND GAS : Safeguards equipment from reverse flow in oil and gas pipelines. <br>
+CHEMICAL PROCESSES : Protects process systems from contamination and reverse flow .</p><!-- /wp:pagelayer/pl_heading -->
+<!-- /wp:pagelayer/pl_col -->
+<!-- /wp:pagelayer/pl_row -->
+<!-- wp:pagelayer/pl_row {"stretch":"auto","col_gap":10,"width_content":"auto","row_height":"default","overlay_hover_delay":400,"row_shape_top_color":"#227bc3","row_shape_top_width":100,"row_shape_top_height":100,"row_shape_bottom_color":"#e44993","row_shape_bottom_width":100,"row_shape_bottom_height":100,"pagelayer-id":"dwm9114"} -->
+<!-- wp:pagelayer/pl_col {"widget_space":-5,"overlay_hover_delay":400,"col":3,"animation":"fadeInUp","animation_delay":600,"ele_css":".p-ar16780 {
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    margin-top: 12px;
+}","pagelayer-id":"pj97255"} -->
+<!-- wp:pagelayer/pl_inner_row {"stretch":"auto","col_gap":10,"width_content":"auto","row_height":"default","overlay_hover_delay":400,"row_shape_top_color":"#227bc3","row_shape_top_width":100,"row_shape_top_height":100,"row_shape_bottom_color":"#e44993","row_shape_bottom_width":100,"row_shape_bottom_height":100,"pagelayer-id":"c3x9945"} -->
+<!-- wp:pagelayer/pl_inner_col {"widget_space":15,"overlay_hover_delay":400,"col":4,"animation":"fadeInUp","animation_delay":600,"pagelayer-id":"dam1985"} -->
+<!-- wp:pagelayer/pl_heading {"align":"center","color":"#fcfcfcff","heading_typo":{"font-size":"20","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"Type of Valve","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#CCC","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"","ele_bg_type":"color","ele_bg_color":"#8a4f50ff","ele_padding":{"0":"12px","1":"12px","2":"12px","3":"12px"},"border_radius":{"0":"0px","1":"0px","2":"56px","3":"0px"},"ele_zindex":84,"ele_custom_pos":"true","ele_position":"absolute","ele_css":".p-zjs6378 {
+    text-align: center;
+    background: #8a4f50;
+    padding-top: 12px;
+    padding-right: 12px;
+    padding-bottom: 12px;
+    padding-left: 12px;
+    z-index: 84 !important;
+    position: relative;
+    border-radius: 0px 0px 56px 0px;
+    -webkit-border-radius: 0px 0px 56px 0px;
+    -moz-border-radius: 0px 0px 56px 0px;
+    position: relative;
+    left: margin;
+    transform: translateX(-margin);
+    height: auto;
+    position: absolute !important;
+    z-index: 1;
+    transform: translateX(-0%);
+    width: 206px;
+    height: 49px;
+    margin-top: 6px;
+    margin-left: -9px;
+}","pagelayer-id":"zjs6378"} -->Type of Valve<!-- /wp:pagelayer/pl_heading -->
+<!-- /wp:pagelayer/pl_inner_col -->
+<!-- /wp:pagelayer/pl_inner_row -->
+<!-- wp:pagelayer/pl_heading {"align":"center","color":"#8a4f50ff","heading_typo":{"font-size":"20","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"Penumatic Valves","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#d3bcbcff","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"fadeInDown","ele_bg_type":"color","ele_bg_color":"#fafafaff","border_radius":{"0":"6px","1":"6px","2":"6px","3":"6px"},"ele_padding":{"0":"43px","1":"43px","2":"43px","3":"43px"},"border_type":"solid","ele_css":".p-bah2267 {
+    text-align: center;
+    background: #fafafa;
+    padding-top: 43px;
+    padding-right: 43px;
+    padding-bottom: 43px;
+    padding-left: 43px;
+    border-style: solid;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-color: #d3bcbc;
+    border-radius: 6px 6px 6px 6px;
+    -webkit-border-radius: 6px 6px 6px 6px;
+    -moz-border-radius: 6px 6px 6px 6px;
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    height: 218px;
+}
+.p-bah2267 .pagelayer-heading-holder {
+    color: #8a4f50;
+    font-family: !important;
+    font-size: 20px !important;
+    font-style: !important;
+    font-weight: 700 !important;
+    font-variant: !important;
+    text-decoration-line: !important;
+    text-decoration-style: solid !important;
+    line-height: em !important;
+    text-transform: !important;
+    letter-spacing: px !important;
+    word-spacing: px !important;
+    margin-top: 49px;
+}","pagelayer-id":"bah2267"} -->Penumatic Valves<!-- /wp:pagelayer/pl_heading -->
+<!-- /wp:pagelayer/pl_col -->
+<!-- wp:pagelayer/pl_col {"widget_space":-60,"overlay_hover_delay":400,"col":3,"animation":"fadeInUp","animation_delay":600,"ele_css":".p-jjl60 {
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    margin-top: 5px;
+}","pagelayer-id":"jjl60"} -->
+<!-- wp:pagelayer/pl_inner_row {"stretch":"auto","col_gap":10,"width_content":"auto","row_height":"default","overlay_hover_delay":400,"row_shape_top_color":"#227bc3","row_shape_top_width":100,"row_shape_top_height":100,"row_shape_bottom_color":"#e44993","row_shape_bottom_width":100,"row_shape_bottom_height":100,"pagelayer-id":"zjg9753"} -->
+<!-- wp:pagelayer/pl_inner_col {"widget_space":15,"overlay_hover_delay":400,"col":4,"animation":"fadeInUp","animation_delay":600,"pagelayer-id":"itq8924"} -->
+<!-- wp:pagelayer/pl_heading {"align":"left","color":"#ffffffff","heading_typo":{"font-size":"20","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"Illustration","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#CCC","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"fadeInDown","ele_bg_type":"color","ele_bg_color":"#8a4f50ff","ele_padding":{"0":"12px","1":"12px","2":"12px","3":"12px"},"border_radius":{"0":"0px","1":"0px","2":"56px","3":"0px"},"ele_css":".p-mvp6259 {
+    text-align: left;
+    background: #8a4f50;
+    padding-top: 12px;
+    padding-right: 12px;
+    padding-bottom: 12px;
+    padding-left: 12px;
+    border-radius: 0px 0px 56px 0px;
+    -webkit-border-radius: 0px 0px 56px 0px;
+    -moz-border-radius: 0px 0px 56px 0px;
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    width: 206px;
+    height: 49px;
+    margin-left: -9px;
+}","pagelayer-id":"mvp6259"} -->Illustration<!-- /wp:pagelayer/pl_heading -->
+<!-- /wp:pagelayer/pl_inner_col -->
+<!-- /wp:pagelayer/pl_inner_row -->
+<!-- wp:pagelayer/pl_image {"id":741,"id-size":"full","align":"center","img_hover":"normal","img_hover_delay":400,"caption_color":"#0986c0","max-width":24,"border_type":"solid","border_width":"1px,1px,1px,1px","border_color":"#d3bcbcff","border_radius":{"0":"6px","1":"6px","2":"6px","3":"6px"},"ele_custom_pos":"true","ele_align":"50%","ele_height":"","ele_custom_height":"148px","ele_css":".p-pse2456 .pagelayer-img {
+    -webkit-transition: all 400ms;
+    transition: all 400ms;
+    margin-top: 62px;
+}
+.p-pse2456 {
+    border-style: solid;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-color: #d3bcbc;
+    border-radius: 6px 6px 6px 6px;
+    -webkit-border-radius: 6px 6px 6px 6px;
+    -moz-border-radius: 6px 6px 6px 6px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 218px;
+}","pagelayer-id":"pse2456"} /-->
+<!-- /wp:pagelayer/pl_col -->
+<!-- wp:pagelayer/pl_col {"widget_space":15,"overlay_hover_delay":400,"col":3,"animation":"fadeInUp","animation_delay":600,"ele_css":".p-rjk1783 {
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    margin-top: 16px;
+}","pagelayer-id":"rjk1783"} -->
+<!-- wp:pagelayer/pl_heading {"align":"left","color":"#8a4f50ff","heading_typo":{"font-size":"13","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"\u003cp\u003eA penumatic valves controls fluid using compressed air. It offers efficient, remote operation in industrial automation, ensuring precision and reliability in dreamanding enviroments.\u003c/p\u003e","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#d3bcbcff","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"fadeInDown","ele_bg_type":"color","ele_bg_color":"#fafafaff","border_radius":{"0":"6px","1":"6px","2":"6px","3":"6px"},"ele_padding":{"0":"43px","1":"43px","2":"43px","3":"43px"},"border_type":"solid","ele_css":".p-ego2307 .pagelayer-heading-holder * {
+    color: #8a4f50;
+    font-family: !important;
+    font-size: 13px !important;
+    font-style: !important;
+    font-weight: 700 !important;
+    font-variant: !important;
+    text-decoration-line: !important;
+    text-decoration-style: solid !important;
+    line-height: em !important;
+    text-transform: !important;
+    letter-spacing: px !important;
+    word-spacing: px !important;
+    margin-top: 25px;
+}","pagelayer-id":"ego2307"} --><p>A penumatic valves controls fluid using compressed air. It offers efficient, remote operation in industrial automation, ensuring precision and reliability in dreamanding enviroments.</p><!-- /wp:pagelayer/pl_heading -->
+<!-- wp:pagelayer/pl_heading {"align":"center","color":"#fcfcfcff","heading_typo":{"font-size":"20","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"Features","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#CCC","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"","ele_bg_type":"color","ele_bg_color":"#8a4f50ff","ele_padding":{"0":"12px","1":"12px","2":"12px","3":"12px"},"border_radius":{"0":"0px","1":"0px","2":"56px","3":"0px"},"ele_zindex":84,"ele_custom_pos":"true","ele_position":"absolute","ele_css":".p-zi18821 {
+    text-align: center;
+    background: #8a4f50;
+    padding-top: 12px;
+    padding-right: 12px;
+    padding-bottom: 12px;
+    padding-left: 12px;
+    z-index: 84 !important;
+    position: relative;
+    border-radius: 0px 0px 56px 0px;
+    -webkit-border-radius: 0px 0px 56px 0px;
+    -moz-border-radius: 0px 0px 56px 0px;
+    position: relative;
+    left: margin;
+    transform: translateX(-margin);
+    height: auto;
+    position: absolute !important;
+    z-index: 1;
+    transform: translateX(-0%);
+    width: 206px;
+    height: 49px;
+}","pagelayer-id":"zi18821"} -->Features<!-- /wp:pagelayer/pl_heading -->
+<!-- /wp:pagelayer/pl_col -->
+<!-- /wp:pagelayer/pl_row -->
+<!-- wp:pagelayer/pl_row {"stretch":"auto","col_gap":10,"width_content":"auto","row_height":"default","overlay_hover_delay":400,"row_shape_top_color":"#227bc3","row_shape_top_width":100,"row_shape_top_height":100,"row_shape_bottom_color":"#e44993","row_shape_bottom_width":100,"row_shape_bottom_height":100,"pagelayer-id":"tpv5397"} -->
+<!-- wp:pagelayer/pl_col {"widget_space":-5,"overlay_hover_delay":400,"col":3,"animation":"fadeInUp","animation_delay":600,"ele_css":".p-ar16780 {
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    margin-top: 12px;
+}","pagelayer-id":"j5p1841"} -->
+<!-- wp:pagelayer/pl_inner_row {"stretch":"auto","col_gap":10,"width_content":"auto","row_height":"default","overlay_hover_delay":400,"row_shape_top_color":"#227bc3","row_shape_top_width":100,"row_shape_top_height":100,"row_shape_bottom_color":"#e44993","row_shape_bottom_width":100,"row_shape_bottom_height":100,"pagelayer-id":"qyd8517"} -->
+<!-- wp:pagelayer/pl_inner_col {"widget_space":15,"overlay_hover_delay":400,"col":4,"animation":"fadeInUp","animation_delay":600,"pagelayer-id":"xzp4324"} -->
+<!-- wp:pagelayer/pl_heading {"align":"center","color":"#fcfcfcff","heading_typo":{"font-size":"20","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"Type of Valve","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#CCC","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"","ele_bg_type":"color","ele_bg_color":"#8a4f50ff","ele_padding":{"0":"12px","1":"12px","2":"12px","3":"12px"},"border_radius":{"0":"0px","1":"0px","2":"56px","3":"0px"},"ele_zindex":84,"ele_custom_pos":"true","ele_position":"absolute","ele_css":".p-avs186 {
+    text-align: left;
+    background: #8a4f50;
+    padding-top: 12px;
+    padding-right: 12px;
+    padding-bottom: 12px;
+    padding-left: 12px;
+    z-index: 84 !important;
+    position: relative;
+    border-radius: 0px 0px 56px 0px;
+    -webkit-border-radius: 0px 0px 56px 0px;
+    -moz-border-radius: 0px 0px 56px 0px;
+    position: relative;
+    left: margin;
+    transform: translateX(-margin);
+    height: auto;
+    position: absolute !important;
+    z-index: 1;
+    transform: translateX(-0%);
+    width: 206px;
+    height: 49px;
+    margin-top: 6px;
+    margin-left: -9px;
+}","pagelayer-id":"avs186"} -->Type of Valve<!-- /wp:pagelayer/pl_heading -->
+<!-- /wp:pagelayer/pl_inner_col -->
+<!-- /wp:pagelayer/pl_inner_row -->
+<!-- wp:pagelayer/pl_heading {"align":"center","color":"#8a4f50ff","heading_typo":{"font-size":"20","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"Hydraulic Valves","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#d3bcbcff","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"fadeInDown","ele_bg_type":"color","ele_bg_color":"#fafafaff","border_radius":{"0":"6px","1":"6px","2":"6px","3":"6px"},"ele_padding":{"0":"43px","1":"43px","2":"43px","3":"43px"},"border_type":"solid","ele_css":".p-seh3717 {
+    text-align: center;
+    background: #fafafa;
+    padding-top: 43px;
+    padding-right: 43px;
+    padding-bottom: 43px;
+    padding-left: 43px;
+    border-style: solid;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-color: #d3bcbc;
+    border-radius: 6px 6px 6px 6px;
+    -webkit-border-radius: 6px 6px 6px 6px;
+    -moz-border-radius: 6px 6px 6px 6px;
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    height: 272px;
+}
+.p-seh3717 .pagelayer-heading-holder {
+    color: #8a4f50;
+    font-family: !important;
+    font-size: 20px !important;
+    font-style: !important;
+    font-weight: 700 !important;
+    font-variant: !important;
+    text-decoration-line: !important;
+    text-decoration-style: solid !important;
+    line-height: em !important;
+    text-transform: !important;
+    letter-spacing: px !important;
+    word-spacing: px !important;
+    margin-top: 76px;
+}","pagelayer-id":"seh3717"} -->Hydraulic Valves<!-- /wp:pagelayer/pl_heading -->
+<!-- /wp:pagelayer/pl_col -->
+<!-- wp:pagelayer/pl_col {"widget_space":-60,"overlay_hover_delay":400,"col":3,"animation":"fadeInUp","animation_delay":600,"ele_css":".p-sik3772 {
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    margin-top: 6px;
+}","pagelayer-id":"sik3772"} -->
+<!-- wp:pagelayer/pl_inner_row {"stretch":"auto","col_gap":10,"width_content":"auto","row_height":"default","overlay_hover_delay":400,"row_shape_top_color":"#227bc3","row_shape_top_width":100,"row_shape_top_height":100,"row_shape_bottom_color":"#e44993","row_shape_bottom_width":100,"row_shape_bottom_height":100,"pagelayer-id":"uy72066"} -->
+<!-- wp:pagelayer/pl_inner_col {"widget_space":15,"overlay_hover_delay":400,"col":4,"animation":"fadeInUp","animation_delay":600,"pagelayer-id":"jmg8808"} -->
+<!-- wp:pagelayer/pl_heading {"align":"left","color":"#ffffffff","heading_typo":{"font-size":"20","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"Illustration","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#CCC","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"fadeInDown","ele_bg_type":"color","ele_bg_color":"#8a4f50ff","ele_padding":{"0":"12px","1":"12px","2":"12px","3":"12px"},"border_radius":{"0":"0px","1":"0px","2":"56px","3":"0px"},"ele_css":".p-r657989 {
+    text-align: left;
+    background: #8a4f50;
+    padding-top: 12px;
+    padding-right: 12px;
+    padding-bottom: 12px;
+    padding-left: 12px;
+    border-radius: 0px 0px 56px 0px;
+    -webkit-border-radius: 0px 0px 56px 0px;
+    -moz-border-radius: 0px 0px 56px 0px;
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    width: 206px;
+    height: 49px;
+    margin-left: -9px;
+}","pagelayer-id":"r657989"} -->Illustration<!-- /wp:pagelayer/pl_heading -->
+<!-- /wp:pagelayer/pl_inner_col -->
+<!-- /wp:pagelayer/pl_inner_row -->
+<!-- wp:pagelayer/pl_image {"id":739,"id-size":"full","align":"center","img_hover":"normal","img_hover_delay":400,"caption_color":"#0986c0","max-width":39,"border_type":"solid","border_width":"1px,1px,1px,1px","border_color":"#d3bcbcff","border_radius":{"0":"6px","1":"6px","2":"6px","3":"6px"},"ele_custom_pos":"true","ele_align":"50%","ele_height":"","ele_custom_height":"148px","ele_css":".p-jxl6735 .pagelayer-img {
+    -webkit-transition: all 400ms;
+    transition: all 400ms;
+    margin-top: 90px;
+}
+.p-jxl6735 {
+    border-style: solid;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-color: #d3bcbc;
+    border-radius: 6px 6px 6px 6px;
+    -webkit-border-radius: 6px 6px 6px 6px;
+    -moz-border-radius: 6px 6px 6px 6px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 272px;
+}","pagelayer-id":"jxl6735"} /-->
+<!-- /wp:pagelayer/pl_col -->
+<!-- wp:pagelayer/pl_col {"widget_space":15,"overlay_hover_delay":400,"col":3,"animation":"fadeInUp","animation_delay":600,"ele_css":".p-cgg7661 {
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    margin-top: 16px;
+}","pagelayer-id":"cgg7661"} -->
+<!-- wp:pagelayer/pl_heading {"align":"left","color":"#8a4f50ff","heading_typo":{"font-size":"13","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"\u003cp\u003eA hydraulic valve from DALUI expertly manages fluid flow within hydraulic systems, providing precise control over pressure, direction, and flow rate. It ensures reliable performance in demanding industrial and mobile equipment applications. 
+d flow using compressed air. It offers dustrial automation, ensuring precision vironments.\u003c/p\u003e","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#d3bcbcff","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"fadeInDown","ele_bg_type":"color","ele_bg_color":"#fafafaff","border_radius":{"0":"6px","1":"6px","2":"6px","3":"6px"},"ele_padding":{"0":"43px","1":"43px","2":"43px","3":"43px"},"border_type":"solid","ele_css":".p-ojv7601 .pagelayer-heading-holder * {
+    color: #8a4f50;
+    font-family: !important;
+    font-size: 13px !important;
+    font-style: !important;
+    font-weight: 700 !important;
+    font-variant: !important;
+    text-decoration-line: !important;
+    text-decoration-style: solid !important;
+    line-height: em !important;
+    text-transform: !important;
+    letter-spacing: px !important;
+    word-spacing: px !important;
+    margin-top: 25px;
+}
+.p-ojv7601 {
+    text-align: left;
+    background: #fafafa;
+    padding-top: 43px;
+    padding-right: 43px;
+    padding-bottom: 34px;
+    padding-left: 43px;
+    border-style: solid;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-color: #d3bcbc;
+    border-radius: 6px 6px 6px 6px;
+    -webkit-border-radius: 6px 6px 6px 6px;
+    -moz-border-radius: 6px 6px 6px 6px;
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+}","pagelayer-id":"ojv7601"} --><p>A hydraulic valve from DALUI expertly manages fluid flow within hydraulic systems, providing precise control over pressure, direction, and flow rate. It ensures reliable performance in demanding industrial and mobile equipment applications. 
+d flow using compressed air. It offers dustrial automation, ensuring precision vironments.</p><!-- /wp:pagelayer/pl_heading -->
+<!-- wp:pagelayer/pl_heading {"align":"center","color":"#fcfcfcff","heading_typo":{"font-size":"20","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"Features","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#CCC","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"","ele_bg_type":"color","ele_bg_color":"#8a4f50ff","ele_padding":{"0":"12px","1":"12px","2":"12px","3":"12px"},"border_radius":{"0":"0px","1":"0px","2":"56px","3":"0px"},"ele_zindex":84,"ele_custom_pos":"true","ele_position":"absolute","ele_css":".p-8v39312 {
+    text-align: left;
+    background: #8a4f50;
+    padding-top: 12px;
+    padding-right: 12px;
+    padding-bottom: 12px;
+    padding-left: 12px;
+    z-index: 84 !important;
+    position: relative;
+    border-radius: 0px 0px 56px 0px;
+    -webkit-border-radius: 0px 0px 56px 0px;
+    -moz-border-radius: 0px 0px 56px 0px;
+    position: relative;
+    left: margin;
+    transform: translateX(-margin);
+    height: auto;
+    position: absolute !important;
+    z-index: 1;
+    transform: translateX(-0%);
+    width: 206px;
+    height: 49px;
+}","pagelayer-id":"8v39312"} -->Features<!-- /wp:pagelayer/pl_heading -->
+<!-- /wp:pagelayer/pl_col -->
+<!-- /wp:pagelayer/pl_row -->
+<!-- wp:pagelayer/pl_row {"stretch":"auto","col_gap":10,"width_content":"auto","row_height":"default","overlay_hover_delay":400,"row_shape_top_color":"#227bc3","row_shape_top_width":100,"row_shape_top_height":100,"row_shape_bottom_color":"#e44993","row_shape_bottom_width":100,"row_shape_bottom_height":100,"pagelayer-id":"f501686"} -->
+<!-- wp:pagelayer/pl_col {"widget_space":-5,"overlay_hover_delay":400,"col":3,"animation":"fadeInUp","animation_delay":600,"ele_css":".p-ar16780 {
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    margin-top: 12px;
+}","pagelayer-id":"2fc6308"} -->
+<!-- wp:pagelayer/pl_inner_row {"stretch":"auto","col_gap":10,"width_content":"auto","row_height":"default","overlay_hover_delay":400,"row_shape_top_color":"#227bc3","row_shape_top_width":100,"row_shape_top_height":100,"row_shape_bottom_color":"#e44993","row_shape_bottom_width":100,"row_shape_bottom_height":100,"pagelayer-id":"qiv1253"} -->
+<!-- wp:pagelayer/pl_inner_col {"widget_space":15,"overlay_hover_delay":400,"col":4,"animation":"fadeInUp","animation_delay":600,"pagelayer-id":"msf7303"} -->
+<!-- wp:pagelayer/pl_heading {"align":"center","color":"#fcfcfcff","heading_typo":{"font-size":"20","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"Type of Valve","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#CCC","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"","ele_bg_type":"color","ele_bg_color":"#8a4f50ff","ele_padding":{"0":"12px","1":"12px","2":"12px","3":"12px"},"border_radius":{"0":"0px","1":"0px","2":"56px","3":"0px"},"ele_zindex":84,"ele_custom_pos":"true","ele_position":"absolute","ele_css":".p-kjm9511 {
+    text-align: center;
+    background: #8a4f50;
+    padding-top: 12px;
+    padding-right: 12px;
+    padding-bottom: 12px;
+    padding-left: 12px;
+    z-index: 84 !important;
+    position: relative;
+    border-radius: 0px 0px 56px 0px;
+    -webkit-border-radius: 0px 0px 56px 0px;
+    -moz-border-radius: 0px 0px 56px 0px;
+    position: relative;
+    left: margin;
+    transform: translateX(-margin);
+    height: auto;
+    position: absolute !important;
+    z-index: 1;
+    transform: translateX(-0%);
+    width: 206px;
+    height: 49px;
+    margin-top: 6px;
+    margin-left: -9px;
+}","pagelayer-id":"kjm9511"} -->Type of Valve<!-- /wp:pagelayer/pl_heading -->
+<!-- /wp:pagelayer/pl_inner_col -->
+<!-- /wp:pagelayer/pl_inner_row -->
+<!-- wp:pagelayer/pl_heading {"align":"center","color":"#8a4f50ff","heading_typo":{"font-size":"20","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"Knife Gate Valves","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#d3bcbcff","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"fadeInDown","ele_bg_type":"color","ele_bg_color":"#fafafaff","border_radius":{"0":"6px","1":"6px","2":"6px","3":"6px"},"ele_padding":{"0":"43px","1":"43px","2":"43px","3":"43px"},"border_type":"solid","ele_css":".p-cvv7082 {
+    text-align: center;
+    background: #fafafa;
+    padding-top: 43px;
+    padding-right: 43px;
+    padding-bottom: 43px;
+    padding-left: 43px;
+    border-style: solid;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-color: #d3bcbc;
+    border-radius: 6px 6px 6px 6px;
+    -webkit-border-radius: 6px 6px 6px 6px;
+    -moz-border-radius: 6px 6px 6px 6px;
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    height: 218px;
+}
+.p-cvv7082 .pagelayer-heading-holder {
+    color: #8a4f50;
+    font-family: !important;
+    font-size: 20px !important;
+    font-style: !important;
+    font-weight: 700 !important;
+    font-variant: !important;
+    text-decoration-line: !important;
+    text-decoration-style: solid !important;
+    line-height: em !important;
+    text-transform: !important;
+    letter-spacing: px !important;
+    word-spacing: px !important;
+    margin-top: 50px;
+}","pagelayer-id":"cvv7082"} -->Knife Gate Valves<!-- /wp:pagelayer/pl_heading -->
+<!-- /wp:pagelayer/pl_col -->
+<!-- wp:pagelayer/pl_col {"widget_space":-60,"overlay_hover_delay":400,"col":3,"animation":"fadeInUp","animation_delay":600,"ele_css":"p-cry1638 {
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    margin-top: 5px;
+}","pagelayer-id":"cry1638"} -->
+<!-- wp:pagelayer/pl_inner_row {"stretch":"auto","col_gap":10,"width_content":"auto","row_height":"default","overlay_hover_delay":400,"row_shape_top_color":"#227bc3","row_shape_top_width":100,"row_shape_top_height":100,"row_shape_bottom_color":"#e44993","row_shape_bottom_width":100,"row_shape_bottom_height":100,"pagelayer-id":"wvk4102"} -->
+<!-- wp:pagelayer/pl_inner_col {"widget_space":15,"overlay_hover_delay":400,"col":4,"animation":"fadeInUp","animation_delay":600,"pagelayer-id":"zvu2838"} -->
+<!-- wp:pagelayer/pl_heading {"align":"left","color":"#ffffffff","heading_typo":{"font-size":"20","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"Illustration","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#CCC","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"fadeInDown","ele_bg_type":"color","ele_bg_color":"#8a4f50ff","ele_padding":{"0":"12px","1":"12px","2":"12px","3":"12px"},"border_radius":{"0":"0px","1":"0px","2":"56px","3":"0px"},"ele_css":".p-lv36675 {
+    text-align: left;
+    background: #8a4f50;
+    padding-top: 12px;
+    padding-right: 12px;
+    padding-bottom: 12px;
+    padding-left: 12px;
+    border-radius: 0px 0px 56px 0px;
+    -webkit-border-radius: 0px 0px 56px 0px;
+    -moz-border-radius: 0px 0px 56px 0px;
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    width: 206px;
+    height: 49px;
+    margin-left: -9px;
+}","pagelayer-id":"lv36675"} -->Illustration<!-- /wp:pagelayer/pl_heading -->
+<!-- /wp:pagelayer/pl_inner_col -->
+<!-- /wp:pagelayer/pl_inner_row -->
+<!-- wp:pagelayer/pl_image {"id":580,"id-size":"full","align":"center","img_hover":"normal","img_hover_delay":400,"caption_color":"#0986c0","max-width":39,"border_type":"solid","border_width":"1px,1px,1px,1px","border_color":"#d3bcbcff","border_radius":{"0":"6px","1":"6px","2":"6px","3":"6px"},"ele_custom_pos":"true","ele_align":"50%","ele_height":"","ele_custom_height":"148px","ele_css":".p-3pt8452 .pagelayer-img {
+    -webkit-transition: all 400ms;
+    transition: all 400ms;
+    margin-top: 80px;
+}
+.p-3pt8452 {
+    border-style: solid;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-color: #d3bcbc;
+    border-radius: 6px 6px 6px 6px;
+    -webkit-border-radius: 6px 6px 6px 6px;
+    -moz-border-radius: 6px 6px 6px 6px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 218px;
+}","pagelayer-id":"3pt8452"} /-->
+<!-- /wp:pagelayer/pl_col -->
+<!-- wp:pagelayer/pl_col {"widget_space":15,"overlay_hover_delay":400,"col":3,"animation":"fadeInUp","animation_delay":600,"ele_css":".p-npi1191 {
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    margin-top: 9px;
+}","pagelayer-id":"npi1191"} -->
+<!-- wp:pagelayer/pl_heading {"align":"left","color":"#8a4f50ff","heading_typo":{"font-size":"13","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"\u003cp\u003eA knife gate valve from DALUI f thick liquids, slurries, and powd in demanding industrial applica 
+eatures a sharp-edged gate that cuts through ers. It provides reliable isolation and durability tions.\u003c/p\u003e","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#d3bcbcff","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"fadeInDown","ele_bg_type":"color","ele_bg_color":"#fafafaff","border_radius":{"0":"6px","1":"6px","2":"6px","3":"6px"},"ele_padding":{"0":"43px","1":"43px","2":"43px","3":"43px"},"border_type":"solid","ele_css":".p-rfd3842 .pagelayer-heading-holder * {
+    color: #8a4f50;
+    font-family: !important;
+    font-size: 13px !important;
+    font-style: !important;
+    font-weight: 700 !important;
+    font-variant: !important;
+    text-decoration-line: !important;
+    text-decoration-style: solid !important;
+    line-height: em !important;
+    text-transform: !important;
+    letter-spacing: px !important;
+    word-spacing: px !important;
+    margin-top: 25px;
+}","pagelayer-id":"rfd3842"} --><p>A knife gate valve from DALUI f thick liquids, slurries, and powd in demanding industrial applica 
+eatures a sharp-edged gate that cuts through ers. It provides reliable isolation and durability tions.</p><!-- /wp:pagelayer/pl_heading -->
+<!-- wp:pagelayer/pl_heading {"align":"center","color":"#fcfcfcff","heading_typo":{"font-size":"20","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"Features","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#CCC","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"","ele_bg_type":"color","ele_bg_color":"#8a4f50ff","ele_padding":{"0":"12px","1":"12px","2":"12px","3":"12px"},"border_radius":{"0":"0px","1":"0px","2":"56px","3":"0px"},"ele_zindex":84,"ele_custom_pos":"true","ele_position":"absolute","ele_css":".p-ydv6810 {
+    text-align: left
+;
+    background: #8a4f50;
+    padding-top: 12px;
+    padding-right: 12px;
+    padding-bottom: 12px;
+    padding-left: 12px;
+    z-index: 84 !important;
+    position: relative;
+    border-radius: 0px 0px 56px 0px;
+    -webkit-border-radius: 0px 0px 56px 0px;
+    -moz-border-radius: 0px 0px 56px 0px;
+    position: relative;
+    left: margin;
+    transform: translateX(-margin);
+    height: auto;
+    position: absolute !important;
+    z-index: 1;
+    transform: translateX(-0%);
+    width: 206px;
+    height: 49px;
+}","pagelayer-id":"ydv6810"} -->Features<!-- /wp:pagelayer/pl_heading -->
+<!-- /wp:pagelayer/pl_col -->
+<!-- /wp:pagelayer/pl_row -->
+<!-- wp:pagelayer/pl_row {"stretch":"auto","col_gap":10,"width_content":"auto","row_height":"default","overlay_hover_delay":400,"row_shape_top_color":"#227bc3","row_shape_top_width":100,"row_shape_top_height":100,"row_shape_bottom_color":"#e44993","row_shape_bottom_width":100,"row_shape_bottom_height":100,"pagelayer-id":"dw81055"} -->
+<!-- wp:pagelayer/pl_col {"widget_space":-5,"overlay_hover_delay":400,"col":3,"animation":"fadeInUp","animation_delay":600,"ele_css":".p-ar16780 {
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    margin-top: 12px;
+}","pagelayer-id":"bdp5271"} -->
+<!-- wp:pagelayer/pl_inner_row {"stretch":"auto","col_gap":10,"width_content":"auto","row_height":"default","overlay_hover_delay":400,"row_shape_top_color":"#227bc3","row_shape_top_width":100,"row_shape_top_height":100,"row_shape_bottom_color":"#e44993","row_shape_bottom_width":100,"row_shape_bottom_height":100,"pagelayer-id":"jep8092"} -->
+<!-- wp:pagelayer/pl_inner_col {"widget_space":15,"overlay_hover_delay":400,"col":4,"animation":"fadeInUp","animation_delay":600,"pagelayer-id":"5df4381"} -->
+<!-- wp:pagelayer/pl_heading {"align":"center","color":"#fcfcfcff","heading_typo":{"font-size":"20","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"Type of Valve","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#CCC","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"","ele_bg_type":"color","ele_bg_color":"#8a4f50ff","ele_padding":{"0":"12px","1":"12px","2":"12px","3":"12px"},"border_radius":{"0":"0px","1":"0px","2":"56px","3":"0px"},"ele_zindex":84,"ele_custom_pos":"true","ele_position":"absolute","ele_css":".p-uco1635 {
+    text-align: left
+;
+    background: #8a4f50;
+    padding-top: 12px;
+    padding-right: 12px;
+    padding-bottom: 12px;
+    padding-left: 12px;
+    z-index: 84 !important;
+    position: relative;
+    border-radius: 0px 0px 56px 0px;
+    -webkit-border-radius: 0px 0px 56px 0px;
+    -moz-border-radius: 0px 0px 56px 0px;
+    position: relative;
+    left: margin;
+    transform: translateX(-margin);
+    height: auto;
+    position: absolute !important;
+    z-index: 1;
+    transform: translateX(-0%);
+    width: 206px;
+    height: 49px;
+    margin-top: 6px;
+    margin-left: -9px;
+}","pagelayer-id":"uco1635"} -->Type of Valve<!-- /wp:pagelayer/pl_heading -->
+<!-- /wp:pagelayer/pl_inner_col -->
+<!-- /wp:pagelayer/pl_inner_row -->
+<!-- wp:pagelayer/pl_heading {"align":"center","color":"#8a4f50ff","heading_typo":{"font-size":"20","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"Sluice Gate","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#d3bcbcff","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"fadeInDown","ele_bg_type":"color","ele_bg_color":"#fafafaff","border_radius":{"0":"6px","1":"6px","2":"6px","3":"6px"},"ele_padding":{"0":"43px","1":"43px","2":"43px","3":"43px"},"border_type":"solid","ele_css":".p-gjc4053 {
+    text-align: center;
+    background: #fafafa;
+    padding-top: 43px;
+    padding-right: 43px;
+    padding-bottom: 43px;
+    padding-left: 43px;
+    border-style: solid;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-color: #d3bcbc;
+    border-radius: 6px 6px 6px 6px;
+    -webkit-border-radius: 6px 6px 6px 6px;
+    -moz-border-radius: 6px 6px 6px 6px;
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    height: 218px;
+}
+.p-gjc4053 .pagelayer-heading-holder {
+    color: #8a4f50;
+    font-family: !important;
+    font-size: 20px !important;
+    font-style: !important;
+    font-weight: 700 !important;
+    font-variant: !important;
+    text-decoration-line: !important;
+    text-decoration-style: solid !important;
+    line-height: em !important;
+    text-transform: !important;
+    letter-spacing: px !important;
+    word-spacing: px !important;
+    margin-top: 50px;
+}","pagelayer-id":"gjc4053"} -->Sluice Gate<!-- /wp:pagelayer/pl_heading -->
+<!-- /wp:pagelayer/pl_col -->
+<!-- wp:pagelayer/pl_col {"widget_space":-60,"overlay_hover_delay":400,"col":3,"animation":"fadeInUp","animation_delay":600,"ele_css":".p-tze1935 {
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    margin-top: 5px;
+}","pagelayer-id":"tze1935"} -->
+<!-- wp:pagelayer/pl_inner_row {"stretch":"auto","col_gap":10,"width_content":"auto","row_height":"default","overlay_hover_delay":400,"row_shape_top_color":"#227bc3","row_shape_top_width":100,"row_shape_top_height":100,"row_shape_bottom_color":"#e44993","row_shape_bottom_width":100,"row_shape_bottom_height":100,"pagelayer-id":"wxh6576"} -->
+<!-- wp:pagelayer/pl_inner_col {"widget_space":15,"overlay_hover_delay":400,"col":4,"animation":"fadeInUp","animation_delay":600,"pagelayer-id":"mep9090"} -->
+<!-- wp:pagelayer/pl_heading {"align":"left","color":"#ffffffff","heading_typo":{"font-size":"20","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"Illustration","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#CCC","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"fadeInDown","ele_bg_type":"color","ele_bg_color":"#8a4f50ff","ele_padding":{"0":"12px","1":"12px","2":"12px","3":"12px"},"border_radius":{"0":"0px","1":"0px","2":"56px","3":"0px"},"ele_css":".p-npe9916 {
+    text-align: left;
+    background: #8a4f50;
+    padding-top: 12px;
+    padding-right: 12px;
+    padding-bottom: 12px;
+    padding-left: 12px;
+    border-radius: 0px 0px 56px 0px;
+    -webkit-border-radius: 0px 0px 56px 0px;
+    -moz-border-radius: 0px 0px 56px 0px;
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    width: 206px;
+    height: 49px;
+    margin-left: -9px;
+}","pagelayer-id":"npe9916"} -->Illustration<!-- /wp:pagelayer/pl_heading -->
+<!-- /wp:pagelayer/pl_inner_col -->
+<!-- /wp:pagelayer/pl_inner_row -->
+<!-- wp:pagelayer/pl_image {"id":604,"id-size":"full","align":"center","img_hover":"normal","img_hover_delay":400,"caption_color":"#0986c0","max-width":39,"border_type":"solid","border_width":"1px,1px,1px,1px","border_color":"#d3bcbcff","border_radius":{"0":"6px","1":"6px","2":"6px","3":"6px"},"ele_custom_pos":"true","ele_align":"50%","ele_height":"","ele_custom_height":"148px","ele_css":".p-xxf1339 .pagelayer-img {
+    -webkit-transition: all 400ms;
+    transition: all 400ms;
+    margin-top: 72px;
+}
+.p-xxf1339 {
+    border-style: solid;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-color: #d3bcbc;
+    border-radius: 6px 6px 6px 6px;
+    -webkit-border-radius: 6px 6px 6px 6px;
+    -moz-border-radius: 6px 6px 6px 6px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 218px;
+}","pagelayer-id":"xxf1339"} /-->
+<!-- /wp:pagelayer/pl_col -->
+<!-- wp:pagelayer/pl_col {"widget_space":15,"overlay_hover_delay":400,"col":3,"animation":"fadeInUp","animation_delay":600,"ele_css":".p-xj49372 {
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    margin-top: 16px;
+}","pagelayer-id":"xj49372"} -->
+<!-- wp:pagelayer/pl_heading {"align":"left","color":"#8a4f50ff","heading_typo":{"font-size":"13","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"\u003cp\u003eA sluice gate from DALUI controls water flow by raising or lowering a gate. It offers reliable isolation and precise flow management in water treatment and industrial applications.\u003c/p\u003e","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#d3bcbcff","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"fadeInDown","ele_bg_type":"color","ele_bg_color":"#fafafaff","border_radius":{"0":"6px","1":"6px","2":"6px","3":"6px"},"ele_padding":{"0":"43px","1":"43px","2":"43px","3":"43px"},"border_type":"solid","ele_css":".p-ut85922 .pagelayer-heading-holder * {
+    color: #8a4f50;
+    font-family: !important;
+    font-size: 13px !important;
+    font-style: !important;
+    font-weight: 700 !important;
+    font-variant: !important;
+    text-decoration-line: !important;
+    text-decoration-style: solid !important;
+    line-height: em !important;
+    text-transform: !important;
+    letter-spacing: px !important;
+    word-spacing: px !important;
+    margin-top: 25px;
+}
+.p-ut85922 {
+    text-align: left;
+    background: #fafafa;
+    padding-top: 43px;
+    padding-right: 43px;
+    padding-bottom: 43px;
+    padding-left: 43px;
+    border-style: solid;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-color: #d3bcbc;
+    border-radius: 6px 6px 6px 6px;
+    -webkit-border-radius: 6px 6px 6px 6px;
+    -moz-border-radius: 6px 6px 6px 6px;
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    height: 218px;","pagelayer-id":"ut85922"} --><p>A sluice gate from DALUI controls water flow by raising or lowering a gate. It offers reliable isolation and precise flow management in water treatment and industrial applications.</p><!-- /wp:pagelayer/pl_heading -->
+<!-- wp:pagelayer/pl_heading {"align":"center","color":"#fcfcfcff","heading_typo":{"font-size":"20","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"Features","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#CCC","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"","ele_bg_type":"color","ele_bg_color":"#8a4f50ff","ele_padding":{"0":"12px","1":"12px","2":"12px","3":"12px"},"border_radius":{"0":"0px","1":"0px","2":"56px","3":"0px"},"ele_zindex":84,"ele_custom_pos":"true","ele_position":"absolute","ele_css":".p-2uo9941 {
+    text-align: left;
+    background: #8a4f50;
+    padding-top: 12px;
+    padding-right: 12px;
+    padding-bottom: 12px;
+    padding-left: 12px;
+    z-index: 84 !important;
+    position: relative;
+    border-radius: 0px 0px 56px 0px;
+    -webkit-border-radius: 0px 0px 56px 0px;
+    -moz-border-radius: 0px 0px 56px 0px;
+    position: relative;
+    left: margin;
+    transform: translateX(-margin);
+    height: auto;
+    position: absolute !important;
+    z-index: 1;
+    transform: translateX(-0%);
+    width: 206px;
+    height: 49px;
+}","pagelayer-id":"2uo9941"} -->Features<!-- /wp:pagelayer/pl_heading -->
+<!-- /wp:pagelayer/pl_col -->
+<!-- /wp:pagelayer/pl_row -->
+<!-- wp:pagelayer/pl_row {"stretch":"auto","col_gap":10,"width_content":"auto","row_height":"default","overlay_hover_delay":400,"row_shape_top_color":"#227bc3","row_shape_top_width":100,"row_shape_top_height":100,"row_shape_bottom_color":"#e44993","row_shape_bottom_width":100,"row_shape_bottom_height":100,"pagelayer-id":"wqx810"} -->
+<!-- wp:pagelayer/pl_col {"widget_space":15,"overlay_hover_delay":400,"pagelayer-id":"unr1652"} -->
+<!-- wp:pagelayer/pl_heading {"align":"center","color":"#8a4f50ff","heading_typo":{"font-size":"25","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"Type Of Check Valves","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#CCC","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"fadeInUp","pagelayer-id":"hsx396"} -->Type Of Check Valves<!-- /wp:pagelayer/pl_heading -->
+<!-- /wp:pagelayer/pl_col -->
+<!-- /wp:pagelayer/pl_row -->
+<!-- wp:pagelayer/pl_row {"stretch":"auto","col_gap":10,"width_content":"auto","row_height":"default","overlay_hover_delay":400,"row_shape_top_color":"#227bc3","row_shape_top_width":100,"row_shape_top_height":100,"row_shape_bottom_color":"#e44993","row_shape_bottom_width":100,"row_shape_bottom_height":100,"pagelayer-id":"ape8849"} -->
+<!-- wp:pagelayer/pl_col {"widget_space":15,"overlay_hover_delay":400,"animation":"fadeInUp","animation_delay":600,"pagelayer-id":"ppj2021"} -->
+<!-- wp:pagelayer/pl_image {"id":745,"id-size":"full","align":"center","img_hover":"normal","img_hover_delay":400,"caption_color":"#0986c0","pagelayer-id":"bzd8431"} /-->
+<!-- /wp:pagelayer/pl_col -->
+<!-- /wp:pagelayer/pl_row -->

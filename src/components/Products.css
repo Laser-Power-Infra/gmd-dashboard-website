@@ -1,0 +1,160 @@
+.products-section {
+  padding: 100px 0;
+  background-color: var(--color-bg-light);
+  overflow: hidden;
+}
+
+.products-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 50px;
+  text-align: left;
+}
+
+.desktop-only {
+  display: inline-block;
+}
+
+@media (max-width: 768px) {
+  .products-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+  .desktop-only {
+    display: none;
+  }
+}
+
+/* Skew button for Products section header */
+.products-header .btn-skew {
+  padding: 14px 36px;
+  border-radius: 0;
+  position: relative;
+  overflow: visible;
+  background-color: var(--color-primary);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  transition: var(--transition-smooth);
+}
+
+.products-header .btn-skew::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -15px;
+  width: 30px;
+  height: 100%;
+  background-color: var(--color-accent);
+  transform: skewX(-20deg);
+  z-index: -1;
+  transition: var(--transition-smooth);
+}
+
+.products-header .btn-skew:hover {
+  background-color: #000000;
+  transform: translateY(-2px);
+}
+
+.products-header .btn-skew:hover::after {
+  background-color: #000000;
+  right: -20px;
+}
+
+/* 3-Column Static Grid Styles */
+.products-grid-v2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.product-card-v2 {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 480px;
+  background-color: #f5f6f8;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-smooth);
+}
+
+.product-image-v2 {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  background-color: #f5f6f8;
+}
+
+.product-image-v2 img {
+  max-width: 85%;
+  max-height: 250px;
+  object-fit: contain;
+  transition: var(--transition-smooth);
+}
+
+.product-info-overlay {
+  background-color: #ffffff;
+  padding: 24px;
+  text-align: left;
+  z-index: 5;
+  transition: var(--transition-smooth);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.product-info-overlay h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 8px;
+  font-family: var(--font-family-heading);
+}
+
+.product-info-overlay p {
+  font-size: 0.95rem;
+  color: var(--color-text-dark);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Hover Grow and Shadows */
+.product-card-v2:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+}
+
+.product-card-v2:hover .product-image-v2 img {
+  transform: scale(1.04);
+}
+
+.product-card-v2:hover .product-info-overlay {
+  border-color: rgba(138, 79, 80, 0.1);
+}
+
+/* Responsive Grid Adjustments */
+@media (max-width: 992px) {
+  .products-grid-v2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .products-grid-v2 {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .product-image-v2 img {
+    max-height: 200px;
+  }
+}

@@ -1,0 +1,463 @@
+/* Industrial Valves Catalog Page Styles */
+
+.valves-catalog-page {
+  background-color: var(--color-bg-white);
+  min-height: 80vh;
+  padding-bottom: 80px;
+}
+
+/* Hero Banner Section */
+.catalog-hero {
+  position: relative;
+  background-color: var(--color-primary); /* Maroon Brand Color */
+  background-image: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+  padding: 80px 0;
+  color: #ffffff;
+  text-align: center;
+  overflow: hidden;
+}
+
+.catalog-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 80% 20%, rgba(245, 144, 25, 0.15) 0%, transparent 60%);
+  z-index: 1;
+}
+
+.catalog-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/uploads/2025/04/service5.jpg') center/cover no-repeat;
+  opacity: 0.12;
+  z-index: 0;
+  mix-blend-mode: overlay;
+}
+
+.catalog-hero-container {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+}
+
+.catalog-hero-badge {
+  display: inline-block;
+  background-color: var(--color-accent);
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 6px 16px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(245, 144, 25, 0.25);
+  opacity: 0;
+  animation: fadeInDown 0.7s cubic-bezier(0.25, 1, 0.5, 1) both;
+}
+
+.catalog-hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+  font-family: var(--font-family-heading);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  animation: fadeInUp 0.7s cubic-bezier(0.25, 1, 0.5, 1) both;
+  animation-delay: 0.15s;
+}
+
+.catalog-hero-subtitle {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  opacity: 0.9;
+  max-width: 760px;
+  margin: 0 auto;
+  opacity: 0;
+  animation: fadeInUp 0.7s cubic-bezier(0.25, 1, 0.5, 1) both;
+  animation-delay: 0.3s;
+}
+
+/* Catalog Controls: Search and Filters */
+.catalog-controls-section {
+  padding: 40px 0 20px;
+  background-color: #fcfdfe;
+  border-bottom: 1px solid #f0f2f5;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.96);
+}
+
+.catalog-controls-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  opacity: 0;
+  animation: fadeInUp 0.7s cubic-bezier(0.25, 1, 0.5, 1) both;
+  animation-delay: 0.45s;
+}
+
+@media (min-width: 992px) {
+  .catalog-controls-wrapper {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+/* Search Input styling */
+.search-bar-wrapper {
+  position: relative;
+  flex: 1;
+  max-width: 500px;
+  width: 100%;
+}
+
+.search-icon {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+  transition: var(--transition-fast);
+}
+
+.search-input {
+  width: 100%;
+  padding: 14px 48px 14px 50px;
+  border: 2px solid #e1e5eb;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text-dark);
+  background-color: #ffffff;
+  outline: none;
+  transition: var(--transition-smooth);
+}
+
+.search-input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 15px rgba(138, 79, 80, 0.1);
+}
+
+.search-input:focus + .search-icon {
+  color: var(--color-primary);
+}
+
+.clear-search-btn {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  padding: 4px;
+  font-size: 1rem;
+  transition: var(--transition-fast);
+}
+
+.clear-search-btn:hover {
+  color: var(--color-primary);
+}
+
+/* Category Filter Pills */
+.category-pills-wrapper {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Hide scrollbar Firefox */
+}
+
+.category-pills-wrapper::-webkit-scrollbar {
+  display: none; /* Hide scrollbar Chrome/Safari */
+}
+
+.category-pill-btn {
+  white-space: nowrap;
+  background-color: #ffffff;
+  border: 1px solid #e1e5eb;
+  color: var(--color-text-muted);
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.category-pill-btn:hover {
+  background-color: rgba(138, 79, 80, 0.05);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.category-pill-btn.active {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(138, 79, 80, 0.2);
+}
+
+.results-count {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  font-weight: 600;
+  margin-top: 12px;
+}
+
+/* Grid Layout */
+.catalog-grid-section {
+  padding: 40px 0;
+}
+
+.valves-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+@media (min-width: 576px) {
+  .valves-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .valves-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .valves-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 columns on desktop */
+  }
+}
+
+/* Valve Square Grid Card Design */
+.valve-card {
+  background-color: #ffffff;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  cursor: pointer;
+  position: relative;
+  transition: var(--transition-smooth);
+  opacity: 0;
+  animation: fadeInUp 0.6s cubic-bezier(0.25, 1, 0.5, 1) both;
+  animation-delay: calc(var(--card-index, 0) * 0.05s);
+}
+
+.valve-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(138, 79, 80, 0.2);
+}
+
+/* Image Container */
+.valve-card-image-container {
+  height: 200px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  border-bottom: 1px solid #f1f3f5;
+  transition: var(--transition-smooth);
+  overflow: hidden;
+}
+
+.valve-card:hover .valve-card-image-container {
+  background-color: #ffffff;
+}
+
+.valve-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.04));
+  transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.valve-card:hover .valve-card-img {
+  transform: scale(1.08);
+}
+
+/* Card Body Content */
+.valve-card-body {
+  padding: 24px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.valve-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  margin-bottom: 16px;
+  line-height: 1.3;
+  font-family: var(--font-family-heading);
+  transition: var(--transition-fast);
+}
+
+.valve-card:hover .valve-card-title {
+  color: var(--color-primary);
+}
+
+/* Specification Lists */
+.valve-card-specs-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.valve-card-specs-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--color-text-dark);
+  line-height: 1.4;
+}
+
+.spec-check-icon {
+  color: var(--color-primary);
+  font-size: 0.95rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.valve-card-specs-list span strong {
+  color: var(--color-text-muted);
+  font-weight: 600;
+  margin-right: 4px;
+}
+
+/* Card Footer Action Button */
+.valve-card-footer {
+  padding: 0 24px 24px;
+}
+
+.valve-details-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1.5px solid var(--color-primary);
+  background-color: transparent;
+  color: var(--color-primary);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: var(--transition-smooth);
+}
+
+.arrow-icon {
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.valve-card:hover .valve-details-btn {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(138, 79, 80, 0.2);
+}
+
+.valve-card:hover .arrow-icon {
+  transform: translateX(4px);
+}
+
+/* No Results Panel */
+.no-results-panel {
+  text-align: center;
+  padding: 60px 24px;
+  background-color: #fafbfd;
+  border: 1px dashed #e1e5eb;
+  border-radius: 12px;
+  max-width: 500px;
+  margin: 40px auto;
+}
+
+.empty-icon {
+  font-size: 3.5rem;
+  color: var(--color-text-muted);
+  margin-bottom: 20px;
+  opacity: 0.6;
+}
+
+.no-results-panel h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  margin-bottom: 8px;
+}
+
+.no-results-panel p {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+}
+
+.reset-filters-btn {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 30px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.reset-filters-btn:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-2px);
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,42 @@
+### Dual Plate Valve
+Inclusions:
+1. Warranty applies to defects in materials and workmanship under normal operating conditions.
+
+2. Covers structural integrity of the valve body, plates, and hinge mechanism for the specified warranty period.
+
+3. Seal leakage that occurs due to faulty manufacturing is included.
+
+4. Repair or replacement of defective components found to be due to manufacturing faults.
+Exclusions:
+1. Damage caused by improper installation, misalignment, or incorrect orientation in the pipeline.
+
+2. Failures resulting from usage outside the specified pressure, temperature, or flow conditions.
+
+3. Wear and tear of soft parts such as gaskets, seals, or seats due to normal operation.
+
+4. Corrosion, scaling, or erosion caused by the process medium if not specified during ordering.
+
+5. Damage due to foreign particles, cavitation, or water hammer.
+
+6. Unauthorized repair, alteration, or use of non-genuine spare parts..
+------------------------------
+### Swing  Valve
+Inclusions:
+1. Warranty covers material and manufacturing defects of the valve body, disc, and hinge pin.
+
+2. Leakage across the seat is covered if caused by manufacturing faults.
+
+3. Repair or replacement of defective components identified during the warranty period.
+Exclusions:
+1. Damage arising from improper installation or operation against the flow direction.
+
+2. Failures due to exceeding rated temperature, pressure, or flow conditions.
+
+3. Normal wear of sealing surfaces, seats, or gaskets.
+
+4. Corrosion or erosion resulting from unsuitable service medium not communicated at the time of purchase.
+
+5. Failures caused by debris, reverse flow shock, or water hammer in the system.
+
+6. Any modifications, welding, or repairs not authorized by the manufacturer.
+------------------------------

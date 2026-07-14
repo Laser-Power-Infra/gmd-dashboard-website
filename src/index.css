@@ -1,0 +1,334 @@
+@import "tailwindcss";
+
+/* Custom design system for GM Dalui & Sons Pvt. Ltd. */
+:root {
+  --color-primary: #8a4f50;
+  --color-primary-dark: #6e3e3f;
+  --color-primary-rgb: 138, 79, 80;
+  
+  --color-accent: #f59019;
+  --color-accent-dark: #d5770d;
+  
+  --color-bg-light: #f8f9fa;
+  --color-bg-white: #ffffff;
+  
+  --color-text-dark: #212529;
+  --color-text-muted: #5c636a;
+  
+  --font-family-heading: 'Calibri', sans-serif;
+  --font-family-body: 'Calibri', sans-serif;
+  
+  --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --transition-fast: all 0.15s ease-in-out;
+  
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+  --shadow-lg: 0 10px 30px rgba(0,0,0,0.12);
+  --shadow-hover: 0 15px 35px rgba(138, 79, 80, 0.15);
+  
+  --border-radius-sm: 4px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 24px;
+  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family-body);
+  color: var(--color-text-dark);
+  background-color: var(--color-bg-white);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-heading);
+  font-weight: 600;
+  color: var(--color-text-dark);
+  line-height: 1.25;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+button, input, textarea, select {
+  font-family: inherit;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-dark);
+}
+
+/* Utilities */
+.container {
+  width: 95%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1560px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1840px;
+  }
+}
+
+@media (min-width: 2560px) {
+  .container {
+    max-width: 2440px;
+  }
+}
+
+.text-center { text-align: center; }
+
+/* Custom Badge - Value Engineering Excellence */
+.heading-badge {
+  display: inline-block;
+  font-family: var(--font-family-heading);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-text-dark);
+  border: 2px solid var(--color-primary);
+  border-radius: 30px;
+  padding: 10px 24px;
+  margin-bottom: 20px;
+  animation: fadeInLeft 0.8s ease-out;
+}
+
+/* Heading Line - Orange bar on the side */
+.section-badge {
+  color: var(--color-primary);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.section-badge::before {
+  content: "";
+  display: inline-block;
+  width: 40px;
+  height: 2px;
+  background-color: var(--color-accent);
+  margin-right: 10px;
+}
+
+.section-badge.centered {
+  justify-content: center;
+}
+.section-badge.centered::after {
+  content: "";
+  display: inline-block;
+  width: 40px;
+  height: 2px;
+  background-color: var(--color-accent);
+  margin-left: 10px;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+}
+
+/* Animated Buttons */
+.btn-primary {
+  display: inline-block;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  padding: 14px 32px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+}
+
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+.btn-primary:hover {
+  background-color: #000000;
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+/* Skew layout button look alike in logo menu */
+.btn-quote {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  padding: 12px 28px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transform: skewX(-20deg);
+  transition: var(--transition-smooth);
+}
+
+.btn-quote-inner {
+  display: inline-block;
+  transform: skewX(20deg);
+}
+
+.btn-quote:hover {
+  background-color: #000000;
+  transform: skewX(-20deg) translateY(-2px);
+}
+
+/* Text link with arrow */
+.btn-text-arrow {
+  color: var(--color-primary);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  cursor: pointer;
+  font-family: var(--font-family-heading);
+}
+
+.btn-text-arrow:hover {
+  color: var(--color-primary-dark);
+}
+
+.btn-text-arrow i {
+  transition: var(--transition-fast);
+}
+
+.btn-text-arrow:hover i {
+  transform: translateX(4px);
+}
+
+
+
+/* Keyframes animations */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Infinite Marquee Client logos */
+.marquee-container {
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  padding: 24px 0;
+  background-color: var(--color-bg-light);
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.marquee-content {
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+  gap: 60px;
+}
+
+.marquee-content:hover {
+  animation-play-state: paused;
+}
+
+.marquee-item {
+  height: 60px;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.marquee-item img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  filter: none;
+  opacity: 1;
+  transition: var(--transition-fast);
+}
+
+.marquee-item img:hover {
+  transform: scale(1.08);
+}

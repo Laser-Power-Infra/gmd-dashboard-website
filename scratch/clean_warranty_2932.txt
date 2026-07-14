@@ -1,0 +1,38 @@
+### Globe control Valve
+Inclusions:
+1 Manufacturing defects in the valve body, actuator, and internal components.
+
+2 Leakage through the seat (within allowable limits as per ANSI/FCI standards).
+
+3 Actuator malfunction due to material or workmanship defects.
+
+4 Control performance under specified operating conditions.
+Exclusions:
+1 Damage caused by improper installation, alignment, or over-tightening.
+
+2 Corrosion or erosion due to process media outside specified compatibility.
+
+3 Failure due to foreign material ingress (lack of filtration).
+
+4 Wear and tear on trim components due to cavitation or flashing not accounted for in design..
+------------------------------
+### Butterfly control Valve
+Inclusions:
+1 Disc and seat performance under specified pressure drop and flow conditions.
+
+2 Actuator integrity (electrical, pneumatic, or hydraulic).
+
+3 Body leakage and shaft seal tightness under normal conditions.
+Exclusions:
+1 Premature wear of seat due to throttling near closed position (not designed for such operation).
+
+2 Damage from reverse flow or back pressure not considered in design.
+
+3 Valve deformation due to pipe stress or thermal expansion.
+------------------------------
+### Sluice/Gate Valve
+Inclusions:
+1. Coverage for body integrity and sealing performance.2. Suitable for heavy-duty service as per manufacturerâs pressure-temperature rating.3. Protection against flange leakage if installed with correct gaskets.
+Exclusions:
+1. Failures due to over-tightening flange bolts.2. Damage from pipeline stresses (misalignment or unsupported loads).3. Warranty void if subjected to abrasive slurry not designed for.
+------------------------------

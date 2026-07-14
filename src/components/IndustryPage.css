@@ -1,0 +1,299 @@
+.industry-page-wrapper {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.industry-hero {
+  background: linear-gradient(135deg, #1f2937, #111827);
+  padding: 80px 0;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 40px;
+}
+
+.industry-hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.industry-hero-subtitle {
+  font-size: 1.1rem;
+  color: #d1d5db;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.industry-content-section {
+  padding-bottom: 60px;
+}
+
+.table-accordion-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.accordion-item {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid #e5e7eb;
+}
+
+.accordion-header {
+  padding: 20px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  background-color: #ffffff;
+  transition: background-color 0.2s ease;
+}
+
+.accordion-header:hover {
+  background-color: #f9fafb;
+}
+
+.accordion-header h2 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+}
+
+.accordion-header i {
+  color: #6b7280;
+  transition: transform 0.3s ease;
+}
+
+.accordion-item.open .accordion-header {
+  border-bottom: 1px solid #e5e7eb;
+  background-color: #f3f4f6;
+}
+
+.accordion-body {
+  padding: 20px;
+  background-color: #fff;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+.industry-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 700px;
+}
+
+.industry-data-table th,
+.industry-data-table td {
+  padding: 12px 15px;
+  border: 1px solid #e5e7eb;
+}
+
+.industry-data-table th {
+  background-color: #f9fafb;
+  font-weight: 600;
+  color: #374151;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+}
+
+.industry-data-table tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+.industry-data-table tr:hover {
+  background-color: #f3f4f6;
+}
+
+.industry-data-table td {
+  color: #4b5563;
+  font-size: 0.95rem;
+}
+
+.industry-cta {
+  text-align: center;
+  background: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  border: 1px solid #e5e7eb;
+}
+
+.industry-cta p {
+  font-size: 1.1rem;
+  color: #4b5563;
+  margin-bottom: 20px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .accordion-header h2 {
+    font-size: 1rem;
+  }
+  .industry-hero-title {
+    font-size: 2rem;
+  }
+}
+
+/* 3D Image Carousel Split Layout */
+.carousel-split-layout {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.carousel-left-pane {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: visible;
+}
+
+.circular-carousel-scene {
+  width: 250px;
+  height: 250px;
+  perspective: 1000px;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+}
+
+.circular-carousel {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.carousel-item {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  left: 25px;
+  top: 25px;
+  background: #f9fafb;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  transition: border-color 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+  filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1));
+}
+
+.carousel-item:hover {
+  border-color: #ef4444;
+}
+
+.carousel-item.active {
+  border-color: #ef4444;
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
+}
+
+.carousel-item img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.carousel-controls {
+  display: flex;
+  gap: 1rem;
+  z-index: 10;
+}
+
+.carousel-controls button {
+  background: #1f2937;
+  color: white;
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.carousel-controls button:hover {
+  background: #ef4444;
+}
+
+.carousel-right-pane {
+  flex: 1;
+  background: #f9fafb;
+  padding: 2rem;
+  border-radius: 12px;
+  border-left: 5px solid #ef4444;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+.active-valve-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 0.5rem;
+}
+
+.active-valve-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.active-valve-table th,
+.active-valve-table td {
+  padding: 12px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+}
+
+.active-valve-table th {
+  font-weight: 600;
+  color: #4b5563;
+  width: 40%;
+}
+
+.active-valve-table td {
+  color: #111827;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .carousel-split-layout {
+    flex-direction: column;
+  }
+  .carousel-right-pane {
+    width: 100%;
+    border-left: none;
+    border-top: 5px solid #ef4444;
+  }
+}

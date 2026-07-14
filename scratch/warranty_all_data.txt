@@ -1,0 +1,87 @@
+
+========================================
+SLUG: warranty
+========================================
+TEXT VALUES IN RECORD:
+IMAGES IN RECORD:
+- https://www.gmdalui.co.in/wp-content/plugins/pagelayer/images/default-image.png
+- https://www.gmdalui.co.in/wp-content/plugins/pagelayer/images/default-image.png
+
+========================================
+SLUG: warranty-of-regulating-valves
+========================================
+TEXT VALUES IN RECORD:
+IMAGES IN RECORD:
+
+========================================
+SLUG: warranty-of-check-valve
+========================================
+TEXT VALUES IN RECORD:
+IMAGES IN RECORD:
+
+========================================
+SLUG: warranty-of-automated-valves
+========================================
+TEXT VALUES IN RECORD:
+IMAGES IN RECORD:
+
+========================================
+SLUG: warranty-2
+========================================
+TEXT VALUES IN RECORD:
+IMAGES IN RECORD:
+- https://www.gmdalui.co.in/wp-content/plugins/pagelayer/images/default-image.png
+
+========================================
+SLUG: warranty-of-pressure-relief-and-safety
+========================================
+TEXT VALUES IN RECORD:
+IMAGES IN RECORD:
+
+========================================
+SLUG: warranty-of-sluice-valve
+========================================
+TEXT VALUES IN RECORD:
+IMAGES IN RECORD:
+
+========================================
+SLUG: warranty-of-manual-valve
+========================================
+TEXT VALUES IN RECORD:
+IMAGES IN RECORD:
+
+========================================
+SLUG: warranty-of-speciality-valves
+========================================
+TEXT VALUES IN RECORD:
+IMAGES IN RECORD:
+
+========================================
+SLUG: warranty-of-sluice-valve-2
+========================================
+TEXT VALUES IN RECORD:
+IMAGES IN RECORD:
+
+========================================
+SLUG: warranty-of-tamper-proof-kinetic-valve
+========================================
+TEXT VALUES IN RECORD:
+IMAGES IN RECORD:
+
+========================================
+SLUG: warranty-of-non-return-valves
+========================================
+TEXT VALUES IN RECORD:
+IMAGES IN RECORD:
+
+========================================
+SLUG: warranty-of-control-valve
+========================================
+TEXT VALUES IN RECORD:
+IMAGES IN RECORD:
+
+========================================
+SLUG: warranty-of-air-valve
+========================================
+TEXT VALUES IN RECORD:
+IMAGES IN RECORD:

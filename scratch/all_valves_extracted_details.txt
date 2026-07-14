@@ -1,0 +1,334 @@
+
+================================================================================
+VALVE CATEGORY FILE: 203_air_valves.txt
+================================================================================
+[HEADING] AIR VALVES
+[HEADING] Introduction
+[HEADING] An air valve from DALUI is designed to manage air within pipelines, addressing both air release and vacuum conditions. It efficiently releases trapped air, prevents vacuum formation, and allows for smooth fluid flow, enhancing system reliability and performance across diverse industrial applications.
+[HEADING] Application For Air Valves
+[IMAGE] ID:752
+[HEADING] WATER DISTRIBUTION SYSTEMS
+[HEADING] Prevents air accumulation and vacuum conditions, ensuring smooth operation and reducing the risk of pipeline damage or flow disruption.
+[IMAGE] ID:753
+[HEADING] SEWAGE AND WASTEWATER SYSTEMS
+[HEADING] Manages air release and intake to maintain system efficiency and prevent pressure surges or blockages in sewage and wastewater pipelines.
+[IMAGE] ID:754
+[HEADING] INDUSTRIAL PROCESSES
+[HEADING] Enhances the efficiency of fluid handling systems by removing trapped air, preventing flow disruptions, and ensuring reliable operation in various manufacturing and processing applications.
+[IMAGE] ID:755
+[HEADING] HVAC SYSTEMS
+[HEADING] Regulates air in heating, ventilation, and air conditioning systems, optimizing performance and preventing air locks or pressure imbalances that can affect system efficiency.
+[HEADING] Type Of Tamper Proof Air Valve
+[IMAGE] ID:757
+
+================================================================================
+VALVE CATEGORY FILE: 204_sluice_valves.txt
+================================================================================
+[HEADING] Sluice Valves
+[HEADING] GATE/SLUICE/SCOUR VALVES
+[HEADING] Our gate/sluice, orscour valves offer exceptional performance for various applications. Constructed from Cast Iron, S.G. Iron, Cast Steel, or Mild Steel fabricated, they feature an outside screw and yoke type with or without rising stem for reliable operation.
+[HEADING] VALVES TYPE BASED ON OPERATION
+[IMAGE] ID:725
+[IMAGE] ID:713
+[IMAGE] ID:712
+[HEADING] WATER DISTRIBUTION SYSTEM
+[HEADING] 1. GATE VALVES : Ideal for on/off control and isolation. 2. SLUICE GATE : Used for flow control and sediment removal. 3. SCOUR VALVES : Designed for pipeline maintenance and cleaning.
+
+================================================================================
+VALVE CATEGORY FILE: 205_check_valves.txt
+================================================================================
+[HEADING] CHECK VALVES
+[HEADING] Introduction
+[HEADING] Non-return valves, also known as check valves, are crucial for preventing backflow and ensuring smooth operation in piping systems. They allow fluid to flow in one direction while closing to prevent reverse flow, protecting equipment and maintaining system efficiency.
+[HEADING] Applications
+[HEADING] WATER SYSTEMS : Prevents backflow in municipal and industrial water pipelines. SEWAGE SYSTEMS : Ensures protection against backflow in sewage and wastewater treatment. OIL AND GAS : Safeguards equipment from reverse flow in oil and gas pipelines. CHEMICAL PROCESSES : Protects process systems from contamination and reverse flow .
+[HEADING] Type of Valve
+[HEADING] Penumatic Valves
+[HEADING] Illustration
+[IMAGE] ID:741
+[HEADING] A penumatic valves controls fluid using compressed air. It offers efficient, remote operation in industrial automation, ensuring precision and reliability in dreamanding enviroments.
+[HEADING] Features
+[HEADING] Type of Valve
+[HEADING] Hydraulic Valves
+[HEADING] Illustration
+[IMAGE] ID:739
+[HEADING] A hydraulic valve from DALUI expertly manages fluid flow within hydraulic systems, providing precise control over pressure, direction, and flow rate. It ensures reliable performance in demanding industrial and mobile equipment applications. d flow using compressed air. It offers dustrial automation, ensuring precision vironments.
+[HEADING] Features
+[HEADING] Type of Valve
+[HEADING] Knife Gate Valves
+[HEADING] Illustration
+[IMAGE] ID:580
+[HEADING] A knife gate valve from DALUI f thick liquids, slurries, and powd in demanding industrial applica eatures a sharp-edged gate that cuts through ers. It provides reliable isolation and durability tions.
+[HEADING] Features
+[HEADING] Type of Valve
+[HEADING] Sluice Gate
+[HEADING] Illustration
+[IMAGE] ID:604
+[HEADING] A sluice gate from DALUI controls water flow by raising or lowering a gate. It offers reliable isolation and precise flow management in water treatment and industrial applications.
+[HEADING] Features
+[HEADING] Type Of Check Valves
+[IMAGE] ID:745
+
+================================================================================
+VALVE CATEGORY FILE: 206_manual_valves.txt
+================================================================================
+[HEADING] MANUAL VALVES
+[HEADING] Introduction
+[HEADING] GM Dalui manual valves are mechanically operated valves used to start, stop, or regulate fluid flow in pipelines. These valves are operated via handwheel, lever, or gearbox to control flow manually. They find applications in water supply, irrigation, industrial processes, and sewage treatment. Manual valves offer reliable operation with simple construction suitable for on/off and throttling purposes depending on valve type.
+[HEADING] Types Of Manual Valves
+[HEADING] Type of Valve
+[HEADING] Gate/ Scour/ Sluice
+[HEADING] Illustration
+[IMAGE] ID:599
+[HEADING] A straight flow path, minimal pressure drop, robust construction, and a sliding gate for tight sealing.
+[HEADING] Features
+[HEADING] Completely open or close flow in pipelines. Common in water distribution, oil and gas pipelines
+[HEADING] Application
+[HEADING] 40-2500
+[HEADING] Size Range (mm)
+[HEADING] Type of Valve
+[HEADING] Ball Valve
+[HEADING] Illustration
+[IMAGE] ID:764
+[HEADING] A hollow, perforated ball that rotates within the valve body..
+[HEADING] Features
+[HEADING] Provides quick shut-off; widely used in gas systems, industrial processes, and water
+[HEADING] Application
+[HEADING] 15-1200
+[HEADING] Size Range (mm)
+[HEADING] Type of Valve
+[HEADING] Plug Valve
+[HEADING] Illustration
+[IMAGE] ID:1907
+[HEADING] A tapered or cylindrical plug to control flow.
+[HEADING] Features
+[HEADING] Quick & frequent operation, like gas pipelines and petrochemical processing.
+[HEADING] Application
+[HEADING] 50-1200
+[HEADING] Size Range (mm)
+[HEADING] Type of Valve
+[HEADING] Sluice Gate
+[HEADING] Illustration
+[IMAGE] ID:604
+[HEADING] A tapered or cylindrical plug to control flow.
+[HEADING] Features
+[HEADING] Quick & frequent operation, like gas pipelines and petrochemical processing.
+[HEADING] Application
+[HEADING] 50-1200
+[HEADING] Size Range (mm)
+[HEADING] Type of Valve
+[HEADING] Butterfly Valves
+[HEADING] Illustration
+[IMAGE] ID:694
+[HEADING] Crafted with a central disc and a robust body, lightweight construction, for quick operation.
+[HEADING] Features
+[HEADING] Large pipelines where space limit and quick shut-off is needed, such as in HVAC systems and wastewater treatment.
+[HEADING] Application
+[HEADING] 40-3000
+[HEADING] Size Range (mm)
+
+================================================================================
+VALVE CATEGORY FILE: 207_non-reaturn_valves.txt
+================================================================================
+[HEADING] Non-Return Valves
+[HEADING] Introduction
+[HEADING] GM Dalui non-return valves, also known as check valves, are designed to allow fluid flow in one direction and prevent backflow, safeguarding pumps, pipelines, and equipment. They automatically close when flow reverses, protecting the system from damage due to backflow or water hammer. These valves find applications in water supply, sewage systems, power plants, and industrial pipelines.
+[HEADING] Types Of Non-Return Valves
+[HEADING] Type of Valve
+[HEADING] Dual Plate
+[HEADING] Illustration
+[IMAGE] ID:605
+[HEADING] Two spring-loaded plates for efficient flow control, durability, and reliable, with bi-dire tional operation.
+[HEADING] Features
+[HEADING] Prevents backflow with two spring-loaded plates, opening for forward flow and closing when reversed, It's compact, efficient design reduces pressure loss compared to the swing swing check valve for unidirectional flow.
+[HEADING] Application
+[HEADING] 50-3400
+[HEADING] Size Range (mm)
+[HEADING] Type of Valve
+[HEADING] Swing Valve
+[HEADING] Illustration
+[IMAGE] ID:1353
+[HEADING] Hinged disc for reliable flow control they ensure efficient, one-way flow.
+[HEADING] Features
+[HEADING] Commonly used in water and waste water systems, and pump discharge lines.
+[HEADING] Application
+[HEADING] 15-1200
+[HEADING] Size Range (mm)
+
+================================================================================
+VALVE CATEGORY FILE: 208_others_valves.txt
+================================================================================
+[HEADING] Other Valves
+[HEADING] Types Of Other Valves
+[HEADING] Type of Valve
+[HEADING] Foot Valve
+[HEADING] Illustration
+[IMAGE] ID:1774
+[HEADING] A mesh strainer and spring-loaded mechanism.
+[HEADING] Features
+[HEADING] Used at the intel of a pump to maintain prime and prevent backflow, commonly used in well system.
+[HEADING] Application
+[HEADING] 26-600
+[HEADING] Size Range (mm)
+[HEADING] Type of Valve
+[HEADING] Lift
+[HEADING] Illustration
+[IMAGE] ID:1790
+[HEADING] Feature a movable disc or ball for precise one-way flow control.
+[HEADING] Features
+[HEADING] Using high-pressure applications like steam and gas system.
+[HEADING] Application
+[HEADING] 50-1200
+[HEADING] Size Range (mm)
+[HEADING] Type of Valve
+[HEADING] Ball
+[HEADING] Illustration
+[IMAGE] ID:1803
+[HEADING] Precision-engineered spherical ball for reliable one-way flow control.
+[HEADING] Features
+[HEADING] Commonly used in water and waste water systems, and pump discharge lines.
+[HEADING] Application
+[HEADING] 25-1200
+[HEADING] Size Range (mm)
+
+================================================================================
+VALVE CATEGORY FILE: 209_tamper_proof_valves.txt
+================================================================================
+[HEADING] Tamper Proof / Kinetic Air Valve
+[HEADING] Introduction
+[HEADING] GM Dalui tamper-proof valves are specially designed valves that prevent unauthorized operation or manipulation. These valves are equipped with secure locking mechanisms and tamper-resistant features, making them ideal for applications in public utilities, industrial plants, and safety-critical systems where controlled access is essential. They are commonly used in water distribution, gas pipelines, and industrial processes requiring restricted valve operation.
+[HEADING] Types Of Tamper Proof / Kinetic Air Valve
+[HEADING] Type of Valve
+[HEADING] Tamper Proof Valve
+[HEADING] Illustration
+[IMAGE] ID:607
+[HEADING] Designed for superior security and reliability, it prevents unauthorized access, ensuring system integrity. Its durable build and advanced sealing deliver long-lasting performance with low maintenance, ideal for high-security applications.
+[HEADING] Features
+[HEADING] The tamper-proof air valve is perfect for industries requiring secure, reliable solutions. Ideal for automotive, HVAC systems, industrial machinery, and gas pipelines.
+[HEADING] Application
+[HEADING] 50-600
+[HEADING] Size Range (mm)
+
+================================================================================
+VALVE CATEGORY FILE: 210_control_valves.txt
+================================================================================
+[HEADING] Control Valves
+[HEADING] Introduction
+[HEADING] GM Dalui control valves are precision valves designed to regulate fluid flow, pressure, or temperature automatically based on signals from a controller. They play a crucial role in process industries such as power generation, chemical processing, water treatment, and HVAC systems, enabling automated control and efficient system performance. Control valves use actuators and positioners to modulate valve opening for accurate flow control.
+[HEADING] Types Of Control Valves
+[HEADING] Type of Valve
+[HEADING] Globe control
+[HEADING] Illustration
+[IMAGE] ID:1429
+[HEADING] A spherical body and precise linear motion makes it unique in itself.
+[HEADING] Features
+[HEADING] Process control systems for precise control of flow rate, pressure, or temperature in industries like oil & gas, chemical processing units.
+[HEADING] Application
+[HEADING] 50-1200
+[HEADING] Size Range (mm)
+[HEADING] Type of Valve
+[HEADING] Butterfly control
+[HEADING] Illustration
+[IMAGE] ID:1454
+[HEADING] Lightweight construction, a central disc for precise flow regulation.
+[HEADING] Features
+[HEADING] Large flow systems such as HVAC and water treatment plants.
+[HEADING] Application
+[HEADING] 50-3000
+[HEADING] Size Range (mm)
+[HEADING] Type of Valve
+[HEADING] Sluice/Gate
+[HEADING] Illustration
+[IMAGE] ID:1478
+[HEADING] Made from high-strength materials
+[HEADING] Features
+[HEADING] Regulates fluid flow in pipelines by adjusting a gate. It ensures precise flow control and isolation commonly used in water management and distribution system.
+[HEADING] Application
+[HEADING] 25-1200
+[HEADING] Size Range (mm)
+
+================================================================================
+VALVE CATEGORY FILE: 211_regulating_valves.txt
+================================================================================
+[HEADING] Regulating Valves
+[HEADING] Introduction
+[HEADING] GM Dalui regulating valves are precision control devices designed for maintaining constant flow rate, pressure regulation, and other control functions in pipelines and industrial processes. These valves are used in applications such as water treatment plants, oil and gas pipelines, chemical processes, and manufacturing where accurate flow control is required. The valves operate automatically, using actuators driven by pneumatic or electric signals, to modulate the flow based on system requirements
+[HEADING] Types Of Regulating Valves
+[HEADING] Type of Valve
+[HEADING] Globe
+[HEADING] Illustration
+[IMAGE] ID:1510
+[HEADING] Utilize compressed air for operation, offering fast response and robust construction.
+[HEADING] Features
+[HEADING] Uses compressed air to operate the valve, used in high-speed and high-cycle applications like in manufacturing processes.
+[HEADING] Application
+[HEADING] 50-1200
+[HEADING] Size Range (mm)
+[HEADING] Type of Valve
+[HEADING] Needle
+[HEADING] Illustration
+[IMAGE] ID:1532
+[HEADING] It features a fine-threaded, tapered needle for precise flow control.
+[HEADING] Features
+[HEADING] Metering systems. chemistry processing, and instrumentation systems.
+[HEADING] Application
+[HEADING] 50-1200
+[HEADING] Size Range (mm)
+[HEADING] Type of Valve
+[HEADING] Ball
+[HEADING] Illustration
+[IMAGE] ID:612
+[HEADING] Engineered with a rotating sphere for quick flow control.
+[HEADING] Features
+[HEADING] Provides quick shut off, widely used in gas systems, industrial processes, and water supply networks.
+[HEADING] Application
+[HEADING] 15-50
+[HEADING] Size Range (mm)
+
+================================================================================
+VALVE CATEGORY FILE: 214_speciality_valves.txt
+================================================================================
+[HEADING] Speciality Valves
+[HEADING] Introduction
+[HEADING] GM Dalui specialty valves are designed for unique and demanding applications requiring customized solutions beyond standard valve types. These valves include but are not limited to diaphragm valves, pinch valves, sampling valves, and other custom-engineered designs used in industries such as pharmaceuticals, food & beverage, petrochemical, and power generation. They provide tailored functionality like sterile flow control, high corrosion resistance, or precise sampling.
+[HEADING] Types Of Speciality Valves
+[HEADING] Type of Valve
+[HEADING] Cryogenic
+[HEADING] Illustration
+[IMAGE] ID:1720
+[HEADING] Featuring leak-proof sealing, durable construction, high-strength materials, and reliable operation for handling liquefied gases safely.
+[HEADING] Features
+[HEADING] Designed to operate at very low temperatures, used in LNG (liquefied natural gas) and other cryogenic system.
+[HEADING] Application
+[HEADING] 50-600
+[HEADING] Size Range (mm)
+[HEADING] Type of Valve
+[HEADING] Safety
+[HEADING] Illustration
+[IMAGE] ID:1733
+[HEADING] Precise regulation, and dependable performance, ensuring efficient fluid management in various applications.
+[HEADING] Features
+[HEADING] Allows for switching between two different flow paths or combining flows.
+[HEADING] Application
+[HEADING] 25-60
+[HEADING] Size Range (mm)
+[HEADING] Type of Valve
+[HEADING] Four Way
+[HEADING] Illustration
+[IMAGE] ID:1745
+[HEADING] Made from durable materials like stainless steel and brass, featuring robust, construction, precise control, corrosion resistance, and reliable performance for versatile fluid handling.
+[HEADING] Features
+[HEADING] Provides quick shut off, widely used in gas systems, industrial processes, and water supply networks.
+[HEADING] Application
+[HEADING] 15-50
+[HEADING] Size Range (mm)
+[HEADING] Type of Valve
+[HEADING] Y-Strainer
+[HEADING] Illustration
+[IMAGE] ID:1761
+[HEADING] Durable construction, fine mesh filtration, easy maintenance, and reliable performance in protecting systems.
+[HEADING] Features
+[HEADING] Contains a strainer to filter debris, protecting downstream equipment in water, steam, or oil system.
+[HEADING] Application
+[HEADING] 25-600
+[HEADING] Size Range (mm)

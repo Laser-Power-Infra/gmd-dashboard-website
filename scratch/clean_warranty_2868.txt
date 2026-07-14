@@ -1,0 +1,86 @@
+### Pneumatic Valves 
+Inclusions:
+1. Manufacturing defects in valve body, seat, disc, and stem.
+
+2. Defects in pneumatic actuator cylinder and piston under normal service.
+
+3. Faulty assembly leading to air leakage within actuator housing.
+
+4. Failure of factory-installed limit stops or guiding mechanism.
+Exclusions:
+1. Damage from contaminated or moist compressed air supply.
+
+2. Seals, diaphragms, O-rings, and packing considered consumables.
+
+3. Failure due to wrong alignment of actuator with valve.
+
+4. External control accessories (solenoid valves, FRL units, tubing) unless specifically supplied under contract.
+------------------------------
+### Hydraulic Valves 
+Inclusions:
+1. Casting or forging defects in valve body, bonnet, or actuator housing.
+
+2. Leakage from hydraulic actuator cylinder due to faulty manufacturing.
+
+3. Malfunctioning due to improper machining of guiding or seating surfaces.
+
+4. Failure of manufacturer-installed hydraulic seals under normal fluid conditions.
+Exclusions:
+1. Damage caused by contaminated hydraulic fluid or improper fluid grade.
+
+2. Wear of seals, packing, O-rings due to normal service life.
+
+3. Failure due to over-pressure surges beyond rated design.
+
+4. External hydraulic power packs, hoses, and fittings unless supplied as part of the valve package.
+------------------------------
+### Knife Gate Valve
+Inclusions:
+1. Manufacturing defects in body, bonnet, or disc.
+
+2. Faults in welding, casting, or machining.
+
+3. Leakage through the body caused by defective materials.
+
+4. Failure of supplied seals/liners within the warranty period (not due to misuse).
+
+5. Actuator defects (if supplied with valve) caused by design or workmanship.
+Exclusions:
+1. Wear and tear of seals, packing, or seats due to normal operation.
+
+2. Damage caused by abrasive, corrosive, or slurry media beyond design specification.
+
+3. Improper installation, alignment, or operation outside rated pressure/temperature.
+
+4. Damage due to lack of maintenance or use of non-genuine spare parts.
+
+5. Surface corrosion, erosion, or scaling caused by operating environment.
+
+6. Modification of valve without manufacturerâs approval.
+------------------------------
+### Sluice Gate Valve
+Inclusions:
+1. Defects in structural frame, gate leaf, or guides due to poor materials/workmanship.
+
+2. Improper sealing due to manufacturing defect in seating surfaces.
+
+3. Corrosion protection (coating/lining) failure due to defective application.
+
+4. Gearbox, spindle, or hoist mechanism defects if provided by manufacturer.
+Exclusions:
+1. Normal wear of seals, wedges, or seating surfaces.
+
+
+2. Damage due to silt, grit, or foreign objects obstructing gate movement.
+
+
+3. Improper installation, foundation settlement, or misalignment of guides.
+
+
+4. Operation under water head or flow conditions beyond design specification.
+
+
+5. Lack of lubrication/maintenance of hoist mechanism.
+
+6. Damage due to unauthorized modification, welding, or structural changes.
+------------------------------

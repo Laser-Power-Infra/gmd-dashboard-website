@@ -1,0 +1,599 @@
+/* Custom styles for About Us Page */
+
+.about-page-wrapper {
+  overflow-x: hidden;
+}
+
+/* Banner Header */
+.about-banner {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.about-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.about-banner-content {
+  position: relative;
+  z-index: 2;
+}
+
+.about-banner-title {
+  font-family: var(--font-family-heading);
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #ffffff !important; /* Force white color override */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.about-banner-bar {
+  width: 80px;
+  height: 4px;
+  background-color: var(--color-accent);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+/* Page Sections spacing */
+.about-page-section {
+  padding: 80px 0;
+}
+
+.about-page-section.bg-white {
+  background-color: #ffffff;
+}
+
+.about-page-section.bg-slate {
+  background-color: #f8f9fa;
+}
+
+/* Alignment grid layouts */
+.about-two-col-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+@media (max-width: 992px) {
+  .about-two-col-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/* Overlapping graphics */
+.about-graphics-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.about-graphics-inner {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  height: 350px;
+  z-index: 1; /* Establish stacking context */
+}
+
+.about-graphics-deco {
+  position: absolute;
+  background-color: var(--color-primary);
+  border-radius: 20px 100px 100px 50px;
+  width: 160px;
+  height: 120px;
+  top: -12px;
+  left: -12px;
+  z-index: 1;
+}
+
+.about-graphics-img {
+  position: absolute;
+  top: 30px;
+  left: 20px;
+  right: 0;
+  bottom: 0;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  z-index: 10; /* Higher z-index to overlay deco block */
+  border: 1px solid rgba(138, 79, 80, 0.1);
+  transition: var(--transition-smooth);
+}
+
+.about-graphics-img:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.about-graphics-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Stats Counter Banner (burgundy block) */
+.about-stats-banner {
+  background-color: var(--color-primary);
+  border-radius: 24px;
+  padding: 40px;
+  color: #ffffff;
+  box-shadow: var(--shadow-lg);
+  margin-top: 60px;
+}
+
+.about-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .about-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+.about-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.about-stat-item:hover {
+  transform: translateY(-3px);
+}
+
+.about-stat-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--color-accent);
+  margin-bottom: 16px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.about-stat-number {
+  font-family: var(--font-family-heading);
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1;
+  color: #ffffff;
+  margin-bottom: 6px;
+  letter-spacing: -1px;
+}
+
+.about-stat-label {
+  font-family: var(--font-family-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+/* Vision & Mission Cards */
+.about-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+@media (max-width: 992px) {
+  .about-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+.about-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  border: 1px solid #f1f3f5;
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background-color: var(--color-primary);
+  transition: height 0.3s ease;
+}
+
+.about-card.accent::before {
+  background-color: var(--color-accent);
+}
+
+.about-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(138, 79, 80, 0.08);
+}
+
+.about-card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.about-card-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background-color: rgba(138, 79, 80, 0.06);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  transition: transform 0.3s ease;
+}
+
+.about-card.accent .about-card-icon {
+  background-color: rgba(245, 144, 25, 0.06);
+  color: var(--color-accent);
+}
+
+.about-card:hover .about-card-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.about-card-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.about-card-body {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  text-align: justify;
+}
+
+/* What We Stand For list & Progress bars */
+.about-strengths-list {
+  list-style: none;
+  margin-bottom: 30px;
+}
+
+.about-strength-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 16px;
+  font-size: 1.05rem;
+  color: var(--color-text-dark);
+}
+
+.about-strength-num {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: rgba(245, 144, 25, 0.1);
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.8rem;
+  shrink: 0;
+  margin-top: 2px;
+}
+
+.about-progress-group {
+  margin-bottom: 20px;
+}
+
+.about-progress-labels {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-family-heading);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--color-text-dark);
+  margin-bottom: 8px;
+}
+
+.about-progress-bar-bg {
+  width: 100%;
+  height: 10px;
+  background-color: #e9ecef;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.about-progress-bar-fill {
+  height: 100%;
+  background-color: var(--color-primary);
+  border-radius: 5px;
+  width: 0;
+  transition: width 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Client grids layout */
+.about-logos-section {
+  border-top: 1px solid #eee;
+}
+
+.about-logos-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  margin-top: 30px;
+}
+
+@media (max-width: 992px) {
+  .about-logos-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .about-logos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.about-logo-item {
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  border: 1px solid #f1f3f5;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  transition: var(--transition-smooth);
+}
+
+.about-logo-item:hover {
+  background-color: #ffffff;
+  border-color: rgba(138, 79, 80, 0.25);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+.about-logo-item img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  filter: none !important; /* Guarantee full color */
+  opacity: 1 !important;
+}
+
+/* Certificate carousel area */
+.about-certs-slider {
+  background-color: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #eee;
+  padding: 30px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.about-cert-item {
+  width: 130px;
+  height: 130px;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  border: 1px solid #f1f3f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  transition: var(--transition-smooth);
+}
+
+.about-cert-item:hover {
+  transform: scale(1.05);
+  background-color: #ffffff;
+  border-color: rgba(138, 79, 80, 0.2);
+  box-shadow: var(--shadow-md);
+}
+
+.about-cert-item img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* Map area styling */
+.about-map-container {
+  background-color: #f8f9fa;
+  border-radius: 20px;
+  border: 1px solid #eee;
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.about-map-inner {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+}
+
+.about-map-inner img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+/* Pulse locator map pins */
+.about-map-pin {
+  position: absolute;
+  z-index: 10;
+  width: 12px;
+  height: 12px;
+  margin-left: -6px;
+  margin-top: -6px;
+}
+
+.about-map-pin::before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  top: -6px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  opacity: 0.5;
+  animation: pulsePin 2s infinite ease-out;
+}
+
+.about-map-pin-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  display: block;
+}
+
+.about-map-pin-tooltip {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #1a1a1a;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 4px;
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  white-space: nowrap;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 20;
+}
+
+.about-map-pin:hover .about-map-pin-tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+@keyframes pulsePin {
+  0% {
+    transform: scale(0.5);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+/* Standard CSS entrance animations */
+.animate-on-mount {
+  opacity: 0;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.animate-fade-in-left {
+  animation: fadeInLeft 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.animate-fade-in-right {
+  animation: fadeInRight 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(45px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Scroll Triggered Reveal Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.reveal.reveal-left {
+  transform: translateX(-50px);
+}
+
+.reveal.reveal-right {
+  transform: translateX(50px);
+}
+
+.reveal.reveal-fade {
+  transform: translateY(0);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translate(0);
+}
+

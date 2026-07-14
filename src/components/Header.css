@@ -1,0 +1,381 @@
+.site-header {
+  position: relative;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Scroll modifications removed to keep navbar static and white all the time */
+
+/* Top bar contact details */
+.top-bar {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 8px 0;
+  font-size: 0.85rem;
+  transition: var(--transition-smooth);
+}
+
+.top-bar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-info {
+  display: flex;
+  align-items: center;
+}
+
+.contact-link {
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-link:hover {
+  color: var(--color-accent);
+}
+
+.contact-link i {
+  color: var(--color-primary);
+}
+
+.contact-divider {
+  margin: 0 12px;
+  color: #333333;
+}
+
+.contact-address {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-address i {
+  color: var(--color-primary);
+}
+
+.social-links {
+  display: flex;
+  gap: 12px;
+}
+
+.social-links a {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: #1a1a1a;
+  border: 1px solid #333333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 0.75rem;
+  transition: var(--transition-smooth);
+}
+
+.social-links a:hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #ffffff;
+}
+
+/* Main Navigation Bar */
+.main-nav-bar {
+  padding: 16px 0;
+  background-color: var(--color-bg-white);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid #f1f3f5;
+  transition: var(--transition-smooth);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-logo {
+  display: flex;
+  align-items: center;
+}
+
+.site-logo img {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+}
+
+.nav-menu ul {
+  display: flex;
+  list-style: none;
+  gap: 28px;
+}
+
+.nav-menu a {
+  font-family: var(--font-family-heading);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-text-dark);
+  position: relative;
+  padding: 6px 0;
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-menu a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-primary);
+  transition: var(--transition-fast);
+}
+
+.nav-menu a:hover {
+  color: var(--color-primary);
+}
+
+.nav-menu a:hover::after {
+  width: 100%;
+}
+
+.nav-menu a.active-nav-link {
+  color: var(--color-primary);
+}
+
+.nav-menu a.active-nav-link::after {
+  width: 100%;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Hamburger toggler menu button */
+.hamburger-menu {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--color-text-dark);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.hamburger-menu:hover {
+  color: var(--color-primary);
+}
+
+/* Mobile drawer styling */
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 280px;
+  height: 100vh;
+  background-color: var(--color-bg-white);
+  box-shadow: var(--shadow-lg);
+  z-index: 1100;
+  transition: var(--transition-smooth);
+  padding: 80px 24px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-drawer.open {
+  right: 0;
+}
+
+.mobile-nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mobile-nav a {
+  font-family: var(--font-family-heading);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-text-dark);
+  display: block;
+}
+
+.mobile-nav a:hover {
+  color: var(--color-primary);
+}
+
+.mobile-action-li {
+  margin-top: 15px;
+}
+
+.btn-mobile-quote {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--color-primary);
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Products Dropdown Styling */
+.nav-dropdown-item {
+  position: relative;
+}
+
+.dropdown-toggle {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 8px;
+}
+
+.caret-icon {
+  font-size: 0.75rem;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  margin-top: 2px;
+}
+
+.nav-dropdown-item:hover .caret-icon {
+  transform: rotate(180deg);
+}
+
+.nav-menu .nav-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(15px);
+  min-width: 220px;
+  background: rgba(255, 255, 255, 0.95); /* Elegant light glassmorphism */
+  backdrop-filter: blur(14px) saturate(180%);
+  -webkit-backdrop-filter: blur(14px) saturate(180%);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  padding: 12px 0;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), visibility 0.3s ease;
+  z-index: 1200;
+  margin-top: 10px;
+}
+
+/* Show Dropdown on Hover */
+.nav-dropdown-item:hover .nav-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.nav-dropdown-menu ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0 !important; /* Reset navigation gap */
+  width: 100%;
+  padding: 0;
+}
+
+.nav-dropdown-menu li {
+  width: 100%;
+  position: relative;
+  list-style: none;
+}
+
+/* High specificity styling for links inside dropdown to enforce padding */
+.nav-menu .nav-dropdown-menu a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 12px 24px !important; /* Force explicit padding to resolve cut-off */
+  font-family: var(--font-family-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text-dark) !important; /* Match text to theme */
+  text-decoration: none;
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+/* Remove hover underline inside dropdown panel */
+.nav-menu .nav-dropdown-menu a::after {
+  display: none !important;
+}
+
+.nav-menu .nav-dropdown-menu a:hover {
+  color: var(--color-accent) !important; /* Premium orange accent */
+  background-color: rgba(245, 144, 25, 0.08) !important; /* Subtle orange glass tint */
+  padding-left: 28px !important;
+}
+
+/* Sub-dropdown Menu (Valves List) */
+.nav-submenu-item {
+  position: relative;
+}
+
+.sub-caret-icon {
+  font-size: 0.7rem;
+  color: rgba(0, 0, 0, 0.35) !important;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.nav-submenu-item:hover .sub-caret-icon {
+  color: var(--color-accent) !important;
+  transform: translateX(3px);
+}
+
+.nav-menu .nav-submenu-menu {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  transform: translateX(15px);
+  min-width: 200px;
+  background: rgba(255, 255, 255, 0.98); /* Solid white glass */
+  backdrop-filter: blur(14px) saturate(180%);
+  -webkit-backdrop-filter: blur(14px) saturate(180%);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  padding: 10px 0;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), visibility 0.3s ease;
+  z-index: 1210;
+}
+
+.nav-submenu-item:hover .nav-submenu-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 992px) {
+  .nav-menu {
+    display: none;
+  }
+  .hamburger-menu {
+    display: block;
+  }
+  .top-bar-container {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+  .contact-divider {
+    display: none;
+  }
+  .contact-info {
+    flex-direction: column;
+    gap: 4px;
+  }
+  /* Scrolled margin behavior removed */
+}
+

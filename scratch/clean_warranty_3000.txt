@@ -1,0 +1,54 @@
+### Cryogenic Type Valve
+Inclusions:
+1 Warranty covers manufacturing defects in valve body, bonnet, stem, and seats.
+
+2 Coverage against leakage under rated cryogenic temperatures and pressures.
+
+3 Functional defects in extended bonnet or special low-temperature seals.
+
+4 Repair/replacement of defective parts due to faulty material or assembly..
+Exclusions:
+1 Damage due to improper handling, rapid temperature cycling, or incorrect insulation.
+
+2 Seal/seat wear caused by repeated thermal contraction/expansion (normal use).
+
+3 Corrosion or material degradation due to incompatible cryogenic fluids.
+
+4 Failure caused by ice formation or lack of specified purging/maintenance.
+------------------------------
+### Safety Type Valve
+Inclusions:
+1 Warranty covers defects in spring, lever, or safety mechanism.
+
+2 Functional failure to open/close at calibrated safety set points due to manufacturing defects.
+
+3 Coverage against leakage caused by faulty sealing surfaces.
+
+4 Repair or replacement of valve if failure occurs under recommended operating limits.
+Exclusions:
+1Tampering with factory set calibration or unauthorized adjustments.
+
+2 Damage from exposure to aggressive chemicals or high-velocity particulate media.
+
+3 Wear of seats, seals, or discs due to repeated actuation cycles.
+
+4 Improper storage, handling, or installation (e.g., overtightening, incorrect alignment)..
+------------------------------
+### Four Way Type Valve
+Inclusions:
+1 Warranty covers manufacturing defects in body, rotor, and internal sealing components.
+
+2 Functional failure to divert/redirect flow as per design due to defective mechanism.
+
+3 Coverage for leakage at rated pressure and temperature conditions.
+
+4 Repair/replacement of faulty unit under normal service operation.
+Exclusions:
+1 Damage caused by excessive torque, incorrect actuator fitment, or forced operation.
+
+2 Wear and tear of sealing surfaces or gaskets from regular switching.
+
+3 Corrosion, scaling, or erosion caused by incompatible process fluids.
+
+4 Improper mounting or misalignment during installation.
+------------------------------

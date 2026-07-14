@@ -1,0 +1,22 @@
+### Tamper Proof Valve
+Inclusions:
+1. Coverage against manufacturing defects in valve body, float, sealing components, and tamper-proof locking system
+
+2. Protection against leakage or malfunction caused by material faults under normal operating pressure
+
+3. Integrity of corrosion-resistant coatings (if factory-applied)
+
+4. Free repair or replacement of defective parts within warranty period
+Exclusions:
+1. Damage due to improper installation or overtightening
+
+2. Failure caused by overpressure, water hammer, or surge events
+
+3. Normal wear and tear of seals, gaskets, and seats
+
+4. Unauthorized modification, tampering, or dismantling of valve
+
+5. Damage from debris, corrosive chemicals, or water quality outside design parameters
+
+6. External coating damage due to mishandling or environmental exposure beyond specified limits
+------------------------------

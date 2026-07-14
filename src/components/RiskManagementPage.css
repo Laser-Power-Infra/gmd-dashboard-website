@@ -1,0 +1,365 @@
+/* RiskManagementPage.css */
+
+.risk-page-wrapper {
+  background-color: #fcfcfc;
+  min-height: 100vh;
+  padding-bottom: 80px;
+  overflow-x: hidden;
+}
+
+/* Hero Section */
+.risk-hero-section {
+  background: linear-gradient(135deg, #0b1c47 0%, #1a3673 100%);
+  color: white;
+  padding: 100px 0 80px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.risk-hero-section::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background-color: #fcfcfc;
+  transform: skewY(-2deg);
+}
+
+.risk-hero-section h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #ffffff !important;
+}
+
+.risk-hero-section p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  letter-spacing: 1px;
+}
+
+/* Main Content Blocks */
+.risk-main-content {
+  padding-top: 40px;
+}
+
+.risk-block {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  padding: 60px 0;
+}
+
+.risk-block.block-alternate {
+  flex-direction: row;
+}
+
+.risk-block:not(.block-alternate) {
+  flex-direction: row-reverse;
+}
+
+@media (max-width: 991px) {
+  .risk-block, .risk-block.block-alternate, .risk-block:not(.block-alternate) {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+
+.risk-image {
+  flex: 1;
+  position: relative;
+}
+
+.risk-image img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.risk-image:hover img {
+  transform: translateY(-10px);
+}
+
+.risk-text {
+  flex: 1;
+}
+
+.section-badge {
+  display: inline-block;
+  background-color: rgba(11, 28, 71, 0.1);
+  color: #0b1c47;
+  padding: 6px 16px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.center-badge {
+  margin: 0 auto 20px;
+}
+
+.risk-text h2 {
+  color: #0b1c47;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.risk-text p {
+  color: #555;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+/* Tier Cards */
+.tier-cards {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.tier-card {
+  flex: 1;
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  border-top: 4px solid #0b1c47;
+}
+
+.tier-card i {
+  font-size: 2rem;
+  color: #0b1c47;
+  margin-bottom: 15px;
+}
+
+.tier-card h4 {
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.tier-card p {
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .tier-cards {
+    flex-direction: column;
+  }
+}
+
+/* Divider */
+.risk-divider {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #ddd, transparent);
+  margin: 20px auto;
+  width: 80%;
+}
+
+/* Table styling */
+.risk-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.risk-table th {
+  background-color: #0b1c47;
+  color: white;
+  padding: 15px;
+  text-align: left;
+}
+
+.risk-table td {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  color: #555;
+}
+
+.indicator-badge {
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: white;
+}
+
+.badge-green { background-color: #2ecc71; }
+.badge-yellow { background-color: #f1c40f; color: #333; }
+.badge-blue { background-color: #3498db; }
+.badge-grey { background-color: #95a5a6; }
+.badge-red { background-color: #e74c3c; }
+
+/* Mitigation Section */
+.risk-mitigation-section {
+  background-color: white;
+  padding: 80px 0;
+  margin-top: 40px;
+}
+
+.section-title {
+  color: #0b1c47;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.section-subtitle {
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto 50px;
+  font-size: 1.1rem;
+}
+
+.mitigation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.m-card {
+  background: #fcfcfc;
+  padding: 40px 30px;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid #eee;
+}
+
+.m-card:hover {
+  background: white;
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  border-color: transparent;
+}
+
+.m-icon {
+  width: 70px;
+  height: 70px;
+  background-color: rgba(11, 28, 71, 0.05);
+  color: #0b1c47;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  margin: 0 auto 20px;
+  transition: all 0.3s ease;
+}
+
+.m-card:hover .m-icon {
+  background-color: #0b1c47;
+  color: white;
+}
+
+.m-card h4 {
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.m-card p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Hazards & Emergency */
+.hazard-levels {
+  margin-bottom: 30px;
+}
+
+.h-level {
+  background: white;
+  padding: 15px 20px;
+  border-left: 4px solid #0b1c47;
+  margin-bottom: 15px;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+}
+
+.h-level h5 {
+  color: #333;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+.h-level p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.emergency-alert {
+  background-color: #fff4f4;
+  border: 1px solid #ffd6d6;
+  border-left: 5px solid #e74c3c;
+  padding: 25px;
+  border-radius: 8px;
+}
+
+.emergency-alert h4 {
+  color: #c0392b;
+  margin-bottom: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.emergency-alert p {
+  color: #333;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* Animations */
+.animate-fade-up {
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.animate-slide-right {
+  animation: slideRight 0.8s ease forwards;
+}
+
+.animate-slide-left {
+  animation: slideLeft 0.8s ease forwards;
+}
+
+.delay-1 {
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideLeft {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}

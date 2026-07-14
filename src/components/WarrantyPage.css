@@ -1,0 +1,545 @@
+/* WarrantyPage.css */
+
+.warranty-page-wrapper {
+  background-color: var(--color-bg-white);
+  padding-bottom: 80px;
+  overflow-x: hidden;
+}
+
+/* Light Theme Hero Banner with Hexagon layout */
+.warranty-hero {
+  background-color: #f8f9fa;
+  padding: 60px 0;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid #e9ecef;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+}
+
+/* Hexagon Border/Outline */
+.hero-left-hex {
+  z-index: 5;
+}
+
+.hexagon-border-blue {
+  width: 290px;
+  height: 250px;
+  background-color: #3E8EF7; /* Primary bright blue border color from screenshot */
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.5s ease;
+}
+
+.hexagon-border-blue:hover {
+  transform: scale(1.03);
+}
+
+.hexagon-inner-valves {
+  width: calc(100% - 16px);
+  height: calc(100% - 16px);
+  background-image: url('/uploads/2025/04/hero_pipes_yellow.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  background-color: #ffffff;
+}
+
+/* Center title styling */
+.hero-center-title {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 10;
+}
+
+.warranty-title-text {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--color-primary); /* Maroon brand color */
+  margin: 0;
+  letter-spacing: 2px;
+  font-family: var(--font-family-heading);
+}
+
+/* Decorative Background shapes from screenshot */
+.hero-decor-shape-top-left {
+  position: absolute;
+  top: -40px;
+  left: -40px;
+  width: 200px;
+  height: 140px;
+  background-color: #0f1c2c; /* Dark blue shape */
+  clip-path: polygon(0 0, 100% 0, 75% 100%, 0 100%);
+  opacity: 0.95;
+  z-index: 1;
+}
+
+.hero-decor-shape-bottom-right {
+  position: absolute;
+  bottom: -60px;
+  right: -60px;
+  width: 260px;
+  height: 260px;
+  border: 28px solid #56ccf2; /* Light cyan/blue curve */
+  border-radius: 50%;
+  z-index: 1;
+  opacity: 0.9;
+}
+
+/* Intro Text styling */
+.warranty-intro-text {
+  text-align: center;
+  padding: 50px 0 40px 0;
+}
+
+.warranty-intro-text h2 {
+  font-size: 2.4rem;
+  color: var(--color-primary);
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  font-family: var(--font-family-heading);
+  letter-spacing: -0.5px;
+}
+
+.warranty-intro-text .subtitle {
+  font-size: 1.15rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* VIEW 1: Grid Catalog of 12 Valves */
+.warranty-catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-top: 10px;
+}
+
+/* Catalog Card styling */
+@keyframes fadeInUpCatalogCard {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.warranty-catalog-card {
+  background-color: #ffffff;
+  border: 1.5px solid #eaeaea;
+  border-radius: 12px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUpCatalogCard 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.warranty-catalog-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 15px 35px rgba(138, 79, 80, 0.12);
+  transform: translateY(-8px);
+}
+
+.catalog-card-img-box {
+  height: 140px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.catalog-card-img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.03));
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.warranty-catalog-card:hover .catalog-card-img {
+  transform: scale(1.08);
+}
+
+.catalog-card-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  margin: 0;
+  text-align: center;
+  font-family: var(--font-family-heading);
+}
+
+/* Stagger card delays for catalog grid */
+.warranty-catalog-card:nth-child(1) { animation-delay: 0.05s; }
+.warranty-catalog-card:nth-child(2) { animation-delay: 0.1s; }
+.warranty-catalog-card:nth-child(3) { animation-delay: 0.15s; }
+.warranty-catalog-card:nth-child(4) { animation-delay: 0.2s; }
+.warranty-catalog-card:nth-child(5) { animation-delay: 0.25s; }
+.warranty-catalog-card:nth-child(6) { animation-delay: 0.3s; }
+.warranty-catalog-card:nth-child(7) { animation-delay: 0.35s; }
+.warranty-catalog-card:nth-child(8) { animation-delay: 0.4s; }
+.warranty-catalog-card:nth-child(9) { animation-delay: 0.45s; }
+.warranty-catalog-card:nth-child(10) { animation-delay: 0.5s; }
+.warranty-catalog-card:nth-child(11) { animation-delay: 0.55s; }
+.warranty-catalog-card:nth-child(12) { animation-delay: 0.60s; }
+
+/* VIEW 2: Detailed Warranty View styling */
+.warranty-details-view {
+  padding-top: 40px;
+  animation: fadeInUpCatalogCard 0.6s ease forwards;
+}
+
+.details-header-nav {
+  margin-bottom: 25px;
+}
+
+.btn-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-primary);
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1.05rem;
+  padding: 6px 12px;
+  border-radius: 4px;
+  background-color: rgba(138, 79, 80, 0.05);
+  transition: all 0.25s ease;
+}
+
+.btn-back-link:hover {
+  color: #ffffff;
+  background-color: var(--color-primary);
+  transform: translateX(-4px);
+}
+
+.btn-back-link i {
+  font-size: 0.95rem;
+}
+
+.warranty-details-title-block {
+  margin-bottom: 30px;
+}
+
+.details-main-title {
+  font-size: 2.2rem;
+  color: var(--color-text-dark);
+  font-weight: 700;
+  margin: 0;
+  font-family: var(--font-family-heading);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.title-decor {
+  display: inline-block;
+  width: 8px;
+  height: 32px;
+  background-color: var(--color-primary);
+  border-radius: 4px;
+}
+
+/* Section Blocks (For sub-valves list) */
+.warranty-sections-list {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.warranty-section-block {
+  border-bottom: 1.5px dashed #eaeaea;
+  padding-bottom: 40px;
+}
+
+.warranty-section-block:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.section-sub-title-bar {
+  font-size: 1.5rem;
+  color: var(--color-text-dark);
+  font-weight: 700;
+  margin: 0 0 25px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-family-heading);
+}
+
+.section-arrow-icon {
+  font-size: 0.9rem;
+  color: var(--color-primary);
+  opacity: 0.8;
+}
+
+.valve-cards-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+/* Cards Design */
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.inclusion-card, .exclusion-card {
+  opacity: 0;
+}
+
+.valve-cards-container.in-view .inclusion-card {
+  animation: slideInFromLeft 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.valve-cards-container.in-view .exclusion-card {
+  animation: slideInFromRight 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.warranty-card {
+  background-color: #ffffff;
+  border: 1.5px solid #eaeaea;
+  border-radius: 12px;
+  padding: 45px 30px 30px 30px; /* High top padding for absolute badge position */
+  position: relative;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.02);
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.warranty-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 15px 35px rgba(138, 79, 80, 0.1);
+  transform: translateY(-5px);
+}
+
+/* Top Left Badges matching user styling request */
+.card-badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-primary); /* Maroon brand color */
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 8px 22px 8px 16px;
+  border-radius: 12px 100px 100px 0; /* Exact border radius requested */
+  letter-spacing: 0.5px;
+  transition: transform 0.3s ease;
+}
+
+.warranty-card:hover .card-badge {
+  transform: translateY(-2px);
+}
+
+/* List details */
+.warranty-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.icon-wrapper {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.check-icon {
+  background-color: rgba(46, 204, 113, 0.12);
+  color: #2ecc71;
+}
+
+.times-icon {
+  background-color: rgba(231, 76, 60, 0.12);
+  color: #e74c3c;
+}
+
+.item-text {
+  font-size: 1.05rem;
+  color: var(--color-text-dark);
+  line-height: 1.5;
+}
+
+/* Footer Prompt styling */
+.warranty-footer-prompt {
+  margin-top: 80px;
+}
+
+.prompt-card {
+  background: linear-gradient(135deg, rgba(138, 79, 80, 0.03) 0%, rgba(15, 28, 44, 0.01) 100%);
+  border-left: 5px solid var(--color-primary);
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 40px;
+  border-radius: 4px 16px 16px 4px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.prompt-card h3 {
+  font-size: 1.6rem;
+  color: var(--color-primary);
+  margin: 0 0 10px 0;
+  font-family: var(--font-family-heading);
+}
+
+.prompt-card p {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  margin: 0 0 25px 0;
+}
+
+.btn-technical-inquiry {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 32px;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 6px;
+  transition: var(--transition-smooth);
+}
+
+.btn-technical-inquiry:hover {
+  background-color: var(--color-primary-dark);
+  box-shadow: 0 5px 20px rgba(138, 79, 80, 0.35);
+  transform: translateY(-2px);
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1200px) {
+  .warranty-catalog-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 992px) {
+  .warranty-hero {
+    min-height: 260px;
+    padding: 40px 0;
+  }
+  .hexagon-border-blue {
+    width: 220px;
+    height: 190px;
+  }
+  .warranty-title-text {
+    font-size: 2.5rem;
+  }
+  
+  .warranty-catalog-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .valve-cards-container {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-new-container {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  
+  .hero-left-hex {
+    margin: 0 auto;
+  }
+  
+  .hero-center-title {
+    position: static;
+    transform: none;
+    margin-top: 10px;
+  }
+  
+  .warranty-intro-text {
+    padding: 30px 0 20px 0;
+  }
+  
+  .warranty-intro-text h2 {
+    font-size: 1.8rem;
+  }
+  
+  .warranty-catalog-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .details-main-title {
+    font-size: 1.7rem;
+  }
+  
+  .section-sub-title-bar {
+    font-size: 1.25rem;
+  }
+  
+  /* Stacks inclusions & exclusions vertically on smaller viewports */
+  .valve-cards-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .prompt-card {
+    padding: 30px 20px;
+  }
+  
+  .prompt-card h3 {
+    font-size: 1.35rem;
+  }
+}

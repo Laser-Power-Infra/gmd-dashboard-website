@@ -1,0 +1,1189 @@
+<!-- wp:pagelayer/pl_post_props {"post_title":"Others Valves","post_status":"publish","post_date":"2025-04-19 16:02:47","post_author":"1","post_name":"others-valves","featured_image":0,"post_excerpt":"","post_password":"","comment_status":"","ping_status":"","post_sticky":"","post_parent":0,"menu_order":0,"post_category":"","post_tags":"","pagelayer-id":"1fc4127"} /-->
+<!-- wp:pagelayer/pl_row {"col_gap":"10","content_pos":"default","row_bg_type":"slider","parallax_img":"https://www.gmdalui.co.in/beta/wp-content/plugins/pagelayer/images/default-image.png","overlay_type":"color","overlay_color":"#3a444731","overlay_transperancy":"0.5","overlay_hover_delay":"400","row_shape_top_color":"#fff","row_shape_top_width":"100","row_shape_top_height":"100","row_shape_bottom_color":"#fff","row_shape_bottom_width":"100","row_shape_bottom_height":"100","ele_bg_type":"image","ele_bg_img":533,"ele_bg_attachment":"scroll","ele_bg_posx":"left","ele_bg_posy":"top","ele_bg_repeat":"no-repeat","ele_bg_size":"cover","ele_bg_hover_delay":"400","ele_padding":"30px,0px,30px,0px","tmpAtts":{"parallax_img-url":"https://www.gmdalui.co.in/beta/wp-content/plugins/pagelayer/images/default-image.png","parallax_img-no-image-set":1,"ele_bg_img-full-url":"https://www.gmdalui.co.in/beta/wp-content/uploads/2025/04/service5.jpg","ele_bg_img-thumbnail-url":"https://www.gmdalui.co.in/beta/wp-content/uploads/2025/04/service5-150x150.jpg","ele_bg_img-medium-url":"https://www.gmdalui.co.in/beta/wp-content/uploads/2025/04/service5-300x168.jpg","ele_bg_img-medium_large-url":"https://www.gmdalui.co.in/beta/wp-content/uploads/2025/04/service5.jpg","ele_bg_img-large-url":"https://www.gmdalui.co.in/beta/wp-content/uploads/2025/04/service5.jpg","ele_bg_img-1536x1536-url":"https://www.gmdalui.co.in/beta/wp-content/uploads/2025/04/service5.jpg","ele_bg_img-2048x2048-url":"https://www.gmdalui.co.in/beta/wp-content/uploads/2025/04/service5.jpg","ele_bg_img-url":"https://www.gmdalui.co.in/beta/wp-content/uploads/2025/04/service5.jpg","ele_bg_img-alt":"service5","ele_bg_img-title":"service5","ele_bg_img-link":"https://www.gmdalui.co.in/beta/service5/"},"stretch":"auto","row_width":"500px","width_content":"auto","fixed_width":"500px","row_height":"default","parallax_align":"center","parallax_id_size":"full","bg_slider_speed":2000,"overlay_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","overlay_gradient_hover":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#CCC","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"pagelayer-id":"aha9721"} -->
+<!-- wp:pagelayer/pl_col {"widget_space":"15","overlay_hover_delay":"400","ele_bg_hover_delay":"400","ele_margin":"58px,0px,0px,0px","ele_padding":"15%,0%,15%,0%","parallax_align":"center","parallax_id_size":"full","bg_slider_speed":2000,"overlay_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","overlay_transperancy":0.5,"overlay_gradient_hover":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","overlay_transperancy_hover":0.5,"ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#CCC","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"pagelayer-id":"goh1662"} -->
+<!-- wp:pagelayer/pl_heading {"align":"center","color":"#8a4f50ff","heading_typo":{"font-size":"35","font-weight":"700","text-decoration-style":"solid","text-transform":"uppercase"},"ele_bg_hover_delay":"400","text":"Other Valves","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#CCC","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"fadeInDown","pagelayer-id":"vb02518"} -->Other Valves<!-- /wp:pagelayer/pl_heading -->
+<!-- /wp:pagelayer/pl_col -->
+<!-- /wp:pagelayer/pl_row -->
+<!-- wp:pagelayer/pl_row {"stretch":"auto","col_gap":10,"width_content":"auto","row_height":"default","overlay_hover_delay":400,"row_shape_top_color":"#227bc3","row_shape_top_width":100,"row_shape_top_height":100,"row_shape_bottom_color":"#e44993","row_shape_bottom_width":100,"row_shape_bottom_height":100,"pagelayer-id":"m4i6844"} -->
+<!-- wp:pagelayer/pl_col {"widget_space":15,"overlay_hover_delay":400,"pagelayer-id":"gnj953"} -->
+<!-- wp:pagelayer/pl_heading {"align":"left","color":"#8a4f50ff","heading_typo":{"font-size":"25","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"Types Of Other Valves","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#CCC","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"fadeInUp","pagelayer-id":"og92913"} -->Types Of Other Valves<!-- /wp:pagelayer/pl_heading -->
+<!-- /wp:pagelayer/pl_col -->
+<!-- /wp:pagelayer/pl_row -->
+<!-- wp:pagelayer/pl_row {"stretch":"auto","col_gap":10,"width_content":"auto","row_height":"default","overlay_hover_delay":400,"row_shape_top_color":"#227bc3","row_shape_top_width":100,"row_shape_top_height":100,"row_shape_bottom_color":"#e44993","row_shape_bottom_width":100,"row_shape_bottom_height":100,"pagelayer-id":"6is4739"} -->
+<!-- wp:pagelayer/pl_col {"widget_space":-5,"overlay_hover_delay":400,"col":2,"animation":"fadeInUp","animation_delay":600,"ele_css":".p-ar16780 {
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    margin-top: 12px;
+}","pagelayer-id":"lm62759"} -->
+<!-- wp:pagelayer/pl_inner_row {"stretch":"auto","col_gap":10,"width_content":"auto","row_height":"default","overlay_hover_delay":400,"row_shape_top_color":"#227bc3","row_shape_top_width":100,"row_shape_top_height":100,"row_shape_bottom_color":"#e44993","row_shape_bottom_width":100,"row_shape_bottom_height":100,"pagelayer-id":"tvx5889"} -->
+<!-- wp:pagelayer/pl_inner_col {"widget_space":15,"overlay_hover_delay":400,"col":4,"animation":"fadeInUp","animation_delay":600,"pagelayer-id":"oxl7053"} -->
+<!-- wp:pagelayer/pl_heading {"align":"center","color":"#fcfcfcff","heading_typo":{"font-size":"20","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"Type of Valve","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#CCC","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"","ele_bg_type":"color","ele_bg_color":"#8a4f50ff","ele_padding":{"0":"12px","1":"12px","2":"12px","3":"12px"},"border_radius":{"0":"0px","1":"0px","2":"56px","3":"0px"},"ele_zindex":84,"ele_custom_pos":"true","ele_position":"absolute","ele_css":".p-4gl8310 {
+    text-align: left;
+    background: #8a4f50;
+    padding-top: 12px;
+    padding-right: 12px;
+    padding-bottom: 12px;
+    padding-left: 12px;
+    z-index: 84 !important;
+    position: relative;
+    border-radius: 0px 0px 56px 0px;
+    -webkit-border-radius: 0px 0px 56px 0px;
+    -moz-border-radius: 0px 0px 56px 0px;
+    position: relative;
+    left: margin;
+    transform: translateX(-margin);
+    height: auto;
+    position: absolute !important;
+    z-index: 1;
+    transform: translateX(-0%);
+    width: 140px;
+    height: 49px;
+    margin-top: 6px;
+    margin-left: -10px;
+}
+.p-4gl8310 .pagelayer-heading-holder {
+    color: #fcfcfc;
+    font-family: !important;
+    font-size: 15px !important;
+    font-style: !important;
+    font-weight: 700 !important;
+    font-variant: !important;
+    text-decoration-line: !important;
+    text-decoration-style: solid !important;
+    line-height: em !important;
+    text-transform: !important;
+    letter-spacing: px !important;
+    word-spacing: px !important;
+}","pagelayer-id":"4gl8310"} -->Type of Valve<!-- /wp:pagelayer/pl_heading -->
+<!-- /wp:pagelayer/pl_inner_col -->
+<!-- /wp:pagelayer/pl_inner_row -->
+<!-- wp:pagelayer/pl_heading {"align":"center","color":"#8a4f50ff","heading_typo":{"font-size":"20","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"Foot Valve","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#d3bcbcff","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"fadeInDown","ele_bg_type":"color","ele_bg_color":"#fafafaff","border_radius":{"0":"6px","1":"6px","2":"6px","3":"6px"},"ele_padding":{"0":"43px","1":"43px","2":"43px","3":"43px"},"border_type":"solid","ele_css":".p-dl84412 .pagelayer-heading-holder {
+    color: #8a4f50;
+    font-family: !important;
+    font-size: 20px !important;
+    font-style: !important;
+    font-weight: 700 !important;
+    font-variant: !important;
+    text-decoration-line: !important;
+    text-decoration-style: solid !important;
+    line-height: em !important;
+    text-transform: !important;
+    letter-spacing: px !important;
+    word-spacing: px !important;
+    margin-top: 49px;
+}
+.p-dl84412 {
+    text-align: center;
+    background: #fafafa;
+    padding-top: 43px;
+    padding-right: 43px;
+    padding-bottom: 43px;
+    padding-left: 43px;
+    border-style: solid;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-color: #d3bcbc;
+    border-radius: 6px 6px 6px 6px;
+    -webkit-border-radius: 6px 6px 6px 6px;
+    -moz-border-radius: 6px 6px 6px 6px;
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    height: 218px;
+}","pagelayer-id":"dl84412"} -->Foot Valve<!-- /wp:pagelayer/pl_heading -->
+<!-- /wp:pagelayer/pl_col -->
+<!-- wp:pagelayer/pl_col {"widget_space":-60,"overlay_hover_delay":400,"col":2,"animation":"fadeInUp","animation_delay":600,"ele_css":".p-5um9916 {
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    margin-top: 6px;
+}","pagelayer-id":"nyk9833"} -->
+<!-- wp:pagelayer/pl_inner_row {"stretch":"auto","col_gap":10,"width_content":"auto","row_height":"default","overlay_hover_delay":400,"row_shape_top_color":"#227bc3","row_shape_top_width":100,"row_shape_top_height":100,"row_shape_bottom_color":"#e44993","row_shape_bottom_width":100,"row_shape_bottom_height":100,"pagelayer-id":"ary4392"} -->
+<!-- wp:pagelayer/pl_inner_col {"widget_space":15,"overlay_hover_delay":400,"col":4,"animation":"fadeInUp","animation_delay":600,"pagelayer-id":"o6v264"} -->
+<!-- wp:pagelayer/pl_heading {"align":"left","color":"#ffffffff","heading_typo":{"font-size":"20","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"Illustration","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#CCC","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"fadeInDown","ele_bg_type":"color","ele_bg_color":"#8a4f50ff","ele_padding":{"0":"12px","1":"12px","2":"12px","3":"12px"},"border_radius":{"0":"0px","1":"0px","2":"56px","3":"0px"},"ele_css":".p-d0t9545 {
+    text-align: left;
+    background: #8a4f50;
+    padding-top: 12px;
+    padding-right: 12px;
+    padding-bottom: 12px;
+    padding-left: 12px;
+    border-radius: 0px 0px 56px 0px;
+    -webkit-border-radius: 0px 0px 56px 0px;
+    -moz-border-radius: 0px 0px 56px 0px;
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    width: 140px;
+    height: 49px;
+    margin-left: -9px;
+}
+.p-d0t9545 .pagelayer-heading-holder {
+    color: #ffffff;
+    font-family: !important;
+    font-size: 15px !important;
+    font-style: !important;
+    font-weight: 700 !important;
+    font-variant: !important;
+    text-decoration-line: !important;
+    text-decoration-style: solid !important;
+    line-height: em !important;
+    text-transform: !important;
+    letter-spacing: px !important;
+    word-spacing: px !important;
+}
+.p-nyk9833 {
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    margin-top: 6px;
+}","pagelayer-id":"d0t9545"} -->Illustration<!-- /wp:pagelayer/pl_heading -->
+<!-- /wp:pagelayer/pl_inner_col -->
+<!-- /wp:pagelayer/pl_inner_row -->
+<!-- wp:pagelayer/pl_image {"id":1774,"id-size":"full","align":"center","img_hover":"normal","img_hover_delay":400,"caption_color":"#0986c0","max-width":32,"border_type":"solid","border_width":"1px,1px,1px,1px","border_color":"#d3bcbcff","border_radius":{"0":"6px","1":"6px","2":"6px","3":"6px"},"ele_custom_pos":"true","ele_align":"50%","ele_height":"","ele_custom_height":"148px","ele_css":".p-oxr7681 .pagelayer-img {
+    -webkit-transition: all 400ms;
+    transition: all 400ms;
+    margin-top: 75px;
+}
+.p-oxr7681 {
+    border-style: solid;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-color: #d3bcbc;
+    border-radius: 6px 6px 6px 6px;
+    -webkit-border-radius: 6px 6px 6px 6px;
+    -moz-border-radius: 6px 6px 6px 6px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 218px;
+}","pagelayer-id":"oxr7681"} /-->
+<!-- /wp:pagelayer/pl_col -->
+<!-- wp:pagelayer/pl_col {"widget_space":15,"overlay_hover_delay":400,"col":2,"animation":"fadeInUp","animation_delay":600,"ele_css":".p-e6c6208 {
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    margin-top: 15px;
+}","pagelayer-id":"e6c6208"} -->
+<!-- wp:pagelayer/pl_heading {"align":"left","color":"#8a4f50ff","heading_typo":{"font-size":"13","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"\u003cp\u003eA mesh strainer and spring-loaded mechanism.
+
+\u003c/p\u003e","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#d3bcbcff","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"fadeInDown","ele_bg_type":"color","ele_bg_color":"#fafafaff","border_radius":{"0":"6px","1":"6px","2":"6px","3":"6px"},"ele_padding":{"0":"43px","1":"43px","2":"43px","3":"43px"},"border_type":"solid","ele_css":".p-caf1857 .pagelayer-heading-holder * {
+    color: #8a4f50;
+    font-family: !important;
+    font-size: 13px !important;
+    font-style: !important;
+    font-weight: 700 !important;
+    font-variant: !important;
+    text-decoration-line: !important;
+    text-decoration-style: solid !important;
+    line-height: em !important;
+    text-transform: !important;
+    letter-spacing: px !important;
+    word-spacing: px !important;
+    margin-top: 45px;
+    margin-left: -12px;
+}
+.p-caf1857 {
+    text-align: left;
+    background: #fafafa;
+    padding-top: 43px;
+    padding-right: 43px;
+    padding-bottom: 43px;
+    padding-left: 43px;
+    border-style: solid;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-color: #d3bcbc;
+    border-radius: 6px 6px 6px 6px;
+    -webkit-border-radius: 6px 6px 6px 6px;
+    -moz-border-radius: 6px 6px 6px 6px;
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    height: 218px;
+}","pagelayer-id":"caf1857"} --><p>A mesh strainer and spring-loaded mechanism.
+
+</p><!-- /wp:pagelayer/pl_heading -->
+<!-- wp:pagelayer/pl_heading {"align":"center","color":"#fcfcfcff","heading_typo":{"font-size":"20","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"Features","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#CCC","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"fadeInDown","ele_bg_type":"color","ele_bg_color":"#8a4f50ff","ele_padding":{"0":"12px","1":"12px","2":"12px","3":"12px"},"border_radius":{"0":"0px","1":"0px","2":"56px","3":"0px"},"ele_zindex":84,"ele_custom_pos":"true","ele_position":"absolute","ele_css":".p-tjy515 {
+    text-align: left;
+    background: #8a4f50;
+    padding-top: 12px;
+    padding-right: 12px;
+    padding-bottom: 12px;
+    padding-left: 12px;
+    z-index: 84 !important;
+    position: relative;
+    border-radius: 0px 0px 56px 0px;
+    -webkit-border-radius: 0px 0px 56px 0px;
+    -moz-border-radius: 0px 0px 56px 0px;
+    position: relative;
+    left: margin;
+    transform: translateX(-margin);
+    height: auto;
+    position: absolute !important;
+    z-index: 1;
+    transform: translateX(-0%);
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    width: 140px;
+    height: 49px;
+}
+.p-tjy515 .pagelayer-heading-holder {
+    color: #fcfcfc;
+    font-family: !important;
+    font-size: 15px !important;
+    font-style: !important;
+    font-weight: 700 !important;
+    font-variant: !important;
+    text-decoration-line: !important;
+    text-decoration-style: solid !important;
+    line-height: em !important;
+    text-transform: !important;
+    letter-spacing: px !important;
+    word-spacing: px !important;
+}","pagelayer-id":"tjy515"} -->Features<!-- /wp:pagelayer/pl_heading -->
+<!-- /wp:pagelayer/pl_col -->
+<!-- wp:pagelayer/pl_col {"widget_space":15,"overlay_hover_delay":400,"col":2,"animation":"fadeInUp","animation_delay":600,"ele_css":".p-csx5690 {
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    margin-top: 16px;
+}","pagelayer-id":"csx5690"} -->
+<!-- wp:pagelayer/pl_heading {"align":"left","color":"#8a4f50ff","heading_typo":{"font-size":"13","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"\u003cp\u003eUsed at the intel of a pump to maintain prime and prevent backflow, commonly used in well system.\u003c/p\u003e","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#d3bcbcff","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"fadeInDown","ele_bg_type":"color","ele_bg_color":"#fafafaff","border_radius":{"0":"6px","1":"6px","2":"6px","3":"6px"},"ele_padding":{"0":"43px","1":"43px","2":"43px","3":"43px"},"border_type":"solid","ele_css":".p-nuz4134 .pagelayer-heading-holder * {
+    color: #8a4f50;
+    font-family: !important;
+    font-size: 13px !important;
+    font-style: !important;
+    font-weight: 700 !important;
+    font-variant: !important;
+    text-decoration-line: !important;
+    text-decoration-style: solid !important;
+    line-height: em !important;
+    text-transform: !important;
+    letter-spacing: px !important;
+    word-spacing: px !important;
+    margin-top: 25px;
+    margin-left: -12px;
+}.p-nuz4134 {
+    text-align: left;
+    background: #fafafa;
+    padding-top: 43px;
+    padding-right: 43px;
+    padding-bottom: 43px;
+    padding-left: 43px;
+    border-style: solid;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-color: #d3bcbc;
+    border-radius: 6px 6px 6px 6px;
+    -webkit-border-radius: 6px 6px 6px 6px;
+    -moz-border-radius: 6px 6px 6px 6px;
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    height: 218px;
+}","pagelayer-id":"nuz4134"} --><p>Used at the intel of a pump to maintain prime and prevent backflow, commonly used in well system.</p><!-- /wp:pagelayer/pl_heading -->
+<!-- wp:pagelayer/pl_heading {"align":"center","color":"#fcfcfcff","heading_typo":{"font-size":"20","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"Application","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#CCC","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"fadeInDown","ele_bg_type":"color","ele_bg_color":"#8a4f50ff","ele_padding":{"0":"12px","1":"12px","2":"12px","3":"12px"},"border_radius":{"0":"0px","1":"0px","2":"56px","3":"0px"},"ele_zindex":84,"ele_custom_pos":"true","ele_position":"absolute","ele_css":".p-y0r5731 {
+    text-align: left;
+    background: #8a4f50;
+    padding-top: 12px;
+    padding-right: 12px;
+    padding-bottom: 12px;
+    padding-left: 12px;
+    z-index: 84 !important;
+    position: relative;
+    border-radius: 0px 0px 56px 0px;
+    -webkit-border-radius: 0px 0px 56px 0px;
+    -moz-border-radius: 0px 0px 56px 0px;
+    position: relative;
+    left: margin;
+    transform: translateX(-margin);
+    height: auto;
+    position: absolute !important;
+    z-index: 1;
+    transform: translateX(-0%);
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    width: 140px;
+    height: 49px;
+}
+.p-y0r5731 .pagelayer-heading-holder {
+    color: #fcfcfc;
+    font-family: !important;
+    font-size: 15px !important;
+    font-style: !important;
+    font-weight: 700 !important;
+    font-variant: !important;
+    text-decoration-line: !important;
+    text-decoration-style: solid !important;
+    line-height: em !important;
+    text-transform: !important;
+    letter-spacing: px !important;
+    word-spacing: px !important;
+}","pagelayer-id":"y0r5731"} -->Application<!-- /wp:pagelayer/pl_heading -->
+<!-- /wp:pagelayer/pl_col -->
+<!-- wp:pagelayer/pl_col {"widget_space":15,"overlay_hover_delay":400,"col":2,"animation":"fadeInUp","animation_delay":600,"ele_css":".p-uuk6987 {
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    margin-top: 16px;
+}","pagelayer-id":"uuk6987"} -->
+<!-- wp:pagelayer/pl_heading {"align":"center","color":"#8a4f50ff","heading_typo":{"font-size":"13","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"\u003cp\u003e26-600\u003c/p\u003e","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#d3bcbcff","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"fadeInDown","ele_bg_type":"color","ele_bg_color":"#fafafaff","border_radius":{"0":"6px","1":"6px","2":"6px","3":"6px"},"ele_padding":{"0":"43px","1":"43px","2":"43px","3":"43px"},"border_type":"solid","ele_css":".p-tiw4497 .pagelayer-heading-holder * {
+    color: #8a4f50;
+    font-family: !important;
+    font-size: 13px !important;
+    font-style: !important;
+    font-weight: 700 !important;
+    font-variant: !important;
+    text-decoration-line: !important;
+    text-decoration-style: solid !important;
+    line-height: em !important;
+    text-transform: !important;
+    letter-spacing: px !important;
+    word-spacing: px !important;
+    margin-top: 67px;
+}
+.p-tiw4497 {
+    text-align: center;
+    background: #fafafa;
+    padding-top: 43px;
+    padding-right: 43px;
+    padding-bottom: 43px;
+    padding-left: 43px;
+    border-style: solid;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-color: #d3bcbc;
+    border-radius: 6px 6px 6px 6px;
+    -webkit-border-radius: 6px 6px 6px 6px;
+    -moz-border-radius: 6px 6px 6px 6px;
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    height: 218px;
+}","pagelayer-id":"tiw4497"} --><p>26-600</p><!-- /wp:pagelayer/pl_heading -->
+<!-- wp:pagelayer/pl_heading {"align":"center","color":"#fcfcfcff","heading_typo":{"font-size":"20","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"Size Range\u003cbr\u003e
+(mm)","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#CCC","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"fadeInDown","ele_bg_type":"color","ele_bg_color":"#8a4f50ff","ele_padding":{"0":"12px","1":"12px","2":"12px","3":"12px"},"border_radius":{"0":"0px","1":"0px","2":"56px","3":"0px"},"ele_zindex":84,"ele_custom_pos":"true","ele_position":"absolute","ele_css":".p-cke1575 {
+    text-align: left;
+    background: #8a4f50;
+    padding-top: 12px;
+    padding-right: 12px;
+    padding-bottom: 12px;
+    padding-left: 12px;
+    z-index: 84 !important;
+    position: relative;
+    border-radius: 0px 0px 56px 0px;
+    -webkit-border-radius: 0px 0px 56px 0px;
+    -moz-border-radius: 0px 0px 56px 0px;
+    position: relative;
+    left: margin;
+    transform: translateX(-margin);
+    height: auto;
+    position: absolute !important;
+    z-index: 1;
+    transform: translateX(-0%);
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    width: 140px;
+    height: 49px;
+}
+.p-cke1575 .pagelayer-heading-holder {
+    color: #fcfcfc;
+    font-family: !important;
+    font-size: 15px !important;
+    font-style: !important;
+    font-weight: 700 !important;
+    font-variant: !important;
+    text-decoration-line: !important;
+    text-decoration-style: solid !important;
+    line-height: em !important;
+    text-transform: !important;
+    letter-spacing: px !important;
+    word-spacing: px !important;
+    margin-top: -13px;
+}","pagelayer-id":"cke1575"} -->Size Range<br>
+(mm)<!-- /wp:pagelayer/pl_heading -->
+<!-- /wp:pagelayer/pl_col -->
+<!-- /wp:pagelayer/pl_row -->
+<!-- wp:pagelayer/pl_row {"stretch":"auto","col_gap":10,"width_content":"auto","row_height":"default","overlay_hover_delay":400,"row_shape_top_color":"#227bc3","row_shape_top_width":100,"row_shape_top_height":100,"row_shape_bottom_color":"#e44993","row_shape_bottom_width":100,"row_shape_bottom_height":100,"pagelayer-id":"osi1705"} -->
+<!-- wp:pagelayer/pl_col {"widget_space":-5,"overlay_hover_delay":400,"col":2,"animation":"fadeInUp","animation_delay":600,"ele_css":".p-ar16780 {
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    margin-top: 12px;
+}","pagelayer-id":"tkh1424"} -->
+<!-- wp:pagelayer/pl_inner_row {"stretch":"auto","col_gap":10,"width_content":"auto","row_height":"default","overlay_hover_delay":400,"row_shape_top_color":"#227bc3","row_shape_top_width":100,"row_shape_top_height":100,"row_shape_bottom_color":"#e44993","row_shape_bottom_width":100,"row_shape_bottom_height":100,"pagelayer-id":"5af113"} -->
+<!-- wp:pagelayer/pl_inner_col {"widget_space":15,"overlay_hover_delay":400,"col":4,"animation":"fadeInUp","animation_delay":600,"pagelayer-id":"obp9960"} -->
+<!-- wp:pagelayer/pl_heading {"align":"center","color":"#fcfcfcff","heading_typo":{"font-size":"20","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"Type of Valve","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#CCC","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"","ele_bg_type":"color","ele_bg_color":"#8a4f50ff","ele_padding":{"0":"12px","1":"12px","2":"12px","3":"12px"},"border_radius":{"0":"0px","1":"0px","2":"56px","3":"0px"},"ele_zindex":84,"ele_custom_pos":"true","ele_position":"absolute","ele_css":".p-rol203 {
+    text-align: left;
+    background: #8a4f50;
+    padding-top: 12px;
+    padding-right: 12px;
+    padding-bottom: 12px;
+    padding-left: 12px;
+    z-index: 84 !important;
+    position: relative;
+    border-radius: 0px 0px 56px 0px;
+    -webkit-border-radius: 0px 0px 56px 0px;
+    -moz-border-radius: 0px 0px 56px 0px;
+    position: relative;
+    left: margin;
+    transform: translateX(-margin);
+    height: auto;
+    position: absolute !important;
+    z-index: 1;
+    transform: translateX(-0%);
+    width: 140px;
+    height: 49px;
+    margin-top: 6px;
+    margin-left: -9px;
+}
+.p-rol203 .pagelayer-heading-holder {
+    color: #fcfcfc;
+    font-family: !important;
+    font-size: 15px !important;
+    font-style: !important;
+    font-weight: 700 !important;
+    font-variant: !important;
+    text-decoration-line: !important;
+    text-decoration-style: solid !important;
+    line-height: em !important;
+    text-transform: !important;
+    letter-spacing: px !important;
+    word-spacing: px !important;
+}","pagelayer-id":"rol203"} -->Type of Valve<!-- /wp:pagelayer/pl_heading -->
+<!-- /wp:pagelayer/pl_inner_col -->
+<!-- /wp:pagelayer/pl_inner_row -->
+<!-- wp:pagelayer/pl_heading {"align":"center","color":"#8a4f50ff","heading_typo":{"font-size":"20","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"Lift","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#d3bcbcff","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"fadeInDown","ele_bg_type":"color","ele_bg_color":"#fafafaff","border_radius":{"0":"6px","1":"6px","2":"6px","3":"6px"},"ele_padding":{"0":"43px","1":"43px","2":"43px","3":"43px"},"border_type":"solid","ele_css":".p-hj35693 .pagelayer-heading-holder {
+    color: #8a4f50;
+    font-family: !important;
+    font-size: 20px !important;
+    font-style: !important;
+    font-weight: 700 !important;
+    font-variant: !important;
+    text-decoration-line: !important;
+    text-decoration-style: solid !important;
+    line-height: em !important;
+    text-transform: !important;
+    letter-spacing: px !important;
+    word-spacing: px !important;
+    margin-top: 50px;
+}
+.p-hj35693 {
+    text-align: center;
+    background: #fafafa;
+    padding-top: 43px;
+    padding-right: 43px;
+    padding-bottom: 43px;
+    padding-left: 43px;
+    border-style: solid;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-color: #d3bcbc;
+    border-radius: 6px 6px 6px 6px;
+    -webkit-border-radius: 6px 6px 6px 6px;
+    -moz-border-radius: 6px 6px 6px 6px;
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    height: 218px;
+}","pagelayer-id":"hj35693"} -->Lift<!-- /wp:pagelayer/pl_heading -->
+<!-- /wp:pagelayer/pl_col -->
+<!-- wp:pagelayer/pl_col {"widget_space":-60,"overlay_hover_delay":400,"col":2,"animation":"fadeInUp","animation_delay":600,"ele_css":".p-bmz1337 {
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    margin-top: 6px;
+}","pagelayer-id":"bmz1337"} -->
+<!-- wp:pagelayer/pl_inner_row {"stretch":"auto","col_gap":10,"width_content":"auto","row_height":"default","overlay_hover_delay":400,"row_shape_top_color":"#227bc3","row_shape_top_width":100,"row_shape_top_height":100,"row_shape_bottom_color":"#e44993","row_shape_bottom_width":100,"row_shape_bottom_height":100,"pagelayer-id":"zta555"} -->
+<!-- wp:pagelayer/pl_inner_col {"widget_space":15,"overlay_hover_delay":400,"col":4,"animation":"fadeInUp","animation_delay":600,"pagelayer-id":"nva8508"} -->
+<!-- wp:pagelayer/pl_heading {"align":"left","color":"#ffffffff","heading_typo":{"font-size":"20","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"Illustration","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#CCC","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"fadeInDown","ele_bg_type":"color","ele_bg_color":"#8a4f50ff","ele_padding":{"0":"12px","1":"12px","2":"12px","3":"12px"},"border_radius":{"0":"0px","1":"0px","2":"56px","3":"0px"},"ele_css":".p-gal5607 {
+    text-align: left;
+    background: #8a4f50;
+    padding-top: 12px;
+    padding-right: 12px;
+    padding-bottom: 12px;
+    padding-left: 12px;
+    border-radius: 0px 0px 56px 0px;
+    -webkit-border-radius: 0px 0px 56px 0px;
+    -moz-border-radius: 0px 0px 56px 0px;
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    width: 140px;
+    height: 49px;
+    margin-left: -9px;
+}
+.p-gal5607 .pagelayer-heading-holder {
+    color: #ffffff;
+    font-family: !important;
+    font-size: 15px !important;
+    font-style: !important;
+    font-weight: 700 !important;
+    font-variant: !important;
+    text-decoration-line: !important;
+    text-decoration-style: solid !important;
+    line-height: em !important;
+    text-transform: !important;
+    letter-spacing: px !important;
+    word-spacing: px !important;
+}","pagelayer-id":"gal5607"} -->Illustration<!-- /wp:pagelayer/pl_heading -->
+<!-- /wp:pagelayer/pl_inner_col -->
+<!-- /wp:pagelayer/pl_inner_row -->
+<!-- wp:pagelayer/pl_image {"id":1790,"id-size":"full","align":"center","img_hover":"normal","img_hover_delay":400,"caption_color":"#0986c0","max-width":32,"border_type":"solid","border_width":"1px,1px,1px,1px","border_color":"#d3bcbcff","border_radius":{"0":"6px","1":"6px","2":"6px","3":"6px"},"ele_custom_pos":"true","ele_align":"50%","ele_height":"","ele_custom_height":"148px","ele_css":".p-4r38077 .pagelayer-img {
+    -webkit-transition: all 400ms;
+    transition: all 400ms;
+    margin-top: 65px;
+}
+.p-4r38077 {
+    border-style: solid;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-color: #d3bcbc;
+    border-radius: 6px 6px 6px 6px;
+    -webkit-border-radius: 6px 6px 6px 6px;
+    -moz-border-radius: 6px 6px 6px 6px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 218px;
+}","pagelayer-id":"4r38077"} /-->
+<!-- /wp:pagelayer/pl_col -->
+<!-- wp:pagelayer/pl_col {"widget_space":15,"overlay_hover_delay":400,"col":2,"animation":"fadeInUp","animation_delay":600,"ele_css":".p-e6c6208 {
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    margin-top: 15px;
+}","pagelayer-id":"y0u3651"} -->
+<!-- wp:pagelayer/pl_heading {"align":"left","color":"#8a4f50ff","heading_typo":{"font-size":"13","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"\u003cp\u003eFeature a movable disc or ball for precise one-way flow control.\u003c/p\u003e","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#d3bcbcff","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"fadeInDown","ele_bg_type":"color","ele_bg_color":"#fafafaff","border_radius":{"0":"6px","1":"6px","2":"6px","3":"6px"},"ele_padding":{"0":"43px","1":"43px","2":"43px","3":"43px"},"border_type":"solid","ele_css":".p-c7a5631 .pagelayer-heading-holder * {
+    color: #8a4f50;
+    font-family: !important;
+    font-size: 13px !important;
+    font-style: !important;
+    font-weight: 700 !important;
+    font-variant: !important;
+    text-decoration-line: !important;
+    text-decoration-style: solid !important;
+    line-height: em !important;
+    text-transform: !important;
+    letter-spacing: px !important;
+    word-spacing: px !important;
+    margin-top: 25px;
+    margin-left: -12px;
+}
+.p-c7a5631 {
+    text-align: left;
+    background: #fafafa;
+    padding-top: 43px;
+    padding-right: 43px;
+    padding-bottom: 43px;
+    padding-left: 43px;
+    border-style: solid;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-color: #d3bcbc;
+    border-radius: 6px 6px 6px 6px;
+    -webkit-border-radius: 6px 6px 6px 6px;
+    -moz-border-radius: 6px 6px 6px 6px;
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    height: 218px;
+}
+.p-y0u3651 {
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    margin-top: 16px;
+}","pagelayer-id":"c7a5631"} --><p>Feature a movable disc or ball for precise one-way flow control.</p><!-- /wp:pagelayer/pl_heading -->
+<!-- wp:pagelayer/pl_heading {"align":"center","color":"#fcfcfcff","heading_typo":{"font-size":"20","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"Features","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#CCC","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"fadeInDown","ele_bg_type":"color","ele_bg_color":"#8a4f50ff","ele_padding":{"0":"12px","1":"12px","2":"12px","3":"12px"},"border_radius":{"0":"0px","1":"0px","2":"56px","3":"0px"},"ele_zindex":84,"ele_custom_pos":"true","ele_position":"absolute","ele_css":".p-fl38540 {
+    text-align: left;
+    background: #8a4f50;
+    padding-top: 12px;
+    padding-right: 12px;
+    padding-bottom: 12px;
+    padding-left: 12px;
+    z-index: 84 !important;
+    position: relative;
+    border-radius: 0px 0px 56px 0px;
+    -webkit-border-radius: 0px 0px 56px 0px;
+    -moz-border-radius: 0px 0px 56px 0px;
+    position: relative;
+    left: margin;
+    transform: translateX(-margin);
+    height: auto;
+    position: absolute !important;
+    z-index: 1;
+    transform: translateX(-0%);
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    width: 140px;
+    height: 49px;
+}
+.p-fl38540 .pagelayer-heading-holder {
+    color: #fcfcfc;
+    font-family: !important;
+    font-size: 15px !important;
+    font-style: !important;
+    font-weight: 700 !important;
+    font-variant: !important;
+    text-decoration-line: !important;
+    text-decoration-style: solid !important;
+    line-height: em !important;
+    text-transform: !important;
+    letter-spacing: px !important;
+    word-spacing: px !important;
+}","pagelayer-id":"fl38540"} -->Features<!-- /wp:pagelayer/pl_heading -->
+<!-- /wp:pagelayer/pl_col -->
+<!-- wp:pagelayer/pl_col {"widget_space":15,"overlay_hover_delay":400,"col":2,"animation":"fadeInUp","animation_delay":600,"ele_css":".p-lro5232 {
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    margin-top: 17px;
+}","pagelayer-id":"lro5232"} -->
+<!-- wp:pagelayer/pl_heading {"align":"left","color":"#8a4f50ff","heading_typo":{"font-size":"13","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"\u003cp\u003eUsing high-pressure applications like steam and gas system.\u003c/p\u003e","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#d3bcbcff","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"fadeInDown","ele_bg_type":"color","ele_bg_color":"#fafafaff","border_radius":{"0":"6px","1":"6px","2":"6px","3":"6px"},"ele_padding":{"0":"43px","1":"43px","2":"43px","3":"43px"},"border_type":"solid","ele_css":".p-2sj9617 .pagelayer-heading-holder * {
+    color: #8a4f50;
+    font-family: !important;
+    font-size: 13px !important;
+    font-style: !important;
+    font-weight: 700 !important;
+    font-variant: !important;
+    text-decoration-line: !important;
+    text-decoration-style: solid !important;
+    line-height: em !important;
+    text-transform: !important;
+    letter-spacing: px !important;
+    word-spacing: px !important;
+    margin-top: 25px;
+    margin-left: -12px;
+}
+.p-2sj9617 {
+    text-align: left;
+    background: #fafafa;
+    padding-top: 43px;
+    padding-right: 43px;
+    padding-bottom: 43px;
+    padding-left: 43px;
+    border-style: solid;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-color: #d3bcbc;
+    border-radius: 6px 6px 6px 6px;
+    -webkit-border-radius: 6px 6px 6px 6px;
+    -moz-border-radius: 6px 6px 6px 6px;
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    height: 218px;
+}","pagelayer-id":"2sj9617"} --><p>Using high-pressure applications like steam and gas system.</p><!-- /wp:pagelayer/pl_heading -->
+<!-- wp:pagelayer/pl_heading {"align":"center","color":"#fcfcfcff","heading_typo":{"font-size":"20","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"Application","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#CCC","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"fadeInDown","ele_bg_type":"color","ele_bg_color":"#8a4f50ff","ele_padding":{"0":"12px","1":"12px","2":"12px","3":"12px"},"border_radius":{"0":"0px","1":"0px","2":"56px","3":"0px"},"ele_zindex":84,"ele_custom_pos":"true","ele_position":"absolute","ele_css":".p-zig3111 {
+    text-align: left;
+    background: #8a4f50;
+    padding-top: 12px;
+    padding-right: 12px;
+    padding-bottom: 12px;
+    padding-left: 12px;
+    z-index: 84 !important;
+    position: relative;
+    border-radius: 0px 0px 56px 0px;
+    -webkit-border-radius: 0px 0px 56px 0px;
+    -moz-border-radius: 0px 0px 56px 0px;
+    position: relative;
+    left: margin;
+    transform: translateX(-margin);
+    height: auto;
+    position: absolute !important;
+    z-index: 1;
+    transform: translateX(-0%);
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    width: 140px;
+    height: 49px;
+}
+.p-zig3111 .pagelayer-heading-holder {
+    color: #fcfcfc;
+    font-family: !important;
+    font-size: 15px !important;
+    font-style: !important;
+    font-weight: 700 !important;
+    font-variant: !important;
+    text-decoration-line: !important;
+    text-decoration-style: solid !important;
+    line-height: em !important;
+    text-transform: !important;
+    letter-spacing: px !important;
+    word-spacing: px !important;
+}","pagelayer-id":"zig3111"} -->Application<!-- /wp:pagelayer/pl_heading -->
+<!-- /wp:pagelayer/pl_col -->
+<!-- wp:pagelayer/pl_col {"widget_space":15,"overlay_hover_delay":400,"col":2,"animation":"fadeInUp","animation_delay":600,"ele_css":".p-epx7839 {
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    margin-top: 18px;
+}","pagelayer-id":"epx7839"} -->
+<!-- wp:pagelayer/pl_heading {"align":"center","color":"#8a4f50ff","heading_typo":{"font-size":"13","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"\u003cp\u003e50-1200\u003c/p\u003e","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#d3bcbcff","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"fadeInDown","ele_bg_type":"color","ele_bg_color":"#fafafaff","border_radius":{"0":"6px","1":"6px","2":"6px","3":"6px"},"ele_padding":{"0":"43px","1":"43px","2":"43px","3":"43px"},"border_type":"solid","ele_css":".p-kjc9148 .pagelayer-heading-holder * {
+    color: #8a4f50;
+    font-family: !important;
+    font-size: 13px !important;
+    font-style: !important;
+    font-weight: 700 !important;
+    font-variant: !important;
+    text-decoration-line: !important;
+    text-decoration-style: solid !important;
+    line-height: em !important;
+    text-transform: !important;
+    letter-spacing: px !important;
+    word-spacing: px !important;
+    margin-top: 55px;
+}
+.p-kjc9148 {
+    text-align: center;
+    background: #fafafa;
+    padding-top: 43px;
+    padding-right: 43px;
+    padding-bottom: 43px;
+    padding-left: 43px;
+    border-style: solid;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-color: #d3bcbc;
+    border-radius: 6px 6px 6px 6px;
+    -webkit-border-radius: 6px 6px 6px 6px;
+    -moz-border-radius: 6px 6px 6px 6px;
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    height: 218px;
+}","pagelayer-id":"kjc9148"} --><p>50-1200</p><!-- /wp:pagelayer/pl_heading -->
+<!-- wp:pagelayer/pl_heading {"align":"center","color":"#fcfcfcff","heading_typo":{"font-size":"20","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"Size Range\u003cbr\u003e
+(mm)","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#CCC","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"fadeInDown","ele_bg_type":"color","ele_bg_color":"#8a4f50ff","ele_padding":{"0":"12px","1":"12px","2":"12px","3":"12px"},"border_radius":{"0":"0px","1":"0px","2":"56px","3":"0px"},"ele_zindex":84,"ele_custom_pos":"true","ele_position":"absolute","ele_css":".p-mio1593 {
+    text-align: left;
+    background: #8a4f50;
+    padding-top: 12px;
+    padding-right: 12px;
+    padding-bottom: 12px;
+    padding-left: 12px;
+    z-index: 84 !important;
+    position: relative;
+    border-radius: 0px 0px 56px 0px;
+    -webkit-border-radius: 0px 0px 56px 0px;
+    -moz-border-radius: 0px 0px 56px 0px;
+    position: relative;
+    left: margin;
+    transform: translateX(-margin);
+    height: auto;
+    position: absolute !important;
+    z-index: 1;
+    transform: translateX(-0%);
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    width: 140px;
+    height: 49px;
+}
+.p-mio1593 .pagelayer-heading-holder {
+    color: #fcfcfc;
+    font-family: !important;
+    font-size: 15px !important;
+    font-style: !important;
+    font-weight: 700 !important;
+    font-variant: !important;
+    text-decoration-line: !important;
+    text-decoration-style: solid !important;
+    line-height: em !important;
+    text-transform: !important;
+    letter-spacing: px !important;
+    word-spacing: px !important;
+    margin-top: -10px;
+}","pagelayer-id":"mio1593"} -->Size Range<br>
+(mm)<!-- /wp:pagelayer/pl_heading -->
+<!-- /wp:pagelayer/pl_col -->
+<!-- /wp:pagelayer/pl_row -->
+<!-- wp:pagelayer/pl_row {"stretch":"auto","col_gap":10,"width_content":"auto","row_height":"default","overlay_hover_delay":400,"row_shape_top_color":"#227bc3","row_shape_top_width":100,"row_shape_top_height":100,"row_shape_bottom_color":"#e44993","row_shape_bottom_width":100,"row_shape_bottom_height":100,"pagelayer-id":"vg01599"} -->
+<!-- wp:pagelayer/pl_col {"widget_space":-5,"overlay_hover_delay":400,"col":2,"animation":"fadeInUp","animation_delay":600,"ele_css":".p-ar16780 {
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    margin-top: 12px;
+}","pagelayer-id":"kor3665"} -->
+<!-- wp:pagelayer/pl_inner_row {"stretch":"auto","col_gap":10,"width_content":"auto","row_height":"default","overlay_hover_delay":400,"row_shape_top_color":"#227bc3","row_shape_top_width":100,"row_shape_top_height":100,"row_shape_bottom_color":"#e44993","row_shape_bottom_width":100,"row_shape_bottom_height":100,"pagelayer-id":"fdw2430"} -->
+<!-- wp:pagelayer/pl_inner_col {"widget_space":15,"overlay_hover_delay":400,"col":4,"animation":"fadeInUp","animation_delay":600,"pagelayer-id":"efx2830"} -->
+<!-- wp:pagelayer/pl_heading {"align":"center","color":"#fcfcfcff","heading_typo":{"font-size":"20","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"Type of Valve","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#CCC","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"","ele_bg_type":"color","ele_bg_color":"#8a4f50ff","ele_padding":{"0":"12px","1":"12px","2":"12px","3":"12px"},"border_radius":{"0":"0px","1":"0px","2":"56px","3":"0px"},"ele_zindex":84,"ele_custom_pos":"true","ele_position":"absolute","ele_css":".p-vdt174 {
+    text-align: left;
+    background: #8a4f50;
+    padding-top: 12px;
+    padding-right: 12px;
+    padding-bottom: 12px;
+    padding-left: 12px;
+    z-index: 84 !important;
+    position: relative;
+    border-radius: 0px 0px 56px 0px;
+    -webkit-border-radius: 0px 0px 56px 0px;
+    -moz-border-radius: 0px 0px 56px 0px;
+    position: relative;
+    left: margin;
+    transform: translateX(-margin);
+    height: auto;
+    position: absolute !important;
+    z-index: 1;
+    transform: translateX(-0%);
+    width: 140px;
+    height: 49px;
+    margin-top: 6px;
+    margin-left: -9px;
+}
+.p-vdt174 .pagelayer-heading-holder {
+    color: #fcfcfc;
+    font-family: !important;
+    font-size: 15px !important;
+    font-style: !important;
+    font-weight: 700 !important;
+    font-variant: !important;
+    text-decoration-line: !important;
+    text-decoration-style: solid !important;
+    line-height: em !important;
+    text-transform: !important;
+    letter-spacing: px !important;
+    word-spacing: px !important;
+}","pagelayer-id":"vdt174"} -->Type of Valve<!-- /wp:pagelayer/pl_heading -->
+<!-- /wp:pagelayer/pl_inner_col -->
+<!-- /wp:pagelayer/pl_inner_row -->
+<!-- wp:pagelayer/pl_heading {"align":"center","color":"#8a4f50ff","heading_typo":{"font-size":"20","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"Ball","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#d3bcbcff","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"fadeInDown","ele_bg_type":"color","ele_bg_color":"#fafafaff","border_radius":{"0":"6px","1":"6px","2":"6px","3":"6px"},"ele_padding":{"0":"43px","1":"43px","2":"43px","3":"43px"},"border_type":"solid","ele_css":".p-br53950 .pagelayer-heading-holder {
+    color: #8a4f50;
+    font-family: !important;
+    font-size: 20px !important;
+    font-style: !important;
+    font-weight: 700 !important;
+    font-variant: !important;
+    text-decoration-line: !important;
+    text-decoration-style: solid !important;
+    line-height: em !important;
+    text-transform: !important;
+    letter-spacing: px !important;
+    word-spacing: px !important;
+    margin-top: 55px;
+}
+.p-br53950 {
+    text-align: center;
+    background: #fafafa;
+    padding-top: 43px;
+    padding-right: 43px;
+    padding-bottom: 43px;
+    padding-left: 43px;
+    border-style: solid;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-color: #d3bcbc;
+    border-radius: 6px 6px 6px 6px;
+    -webkit-border-radius: 6px 6px 6px 6px;
+    -moz-border-radius: 6px 6px 6px 6px;
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    height: 218px;
+}","pagelayer-id":"br53950"} -->Ball<!-- /wp:pagelayer/pl_heading -->
+<!-- /wp:pagelayer/pl_col -->
+<!-- wp:pagelayer/pl_col {"widget_space":-60,"overlay_hover_delay":400,"col":2,"animation":"fadeInUp","animation_delay":600,"ele_css":".p-w7a4876 {
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    margin-top: 6px;
+}","pagelayer-id":"w7a4876"} -->
+<!-- wp:pagelayer/pl_inner_row {"stretch":"auto","col_gap":10,"width_content":"auto","row_height":"default","overlay_hover_delay":400,"row_shape_top_color":"#227bc3","row_shape_top_width":100,"row_shape_top_height":100,"row_shape_bottom_color":"#e44993","row_shape_bottom_width":100,"row_shape_bottom_height":100,"pagelayer-id":"2j06867"} -->
+<!-- wp:pagelayer/pl_inner_col {"widget_space":15,"overlay_hover_delay":400,"col":4,"animation":"fadeInUp","animation_delay":600,"pagelayer-id":"eah3389"} -->
+<!-- wp:pagelayer/pl_heading {"align":"left","color":"#ffffffff","heading_typo":{"font-size":"20","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"Illustration","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#CCC","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"fadeInDown","ele_bg_type":"color","ele_bg_color":"#8a4f50ff","ele_padding":{"0":"12px","1":"12px","2":"12px","3":"12px"},"border_radius":{"0":"0px","1":"0px","2":"56px","3":"0px"},"ele_css":".p-sjw1306 {
+    text-align: left;
+    background: #8a4f50;
+    padding-top: 12px;
+    padding-right: 12px;
+    padding-bottom: 12px;
+    padding-left: 12px;
+    border-radius: 0px 0px 56px 0px;
+    -webkit-border-radius: 0px 0px 56px 0px;
+    -moz-border-radius: 0px 0px 56px 0px;
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    width: 140px;
+    height: 49px;
+    margin-left: -9px;
+}
+.p-sjw1306 .pagelayer-heading-holder {
+    color: #ffffff;
+    font-family: !important;
+    font-size: 15px !important;
+    font-style: !important;
+    font-weight: 700 !important;
+    font-variant: !important;
+    text-decoration-line: !important;
+    text-decoration-style: solid !important;
+    line-height: em !important;
+    text-transform: !important;
+    letter-spacing: px !important;
+    word-spacing: px !important;
+}","pagelayer-id":"sjw1306"} -->Illustration<!-- /wp:pagelayer/pl_heading -->
+<!-- /wp:pagelayer/pl_inner_col -->
+<!-- /wp:pagelayer/pl_inner_row -->
+<!-- wp:pagelayer/pl_image {"id":1803,"id-size":"full","align":"center","img_hover":"normal","img_hover_delay":400,"caption_color":"#0986c0","max-width":40,"border_type":"solid","border_width":"1px,1px,1px,1px","border_color":"#d3bcbcff","border_radius":{"0":"6px","1":"6px","2":"6px","3":"6px"},"ele_custom_pos":"true","ele_align":"50%","ele_height":"","ele_custom_height":"148px","ele_css":".p-6kk8505 .pagelayer-img {
+    -webkit-transition: all 400ms;
+    transition: all 400ms;
+    margin-top: 76px;
+}
+.p-6kk8505 {
+    border-style: solid;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-color: #d3bcbc;
+    border-radius: 6px 6px 6px 6px;
+    -webkit-border-radius: 6px 6px 6px 6px;
+    -moz-border-radius: 6px 6px 6px 6px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 218px;","pagelayer-id":"6kk8505"} /-->
+<!-- /wp:pagelayer/pl_col -->
+<!-- wp:pagelayer/pl_col {"widget_space":15,"overlay_hover_delay":400,"col":2,"animation":"fadeInUp","animation_delay":600,"ele_css":".p-e6c6208 {
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    margin-top: 15px;
+}","pagelayer-id":"tka4478"} -->
+<!-- wp:pagelayer/pl_heading {"align":"left","color":"#8a4f50ff","heading_typo":{"font-size":"13","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"\u003cp\u003ePrecision-engineered spherical ball for reliable one-way flow control.\u003c/p\u003e","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#d3bcbcff","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"fadeInDown","ele_bg_type":"color","ele_bg_color":"#fafafaff","border_radius":{"0":"6px","1":"6px","2":"6px","3":"6px"},"ele_padding":{"0":"43px","1":"43px","2":"43px","3":"43px"},"border_type":"solid","ele_css":".p-3vw4749 .pagelayer-heading-holder * {
+    color: #8a4f50;
+    font-family: !important;
+    font-size: 13px !important;
+    font-style: !important;
+    font-weight: 700 !important;
+    font-variant: !important;
+    text-decoration-line: !important;
+    text-decoration-style: solid !important;
+    line-height: em !important;
+    text-transform: !important;
+    letter-spacing: px !important;
+    word-spacing: px !important;
+    margin-top: 30px;
+    margin-left: -10px;
+}
+.p-3vw4749 {
+    text-align: left;
+    background: #fafafa;
+    padding-top: 43px;
+    padding-right: 43px;
+    padding-bottom: 43px;
+    padding-left: 43px;
+    border-style: solid;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-color: #d3bcbc;
+    border-radius: 6px 6px 6px 6px;
+    -webkit-border-radius: 6px 6px 6px 6px;
+    -moz-border-radius: 6px 6px 6px 6px;
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    height: 218px;
+}
+.p-tka4478 {
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    margin-top: 16px;
+}","pagelayer-id":"3vw4749"} --><p>Precision-engineered spherical ball for reliable one-way flow control.</p><!-- /wp:pagelayer/pl_heading -->
+<!-- wp:pagelayer/pl_heading {"align":"center","color":"#fcfcfcff","heading_typo":{"font-size":"20","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"Features","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#CCC","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"fadeInDown","ele_bg_type":"color","ele_bg_color":"#8a4f50ff","ele_padding":{"0":"12px","1":"12px","2":"12px","3":"12px"},"border_radius":{"0":"0px","1":"0px","2":"56px","3":"0px"},"ele_zindex":84,"ele_custom_pos":"true","ele_position":"absolute","ele_css":".p-ct66210 {
+    text-align: left;
+    background: #8a4f50;
+    padding-top: 12px;
+    padding-right: 12px;
+    padding-bottom: 12px;
+    padding-left: 12px;
+    z-index: 84 !important;
+    position: relative;
+    border-radius: 0px 0px 56px 0px;
+    -webkit-border-radius: 0px 0px 56px 0px;
+    -moz-border-radius: 0px 0px 56px 0px;
+    position: relative;
+    left: margin;
+    transform: translateX(-margin);
+    height: auto;
+    position: absolute !important;
+    z-index: 1;
+    transform: translateX(-0%);
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    width: 140px;
+    height: 49px;
+}
+.p-ct66210 .pagelayer-heading-holder {
+    color: #fcfcfc;
+    font-family: !important;
+    font-size: 15px !important;
+    font-style: !important;
+    font-weight: 700 !important;
+    font-variant: !important;
+    text-decoration-line: !important;
+    text-decoration-style: solid !important;
+    line-height: em !important;
+    text-transform: !important;
+    letter-spacing: px !important;
+    word-spacing: px !important;
+}","pagelayer-id":"ct66210"} -->Features<!-- /wp:pagelayer/pl_heading -->
+<!-- /wp:pagelayer/pl_col -->
+<!-- wp:pagelayer/pl_col {"widget_space":15,"overlay_hover_delay":400,"col":2,"animation":"fadeInUp","animation_delay":600,"ele_css":".p-wdi1534 {
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    margin-top: 17px;
+}","pagelayer-id":"wdi1534"} -->
+<!-- wp:pagelayer/pl_heading {"align":"left","color":"#8a4f50ff","heading_typo":{"font-size":"13","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"\u003cp\u003eCommonly used in water and waste water systems, and pump discharge lines.\u003c/p\u003e","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#d3bcbcff","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"fadeInDown","ele_bg_type":"color","ele_bg_color":"#fafafaff","border_radius":{"0":"6px","1":"6px","2":"6px","3":"6px"},"ele_padding":{"0":"43px","1":"43px","2":"43px","3":"43px"},"border_type":"solid","ele_css":".p-elg4395 .pagelayer-heading-holder * {
+    color: #8a4f50;
+    font-family: !important;
+    font-size: 13px !important;
+    font-style: !important;
+    font-weight: 700 !important;
+    font-variant: !important;
+    text-decoration-line: !important;
+    text-decoration-style: solid !important;
+    line-height: em !important;
+    text-transform: !important;
+    letter-spacing: px !important;
+    word-spacing: px !important;
+    margin-top: 25px;
+    margin-left: -10px;
+}
+.p-elg4395 {
+    text-align: left;
+    background: #fafafa;
+    padding-top: 43px;
+    padding-right: 43px;
+    padding-bottom: 43px;
+    padding-left: 43px;
+    border-style: solid;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-color: #d3bcbc;
+    border-radius: 6px 6px 6px 6px;
+    -webkit-border-radius: 6px 6px 6px 6px;
+    -moz-border-radius: 6px 6px 6px 6px;
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    height: 218px;
+}","pagelayer-id":"elg4395"} --><p>Commonly used in water and waste water systems, and pump discharge lines.</p><!-- /wp:pagelayer/pl_heading -->
+<!-- wp:pagelayer/pl_heading {"align":"center","color":"#fcfcfcff","heading_typo":{"font-size":"20","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"Application","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#CCC","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"fadeInDown","ele_bg_type":"color","ele_bg_color":"#8a4f50ff","ele_padding":{"0":"12px","1":"12px","2":"12px","3":"12px"},"border_radius":{"0":"0px","1":"0px","2":"56px","3":"0px"},"ele_zindex":84,"ele_custom_pos":"true","ele_position":"absolute","ele_css":".p-czj4517 {
+    text-align: left;
+    background: #8a4f50;
+    padding-top: 12px;
+    padding-right: 12px;
+    padding-bottom: 12px;
+    padding-left: 12px;
+    z-index: 84 !important;
+    position: relative;
+    border-radius: 0px 0px 56px 0px;
+    -webkit-border-radius: 0px 0px 56px 0px;
+    -moz-border-radius: 0px 0px 56px 0px;
+    position: relative;
+    left: margin;
+    transform: translateX(-margin);
+    height: auto;
+    position: absolute !important;
+    z-index: 1;
+    transform: translateX(-0%);
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    width: 140px;
+    height: 49px;
+}
+.p-czj4517 .pagelayer-heading-holder {
+    color: #fcfcfc;
+    font-family: !important;
+    font-size: 15px !important;
+    font-style: !important;
+    font-weight: 700 !important;
+    font-variant: !important;
+    text-decoration-line: !important;
+    text-decoration-style: solid !important;
+    line-height: em !important;
+    text-transform: !important;
+    letter-spacing: px !important;
+    word-spacing: px !important;
+}","pagelayer-id":"czj4517"} -->Application<!-- /wp:pagelayer/pl_heading -->
+<!-- /wp:pagelayer/pl_col -->
+<!-- wp:pagelayer/pl_col {"widget_space":15,"overlay_hover_delay":400,"col":2,"animation":"fadeInUp","animation_delay":600,"ele_css":".p-zg96275 {
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    margin-top: 16px;
+}","pagelayer-id":"zg96275"} -->
+<!-- wp:pagelayer/pl_heading {"align":"center","color":"#8a4f50ff","heading_typo":{"font-size":"13","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"\u003cp\u003e25-1200\u003c/p\u003e","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#d3bcbcff","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"fadeInDown","ele_bg_type":"color","ele_bg_color":"#fafafaff","border_radius":{"0":"6px","1":"6px","2":"6px","3":"6px"},"ele_padding":{"0":"43px","1":"43px","2":"43px","3":"43px"},"border_type":"solid","ele_css":".p-h399903 {
+    text-align: center;
+    background: #fafafa;
+    padding-top: 43px;
+    padding-right: 43px;
+    padding-bottom: 43px;
+    padding-left: 43px;
+    border-style: solid;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-color: #d3bcbc;
+    border-radius: 6px 6px 6px 6px;
+    -webkit-border-radius: 6px 6px 6px 6px;
+    -moz-border-radius: 6px 6px 6px 6px;
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    height: 218px;
+}
+.p-h399903 .pagelayer-heading-holder * {
+    color: #8a4f50;
+    font-family: !important;
+    font-size: 13px !important;
+    font-style: !important;
+    font-weight: 700 !important;
+    font-variant: !important;
+    text-decoration-line: !important;
+    text-decoration-style: solid !important;
+    line-height: em !important;
+    text-transform: !important;
+    letter-spacing: px !important;
+    word-spacing: px !important;
+    margin-top: 55px;
+}","pagelayer-id":"h399903"} --><p>25-1200</p><!-- /wp:pagelayer/pl_heading -->
+<!-- wp:pagelayer/pl_heading {"align":"center","color":"#fcfcfcff","heading_typo":{"font-size":"20","font-weight":"700","text-decoration-style":"solid"},"ele_bg_hover_delay":"400","text":"Size Range\u003cbr\u003e
+(mm)","heading_state":"normal","ele_bg_gradient":"150,#44d3f6,23,#72e584,45,#2ca4eb,100","ele_bg_gradient_hover":"150,#44d3f6,25,#72e584,75,#2ca4eb,100","border_width":"1px,1px,1px,1px","border_color":"#CCC","ele_align":"margin","ele_height":"auto","animation_delay":600,"ele_sticky_on":"desktop,tablet,mobile","ele_v_sc_direction":"opposite","ele_v_sc_speed":5,"ele_v_sc_top_viewport":100,"ele_v_sc_bottom_viewport":100,"ele_h_sc_direction":"toleft","ele_h_sc_speed":5,"ele_h_sc_left_viewport":100,"ele_h_sc_right_viewport":100,"ele_transp_type":"fadein","ele_transp_level":5,"ele_transp_top_viewport":100,"ele_transp_bottom_viewport":100,"ele_blur_type":"blurin","ele_blur_level":5,"ele_blur_top_viewport":100,"ele_blur_bottom_viewport":100,"ele_rot_direction":"clockwise","ele_rot_speed":5,"ele_rot_top_viewport":100,"ele_rot_bottom_viewport":100,"ele_rot_x_anc_point":"center","ele_rot_y_anc_point":"center","ele_scl_direction":"scaleup","ele_scl_level":5,"ele_scl_top_viewport":100,"ele_scl_bottom_viewport":100,"ele_scl_x_anc_point":"center","ele_scl_y_anc_point":"center","motion_area":"viewport","ele_motion_effect_on":"desktop,tablet,mobile","ele_m_tr_direction":"opposite","ele_m_tr_level":5,"ele_3d_tilt_direction":"opposite","ele_3d_tilt_level":5,"animation":"fadeInDown","ele_bg_type":"color","ele_bg_color":"#8a4f50ff","ele_padding":{"0":"12px","1":"12px","2":"12px","3":"12px"},"border_radius":{"0":"0px","1":"0px","2":"56px","3":"0px"},"ele_zindex":84,"ele_custom_pos":"true","ele_position":"absolute","ele_css":".p-v7r8315 {
+    text-align: left;
+    background: #8a4f50;
+    padding-top: 12px;
+    padding-right: 12px;
+    padding-bottom: 12px;
+    padding-left: 12px;
+    z-index: 84 !important;
+    position: relative;
+    border-radius: 0px 0px 56px 0px;
+    -webkit-border-radius: 0px 0px 56px 0px;
+    -moz-border-radius: 0px 0px 56px 0px;
+    position: relative;
+    left: margin;
+    transform: translateX(-margin);
+    height: auto;
+    position: absolute !important;
+    z-index: 1;
+    transform: translateX(-0%);
+    -webkit-animation-delay: 600ms;
+    animation-delay: 600ms;
+    width: 140px;
+    height: 49px;
+}
+.p-v7r8315 .pagelayer-heading-holder {
+    color: #fcfcfc;
+    font-family: !important;
+    font-size: 15px !important;
+    font-style: !important;
+    font-weight: 700 !important;
+    font-variant: !important;
+    text-decoration-line: !important;
+    text-decoration-style: solid !important;
+    line-height: em !important;
+    text-transform: !important;
+    letter-spacing: px !important;
+    word-spacing: px !important;
+    margin-top: -10px;
+}","pagelayer-id":"v7r8315"} -->Size Range<br>
+(mm)<!-- /wp:pagelayer/pl_heading -->
+<!-- /wp:pagelayer/pl_col -->
+<!-- /wp:pagelayer/pl_row -->

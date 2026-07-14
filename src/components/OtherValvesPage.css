@@ -1,0 +1,427 @@
+/* OtherValvesPage.css */
+
+.other-valves-page-wrapper {
+  background-color: var(--color-bg-white);
+  padding-bottom: 80px;
+}
+
+/* Light Theme Hero Banner with Hexagon layout */
+.other-valves-hero-new {
+  background-color: #f8f9fa;
+  padding: 60px 0;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid #e9ecef;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+}
+
+.hero-new-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+}
+
+/* Hexagon Border/Outline */
+.hero-left-hex {
+  z-index: 5;
+}
+
+.hexagon-border-blue {
+  width: 290px;
+  height: 250px;
+  background-color: #3E8EF7; /* Primary bright blue border color from screenshot */
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.5s ease;
+}
+
+.hexagon-border-blue:hover {
+  transform: scale(1.03);
+}
+
+.hexagon-inner-valves {
+  width: calc(100% - 16px); /* Creates 8px border */
+  height: calc(100% - 16px);
+  background-image: url('/uploads/2025/04/hero_pipes_yellow.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  background-color: #ffffff;
+}
+
+/* Center title styling */
+.hero-center-title {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 10;
+}
+
+.other-valves-title-text {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--color-primary); /* Maroon brand color #8a4f50 */
+  margin: 0;
+  letter-spacing: 2px;
+  font-family: var(--font-family-heading);
+}
+
+/* Decorative Background shapes from screenshot */
+.hero-decor-shape-top-left {
+  position: absolute;
+  top: -40px;
+  left: -40px;
+  width: 200px;
+  height: 140px;
+  background-color: #0f1c2c; /* Dark blue shape */
+  clip-path: polygon(0 0, 100% 0, 75% 100%, 0 100%);
+  opacity: 0.95;
+  z-index: 1;
+}
+
+.hero-decor-shape-bottom-right {
+  position: absolute;
+  bottom: -60px;
+  right: -60px;
+  width: 260px;
+  height: 260px;
+  border: 28px solid #56ccf2; /* Light cyan/blue curve */
+  border-radius: 50%;
+  z-index: 1;
+  opacity: 0.9;
+}
+
+/* Types of Other Valves heading section */
+.types-heading-section {
+  padding: 40px 0 10px 0;
+  background-color: var(--color-bg-white);
+}
+
+.types-section-title {
+  font-size: 2rem;
+  color: var(--color-primary);
+  font-weight: 700;
+  margin: 0;
+  font-family: var(--font-family-heading);
+  position: relative;
+  padding-bottom: 10px;
+}
+
+/* Search and Filters */
+.other-valves-filter-bar {
+  background-color: var(--color-bg-white);
+  padding: 10px 0 30px 0;
+}
+
+.search-box-wrapper {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.search-box-wrapper .search-icon {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+}
+
+.search-input {
+  width: 100%;
+  padding: 14px 20px 14px 48px;
+  border: 1.5px solid #d1d5db;
+  border-radius: 30px;
+  font-size: 1rem;
+  outline: none;
+  background-color: #ffffff;
+  color: var(--color-text-dark);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-fast);
+}
+
+.search-input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px rgba(138, 79, 80, 0.12);
+}
+
+/* 5-Columns row grid catalog layout */
+.other-valves-grid-section-new {
+  padding: 10px 0 60px 0;
+  background-color: var(--color-bg-white);
+}
+
+.other-valve-row-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+/* Staggered Card Entrance Animations */
+@keyframes fadeInUpOtherCard {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.other-valve-grid-card {
+  background-color: #ffffff;
+  border: 1.5px solid #eaeaea;
+  border-radius: 12px;
+  position: relative;
+  min-height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 18px 20px 18px; /* High top padding to clear badge */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+  text-align: center;
+  opacity: 0;
+  animation: fadeInUpOtherCard 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.other-valve-grid-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 12px 28px rgba(138, 79, 80, 0.15);
+  transform: translateY(-8px) scale(1.02);
+}
+
+/* Stagger card delays by row & column position */
+/* Row 1 Delays */
+.other-valve-row-grid:nth-child(1) .other-valve-grid-card:nth-child(1) { animation-delay: 0.1s; }
+.other-valve-row-grid:nth-child(1) .other-valve-grid-card:nth-child(2) { animation-delay: 0.18s; }
+.other-valve-row-grid:nth-child(1) .other-valve-grid-card:nth-child(3) { animation-delay: 0.26s; }
+.other-valve-row-grid:nth-child(1) .other-valve-grid-card:nth-child(4) { animation-delay: 0.34s; }
+.other-valve-row-grid:nth-child(1) .other-valve-grid-card:nth-child(5) { animation-delay: 0.42s; }
+
+/* Row 2 Delays */
+.other-valve-row-grid:nth-child(2) .other-valve-grid-card:nth-child(1) { animation-delay: 0.25s; }
+.other-valve-row-grid:nth-child(2) .other-valve-grid-card:nth-child(2) { animation-delay: 0.33s; }
+.other-valve-row-grid:nth-child(2) .other-valve-grid-card:nth-child(3) { animation-delay: 0.41s; }
+.other-valve-row-grid:nth-child(2) .other-valve-grid-card:nth-child(4) { animation-delay: 0.49s; }
+.other-valve-row-grid:nth-child(2) .other-valve-grid-card:nth-child(5) { animation-delay: 0.57s; }
+
+/* Row 3 Delays */
+.other-valve-row-grid:nth-child(3) .other-valve-grid-card:nth-child(1) { animation-delay: 0.4s; }
+.other-valve-row-grid:nth-child(3) .other-valve-grid-card:nth-child(2) { animation-delay: 0.48s; }
+.other-valve-row-grid:nth-child(3) .other-valve-grid-card:nth-child(3) { animation-delay: 0.56s; }
+.other-valve-row-grid:nth-child(3) .other-valve-grid-card:nth-child(4) { animation-delay: 0.64s; }
+.other-valve-row-grid:nth-child(3) .other-valve-grid-card:nth-child(5) { animation-delay: 0.72s; }
+
+/* Half Rounded Tab-Badge inside card */
+.grid-card-badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-primary); /* Maroon brand color */
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 8px 18px 8px 14px;
+  border-radius: 10px 100px 100px 0; /* Fully matches screenshot style */
+  text-transform: capitalize;
+  letter-spacing: 0.2px;
+  transition: transform 0.3s ease;
+}
+
+.other-valve-grid-card:hover .grid-card-badge {
+  transform: translateY(-2px) scale(1.03);
+}
+
+/* Card Content styling */
+.grid-card-content {
+  font-size: 0.95rem;
+  color: var(--color-text-dark);
+  line-height: 1.6;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.valve-name-bold {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  font-family: var(--font-family-heading);
+}
+
+.img-content-box {
+  height: 120px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid-card-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.04));
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.other-valve-grid-card:hover .grid-card-img {
+  transform: scale(1.1) rotate(1deg);
+}
+
+.desc-text {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+.size-range-bold {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--color-primary);
+}
+
+.no-results-text {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  padding: 40px 0;
+}
+
+/* Brand Statement card styled below catalog */
+.brand-statement-bar {
+  padding: 40px 0;
+  background-color: #fcfcfc;
+  border-top: 1px solid #f1f3f5;
+}
+
+.brand-statement-card {
+  background: linear-gradient(135deg, rgba(138, 79, 80, 0.04) 0%, rgba(15, 28, 44, 0.02) 100%);
+  border-left: 5px solid var(--color-primary);
+  padding: 30px 40px;
+  border-radius: 4px 12px 12px 4px;
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+}
+
+.brand-statement-card p {
+  margin: 0 0 20px 0;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--color-text-dark);
+}
+
+.brand-statement-card strong {
+  color: var(--color-primary);
+}
+
+.btn-brand-quote-new {
+  padding: 14px 32px;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: var(--transition-smooth);
+}
+
+.btn-brand-quote-new:hover {
+  background-color: var(--color-primary-dark);
+  box-shadow: 0 4px 15px rgba(138, 79, 80, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1200px) {
+  .other-valves-title-text {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .other-valves-hero-new {
+    min-height: 260px;
+    padding: 40px 0;
+  }
+  .hexagon-border-blue {
+    width: 220px;
+    height: 190px;
+  }
+  .other-valves-title-text {
+    font-size: 2.2rem;
+  }
+  
+  /* Grid collapses into 2 columns on tablet */
+  .other-valve-row-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    border-bottom: 2px dashed #eaeaea;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+  }
+  
+  .other-valve-row-grid .other-valve-grid-card:nth-child(5) {
+    grid-column: span 2;
+    min-height: 120px;
+    padding: 30px 18px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-new-container {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  
+  .hero-left-hex {
+    margin: 0 auto;
+  }
+  
+  .hero-center-title {
+    position: static;
+    transform: none;
+    margin-top: 10px;
+  }
+  
+  /* Stacks 1 card per row on mobile */
+  .other-valve-row-grid {
+    grid-template-columns: 1fr;
+    border-bottom: 2px dashed #eaeaea;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+  }
+  
+  .other-valve-row-grid .other-valve-grid-card:nth-child(5) {
+    grid-column: span 1;
+    min-height: 160px;
+  }
+  
+  .brand-statement-card {
+    padding: 24px 20px;
+  }
+  
+  .brand-statement-card p {
+    font-size: 1rem;
+  }
+}

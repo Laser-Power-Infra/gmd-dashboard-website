@@ -1,0 +1,52 @@
+### Globe Type Valve
+Inclusions:
+1 Defects in materials or workmanship in body, plug, seat, and stem.
+
+2 Leakage within ANSI/FCI Class standards (e.g., Class IV or V).
+
+3 Actuator function (manual or automatic) within rated service.
+
+4 Internal trim operation under specified pressure and temperature conditions..
+Exclusions:
+1 Trim wear due to cavitation or flashing beyond design conditions.
+
+2 Corrosion or erosion from process media outside material compatibility.
+
+3 Seat leakage due to dirt, debris, or lack of filtration.
+
+4 Damage from overtightening or incorrect actuator sizing or setup.
+------------------------------
+### Needle Type Valve
+Inclusions:
+1Precision control performance under design conditions.
+
+2 Sealing and shut-off integrity at rated pressure.
+
+3 Structural integrity of needle, seat, and stem.
+Exclusions:
+1 Blockage due to particulate matter or poor system cleanliness.
+
+2 Damage caused by over-torquing or forcing the needle.
+
+3 Leakage due to wear from high-cycle or pulsating service not specified in design.
+------------------------------
+### Ball Type Valve
+Inclusions:
+1 Leakage protection due to faulty sealing material under normal operating conditions.
+
+2 Corrosion protection integrity (if coated by manufacturer).
+
+3 Repair/replacement of defective internal components during warranty period..
+Exclusions:
+1  Damage from improper installation, misalignment, or overtightening.
+
+2 Normal wear and tear of PTFE seats, seals, and packing.
+
+3 Failure due to operation outside design pressure/temperature.
+
+4 Damage from abrasive or corrosive media not specified for the valve.
+
+5Tampering, unauthorized modifications, or non-OEM spare usage.
+
+6 External surface/cosmetic damage due to mishandling.
+------------------------------

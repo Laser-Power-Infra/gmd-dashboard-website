@@ -1,0 +1,414 @@
+.hero-section {
+  padding: 80px 0 100px 0;
+  background-color: #f1f3f5;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(245, 144, 25, 0.05) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(138, 79, 80, 0.05) 0px, transparent 50%);
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 50px;
+}
+
+.hero-content {
+  text-align: left;
+  animation: fadeInLeft 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 10;
+}
+
+.hero-welcome {
+  font-size: 3.2rem;
+  font-weight: 500;
+  color: var(--color-text-dark);
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.hero-company {
+  font-size: 4.4rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: 28px;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.hero-subtitle {
+  font-size: 1.4rem;
+  color: var(--color-text-muted);
+  margin-bottom: 40px;
+  max-width: 680px;
+  line-height: 1.5;
+}
+
+/* Skew accent style for KNOW MORE button */
+.hero-content .btn-primary {
+  padding: 18px 48px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  border-radius: 0;
+  position: relative;
+  overflow: visible;
+  background-color: var(--color-primary);
+}
+
+.hero-content .btn-primary::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -15px;
+  width: 30px;
+  height: 100%;
+  background-color: var(--color-accent);
+  transform: skewX(-20deg);
+  z-index: -1;
+  transition: var(--transition-smooth);
+}
+
+.hero-content .btn-primary:hover::after {
+  background-color: #000000;
+  right: -20px;
+}
+
+.hero-content .btn-primary:hover {
+  background-color: #000000;
+}
+
+/* Graphics Container */
+.hero-graphics {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  animation: fadeInUp 0.8s cubic-bezier(0.25, 1, 0.5, 1) 0.2s both;
+}
+
+.hero-shapes-container {
+  position: relative;
+  width: 100%;
+  height: 750px; /* Increased vertical container height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Slides and Transitions */
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1), visibility 1s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Nested Hexagon Border clip-path */
+.hexagon-wrapper {
+  position: absolute;
+  width: 680px; /* Massively expanded horizontal width */
+  height: 630px; /* Reverted/maintained tall vertical height */
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  transition: transform 1s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.8s ease;
+}
+
+/* Hexagon Border Colors */
+.hexagon-wrapper.blue {
+  background-color: #3E8EF7;
+}
+
+.hexagon-wrapper.yellow {
+  background-color: #f1c40f;
+}
+
+.hexagon-wrapper.green {
+  background-color: #2ecc71;
+}
+
+/* Inner card holds the cropped images */
+.hexagon-inner {
+  width: calc(100% - 16px); /* Perfect 8px border */
+  height: calc(100% - 16px);
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #ffffff;
+  transition: var(--transition-smooth);
+}
+
+/* Background image assignments */
+.img-blue-valve {
+  background-image: url('/uploads/2025/04/product1-1.jpg');
+}
+
+.img-welder {
+  background-image: url('/uploads/2025/09/IMG_4648.jpg');
+}
+
+.img-tech-assembly {
+  background-image: url('/uploads/2025/09/IMG_4646.jpg');
+}
+
+.img-valve-workshop {
+  background-image: url('/uploads/2025/09/IMG_4645.jpg');
+}
+
+.img-quality-check {
+  background-image: url('/uploads/2025/09/IMG_4646-1.jpg');
+}
+
+.img-blue-pipes {
+  background-image: url('/uploads/2025/04/hero_pipes_blue.jpg');
+}
+
+.img-yellow-pipes {
+  background-image: url('/uploads/2025/04/hero_pipes_yellow.jpg');
+}
+
+/* Slide 0 Coordinates & Animation */
+.hero-slide .hexagon-wrapper.shape-top-left {
+  transform: translate(-120px, -70px) scale(0.8);
+}
+.hero-slide.active .hexagon-wrapper.shape-top-left {
+  transform: translate(-120px, -70px) scale(1);
+  opacity: 1;
+}
+
+.hero-slide .hexagon-wrapper.shape-bottom-right {
+  transform: translate(120px, 70px) scale(0.8);
+}
+.hero-slide.active .hexagon-wrapper.shape-bottom-right {
+  transform: translate(120px, 70px) scale(1);
+  opacity: 1;
+}
+
+/* Slide 1 Coordinates & Animation */
+.hero-slide .hexagon-wrapper.shape-center-large {
+  transform: translate(0, 0) scale(0.95);
+}
+.hero-slide.active .hexagon-wrapper.shape-center-large {
+  transform: translate(0, 0) scale(1.1);
+  opacity: 1;
+}
+
+/* Slide 2 & 3 Coordinates & Animation */
+.hero-slide .hexagon-wrapper.shape-top-right {
+  transform: translate(120px, -70px) scale(0.8);
+}
+.hero-slide.active .hexagon-wrapper.shape-top-right {
+  transform: translate(120px, -70px) scale(1);
+  opacity: 1;
+}
+
+.hero-slide .hexagon-wrapper.shape-bottom-left {
+  transform: translate(-120px, 70px) scale(0.8);
+}
+.hero-slide.active .hexagon-wrapper.shape-bottom-left {
+  transform: translate(-120px, 70px) scale(1);
+  opacity: 1;
+}
+
+/* Interactive Hover States */
+.hexagon-wrapper:hover .hexagon-inner {
+  transform: scale(1.05);
+}
+
+/* Slide Dots Navigation styling */
+.hero-slider-dots {
+  position: absolute;
+  bottom: -30px;
+  display: flex;
+  gap: 10px;
+  z-index: 50;
+}
+
+.hero-slider-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ced4da;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.hero-slider-dot.active {
+  background-color: var(--color-primary);
+  width: 24px;
+  border-radius: 5px;
+}
+
+/* Decorative background shapes */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border: 4px solid rgba(245, 144, 25, 0.1);
+  border-radius: 50%;
+  top: -50px;
+  left: -50px;
+  z-index: 1;
+}
+
+.hero-section::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border: 4px solid rgba(138, 79, 80, 0.05);
+  border-radius: 50%;
+  bottom: -100px;
+  right: -100px;
+  z-index: 1;
+}
+
+/* Responsive Layout */
+@media (max-width: 992px) {
+  .hero-section {
+    padding: 60px 0;
+  }
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  .hero-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-company {
+    font-size: 2.8rem;
+  }
+  .hero-welcome {
+    font-size: 2rem;
+  }
+  
+  .hero-shapes-container {
+    height: 580px;
+  }
+  
+  .hexagon-wrapper {
+    width: 440px;
+    height: 380px;
+  }
+  
+  /* Slide 0 Coordinate Adaptability */
+  .hero-slide .hexagon-wrapper.shape-top-left {
+    transform: translate(-70px, -45px) scale(0.8);
+  }
+  .hero-slide.active .hexagon-wrapper.shape-top-left {
+    transform: translate(-70px, -45px) scale(1);
+  }
+
+  .hero-slide .hexagon-wrapper.shape-bottom-right {
+    transform: translate(70px, 45px) scale(0.8);
+  }
+  .hero-slide.active .hexagon-wrapper.shape-bottom-right {
+    transform: translate(70px, 45px) scale(1);
+  }
+
+  /* Slide 1 Coordinate Adaptability */
+  .hero-slide .hexagon-wrapper.shape-center-large {
+    transform: translate(0, 0) scale(0.9);
+  }
+  .hero-slide.active .hexagon-wrapper.shape-center-large {
+    transform: translate(0, 0) scale(1.1);
+  }
+
+  /* Slide 2 & 3 Coordinate Adaptability */
+  .hero-slide .hexagon-wrapper.shape-top-right {
+    transform: translate(70px, -45px) scale(0.8);
+  }
+  .hero-slide.active .hexagon-wrapper.shape-top-right {
+    transform: translate(70px, -45px) scale(1);
+  }
+
+  .hero-slide .hexagon-wrapper.shape-bottom-left {
+    transform: translate(-70px, 45px) scale(0.8);
+  }
+  .hero-slide.active .hexagon-wrapper.shape-bottom-left {
+    transform: translate(-70px, 45px) scale(1);
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-company {
+    font-size: 2.2rem;
+  }
+  .hero-shapes-container {
+    height: 380px;
+  }
+  
+  .hexagon-wrapper {
+    width: 280px;
+    height: 240px;
+  }
+  
+  /* Slide 0 Coordinate Adaptability */
+  .hero-slide .hexagon-wrapper.shape-top-left {
+    transform: translate(-50px, -30px) scale(0.8);
+  }
+  .hero-slide.active .hexagon-wrapper.shape-top-left {
+    transform: translate(-50px, -30px) scale(1);
+  }
+
+  .hero-slide .hexagon-wrapper.shape-bottom-right {
+    transform: translate(50px, 30px) scale(0.8);
+  }
+  .hero-slide.active .hexagon-wrapper.shape-bottom-right {
+    transform: translate(50px, 30px) scale(1);
+  }
+
+  /* Slide 1 Coordinate Adaptability */
+  .hero-slide .hexagon-wrapper.shape-center-large {
+    transform: translate(0, 0) scale(0.9);
+  }
+  .hero-slide.active .hexagon-wrapper.shape-center-large {
+    transform: translate(0, 0) scale(1.1);
+  }
+
+  /* Slide 2 & 3 Coordinate Adaptability */
+  .hero-slide .hexagon-wrapper.shape-top-right {
+    transform: translate(50px, -30px) scale(0.8);
+  }
+  .hero-slide.active .hexagon-wrapper.shape-top-right {
+    transform: translate(50px, -30px) scale(1);
+  }
+
+  .hero-slide .hexagon-wrapper.shape-bottom-left {
+    transform: translate(-50px, 30px) scale(0.8);
+  }
+  .hero-slide.active .hexagon-wrapper.shape-bottom-left {
+    transform: translate(-50px, 30px) scale(1);
+  }
+}

@@ -1,0 +1,528 @@
+/* SluiceValveManualPage.css */
+
+.manual-page-wrapper {
+  background-color: var(--color-bg-white);
+  padding-bottom: 80px;
+  overflow-x: hidden;
+}
+
+/* Light Theme Hero Banner with Hexagon layout */
+.manual-hero {
+  background-color: #f8f9fa;
+  padding: 60px 0;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid #e9ecef;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+}
+
+/* Hexagon Border/Outline */
+.hero-left-hex {
+  z-index: 5;
+}
+
+.hexagon-border-blue {
+  width: 290px;
+  height: 250px;
+  background-color: #3E8EF7; /* Primary bright blue border color from screenshot */
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.5s ease;
+}
+
+.hexagon-border-blue:hover {
+  transform: scale(1.03);
+}
+
+.hexagon-inner-valves {
+  width: calc(100% - 16px);
+  height: calc(100% - 16px);
+  background-image: url('/uploads/2025/04/hero_pipes_yellow.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  background-color: #ffffff;
+}
+
+/* Center title styling */
+.manual-section-title-container {
+  text-align: center;
+  margin-bottom: 60px;
+  width: 100%;
+}
+
+.manual-title-text {
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: var(--color-primary); /* Maroon brand color */
+  margin: 0;
+  letter-spacing: 1.5px;
+  font-family: var(--font-family-heading);
+  line-height: 1.2;
+}
+
+/* Decorative Background shapes from screenshot */
+.hero-decor-shape-top-left {
+  position: absolute;
+  top: -40px;
+  left: -40px;
+  width: 200px;
+  height: 140px;
+  background-color: #0f1c2c; /* Dark blue shape */
+  clip-path: polygon(0 0, 100% 0, 75% 100%, 0 100%);
+  opacity: 0.95;
+  z-index: 1;
+}
+
+.hero-decor-shape-bottom-right {
+  position: absolute;
+  bottom: -60px;
+  right: -60px;
+  width: 260px;
+  height: 260px;
+  border: 28px solid #56ccf2; /* Light cyan/blue curve */
+  border-radius: 50%;
+  z-index: 1;
+  opacity: 0.9;
+}
+
+/* Content Body */
+.manual-content-body {
+  padding: 60px 0;
+}
+
+/* Manual Section Blocks */
+.manual-section {
+  margin-bottom: 70px;
+}
+
+.manual-section:last-child {
+  margin-bottom: 0;
+}
+
+.section-main-heading {
+  font-size: 2.2rem;
+  color: var(--color-primary);
+  font-weight: 800;
+  margin: 0 0 40px 0;
+  font-family: var(--font-family-heading);
+  border-left: 6px solid var(--color-primary);
+  padding-left: 16px;
+  line-height: 1.1;
+}
+
+.section-sub-heading {
+  font-size: 1.5rem;
+  color: var(--color-text-dark);
+  font-weight: 700;
+  margin: 0 0 20px 0;
+  font-family: var(--font-family-heading);
+}
+
+/* Alternating Rows */
+.alternating-row {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  margin-bottom: 50px;
+}
+
+.alternating-row:last-child {
+  margin-bottom: 0;
+}
+
+.reverse-row {
+  flex-direction: row-reverse;
+}
+
+.manual-image-col, 
+.manual-text-col {
+  flex: 1;
+}
+
+/* Scroll Animation Styles (using Keyframes like WOW.js) */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-100px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translate3d(100px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Initial hidden state */
+.manual-row > div {
+  opacity: 0;
+}
+
+/* Normal row animations */
+.manual-row.in-view:not(.reverse-row) > div:first-child {
+  animation: fadeInLeft 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+.manual-row.in-view:not(.reverse-row) > div:last-child {
+  animation: fadeInRight 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* Reverse row animations */
+.manual-row.reverse-row.in-view > div:first-child {
+  animation: fadeInRight 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+.manual-row.reverse-row.in-view > div:last-child {
+  animation: fadeInLeft 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* Premium Image Containers */
+.manual-img-container {
+  position: relative;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  overflow: visible;
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.manual-img-container:hover {
+  transform: translateY(-5px) scale(1.01);
+}
+
+.manual-asset-img {
+  width: 100%;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  z-index: 2;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.img-frame-accent {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: -15px;
+  bottom: -15px;
+  border: 2px solid var(--color-accent); /* Orange accent border */
+  border-radius: 12px;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.4;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.manual-img-container:hover .img-frame-accent {
+  transform: translate(5px, 5px);
+  opacity: 0.8;
+}
+
+/* Bullet list stylings */
+.manual-bullet-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.manual-bullet-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.manual-bullet-list span {
+  font-size: 1.1rem;
+  color: var(--color-text-dark);
+  line-height: 1.6;
+}
+
+.list-arrow {
+  color: var(--color-primary);
+  font-size: 0.85rem;
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+.check-bullet {
+  color: #2ecc71; /* Green check */
+  font-size: 1.1rem;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.step-bullet {
+  color: var(--color-accent); /* Orange arrow */
+  font-size: 1.1rem;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+/* Section 3: Troubleshooting Layout (Alternating Rows) */
+.troubleshooting-alternating-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.troubleshoot-row-card {
+  background-color: #ffffff;
+  border: 1.5px solid #eaeaea;
+  border-radius: 12px;
+  position: relative;
+  padding: 40px 30px 30px 30px; /* High top padding for badge */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+  transition: all 0.3s ease;
+  border-left: 5px solid var(--color-primary);
+  width: 100%;
+}
+
+.troubleshoot-row-card:hover {
+  box-shadow: 0 12px 28px rgba(138, 79, 80, 0.1);
+  transform: translateY(-2px);
+}
+
+.troubleshoot-card-badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 12px 0 12px 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.troubleshoot-icon {
+  font-size: 0.75rem;
+}
+
+.troubleshoot-heading {
+  font-size: 1.5rem;
+  color: var(--color-text-dark);
+  font-weight: 700;
+  margin: 10px 0 20px 0;
+  font-family: var(--font-family-heading);
+}
+
+.troubleshoot-details p {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  margin: 0 0 12px 0;
+  line-height: 1.6;
+}
+
+.troubleshoot-details p strong {
+  color: var(--color-text-dark);
+}
+
+.troubleshoot-details p:last-child {
+  margin-bottom: 0;
+}
+
+/* Section 4: Maintenance details */
+.maintenance-sub-block {
+  margin-bottom: 40px;
+}
+
+.maintenance-sub-block:last-child {
+  margin-bottom: 0;
+}
+
+/* Maintenance Table styling */
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 12px;
+  border: 1.5px solid #eaeaea;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.01);
+  margin-top: 15px;
+}
+
+.maintenance-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.maintenance-table th {
+  background-color: var(--color-primary); /* Maroon brand color */
+  color: #ffffff;
+  padding: 16px 24px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  font-family: var(--font-family-heading);
+}
+
+.maintenance-table td {
+  padding: 16px 24px;
+  border-bottom: 1px solid #eaeaea;
+  font-size: 1rem;
+  color: var(--color-text-dark);
+  transition: background-color 0.2s ease;
+}
+
+.maintenance-table tr:last-child td {
+  border-bottom: none;
+}
+
+.maintenance-table tr:nth-child(even) td {
+  background-color: #f9f9f9;
+}
+
+.maintenance-table tr:hover td {
+  background-color: rgba(138, 79, 80, 0.05); /* Light maroon tint */
+}
+
+/* Section 5: Safety Production GUIDELINES */
+.safety-section {
+  margin-top: 80px;
+}
+
+.safety-callout-card {
+  background: rgba(231, 76, 60, 0.02); /* Soft red background */
+  border-left: 6px solid #e74c3c; /* Red warning accent */
+  border-right: 1px solid rgba(231, 76, 60, 0.1);
+  border-top: 1px solid rgba(231, 76, 60, 0.1);
+  border-bottom: 1px solid rgba(231, 76, 60, 0.1);
+  padding: 40px;
+  border-radius: 4px 16px 16px 4px;
+  box-shadow: 0 6px 20px rgba(231, 76, 60, 0.02);
+}
+
+.safety-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.shield-icon {
+  color: #e74c3c;
+  font-size: 1.8rem;
+}
+
+.safety-badge h3 {
+  font-size: 1.6rem;
+  color: #e74c3c;
+  margin: 0;
+  font-weight: 700;
+  font-family: var(--font-family-heading);
+}
+
+.safety-bullet-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.safety-bullet-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.safety-bullet-list span {
+  font-size: 1.1rem;
+  color: var(--color-text-dark);
+  line-height: 1.6;
+}
+
+.alert-icon {
+  color: #e74c3c;
+  font-size: 1.1rem;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 992px) {
+  .manual-hero {
+    min-height: 260px;
+    padding: 40px 0;
+  }
+  .manual-title-text {
+    font-size: 2.2rem;
+  }
+  
+  .alternating-row {
+    gap: 30px;
+  }
+  
+  .troubleshooting-layout {
+    flex-direction: column;
+  }
+  
+  .troubleshooting-side-img-container {
+    min-height: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-new-container {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  
+  .hero-left-hex {
+    margin: 0 auto;
+  }
+  
+  .hero-center-title {
+    position: static;
+    transform: none;
+    margin-top: 10px;
+    width: 100%;
+  }
+  
+  .alternating-row, 
+  .reverse-row {
+    flex-direction: column;
+    gap: 20px;
+    align-items: stretch;
+  }
+  
+  .section-main-heading {
+    font-size: 1.8rem;
+  }
+  
+  .troubleshooting-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .safety-callout-card {
+    padding: 24px 20px;
+  }
+  
+  .safety-badge h3 {
+    font-size: 1.35rem;
+  }
+  
+  .safety-bullet-list span {
+    font-size: 1rem;
+  }
+}

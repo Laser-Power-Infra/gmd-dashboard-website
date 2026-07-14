@@ -1,0 +1,92 @@
+.vision-mission-section {
+  position: relative;
+  padding: 120px 0;
+  background-image: url('/uploads/2025/04/banner-image-3.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Parallax effect */
+  z-index: 1;
+}
+
+/* Dark Overlay matching WordPress parameters */
+.section-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(24, 29, 30, 0.75); /* #181d1e with transparency */
+  z-index: -1;
+}
+
+.vision-mission-container {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  align-items: center;
+  gap: 60px;
+}
+
+/* Left Column styling */
+.sustainable-banner {
+  text-align: left;
+  color: #ffffff;
+  z-index: 5;
+}
+
+.sustainable-banner h2 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 36px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Right Column unified card */
+.vision-mission-card {
+  background-color: var(--color-bg-white);
+  border-radius: var(--border-radius-md);
+  padding: 48px;
+  box-shadow: var(--shadow-lg);
+  text-align: left;
+  z-index: 5;
+}
+
+.vision-block, .mission-block {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.vision-mission-text {
+  font-size: 0.98rem;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  text-align: justify;
+}
+
+.card-divider {
+  border: 0;
+  height: 1px;
+  background-color: #e9ecef;
+  margin: 32px 0;
+}
+
+/* Responsive adjustment */
+@media (max-width: 992px) {
+  .vision-mission-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  .sustainable-banner {
+    text-align: center;
+  }
+  .sustainable-banner h2 {
+    font-size: 2.2rem;
+    margin-bottom: 24px;
+  }
+  .vision-mission-card {
+    padding: 30px;
+  }
+}

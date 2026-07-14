@@ -1,0 +1,155 @@
+Manual Of Sluice Valve
+
+
+
+
+1. Transportation And Storage
+
+
+
+
+
+
+
+<p><strong> 1.1 Transportation</strong><br><br> -Transport valves in the closed position to protect sealing surfaces.<br>- Use appropriate lifting equipment; do not lift the valve by the handwheel or stem.<br>- Avoid impact or dropping to prevent damage to valve components.</p>
+
+
+
+
+<p><strong>1.2 Storage</strong><br><br>- Store in a clean, dry environment away from direct sunlight and corrosive chemicals.<br>- Cover the valve openings to prevent ingress of dust and debris.<br>- Periodically inspect and rotate valve stem to ensure functionality if stored longterm.</p>
+
+
+
+
+
+
+
+2. Installation
+
+
+
+
+
+
+
+<p><strong>2.1 Pre-Installation Checks</strong><br><br>- Verify the valve type, size, pressure rating, and material against service requirements.<br>- Inspect the valve for damage during transit or storage.<br>- Ensure piping is clean and aligned to prevent stress on valve body.</p>
+
+
+
+
+<p><strong> 2.2 Installation Guidelines</strong><br><br>- Install the valve in the correct flow direction as indicated by the arrow on the body.<br>- Ensure valves are fully closed before installation.<br>- Support the valve to avoid unnecessary pipe strain.<br>- Use appropriate gaskets and tighten bolts in a crisscross pattern evenly.<br>- Allow sufficient space for handwheel or actuator operation and maintenance access.</p>
+
+
+
+
+
+
+
+3. Troubleshooting
+
+
+
+
+
+
+
+<p> <strong>Issue: Valve leaking when closed</strong><br><br>- Possible Cause: Worn or damaged seat or gate.<br>
+- Solution: Inspect sealing surfaces; repair or replace parts as needed.</p>
+
+
+
+
+<p> <strong>Issue: Valve difficult to operate</strong><br><br>- Possible Cause: Corrosion or debris on stem/gate.<br>- Solution: Clean components; lubricate stem; check for actuator faults.</p>
+
+
+
+
+
+
+
+
+
+
+<p>  <strong>Issue: Leakage at bonnet or flanges</strong><br><br>- Possible Cause: Gasket failure or loose bolts.<br>- Solution: Replace gasket; tighten or replace bolt.</p>
+
+
+
+
+<p> <strong>Issue: No flow despite valve being open</strong><br><br>- Possible Cause: Gate jammed or disconnected stem.<br>- Solution: Inspect internals; check stem connection and gate movement.</p>
+
+
+
+
+
+
+
+4. Maintenance
+
+
+
+
+
+
+
+<p><strong>  4.1 Periodic Inspection</strong><br><br>- Check valve operation regularly by fully opening and closing.<br>- Look for signs of leakage, corrosion, or mechanical wear.<br>- Inspect bolts, gaskets, and paint coating.</p>
+
+
+
+
+<p><strong> 4.2 Routine Maintenance</strong><br><br>
+
+
+
+
+
+
+
+</p>
+
+
+Type of Inspection
+Recommended Frequency
+
+
+Visual Inspection
+Monthly
+
+
+Operational Check
+Quarterly (every 3 months)
+
+
+Full Functional Test
+Annually (1x per year)
+
+
+Lubrication/Servicing
+Annually
+
+
+Leakage Test
+Annually
+
+
+
+
+
+
+
+
+
+
+
+
+<p><strong> 4.3 Overhaul Procedure</strong><br><br>- Isolate valve from system pressure before disassembly.<br>- Remove bonnet to access internal components.<br>
+- Inspect and replace worn parts such as gate, seat, stem, and seals.<br>- Reassemble using correct torque specifications and pressure test before reinstallation.</p>
+
+
+
+
+5. Safety Production
+
+
+
+
+<p>- Always isolate and depressurize pipeline before working on the valve.<br>- Use proper lifting techniques and PPE.<br>- Confirm absence of hazardous fluids before disassembly.</p>
