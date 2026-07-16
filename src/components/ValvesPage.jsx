@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { valvesData } from './valvesData';
+import { otherProducts } from './otherProductsData';
 import './ValvesPage.css';
 
 import OtherProductsPage from './OtherProductsPage';
@@ -241,16 +242,105 @@ export default function ValvesPage({ onSelectValve }) {
   // Categories list derived from valves data
   const categories = ['All', 'Isolation Valves', 'Check Valves', 'Safety & Control Valves', 'Other Accessories'];
 
-  // Filter and Search logic
+  const allItems = useMemo(() => {
+    return [
+      ...valvesData,
+      ...otherProducts.map((product) => ({
+        ...product,
+        category: 'Other Accessories',
+        size: product.size || 'Various',
+        standards: product.standards || ['Other Accessories'],
+        moc: product.moc || ['Various'],
+        pressure: product.pressure || ['Various'],
+        operation: product.operation || ['Manual / Accessories'],
+        endConnection: product.endConnection || 'N/A'
+      }))
+    ];
+  }, []);
+
   const filteredValves = useMemo(() => {
-    return valvesData.filter((valve) => {
-      const matchesSearch = valve.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                            valve.standards.some(s => s.toLowerCase().includes(searchTerm.toLowerCase())) ||
-                            valve.moc.some(m => m.toLowerCase().includes(searchTerm.toLowerCase()));
-      const matchesCategory = activeCategory === 'All' || valve.category === activeCategory;
-      return matchesSearch && matchesCategory;
-    });
-  }, [searchTerm, activeCategory]);
+    const categoryOrder = ['Isolation Valves', 'Check Valves', 'Safety & Control Valves', 'Other Accessories'];
+
+    const matchesSearch = (valve) => {
+      const query = searchTerm.toLowerCase();
+      const nameMatch = valve.name.toLowerCase().includes(query);
+      const standardMatch = Array.isArray(valve.standards) && valve.standards.some((s) => s.toLowerCase().includes(query));
+      const mocMatch = Array.isArray(valve.moc) && valve.moc.some((m) => m.toLowerCase().includes(query));
+      const usageMatch = Array.isArray(valve.usage) && valve.usage.some((u) => u.toLowerCase().includes(query));
+      return nameMatch || standardMatch || mocMatch || usageMatch;
+    };
+
+    const itemOrder = {
+      // Safety & Control Valves ordering
+      'Tamper Proof / Air Valve': 0,
+      'Air Valve (Kinetic/Double Act)': 1,
+      'Pressure Reducing Valve (PRV)': 2,
+      'Pressure Relief Valve (Safety Valve)': 3,
+      'Pressure Release Valve': 4,
+      // Other Accessories ordering (must match otherProductsData.js sequence)
+      'Single-Flanged Dismantling Joints': 100,
+      'Rubber Bellows': 101,
+      'Basket Strainers': 102,
+      'Temporary Cone or Tee Strainers': 103,
+      'Weld-Neck Flanges': 104,
+      'Slip-On Flanges': 105,
+      'Blind Flanges': 106,
+      'Threaded Flanges': 107,
+      'Mechanical Indicators (Lever/Scale type)': 108,
+      'Electrical Indicators (Limit switches with LED displays)': 109,
+      'Mechanical Switches': 110,
+      'Proximity Sensors (Magnetic or Inductive)': 111,
+      'Direct-Acting Solenoid Valves': 112,
+      'Pilot-Operated Solenoid Valves': 113,
+      'Pneumatic Actuators (Air-Operated)': 114,
+      'Hydraulic Actuators (Fluid-Operated)': 115,
+      'Electric Actuators (Motor-Driven)': 116,
+      'Pneumatic Valve Positioners': 117,
+      'Electro-Pneumatic Valve Positioners': 118,
+      'Spiral Wound Gaskets': 119,
+      'Ring-Type Joint (RTJ) Gaskets': 120,
+      'Plugged or Capped Connections': 121,
+      'Integrated Drain or Vent Valves': 122,
+      'Inline Silencers': 123,
+      'Exhaust Mufflers': 124,
+      'Analog Pressure Gauges': 125,
+      'Digital Flowmeters': 126,
+      'Fixed-Length Extension Stems': 127,
+      'Chain-Operated Extensions': 128,
+      'Removable Thermal Insulation Covers': 129,
+      'Custom-Molded Insulation Jackets': 130,
+      'Padlockable Handles': 131,
+      'Interlocking Systems': 132,
+      'Analog Feedback Systems (4-20mA signals)': 133,
+      'Digital Feedback Systems (HART or Fieldbus)': 134,
+      'Y Strainer': 135
+    };
+
+    return allItems
+      .filter((valve) => {
+        const matchesCategory = activeCategory === 'All' || valve.category === activeCategory;
+        return matchesCategory && matchesSearch(valve);
+      })
+      .sort((a, b) => {
+        const aIndex = categoryOrder.indexOf(a.category);
+        const bIndex = categoryOrder.indexOf(b.category);
+        if (aIndex !== bIndex) {
+          if (aIndex === -1) return 1;
+          if (bIndex === -1) return -1;
+          return aIndex - bIndex;
+        }
+
+        const aOrder = itemOrder[a.name];
+        const bOrder = itemOrder[b.name];
+        if (aOrder !== undefined || bOrder !== undefined) {
+          if (aOrder === undefined) return 1;
+          if (bOrder === undefined) return -1;
+          return aOrder - bOrder;
+        }
+
+        return 0;
+      });
+  }, [searchTerm, activeCategory, allItems]);
 
   return (
     <div className="valves-catalog-page">

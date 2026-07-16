@@ -1,13 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import { valvesData } from './valvesData';
 import { valveDetailsData } from './valveDetailsData';
+import { otherProducts } from './otherProductsData';
 import './ValveDetailPage.css';
 
 
 
 export default function ValveDetailPage({ valveId, onBackToCatalog, onOpenQuote }) {
   // Find current valve by ID, fallback to butterfly if not found
-  const valve = valvesData.find((v) => v.id === valveId) || valvesData[0];
+  const rawValve = valvesData.find((v) => v.id === valveId) || otherProducts.find((p) => p.id === valveId) || valvesData[0];
+
+  // normalize valve object so ValveDetailPage can render accessories too
+  const valve = {
+    features: [],
+    standards: [],
+    moc: [],
+    pressure: [],
+    operation: ['Manual'],
+    endConnection: rawValve.endConnection || 'N/A',
+    size: rawValve.size || 'Various',
+    description: rawValve.description || (rawValve.usage ? rawValve.usage.join(' ') : ''),
+    application: rawValve.application || '',
+    image: rawValve.image,
+    name: rawValve.name,
+    category: rawValve.category || 'Other Accessories',
+    id: rawValve.id,
+    ...rawValve
+  };
+
   const customDetail = valveDetailsData[valve.id];
 
   // Inquiry Form State

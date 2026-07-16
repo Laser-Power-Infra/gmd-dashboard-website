@@ -242,53 +242,7 @@ export const valvesData = [
     ]
   },
 
-  {
-  id: 'plug-valve',
-  name: 'Plug Valve',
-  category: 'Isolation & Control Valves',
-  iconName: 'settings',
-  image: '/valve img/ChatGPT Image Jun 18, 2026, 02_23_54 PM.png',
-  size: 'Up to 1200 mm',
-  standards: ['API 599', 'API 6D', 'BS 5353', 'Manufacturer Standard'],
-  moc: ['Cast Iron', 'Ductile Iron', 'Cast Steel', 'Stainless Steel', 'Duplex Stainless Steel', 'Bronze', 'Nickel Alloy'],
-  pressure: ['1.0', '1.6', '2.5', '4.0', 'Class 150#', '300#', '600#', '900#'],
-  operation: ['T-Key', 'Handwheel', 'Gear Operated', 'Electric Actuated', 'Pneumatic Actuated', 'Hydraulic Actuated'],
-  endConnection: 'Flanged, Screwed, Socket Weld, Butt Weld',
-  application: 'Water distribution systems, sewage treatment plants, chemical processing, oil & gas pipelines, slurry handling, and industrial process isolation.',
-  description: 'Plug Valves are quarter-turn rotary valves designed for reliable shut-off and flow diversion services. Featuring a cylindrical or tapered plug with a flow passage, they provide bubble-tight sealing, low pressure drop, and quick operation in demanding industrial applications.',
-  features: [
-    'Quarter-turn operation for fast opening and closing.',
-    'Lubricated or non-lubricated plug designs available.',
-    'Full port design ensures minimal pressure loss.',
-    'Excellent sealing performance with resilient or metal seats.',
-    'Suitable for handling liquids, gases, slurries, and corrosive media.',
-    'Low maintenance design with robust construction.',
-    'Available in multi-port configurations for flow diversion service.',
-    'Fire-safe and anti-static designs available for critical applications.'
-  ]
-},
-  {
-    id: 'y-strainer',
-    name: 'Y Strainer',
-    category: 'Other Accessories',
-    iconName: 'strainer',
-    image: '/valve img/ChatGPT Image Jun 9, 2026, 03_31_28 PM.png',
-    size: 'Up to 600 mm',
-    standards: ['ASME B16.34', 'Manufacturer Standard'],
-    moc: ['Cast Iron', 'Ductile Iron', 'SG Iron', 'Cast Steel', 'Stainless Steel', 'Copper Alloy', 'Duplex'],
-    pressure: ['1.0', '1.6', '2.0', '2.5', 'Class 150#', '300#', '800#'],
-    operation: ['Manual Blow-off / Cleanout plug'],
-    endConnection: 'Flanged / Screwed',
-    application: 'Protection of control valves, pumps, meters, steam traps from pipeline debris.',
-    description: 'Y Strainers mechanically remove solids from flowing fluids using a perforated or wire mesh straining screen. Their compact "Y" shape features a low pressure drop and is easily cleaned using a blow-off plug in the strainer cap.',
-    features: [
-      'Removes rust, welding slag, scale, and foreign matter to protect downstream equipment.',
-      'Double-ply stainless steel wire mesh screen (standard meshes 20 to 100 mesh).',
-      'Strainer basket cap includes a threaded blow-off port with plug.',
-      'Gasketed cover with high durability graphite seals.',
-      'Installed in either horizontal or vertical down-run pipelines.'
-    ]
-  },
+  
 
 
 
