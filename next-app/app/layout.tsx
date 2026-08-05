@@ -37,6 +37,9 @@ import { QuoteProvider } from '@/components/layout/QuoteProvider';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import QuoteModalHost from '@/components/layout/QuoteModalHost';
+import AdminNavSlot from '@/components/layout/AdminNavSlot';
+import AuthNavSlot from '@/components/layout/AuthNavSlot';
+import { Suspense } from 'react';
 
 export const metadata: Metadata = {
   title: 'GM Dalui & Sons Pvt. Ltd. | Value Engineering Excellence',
@@ -62,7 +65,28 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body>
         <QuoteProvider>
           <div className="app-wrapper">
-            <Header />
+            <Header
+              desktopAuthSlot={
+                <Suspense fallback={null}>
+                  <AuthNavSlot variant="desktop" />
+                </Suspense>
+              }
+              mobileAuthSlot={
+                <Suspense fallback={null}>
+                  <AuthNavSlot variant="mobile" />
+                </Suspense>
+              }
+              desktopAdminSlot={
+                <Suspense fallback={null}>
+                  <AdminNavSlot variant="desktop" />
+                </Suspense>
+              }
+              mobileAdminSlot={
+                <Suspense fallback={null}>
+                  <AdminNavSlot variant="mobile" />
+                </Suspense>
+              }
+            />
             <main>{children}</main>
             <Footer />
             <QuoteModalHost />

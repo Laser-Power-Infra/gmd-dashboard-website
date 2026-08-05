@@ -43,11 +43,11 @@
   --font-sans: var(--font-family-body);
 }
 
-* {
+/* * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
+} */
 
 html {
   scroll-padding-top: 140px;
@@ -247,6 +247,25 @@ button, input, textarea, select {
 .btn-quote:hover {
   background-color: #000000;
   transform: skewX(-20deg) translateY(-2px);
+}
+
+/* Admin link in the navbar (shown to ADMIN/DEVELOPER roles only) */
+.btn-quote.btn-admin {
+  background-color: #7b3e41;
+}
+
+.btn-quote.btn-admin:hover {
+  background-color: #5a2c2f;
+}
+
+/* Sign In / Sign Out button in the navbar (dark slate, distinct from
+   the orange Get Quote and maroon Admin buttons) */
+.btn-quote.btn-auth {
+  background-color: #334155;
+}
+
+.btn-quote.btn-auth:hover {
+  background-color: #1e293b;
 }
 
 /* Text link with arrow */

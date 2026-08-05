@@ -78,8 +78,11 @@ export default function CostForm() {
         Request a Cost Estimate
       </h2>
       
-      {/* Changed to flex and gap for robust spacing instead of space-y */}
-      <form onSubmit={handleSubmit} className="flex flex-col gap-5" noValidate>
+      {/* action={formAction} enables progressive enhancement: even without
+          JS (e.g. a blocked/hydration-failed client) the form POSTs to the
+          server action instead of doing a native GET with query params. The
+          onSubmit handler runs first when JS is present. */}
+      <form action={formAction} onSubmit={handleSubmit} className="flex flex-col gap-5" noValidate>
         
         {/* Full Name */}
         <div className="flex flex-col">
