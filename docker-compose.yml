@@ -1,12 +1,12 @@
 services:
-  bom:
+  gmd-dashboard-website:
     # build:
     #   context: .
     #   dockerfile: Dockerfile
     # Replaced 'build:' with the GHCR image
-    image: ghcr.io/laser-power-infra/bom:${APP_VERSION:-latest}
+    image: ghcr.io/laser-power-infra/gmd-dashboard-website:${APP_VERSION:-latest}
 
-    container_name: bom
+    container_name: gmd-dashboard-website
     ports:
       - "3980:3980"
 
