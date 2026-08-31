@@ -11,6 +11,7 @@ const nextConfig: NextConfig = {
   // Next.js 16 blocks cross-origin requests to dev resources, so pages
   // render HTML but never hydrate (buttons/forms go dead).
   allowedDevOrigins: ['192.168.1.196','192.168.1.190'],
+  output:'standalone'
 };
 
 export default nextConfig;
