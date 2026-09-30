@@ -178,11 +178,20 @@ export default function Header({
                     </li>
                     <li>
                       <Link
-                        href="/apply-amc"
+                        href="/development"
                         onClick={handleLinkClick}
-                        className={currentPage === 'apply-amc' ? 'active' : ''}
+                        className={currentPage === 'development' ? 'active' : ''}
                       >
-                        Apply AMC
+                        Development
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/engineering-data"
+                        onClick={handleLinkClick}
+                        className={currentPage === 'engineering-data' ? 'active' : ''}
+                      >
+                        Engineering Data
                       </Link>
                     </li>
                   </ul>
@@ -192,7 +201,7 @@ export default function Header({
                 <a
                   href="#technical"
                   onClick={(e) => e.preventDefault()}
-                  className={`dropdown-toggle ${currentPage === 'risk-management' || currentPage === 'usages' || currentPage === 'safety-plan' || currentPage === 'manuals' || currentPage === 'development' ? 'active-nav-link' : ''}`}
+                  className={`dropdown-toggle ${currentPage === 'risk-management' || currentPage === 'usages' || currentPage === 'safety-plan' || currentPage === 'manuals' || currentPage === 'development' || currentPage === 'engineering-data' ? 'active-nav-link' : ''}`}
                 >
                   Technical <i className="fas fa-chevron-down caret-icon"></i>
                 </a>
@@ -323,6 +332,9 @@ export default function Header({
             </li>
             <li className="mobile-dropdown-item">
               <a href="/Quality_Manual.pdf" target="_blank" rel="noopener noreferrer">Quality Manual PDF</a>
+            </li>
+            <li className="mobile-dropdown-item">
+              <Link href="/engineering-data" onClick={handleLinkClick}>Engineering Data</Link>
             </li>
             <li><Link href="/#footer" onClick={handleLinkClick}>Contact</Link></li>
             <li><Link href="/cost" onClick={handleLinkClick}>Cost</Link></li>

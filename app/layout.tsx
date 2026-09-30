@@ -39,6 +39,7 @@ import Footer from '@/components/layout/Footer';
 import QuoteModalHost from '@/components/layout/QuoteModalHost';
 import AdminNavSlot from '@/components/layout/AdminNavSlot';
 import AuthNavSlot from '@/components/layout/AuthNavSlot';
+import { Toaster } from 'sonner';
 import { Suspense } from 'react';
 
 export const metadata: Metadata = {
@@ -90,6 +91,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             <main>{children}</main>
             <Footer />
             <QuoteModalHost />
+            {/* Excel export / clipboard feedback on the Engineering Data tables. */}
+            <Toaster
+              position="bottom-right"
+              toastOptions={{
+                classNames: {
+                  toast: 'font-sans',
+                },
+              }}
+            />
           </div>
         </QuoteProvider>
       </body>

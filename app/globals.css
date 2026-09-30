@@ -30,6 +30,27 @@
   --border-radius-md: 12px;
   --border-radius-lg: 24px;
 
+  /* Data-table surface tokens, used by components/technical/GMDUpdateTable.
+     The GMD suite these tables were ported from used a navy/blue palette
+     (#0a2540 text, #e1e6eb rules, #0070f3 accent); these map the same roles
+     onto the site palette so the tables read as part of the brand. */
+  --color-ink: #212529;
+  --color-ink-muted: #5c636a;
+  --color-line: #e4e7ea;
+  --color-surface: #f1f3f5;
+  --color-surface-soft: #f8f9fa;
+
+  /* shadcn primitive surface tokens. Only the ones components/ui/ actually
+     references are declared; this is not a full shadcn theme. */
+  --background: #ffffff;
+  --foreground: #212529;
+  --popover: #ffffff;
+  --popover-foreground: #212529;
+  --muted: #f1f3f5;
+  --muted-foreground: #5c636a;
+  --border: #e4e7ea;
+  --ring: rgba(138, 79, 80, 0.25);
+  --destructive: #e11d48;
 }
 
 @theme inline {
@@ -41,6 +62,24 @@
   --color-text-dark: var(--color-text-dark);
   --color-text-muted: var(--color-text-muted);
   --font-sans: var(--font-family-body);
+
+  /* Data-table tokens (see lib/gmd/tableConfig.ts consumers). */
+  --color-ink: var(--color-ink);
+  --color-ink-muted: var(--color-ink-muted);
+  --color-line: var(--color-line);
+  --color-surface: var(--color-surface);
+  --color-surface-soft: var(--color-surface-soft);
+
+  /* shadcn primitive tokens. */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --color-destructive: var(--destructive);
 }
 
 /* * {
@@ -122,6 +161,51 @@ button, input, textarea, select {
 }
 
 .text-center { text-align: center; }
+
+/* Dialog open/close transitions. Written by hand rather than pulling in
+   tw-animate-css, which exists in the GMD suite purely to power these two
+   keyframes on the shadcn dialog. */
+@keyframes gmd-dialog-in {
+  from { opacity: 0; transform: translate(-50%, -50%) scale(0.96); }
+  to   { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+@keyframes gmd-dialog-out {
+  from { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  to   { opacity: 0; transform: translate(-50%, -50%) scale(0.96); }
+}
+@keyframes gmd-dialog-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes gmd-dialog-fade-out {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+/* The popup is translated -50%,-50% to centre itself, so the scale keyframes
+   have to carry that offset or the dialog jumps while animating. */
+[data-slot="dialog-content"][data-open] { animation: gmd-dialog-in 150ms ease-out; }
+[data-slot="dialog-content"][data-closed] { animation: gmd-dialog-out 120ms ease-in; }
+[data-slot="dialog-overlay"][data-open] { animation: gmd-dialog-fade-in 150ms ease-out; }
+[data-slot="dialog-overlay"][data-closed] { animation: gmd-dialog-fade-out 120ms ease-in; }
+
+/* Keeps the scrollbar 4px wide. The Engineering Data tables can show 60+
+   columns at once, and a default-width scrollbar on every overflowing wrapped
+   cell would swamp the grid. */
+.cell-scrollable::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+.cell-scrollable::-webkit-scrollbar-track {
+  background: transparent;
+}
+.cell-scrollable::-webkit-scrollbar-thumb {
+  background: var(--color-line);
+  border-radius: 4px;
+}
+.cell-scrollable::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
 
 /* Custom Badge - Value Engineering Excellence */
 .heading-badge {
