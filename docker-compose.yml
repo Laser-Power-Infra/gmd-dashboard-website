@@ -4,6 +4,7 @@ services:
     #   context: .
     #   dockerfile: Dockerfile
     # Replaced 'build:' with the GHCR image
+    
     image: ghcr.io/laser-power-infra/gmd-dashboard-website:${APP_VERSION:-latest}
 
     container_name: gmd-dashboard-website
