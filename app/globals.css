@@ -134,6 +134,15 @@ button, input, textarea, select {
   background: var(--color-primary-dark);
 }
 
+/* Icon correction
+   The Font Awesome phone glyph (.fa-phone-alt / its .fa-phone-flip alias)
+   renders facing the wrong way, so mirror it wherever it appears. */
+.fa-phone-alt,
+.fa-phone-flip {
+  display: inline-block;
+  transform: scaleX(-1);
+}
+
 /* Utilities */
 .container {
   width: 95%;

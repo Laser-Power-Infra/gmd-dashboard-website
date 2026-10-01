@@ -770,9 +770,9 @@ export default function Purchase() {
             aria-label={`Open purchase list, ${cartItems.length} item${cartItems.length === 1 ? '' : 's'}`}
             key={fabPulse}
           >
-            <i className="fas fa-clipboard-list fab-icon" aria-hidden="true"></i>
-            <span className="cart-fab-badge">{cartItems.length}</span>
+            <i className="fas fa-cart-shopping fab-icon" aria-hidden="true"></i>
             <span className="cart-fab-label">Purchase List</span>
+            <span className="cart-fab-badge">{cartItems.length}</span>
           </button>
         )}
 
