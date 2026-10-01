@@ -583,5 +583,313 @@ export const valveDetailsData: Record<string, ValveDetail> = {
         ]
       }
     ]
+  },
+  "control-valve": {
+    "introduction": "A control valve is a power-operated device that automatically regulates fluid flow, pressure, temperature, or level by modulating the flow area based on a control signal. It forms the final control element of a process control loop, ensuring process stability and product quality across industrial plants.",
+    "applications": [
+      {
+        "num": 1,
+        "title": "Flow Control",
+        "description": "Regulates process flow rates in oil & gas, chemical, petrochemical, and power generation plants, maintaining setpoint flow despite changing upstream conditions."
+      },
+      {
+        "num": 2,
+        "title": "Pressure Control",
+        "description": "Maintains constant downstream pressure in steam, gas, and liquid systems by throttling the flow, protecting equipment from overpressure and pressure excursions."
+      },
+      {
+        "num": 3,
+        "title": "Temperature Control",
+        "description": "Modulates the flow of heating or cooling media through heat exchangers, condensers, and HVAC circuits to hold process temperatures within tight limits."
+      },
+      {
+        "num": 4,
+        "title": "Level Control",
+        "description": "Controls liquid level in tanks, drums, separators, and boiler feedwater systems by adjusting inlet or outlet flow proportionally to level deviations."
+      },
+      {
+        "num": 5,
+        "title": "Blending / Proportioning",
+        "description": "Mixes two or more process streams in exact ratios for dosing, blending, and ratio control applications in continuous processes."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Types of Control Valves",
+        "gridClass": "col-4",
+        "cards": [
+          {
+            "title": "Globe Control Valve",
+            "description": "Linear-motion valve with a plug and seat arrangement, providing precise throttling and tight shut-off. The most widely used body style for modulating control."
+          },
+          {
+            "title": "Angle Control Valve",
+            "description": "A globe-type body with inlet and outlet at right angles, suited for high-pressure drops, erosive fluids, and compact installations."
+          },
+          {
+            "title": "Rotary Control Valve",
+            "description": "Quarter-turn ball or butterfly based designs offering high capacity, low leakage, and cost-effective control for large diameter services."
+          },
+          {
+            "title": "Cage-Guided Control Valve",
+            "description": "Uses a guiding cage around the plug to stabilize trim, reduce vibration and noise, and lower cavitation risk in severe service."
+          }
+        ]
+      }
+    ]
+  },
+  "flow-control-plunger": {
+    "introduction": "The plunger type flow control valve is a large-diameter throttling valve that uses a plunger or axial-flow element to regulate flow smoothly. It is engineered for water systems where controlled discharge and reduced turbulence are required, particularly in large-diameter pipelines.",
+    "applications": [
+      {
+        "num": 1,
+        "title": "Water Supply & Distribution",
+        "description": "Regulates flow in large-diameter transmission and distribution mains, allowing operators to balance supply zones and control discharge."
+      },
+      {
+        "num": 2,
+        "title": "Pumping Station Discharge Control",
+        "description": "Controls pump discharge flow during start-up, shutdown, and normal operation, smoothing the flow and reducing pressure surges."
+      },
+      {
+        "num": 3,
+        "title": "Hydroelectric Projects",
+        "description": "Provides precise flow regulation to turbines and bypass lines, helping to manage head, flow, and plant output."
+      },
+      {
+        "num": 4,
+        "title": "Irrigation Networks",
+        "description": "Regulates canal and pipeline flows to deliver the required quantity of water to command areas while preventing surges."
+      },
+      {
+        "num": 5,
+        "title": "Pressure Reduction",
+        "description": "Serves as a pressure-regulating element in transmission lines, reducing high inlet pressure to a controlled downstream level."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Types of Flow Control Valves",
+        "gridClass": "col-3",
+        "cards": [
+          {
+            "title": "Plunger Type",
+            "description": "Features a machined plunger that moves in and out of a seat to modulate flow with a linear characteristic and controlled discharge."
+          },
+          {
+            "title": "Axial Flow Type",
+            "description": "Uses an axial-flow trim to guide the fluid along the axis, minimizing turbulence, noise, and pressure loss at large openings."
+          },
+          {
+            "title": "Cast / Fabricated Body",
+            "description": "Available in cast or fabricated construction to suit large diameters and high-pressure applications with long service life."
+          }
+        ]
+      }
+    ]
+  },
+  "wide-type-strainer": {
+    "introduction": "A wide type strainer is a basket-style filtration device installed in pipelines to remove solid particles and debris from the fluid stream. Its wide body and large screen area provide low pressure drop and high debris holding capacity.",
+    "applications": [
+      {
+        "num": 1,
+        "title": "Pump Protection",
+        "description": "Installed on pump suction lines to remove sand, scale, and debris that would damage impellers and seals."
+      },
+      {
+        "num": 2,
+        "title": "Water & Cooling Water Systems",
+        "description": "Filters raw and clarified water in intake and cooling circuits, protecting heat exchangers and nozzles."
+      },
+      {
+        "num": 3,
+        "title": "HVAC Systems",
+        "description": "Protects chilled-water and condenser loops from particulate contamination, maintaining coil and valve performance."
+      },
+      {
+        "num": 4,
+        "title": "Process Lines",
+        "description": "Placed upstream of control valves, flow meters, and instruments to prevent clogging and premature wear."
+      },
+      {
+        "num": 5,
+        "title": "Irrigation Networks",
+        "description": "Removes silt, sand, and organic debris from canal and pipeline water to safeguard downstream equipment."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Types of Strainers",
+        "gridClass": "col-3",
+        "cards": [
+          {
+            "title": "Basket Strainer",
+            "description": "Wide-body strainer with a large cylindrical basket screen, offering high debris capacity and easy removal for cleaning."
+          },
+          {
+            "title": "Y-Type Strainer",
+            "description": "Compact strainer with a Y-shaped body and inclined screen, ideal for limited-space installations and fine filtration."
+          },
+          {
+            "title": "Wide-Bodied Strainer",
+            "description": "Extra-large screen area design that minimizes pressure drop and maximizes holding capacity for high-flow services."
+          }
+        ]
+      }
+    ]
+  },
+  "plug-valve": {
+    "introduction": "A plug valve is a quarter-turn isolation valve that uses a cylindrical or tapered plug with a passage to start, stop, or regulate flow. It offers tight shut-off, low pressure drop, and simple operation across a wide range of services.",
+    "applications": [
+      {
+        "num": 1,
+        "title": "Water & Wastewater",
+        "description": "Provides reliable isolation and flow control in potable water, sewage, and treatment plant piping."
+      },
+      {
+        "num": 2,
+        "title": "Oil & Gas",
+        "description": "Used for block-and-bleed and isolation duties in pipelines, manifolds, and wellhead services where tight shut-off is required."
+      },
+      {
+        "num": 3,
+        "title": "Chemical Process",
+        "description": "Handles corrosive and aggressive media with suitable body, plug, and seat materials, ensuring safe isolation."
+      },
+      {
+        "num": 4,
+        "title": "Slurry Service",
+        "description": "Full-port designs handle abrasive slurries with minimal clogging and erosion in mining and process plants."
+      },
+      {
+        "num": 5,
+        "title": "Industrial Gases",
+        "description": "Provides dependable quarter-turn isolation for air, inert gas, and fuel gas distribution systems."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Types of Plug Valves",
+        "gridClass": "col-4",
+        "cards": [
+          {
+            "title": "Lubricated Plug Valve",
+            "description": "Injects a sealant between plug and body to reduce friction and improve sealing, suited to high-pressure services."
+          },
+          {
+            "title": "Non-Lubricated Plug Valve",
+            "description": "Uses a tapered plug, sleeve, or metal-to-metal seating without sealant, reducing maintenance and fugitive emissions."
+          },
+          {
+            "title": "Sleeved Plug Valve",
+            "description": "A PTFE or elastomer sleeve covers the plug to provide bubble-tight shut-off and corrosion resistance."
+          },
+          {
+            "title": "Eccentric Plug Valve",
+            "description": "Offset plug and shaft design minimizes seat wear and operating torque, ideal for throttling and abrasive media."
+          }
+        ]
+      }
+    ]
+  },
+  "needle-valve": {
+    "introduction": "A needle valve is a precision throttling valve that uses a slender, tapered needle to regulate flow with extremely fine control. It is ideal for instrumentation, sampling, and high-pressure services requiring accurate flow and pressure regulation.",
+    "applications": [
+      {
+        "num": 1,
+        "title": "Instrumentation & Gauge Lines",
+        "description": "Provides fine flow control and isolation in pressure gauge, transmitter, and analyzer lines."
+      },
+      {
+        "num": 2,
+        "title": "Hydro Power & Bypass Lines",
+        "description": "Regulates turbine bypass and start-up flows to balance pressure and protect equipment."
+      },
+      {
+        "num": 3,
+        "title": "High-Pressure Letdown",
+        "description": "Steps down high process pressures gradually, providing controlled pressure reduction without abrupt surges."
+      },
+      {
+        "num": 4,
+        "title": "Sampling Systems",
+        "description": "Controls sample flow to analyzers and lab points with precise, repeatable throttling."
+      },
+      {
+        "num": 5,
+        "title": "Pump & Process Regulation",
+        "description": "Adjusts purge, bleed, and small line flows in pump and process systems with fine accuracy."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Types of Needle Valves",
+        "gridClass": "col-3",
+        "cards": [
+          {
+            "title": "Needle Valve",
+            "description": "Fine-threaded tapered stem provides micro-precise flow regulation for metering and throttling duties."
+          },
+          {
+            "title": "Plunger Valve",
+            "description": "A plunger-type trim offers robust throttling with higher capacity while retaining fine control."
+          },
+          {
+            "title": "Regulating Needle Valve",
+            "description": "Combines a tapered needle with a regulating seat profile for stable, repeatable flow characteristic."
+          }
+        ]
+      }
+    ]
+  },
+  "zero-velocity-valve": {
+    "introduction": "The zero velocity (non-slam) check valve is an automatic check valve that closes as forward flow approaches zero velocity. Its non-slam action prevents reverse flow and reduces water hammer and pressure surges, protecting pumps, pipelines, and associated equipment.",
+    "applications": [
+      {
+        "num": 1,
+        "title": "Pumping Stations",
+        "description": "Installed on pump discharge to prevent reverse flow and water hammer when pumps trip or stop."
+      },
+      {
+        "num": 2,
+        "title": "Water Treatment Plants",
+        "description": "Protects treatment plant piping and equipment from backflow and surge conditions."
+      },
+      {
+        "num": 3,
+        "title": "Rising Mains",
+        "description": "Prevents column separation and surge pressure in long rising mains, safeguarding the pipeline."
+      },
+      {
+        "num": 4,
+        "title": "HVAC Systems",
+        "description": "Prevents reverse circulation in chilled and hot water loops, maintaining system balance."
+      },
+      {
+        "num": 5,
+        "title": "Industrial Pipelines",
+        "description": "Provides surge suppression and backflow protection in general industrial piping networks."
+      }
+    ],
+    "sections": [
+      {
+        "title": "Types of Non-Slam Check Valves",
+        "gridClass": "col-3",
+        "cards": [
+          {
+            "title": "Zero Velocity Valve",
+            "description": "Closes automatically as forward flow approaches zero, minimizing reverse flow and surge."
+          },
+          {
+            "title": "Dual Plate Check Valve",
+            "description": "Spring-loaded twin plates provide fast closing action and compact installation between flanges."
+          },
+          {
+            "title": "Axial Nozzle Check Valve",
+            "description": "Axial-flow design with a spring-centered disc gives quick, silent closure and low pressure drop."
+          }
+        ]
+      }
+    ]
   }
 };

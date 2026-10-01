@@ -6,10 +6,11 @@ import type { Valve, OtherProduct, DetailValve } from '@/types';
 import { valvesData } from '@/data/valves';
 import { valveDetailsData } from '@/data/valveDetails';
 import { otherProducts } from '@/data/otherProducts';
+import { normalizeName } from '@/lib/valveName';
 import { useQuote } from '@/components/layout/QuoteProvider';
 import ValveInquiryForm from '@/components/valves/ValveInquiryForm';
 
-export default function ValveDetailPage({ valveId }: { valveId: string }) {
+export default function ValveDetailPage({ valveId, imageMap = {} }: { valveId: string; imageMap?: Record<string, string> }) {
   const router = useRouter();
   const { openQuote } = useQuote();
 
@@ -79,7 +80,18 @@ export default function ValveDetailPage({ valveId }: { valveId: string }) {
             {/* Left Column: Valve Product Image */}
             <div className="detail-hero-graphic-col">
               <div className="detail-valve-image-container">
-                <img src={valve.image} alt={valve.name} className="detail-valve-img" />
+                {imageMap[normalizeName(valve.name)] || valve.image ? (
+                  <img
+                    src={imageMap[normalizeName(valve.name)] || valve.image}
+                    alt={valve.name}
+                    className="detail-valve-img"
+                  />
+                ) : (
+                  <div className="detail-valve-img-placeholder">
+                    <i className="fas fa-image placeholder-icon"></i>
+                    <span>Image coming soon</span>
+                  </div>
+                )}
               </div>
               <div className="datasheet-downloads-row">
                 <a href="#inquiry-form-container" className="download-btn-v2" onClick={scrollToForm}>

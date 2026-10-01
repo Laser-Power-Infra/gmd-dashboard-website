@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import type { ChangeEvent } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
+import type { ChangeEvent, PointerEvent } from 'react';
 import { RAZORPAY_KEY_ID } from '@/lib/purchaseConfig';
 
 interface MasterItem {
@@ -14,6 +14,225 @@ interface MasterItem {
 interface CartItem extends MasterItem {
   quantity: string;
   remarks: string;
+}
+
+interface ParsedSpecs {
+  size: string | null;
+  pressure: string | null;
+  title: string;
+  specs: { label: string; value: string }[];
+}
+
+const parseItemSpecs = (itemName: string): ParsedSpecs => {
+  const name = (itemName || '').trim();
+  const upper = name.toUpperCase();
+
+  const sizeMatch = name.match(/\b(\d+)\s*MM\b/i);
+  const size = sizeMatch ? `${sizeMatch[1]}MM` : null;
+
+  const pnMatch = name.match(/\bPN-?\s*(\d+)\b/i);
+  const classMatch = name.match(/\bCLASS\s*(\d+)/i);
+  const pressure = pnMatch
+    ? `PN-${pnMatch[1]}`
+    : classMatch
+      ? `Class ${classMatch[1]}#`
+      : null;
+
+  const specs: { label: string; value: string }[] = [];
+
+  if (/METAL TO METAL/.test(upper)) specs.push({ label: 'Seat', value: 'Metal to Metal' });
+  else if (/METAL TO RUBBER|RESILE?NT SEATED/.test(upper)) specs.push({ label: 'Seat', value: 'Metal to Rubber' });
+
+  if (/LEVER OPERATED/.test(upper)) specs.push({ label: 'Operation', value: 'Lever' });
+  else if (/GEAR OPERATED|GEAR BOX|GEAR$|GEAR /.test(upper)) specs.push({ label: 'Operation', value: 'Gear' });
+  else if (/HW OP|HANDWHEEL|HAND WHEEL/.test(upper)) specs.push({ label: 'Operation', value: 'Handwheel' });
+
+  if (/DOUBLE FLANGE/.test(upper)) specs.push({ label: 'End', value: 'Double Flanged' });
+  else if (/FLANGE TYPE|FLANGE END|FLANGE/.test(upper)) specs.push({ label: 'End', value: 'Flanged' });
+  else if (/WAFER/.test(upper)) specs.push({ label: 'End', value: 'Wafer' });
+  else if (/BUTT WELD/.test(upper)) specs.push({ label: 'End', value: 'Butt Weld' });
+  else if (/SCREWED|THREADED/.test(upper)) specs.push({ label: 'End', value: 'Screwed' });
+
+  if (/DUCTILE IRON/.test(upper)) specs.push({ label: 'MOC', value: 'Ductile Iron' });
+  else if (/CAST STEEL|CARBON STEEL/.test(upper)) specs.push({ label: 'MOC', value: 'Cast Steel' });
+  else if (/BRONZE|BRASS|GUN METAL/.test(upper)) specs.push({ label: 'MOC', value: 'Bronze' });
+  else if (/STAINLESS/.test(upper)) specs.push({ label: 'MOC', value: 'Stainless Steel' });
+
+  if (/2-PIECE/.test(upper)) specs.push({ label: 'Design', value: '2-Piece' });
+  else if (/3-PIECE/.test(upper)) specs.push({ label: 'Design', value: '3-Piece' });
+
+  const title = name
+    .replace(/\b\d+\s*MM\b/gi, ' ')
+    .replace(/\bPN-?\s*\d+\b/gi, ' ')
+    .replace(/\bCLASS\s*\d+\s*#?/gi, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+  return { size, pressure, title: title || name, specs };
+};
+
+const TILT_MAX_DEG = 5;
+const TILT_EASE = 0.075;
+const GLIDE_EASE = 0.12;
+const RETURN_EASE = 0.1;
+
+/* Consumables / tools / stationery lines that are not part of the valve catalog.
+   Matched as a case-insensitive prefix so variants such as
+   "TOOLS & FIXTURES 6NM AIR WRENCH..." are covered too. */
+const EXCLUDED_ITEM_PREFIXES = [
+  'CONSUMABLES ENAMEL PAINT- BLUE',
+  'CONSUMABLES THINNER STD',
+  'OIL & LUBE GREASE STD',
+  'PRINTING & STATIONERY',
+  'WASTAGE BUBBLE WRAP PLASTIC',
+  'TOOLS & FIXTURES',
+];
+
+const isExcludedItem = (itemName: string) => {
+  const name = (itemName || '').toUpperCase();
+  return EXCLUDED_ITEM_PREFIXES.some((prefix) => name.startsWith(prefix));
+};
+
+interface TiltState {
+  el: HTMLDivElement;
+  tx: number;
+  ty: number;
+  cx: number;
+  cy: number;
+  tmx: number;
+  tmy: number;
+  cmx: number;
+  cmy: number;
+  active: boolean;
+}
+
+const clamp01 = (n: number) => Math.min(1, Math.max(0, n));
+
+const prefersReducedMotion = () =>
+  typeof window !== 'undefined' &&
+  typeof window.matchMedia === 'function' &&
+  window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function useCardTilt() {
+  const states = useRef(new WeakMap<HTMLDivElement, TiltState>());
+  const live = useRef(new Set<TiltState>());
+  const rafId = useRef<number | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (rafId.current !== null) cancelAnimationFrame(rafId.current);
+    };
+  }, []);
+
+  const startLoop = useCallback(() => {
+    if (rafId.current !== null) return;
+
+    const step = () => {
+      live.current.forEach((s) => {
+        const k = s.active ? TILT_EASE : RETURN_EASE;
+        const g = s.active ? GLIDE_EASE : RETURN_EASE;
+
+        s.cx += (s.tx - s.cx) * k;
+        s.cy += (s.ty - s.cy) * k;
+        s.cmx += (s.tmx - s.cmx) * g;
+        s.cmy += (s.tmy - s.cmy) * g;
+
+        s.el.style.setProperty('--ry', `${s.cx.toFixed(3)}deg`);
+        s.el.style.setProperty('--rx', `${s.cy.toFixed(3)}deg`);
+        s.el.style.setProperty('--mx', `${(s.cmx * 100).toFixed(2)}%`);
+        s.el.style.setProperty('--my', `${(s.cmy * 100).toFixed(2)}%`);
+
+        const settled =
+          !s.active &&
+          Math.abs(s.tx - s.cx) < 0.005 &&
+          Math.abs(s.ty - s.cy) < 0.005 &&
+          Math.abs(s.tmx - s.cmx) < 0.002 &&
+          Math.abs(s.tmy - s.cmy) < 0.002;
+
+        if (settled) {
+          s.el.style.setProperty('--rx', '0deg');
+          s.el.style.setProperty('--ry', '0deg');
+          s.el.style.setProperty('--gloss', '0');
+          s.el.classList.remove('is-tilting');
+          live.current.delete(s);
+        }
+      });
+
+      rafId.current = live.current.size > 0 ? requestAnimationFrame(step) : null;
+    };
+
+    rafId.current = requestAnimationFrame(step);
+  }, []);
+
+  const getState = useCallback((el: HTMLDivElement): TiltState => {
+    const existing = states.current.get(el);
+    if (existing) return existing;
+    const created: TiltState = {
+      el,
+      tx: 0,
+      ty: 0,
+      cx: 0,
+      cy: 0,
+      tmx: 0.5,
+      tmy: 0.5,
+      cmx: 0.5,
+      cmy: 0.5,
+      active: false,
+    };
+    states.current.set(el, created);
+    return created;
+  }, []);
+
+  const onPointerEnter = useCallback(
+    (e: PointerEvent<HTMLDivElement>) => {
+      if (e.pointerType === 'touch' || prefersReducedMotion()) return;
+      const el = e.currentTarget;
+      const s = getState(el);
+      s.active = true;
+      el.classList.add('is-tilting');
+      el.style.setProperty('--gloss', '1');
+      live.current.add(s);
+      startLoop();
+    },
+    [getState, startLoop]
+  );
+
+  const onPointerMove = useCallback(
+    (e: PointerEvent<HTMLDivElement>) => {
+      if (e.pointerType === 'touch' || prefersReducedMotion()) return;
+      const el = e.currentTarget;
+      const rect = el.getBoundingClientRect();
+      const px = clamp01((e.clientX - rect.left) / rect.width);
+      const py = clamp01((e.clientY - rect.top) / rect.height);
+
+      const s = getState(el);
+      s.tx = (px - 0.5) * 2 * TILT_MAX_DEG;
+      s.ty = (0.5 - py) * 2 * TILT_MAX_DEG;
+      s.tmx = px;
+      s.tmy = py;
+
+      live.current.add(s);
+      startLoop();
+    },
+    [getState, startLoop]
+  );
+
+  const onPointerLeave = useCallback(
+    (e: PointerEvent<HTMLDivElement>) => {
+      if (e.pointerType === 'touch') return;
+      const s = getState(e.currentTarget);
+      s.active = false;
+      s.tx = 0;
+      s.ty = 0;
+      s.tmx = 0.5;
+      s.tmy = 0.5;
+      live.current.add(s);
+      startLoop();
+    },
+    [getState, startLoop]
+  );
+
+  return { onPointerMove, onPointerEnter, onPointerLeave };
 }
 
 declare global {
@@ -44,12 +263,46 @@ export default function Purchase() {
   const [displayCount, setDisplayCount] = useState(12);
 
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const [cartStep, setCartStep] = useState<'list' | 'checkout'>('list');
+  const [fabPulse, setFabPulse] = useState(0);
+  const tilt = useCardTilt();
+
+  const openCart = useCallback(() => {
+    setCartStep('list');
+    setIsCartOpen(true);
+  }, []);
+
+  const closeCart = useCallback(() => {
+    setIsCartOpen(false);
+    setCartStep('list');
+  }, []);
+
+  // Escape closes the drawer
+  useEffect(() => {
+    if (!isCartOpen) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') closeCart();
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [isCartOpen, closeCart]);
+
+  // Lock body scroll while the drawer is open
+  useEffect(() => {
+    if (!isCartOpen) return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = previous;
+    };
+  }, [isCartOpen]);
 
   // Fetch the extracted items on mount
   useEffect(() => {
     fetch('/purchaseItems.json')
       .then((res) => res.json())
-      .then((data: MasterItem[]) => setMasterItems(data))
+      .then((data: MasterItem[]) => setMasterItems(data.filter((item) => !isExcludedItem(item.itemName))))
       .catch((err) => console.error('Error loading master items:', err));
   }, []);
 
@@ -221,12 +474,18 @@ export default function Purchase() {
         remarks: '',
       },
     ]);
+    setFabPulse((n) => n + 1);
   };
 
   const handleRemoveItem = (index: number) => {
     const updatedItems = [...cartItems];
     updatedItems.splice(index, 1);
     setCartItems(updatedItems);
+
+    if (updatedItems.length === 0) {
+      setIsCartOpen(false);
+      setCartStep('list');
+    }
   };
 
   const handleCartChange = (index: number, field: keyof Pick<CartItem, 'quantity' | 'remarks'>, value: string) => {
@@ -254,6 +513,8 @@ export default function Purchase() {
         console.log('Payment details:', response);
         console.log('Purchased Items:', cartItems);
         setCartItems([]); // Clear cart after successful payment
+        setIsCartOpen(false);
+        setCartStep('list');
       },
       theme: {
         color: '#111827',
@@ -425,31 +686,64 @@ export default function Purchase() {
         <div className="catalog-section">
           <h2 className="section-heading">Available Items</h2>
           <div className="purchase-grid">
-            {displayedItems.map((item) => (
-              <div key={item.itemCode} className="purchase-card catalog-card">
-                <div className="purchase-card-header">
-                  <div>
-                    <h2 className="item-code">{extractCategoryName(item.itemName) || item.itemCode}</h2>
-                    <span className="item-cat-badge">FINISHED / COMPLETE VALVE</span>
+            {displayedItems.map((item) => {
+              const parsed = parseItemSpecs(item.itemName);
+
+              return (
+                <div key={item.itemCode} className="purchase-card catalog-card" {...tilt}>
+                  <span className="card-accent-bar" aria-hidden="true" />
+                  <span className="card-glare" aria-hidden="true" />
+
+                  <div className="purchase-media">
+                    <img
+                      src={getItemImage(item.itemName)}
+                      alt={parsed.title}
+                      className="purchase-media-img"
+                      loading="lazy"
+                    />
+
+                    {parsed.size && (
+                      <span className="size-badge-overlay">
+                        <i className="fas fa-ruler-combined badge-icon" aria-hidden="true"></i>
+                        {parsed.size}
+                      </span>
+                    )}
+
+                    {parsed.pressure && (
+                      <span className="pressure-badge-overlay">
+                        <i className="fas fa-gauge-high badge-icon" aria-hidden="true"></i>
+                        {parsed.pressure}
+                      </span>
+                    )}
+                  </div>
+
+                  <div className="purchase-body">
+                    <div className="purchase-meta">
+                      <span className="item-cat-badge">{item.category}</span>
+                    </div>
+
+                    <h3 className="item-title">{parsed.title}</h3>
+
+                    {parsed.specs.length > 0 && (
+                      <div className="spec-chips">
+                        {parsed.specs.map((spec, i) => (
+                          <span key={`${spec.label}-${i}`} className="spec-chip">
+                            <em>{spec.label}</em>
+                            {spec.value}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+
+                    <div className="catalog-action">
+                      <button className="btn-add-to-cart" onClick={() => handleAddItem(item)}>
+                        <i className="fas fa-plus"></i> Add to List
+                      </button>
+                    </div>
                   </div>
                 </div>
-
-                {/* Add Product Image */}
-                <div className="item-image-box" style={{ width: '100%', height: '200px', backgroundColor: '#f9f9f9', display: 'flex', justifyContent: 'center', alignItems: 'center', overflow: 'hidden', borderBottom: '1px solid #eee' }}>
-                  <img src={getItemImage(item.itemName)} alt={item.itemName} style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }} />
-                </div>
-
-                <div className="item-desc-box">
-                  <p className="desc-text">{item.itemName}</p>
-                </div>
-
-                <div className="catalog-action">
-                  <button className="btn-add-to-cart" onClick={() => handleAddItem(item)}>
-                    <i className="fas fa-plus"></i> Add to List
-                  </button>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           {uniqueFilteredItems.length === 0 && (
@@ -467,70 +761,175 @@ export default function Purchase() {
           )}
         </div>
 
-        <hr className="section-divider" />
+        {/* Floating Cart Button */}
+        {cartItems.length > 0 && (
+          <button
+            type="button"
+            className="cart-fab"
+            onClick={openCart}
+            aria-label={`Open purchase list, ${cartItems.length} item${cartItems.length === 1 ? '' : 's'}`}
+            key={fabPulse}
+          >
+            <i className="fas fa-clipboard-list fab-icon" aria-hidden="true"></i>
+            <span className="cart-fab-badge">{cartItems.length}</span>
+            <span className="cart-fab-label">Purchase List</span>
+          </button>
+        )}
 
-        {/* Selected Items (Cart) Grid */}
-        <div className="cart-section" id="cart">
-          <h2 className="section-heading">Your Purchase List ({cartItems.length})</h2>
-
-          {cartItems.length > 0 ? (
-            <div className="purchase-grid">
-              {cartItems.map((item, index) => (
-                <div key={`cart-${item.itemCode}`} className="purchase-card cart-card">
-                  <div className="purchase-card-header">
-                    <div>
-                      <h2 className="item-code">{extractCategoryName(item.itemName) || item.itemCode}</h2>
-                      <span className="item-cat-badge">FINISHED / COMPLETE VALVE</span>
-                    </div>
-                    <button className="remove-item-btn" onClick={() => handleRemoveItem(index)} title="Remove Item">
-                      <i className="fas fa-trash-alt"></i>
-                    </button>
-                  </div>
-
-                  {/* Add Product Image */}
-                  <div className="item-image-box" style={{ width: '100%', height: '150px', backgroundColor: '#f9f9f9', display: 'flex', justifyContent: 'center', alignItems: 'center', overflow: 'hidden', borderBottom: '1px solid #eee', marginTop: '10px' }}>
-                    <img src={getItemImage(item.itemName)} alt={item.itemName} style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }} />
-                  </div>
-
-                  <div className="item-desc-box">
-                    <span className="desc-label">Item Description</span>
-                    <p className="desc-text">{item.itemName}</p>
-                  </div>
-
-                  <div className="purchase-form-group">
-                    <input
-                      type="number"
-                      placeholder="Enter Quantity"
-                      value={item.quantity}
-                      onChange={(e) => handleCartChange(index, 'quantity', e.target.value)}
-                      className="purchase-input"
-                      min="1"
-                    />
-                    <textarea
-                      placeholder="Remarks (Optional)"
-                      value={item.remarks}
-                      onChange={(e) => handleCartChange(index, 'remarks', e.target.value)}
-                      className="purchase-textarea"
-                      rows={2}
-                    />
-                  </div>
+        {/* Right Side Drawer */}
+        <div
+          className={`cart-drawer-overlay ${isCartOpen ? 'open' : ''}`}
+          onClick={closeCart}
+          aria-hidden={!isCartOpen}
+        >
+          <aside
+            className="cart-drawer"
+            onClick={(e) => e.stopPropagation()}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Your Purchase List"
+          >
+            <div className="cart-drawer-header">
+              <div className="cart-drawer-heading">
+                {cartStep === 'checkout' && (
+                  <button
+                    type="button"
+                    className="cart-back-btn"
+                    onClick={() => setCartStep('list')}
+                    aria-label="Back to list"
+                  >
+                    <i className="fas fa-arrow-left" aria-hidden="true"></i>
+                  </button>
+                )}
+                <div>
+                  <h2 className="cart-drawer-title">
+                    {cartStep === 'checkout' ? 'Review & Pay' : 'Your Purchase List'}
+                  </h2>
+                  <span className="cart-drawer-sub">
+                    {cartItems.length} item{cartItems.length === 1 ? '' : 's'}
+                    {cartStep === 'checkout' ? ' · confirm quantity and remarks' : ''}
+                  </span>
                 </div>
-              ))}
-            </div>
-          ) : (
-            <div className="empty-cart-message">
-              <i className="fas fa-box-open"></i>
-              <p>Your purchase list is empty. Add items from the catalog above.</p>
-            </div>
-          )}
+              </div>
 
-          {cartItems.length > 0 && (
-            <div className="purchase-action-container">
-              <button onClick={handleSubmit} className="btn-primary purchase-submit-btn">
-                Submit Request &amp; Pay <i className="fas fa-credit-card"></i>
+              <button
+                type="button"
+                className="cart-drawer-close"
+                onClick={closeCart}
+                aria-label="Close purchase list"
+              >
+                <i className="fas fa-times" aria-hidden="true"></i>
               </button>
             </div>
-          )}
+
+            <div className="cart-drawer-body">
+              {cartItems.length === 0 ? (
+                <div className="cart-drawer-empty">
+                  <i className="fas fa-box-open" aria-hidden="true"></i>
+                  <p>Your purchase list is empty.</p>
+                  <span>Add items from the catalog to get started.</span>
+                </div>
+              ) : cartStep === 'list' ? (
+                <ul className="cart-rows">
+                  {cartItems.map((item, index) => {
+                    const parsed = parseItemSpecs(item.itemName);
+                    const overlayText = parsed.size || parsed.pressure;
+                    const qty = Number(item.quantity) > 0 ? Number(item.quantity) : 1;
+
+                    return (
+                      <li key={`cart-${item.itemCode}`} className="cart-row">
+                        <div className="cart-row-thumb">
+                          <img src={getItemImage(item.itemName)} alt={parsed.title} />
+                          {overlayText && <span className="cart-row-badge">{overlayText}</span>}
+                        </div>
+
+                        <div className="cart-row-meta">
+                          <h3 className="cart-row-title">{parsed.title}</h3>
+                          <div className="cart-row-sub">
+                            <span className="cart-qty-pill">
+                              Qty <strong>{qty}</strong> {item.unit}
+                            </span>
+                          </div>
+                        </div>
+
+                        <button
+                          type="button"
+                          className="cart-remove-btn"
+                          onClick={() => handleRemoveItem(index)}
+                          aria-label={`Remove ${parsed.title}`}
+                          title="Remove Item"
+                        >
+                          <i className="fas fa-trash-alt" aria-hidden="true"></i>
+                        </button>
+                      </li>
+                    );
+                  })}
+                </ul>
+              ) : (
+                <ul className="cart-rows">
+                  {cartItems.map((item, index) => {
+                    const parsed = parseItemSpecs(item.itemName);
+
+                    return (
+                      <li key={`checkout-${item.itemCode}`} className="cart-row cart-checkout-row">
+                        <div className="cart-row-thumb">
+                          <img src={getItemImage(item.itemName)} alt={parsed.title} />
+                        </div>
+
+                        <div className="cart-row-meta">
+                          <h3 className="cart-row-title">{parsed.title}</h3>
+
+                          <div className="cart-checkout-fields">
+                            <input
+                              type="number"
+                              placeholder="Quantity"
+                              value={item.quantity}
+                              onChange={(e) => handleCartChange(index, 'quantity', e.target.value)}
+                              className="purchase-input"
+                              min="1"
+                              aria-label={`Quantity for ${parsed.title}`}
+                            />
+                            <textarea
+                              placeholder="Remarks (Optional)"
+                              value={item.remarks}
+                              onChange={(e) => handleCartChange(index, 'remarks', e.target.value)}
+                              className="purchase-textarea"
+                              rows={2}
+                              aria-label={`Remarks for ${parsed.title}`}
+                            />
+                          </div>
+                        </div>
+
+                        <button
+                          type="button"
+                          className="cart-remove-btn"
+                          onClick={() => handleRemoveItem(index)}
+                          aria-label={`Remove ${parsed.title}`}
+                          title="Remove Item"
+                        >
+                          <i className="fas fa-trash-alt" aria-hidden="true"></i>
+                        </button>
+                      </li>
+                    );
+                  })}
+                </ul>
+              )}
+            </div>
+
+            {cartItems.length > 0 && (
+              <div className="cart-drawer-footer">
+                {cartStep === 'list' ? (
+                  <button type="button" className="btn-primary cart-footer-btn" onClick={() => setCartStep('checkout')}>
+                    Proceed to Checkout <i className="fas fa-arrow-right" aria-hidden="true"></i>
+                  </button>
+                ) : (
+                  <button type="button" onClick={handleSubmit} className="btn-primary cart-footer-btn">
+                    Submit Request &amp; Pay <i className="fas fa-credit-card" aria-hidden="true"></i>
+                  </button>
+                )}
+              </div>
+            )}
+          </aside>
         </div>
       </div>
     </div>

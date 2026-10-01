@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { valvesData } from '@/data/valves';
 import { otherProducts } from '@/data/otherProducts';
 import type { Valve } from '@/types';
+import { normalizeName } from '@/lib/valveName';
 import OtherProductsPage from './OtherProductsPage';
 
 interface CatalogItem extends Valve {
@@ -22,9 +23,12 @@ const ITEM_ORDER: Record<string, number> = {
   'Pressure Reducing Valve (PRV)': 2,
   'Pressure Relief Valve (Safety Valve)': 3,
   'Pressure Release Valve': 4,
+  'Control Valve': 5,
+  'Flow Control Valve (Plunger Type)': 6,
+  'Wide Type Strainer': 7,
   // Other Accessories ordering (must match otherProductsData.js sequence)
   'Single-Flanged Dismantling Joints': 100,
-  'Rubber Bellows': 101,
+  'Rubber Bellows (Stainless Steel Bellows)': 101,
   'Basket Strainers': 102,
   'Temporary Cone or Tee Strainers': 103,
   'Weld-Neck Flanges': 104,
@@ -61,7 +65,7 @@ const ITEM_ORDER: Record<string, number> = {
   'Y Strainer': 135,
 };
 
-export default function ValvesPage() {
+export default function ValvesPage({ imageMap = {} }: { imageMap?: Record<string, string> }) {
   const router = useRouter();
   const [searchTerm, setSearchTerm] = useState('');
   const [activeCategory, setActiveCategory] = useState('All');
@@ -73,7 +77,7 @@ export default function ValvesPage() {
         ...product,
         category: 'Other Accessories',
         iconName: '',
-        size: 'Various',
+        size: product.size || 'Various',
         standards: ['Other Accessories'],
         moc: ['Various'],
         pressure: ['Various'],
@@ -192,7 +196,18 @@ export default function ValvesPage() {
                   >
                     {/* Image Wrapper */}
                     <div className="valve-card-image-container">
-                      <img src={valve.image} alt={valve.name} className="valve-card-img" />
+                      {imageMap[normalizeName(valve.name)] || valve.image ? (
+                        <img
+                          src={imageMap[normalizeName(valve.name)] || valve.image}
+                          alt={valve.name}
+                          className="valve-card-img"
+                        />
+                      ) : (
+                        <div className="valve-card-img-placeholder">
+                          <i className="fas fa-image placeholder-icon"></i>
+                          <span>Image coming soon</span>
+                        </div>
+                      )}
                     </div>
 
                     {/* Body Content */}

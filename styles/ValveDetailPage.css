@@ -126,6 +126,32 @@
   animation: floatImage 6s ease-in-out infinite;
 }
 
+/* Placeholder for valves without an image yet */
+.detail-valve-img-placeholder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  height: 100%;
+  color: #adb5bd;
+  background: linear-gradient(135deg, #f8f9fa 0%, #eef0f2 100%);
+  border: 1px dashed #dee2e6;
+  border-radius: 8px;
+}
+
+.detail-valve-img-placeholder .placeholder-icon {
+  font-size: 3.5rem;
+  opacity: 0.6;
+}
+
+.detail-valve-img-placeholder span {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
 @keyframes floatImage {
   0% {
     transform: translateY(0) scale(1);

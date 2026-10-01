@@ -6,6 +6,7 @@ export const otherProducts: OtherProduct[] = [
     name: 'Single-Flanged Dismantling Joints',
     category: 'Other Accessories',
     image: '/other accessories/single flange dismantling.png',
+    size: 'Up to 2000 mm',
     usage: [
       'Facilitates the installation and removal of valves, meters, or other components from a pipeline.',
       'Provides axial adjustment to accommodate pipe misalignment.',
@@ -14,9 +15,10 @@ export const otherProducts: OtherProduct[] = [
   },
   {
     id: 'prod-1',
-    name: 'Rubber Bellows',
+    name: 'Rubber Bellows (Stainless Steel Bellows)',
     category: 'Other Accessories',
     image: '/other accessories/rubber bellows.png',
+    size: 'Up to 2000 mm',
     usage: [
       'Absorbs thermal expansion and contraction in pipelines.',
       'Reduces vibration and noise transmission to valves.',

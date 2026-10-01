@@ -23,6 +23,12 @@ export default function OtherProductsPage() {
                   <h3 className="card-product-name">{p.name}</h3>
 
                   <div className="card-spec-list">
+                    {p.size && (
+                      <div className="spec-item">
+                        <span className="spec-label">Size:</span>
+                        <span className="spec-value">{p.size}</span>
+                      </div>
+                    )}
                     <div className="spec-item">
                       <span className="spec-label">Usage / Functions:</span>
                       <ul className="spec-bullet-list">

@@ -263,15 +263,6 @@ export default function Header({
               </li>
               <li>
                 <Link
-                  href="/feedback"
-                  className={currentPage === 'feedback' ? 'active-nav-link' : ''}
-                  onClick={handleLinkClick}
-                >
-                  Feedback
-                </Link>
-              </li>
-              <li>
-                <Link
                   href="/cost"
                   className={currentPage === 'cost' ? 'active-nav-link' : ''}
                   onClick={handleLinkClick}
@@ -338,7 +329,6 @@ export default function Header({
             </li>
             <li><Link href="/#footer" onClick={handleLinkClick}>Contact</Link></li>
             <li><Link href="/cost" onClick={handleLinkClick}>Cost</Link></li>
-            <li><Link href="/feedback" onClick={handleLinkClick}>Feedback</Link></li>
             {mobileAuthSlot}
             {mobileAdminSlot}
             <li className="mobile-action-li">

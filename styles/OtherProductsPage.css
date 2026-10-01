@@ -243,6 +243,11 @@
   line-height: 1.5;
 }
 
+.spec-value {
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
 .spec-bullet-list li {
   margin-bottom: 4px;
 }

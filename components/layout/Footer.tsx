@@ -45,7 +45,6 @@ export default function Footer() {
               <li><Link href="/valves">Valves</Link></li>
               <li><Link href="/other-valves">Other Valves</Link></li>
               <li><Link href="/other-products">Other Products</Link></li>
-              <li><Link href="/feedback">Feedback</Link></li>
             </ul>
           </div>
 

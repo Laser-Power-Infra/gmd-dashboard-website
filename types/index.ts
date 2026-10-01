@@ -23,7 +23,7 @@ export interface ValveApplication {
 
 export interface ValveDetailCard {
   title: string;
-  image: string;
+  image?: string;
   description: string;
 }
 
@@ -44,6 +44,7 @@ export interface OtherProduct {
   name: string;
   category: string;
   image: string;
+  size?: string;
   usage: string[];
 }
 

@@ -1,6 +1,7 @@
 import { valvesData } from '@/data/valves';
 import { otherProducts } from '@/data/otherProducts';
 import ValveDetailPage from '@/components/pages/ValveDetailPage';
+import { getValveImageMap } from '@/lib/valveImages';
 
 export function generateStaticParams() {
   const ids = [
@@ -12,5 +13,6 @@ export function generateStaticParams() {
 
 export default async function Page({ params }: { params: Promise<{ valveId: string }> }) {
   const { valveId } = await params;
-  return <ValveDetailPage valveId={valveId} />;
+  const imageMap = getValveImageMap();
+  return <ValveDetailPage valveId={valveId} imageMap={imageMap} />;
 }

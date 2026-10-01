@@ -250,7 +250,7 @@ export const valvesData: Valve[] = [
 
   {
   id: 'zero-velocity-valve',
-  name: 'Zero Velocity Valve',
+  name: 'Zero Velocity (Non-Slam)',
   category: 'Check Valves',
   iconName: 'zeroVelocityValve',
   image: '/valve img/zero-velocity-valve.jpeg',
@@ -297,6 +297,315 @@ export const valvesData: Valve[] = [
     'Maintenance-friendly design with accessible internal components.',
     'Long service life with corrosion-resistant coating and materials.',
     'Available in large diameters up to DN 1400 mm.'
+  ]
+},
+{
+  id: 'control-valve',
+  name: 'Control Valve',
+  category: 'Safety & Control Valves',
+  iconName: 'controlValve',
+  image: '',
+
+  size: 'DN 25 mm to DN 1000 mm',
+
+  standards: [
+    'IEC 60534',
+    'ANSI',
+    'ISA',
+    'ASME B16.34'
+  ],
+
+  moc: [
+    'Cast Steel',
+    'Carbon Steel',
+    'Stainless Steel',
+    'Duplex',
+    'Alloy Steel',
+    'SG Iron'
+  ],
+
+  pressure: [
+    'PN 10',
+    'PN 16',
+    'PN 25',
+    'PN 40',
+    'PN 63',
+    'PN 100',
+    'Class 150#',
+    'Class 300#',
+    'Class 600#',
+    'Class 900#',
+    'Class 1500#'
+  ],
+
+  operation: [
+    'Pneumatic',
+    'Electric',
+    'Hydraulic',
+    'Electro-Hydraulic'
+  ],
+
+  endConnection: 'Flanged / Butt Weld / Socket Weld / Threaded',
+
+  application:
+    'Flow / Pressure / Level / Temperature Control in process pipelines and industrial plants.',
+
+  description:
+    'Control Valve is a power-operated device that regulates fluid flow, pressure, level, or temperature by modulating the flow area based on control signals. Available in Globe, Angle, Rotary, and Cage-Guided configurations, it is engineered for precise process automation and reliable throttling in demanding industrial applications. Designed in accordance with IEC 60534 (terminology, inherent flow characteristics, rangeability, and standardised control-valve datasheet framework) with pressure-temperature ratings per ASME B16.34.',
+
+  features: [
+    'Globe, Angle, Rotary, or Cage-Guided body configurations.',
+    'Pneumatic, electric, hydraulic, or electro-hydraulic operation.',
+    'Diaphragm, piston, or electric actuator options.',
+    'Trim available in SS, Stellite, Tungsten Carbide, or Hardened Alloy.',
+    'Metal seat or soft seat options.',
+    'Flow characteristics: Linear, Equal Percentage, or Quick Opening.',
+    'Designed to IEC 60534 / ANSI / ISA with ASME B16.34 ratings.',
+    'Flanged, butt weld, socket weld, or threaded end connections.'
+  ]
+},
+{
+  id: 'flow-control-plunger',
+  name: 'Flow Control Valve (Plunger Type)',
+  category: 'Safety & Control Valves',
+  iconName: 'flowControlPlunger',
+  image: '',
+
+  size: 'DN 100 mm to DN 2000 mm',
+
+  standards: [
+    'Manufacturer Standard',
+    'Hydraulic Institute',
+    'IEC 60534 principles where applicable'
+  ],
+
+  moc: [
+    'Cast Steel',
+    'Carbon Steel',
+    'Stainless Steel',
+    'SG Iron',
+    'Duplex'
+  ],
+
+  pressure: [
+    'PN 10',
+    'PN 16',
+    'PN 25',
+    'PN 40',
+    'Class 150#',
+    'Class 300#'
+  ],
+
+  operation: [
+    'Manual',
+    'Gear Operated',
+    'Pneumatic',
+    'Hydraulic',
+    'Electric'
+  ],
+
+  endConnection: 'Double Flanged / Flanged',
+
+  application:
+    'Water Supply / Pumping Stations / Hydro Projects / Irrigation / Pressure & Flow Regulation',
+
+  description:
+    'Plunger Type Flow Control Valve provides accurate linear flow regulation and discharge control for large-diameter pipelines. The plunger or axial-flow element modulates flow smoothly, providing controlled discharge with reduced turbulence. Particularly suitable for large-diameter water-flow regulation where controlled throttling is required, available in cast or fabricated body construction.',
+
+  features: [
+    'Plunger type or axial flow control element.',
+    'Cast or fabricated body construction.',
+    'Stainless Steel, Duplex, or Special Alloy plunger.',
+    'Replaceable metallic or elastomeric seat.',
+    'Variable opening / throttling flow regulation.',
+    'Controlled discharge with reduced turbulence.',
+    'Suitable for large-diameter water-flow regulation up to DN 2000 mm.',
+    'Double flanged / flanged end connections for robust integration.'
+  ]
+},
+{
+  id: 'wide-type-strainer',
+  name: 'Wide Type Strainer',
+  category: 'Safety & Control Valves',
+  iconName: 'wideTypeStrainer',
+  image: '',
+
+  size: 'DN 50 mm to DN 600 mm',
+
+  standards: [
+    'ASME B16.34',
+    'ASME B16.5',
+    'Manufacturer Standard'
+  ],
+
+  moc: [
+    'Cast Iron',
+    'Ductile Iron',
+    'Cast Steel',
+    'Stainless Steel',
+    'Duplex'
+  ],
+
+  pressure: [
+    'PN 10',
+    'PN 16',
+    'PN 25',
+    'PN 40',
+    'Class 150#',
+    'Class 300#'
+  ],
+
+  operation: [
+    'Manual Cleaning'
+  ],
+
+  endConnection: 'Flanged / Wafer / Lug',
+
+  application:
+    'Water / Cooling Water / HVAC / Pump Protection / Industrial Process Lines',
+
+  description:
+    'Wide Type Strainer is a wide-body / basket-type strainer used to remove solid particles and debris from pipeline flow. Its large filtration area offers low pressure drop and easy screen removal, protecting pumps, valves, and downstream equipment from damage in water, cooling water, HVAC, and industrial process lines.',
+
+  features: [
+    'Basket, Y-Type, or Wide-Bodied strainer construction.',
+    'Stainless Steel (SS 304 / SS 316) or Duplex screen.',
+    'Perforation level as per required filtration requirement.',
+    'Drain plug / drain valve arrangement for easy cleaning.',
+    'Bolted or quick-opening cover.',
+    'Large filtration area with low pressure drop.',
+    'Easy screen removal for maintenance.',
+    'Flanged, wafer, or lug end connections.'
+  ]
+},
+{
+  id: 'plug-valve',
+  name: 'Plug Valve',
+  category: 'Isolation Valves',
+  iconName: 'plugValve',
+  image: '',
+
+  size: 'DN 15 mm to DN 900 mm',
+
+  standards: [
+    'API 599',
+    'API 6D',
+    'ASME B16.34'
+  ],
+
+  moc: [
+    'Cast Iron',
+    'Ductile Iron',
+    'Cast Steel',
+    'Carbon Steel',
+    'Stainless Steel',
+    'Duplex'
+  ],
+
+  pressure: [
+    'PN 10',
+    'PN 16',
+    'PN 25',
+    'PN 40',
+    'Class 150#',
+    'Class 300#',
+    'Class 600#',
+    'Class 900#',
+    'Class 1500#',
+    'Class 2500#'
+  ],
+
+  operation: [
+    'Lever',
+    'Handwheel',
+    'Gear',
+    'Pneumatic',
+    'Electric',
+    'Hydraulic'
+  ],
+
+  endConnection: 'Flanged / Threaded / Butt Weld / Socket Weld',
+
+  application:
+    'Water / Sewage / Slurry / Oil & Gas / Chemical / Industrial Process',
+
+  description:
+    'Plug Valve uses a cylindrical or tapered plug with a passage to control flow with a quick quarter-turn motion. Available in lubricated, non-lubricated, sleeved, eccentric, and full port designs, it provides reliable tight shut-off and low pressure drop for isolation and flow control across water, sewage, slurry, oil & gas, chemical, and industrial process services.',
+
+  features: [
+    'Quarter-turn operation for quick and positive shut-off.',
+    'Lubricated, non-lubricated, sleeved, and eccentric plug designs.',
+    'Full port configuration available.',
+    'Stainless Steel, Carbon Steel, or Alloy Steel plug.',
+    'PTFE, elastomer, metal, or rubber seat / lining.',
+    'Full port or reduced port configuration.',
+    'Bi-directional flow depending on design.',
+    'Designed to API 599 / API 6D / ASME B16.34 standards.'
+  ]
+},
+{
+  id: 'needle-valve',
+  name: 'Needle Valve',
+  category: 'Isolation Valves',
+  iconName: 'needleValve',
+  image: '',
+
+  size: 'DN 15 mm to DN 600 mm',
+
+  standards: [
+    'API 6D',
+    'ASME B16.34',
+    'Applicable Project Specification'
+  ],
+
+  moc: [
+    'Forged Steel',
+    'Cast Steel',
+    'Stainless Steel',
+    'Duplex',
+    'Alloy Steel'
+  ],
+
+  pressure: [
+    'PN 16',
+    'PN 25',
+    'PN 40',
+    'PN 63',
+    'PN 100',
+    'Class 150#',
+    'Class 300#',
+    'Class 600#',
+    'Class 800#',
+    'Class 900#',
+    'Class 1500#',
+    'Class 2500#'
+  ],
+
+  operation: [
+    'Handwheel',
+    'Gear',
+    'Pneumatic',
+    'Electric',
+    'Hydraulic'
+  ],
+
+  endConnection: 'Flanged / Threaded / Socket Weld / Butt Weld',
+
+  application:
+    'Water Systems / Hydro Power / Bypass Lines / High-Pressure Service / Pump Systems / Process Industries',
+
+  description:
+    'Needle Valve features a fine-threaded, tapered needle, plunger, or regulating element that enables precise flow regulation and controlled pressure drop. It provides accurate flow and pressure control in water systems, hydro power, bypass lines, high-pressure service, pump systems, and process industries.',
+
+  features: [
+    'Needle, plunger, or regulating needle valve types.',
+    'Precise flow regulation and controlled pressure drop.',
+    'Stainless Steel or Alloy Steel stem.',
+    'SS, Duplex, Stellite, or Hardened Alloy trim.',
+    'Metal seat or soft seat options.',
+    'Throttling / regulating flow service.',
+    'High-pressure service up to Class 2500# / PN 100.',
+    'Flanged, threaded, socket weld, or butt weld end connections.'
   ]
 },
 {

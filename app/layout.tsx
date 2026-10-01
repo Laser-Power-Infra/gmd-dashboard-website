@@ -15,7 +15,6 @@ import '@/styles/GetQuoteModal.css';
 import '@/styles/AboutPage.css';
 import '@/styles/ValvesPage.css';
 import '@/styles/ValveDetailPage.css';
-import '@/styles/FeedbackPage.css';
 import '@/styles/ContactPage.css';
 import '@/styles/OtherValvesPage.css';
 import '@/styles/OtherProductsPage.css';
