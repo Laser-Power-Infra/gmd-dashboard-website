@@ -24,12 +24,12 @@ function formatSyncTime(dateStr: string | null): string {
 }
 
 /**
- * Navy bar above a table: title, row count, last-synced time.
+ * Maroon bar above a table: title, row count, last-fetched time.
  *
- * `syncedAt` is optional and the whole "Last synced" readout is hidden when it
- * is `undefined` (not merely null) — Phase 1 has no sheet behind it yet, and an
- * "Never" that can never improve is worse than no readout. Pass `null` once a
- * real sync timestamp is wired up in Phase 2.
+ * `syncedAt` is optional. The "Last synced" readout is hidden when it is
+ * `undefined` — the loading and error branches pass nothing, and showing
+ * "Never" there would be misleading. A fetched table passes the ISO timestamp
+ * of its fetch.
  */
 export default function GMDUpdateHeader({
   totalRows,

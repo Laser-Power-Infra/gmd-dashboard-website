@@ -28,8 +28,30 @@ import {
   FLOW_NON_ZERO,
   FLOW_ZERO,
 } from "@/lib/gmd/flowFilter";
-import type { ColumnGroup, ColumnGroupChild } from "@/lib/gmd/columns";
 import type { ItemImage } from "@/lib/gmd/types";
+
+/* -------------------------------------------------------------------------- */
+/* Column groups                                                               */
+/* -------------------------------------------------------------------------- */
+
+/**
+ * Two or more columns collapsed into a single rendered column. No Engineering
+ * Data tab uses this today, but the table keeps the capability so a future tab
+ * with many sparse sub-columns can group them without a rewrite.
+ */
+export type ColumnGroupChild = {
+  header: string;
+  /** Short caption shown next to the field inside the collapsed cell. */
+  label?: string;
+};
+
+export type ColumnGroup = {
+  /** Parent header caption. */
+  label: string;
+  /** Rendered width of the single collapsed column. */
+  width?: number;
+  children: ColumnGroupChild[];
+};
 
 /* -------------------------------------------------------------------------- */
 /* Date / value comparison                                                     */
@@ -92,8 +114,6 @@ function cellEq(rowA: unknown[], rowB: unknown[], colIdx: number): boolean {
 /* -------------------------------------------------------------------------- */
 /* Types                                                                       */
 /* -------------------------------------------------------------------------- */
-
-export type { ColumnGroup, ColumnGroupChild };
 
 /** A rendered column: either a standalone header, or a collapsed group. */
 type ResolvedCol = {
@@ -182,6 +202,12 @@ export type GMDUpdateTableProps = {
   imageButtonColumn?: string;
   /** Images per item code, keyed by the code shown in that column. */
   itemImagesByCode?: Record<string, ItemImage[]>;
+  /**
+   * Extra content rendered in the toolbar immediately after the "Showing X of Y
+   * records" count. The table does not fetch this itself — callers pass a
+   * ready-rendered node (e.g. the density reference strip).
+   */
+  toolbarExtra?: ReactNode;
 };
 
 /* -------------------------------------------------------------------------- */
@@ -215,6 +241,7 @@ export default function GMDUpdateTable({
   wrapCells,
   imageButtonColumn,
   itemImagesByCode,
+  toolbarExtra,
 }: GMDUpdateTableProps) {
   const [sortColumn, setSortColumn] = useState<number | null>(null);
   const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc");
@@ -898,7 +925,7 @@ export default function GMDUpdateTable({
     >
       {/* Toolbar */}
       <div className="flex flex-wrap items-center justify-between gap-2 px-4 py-2 border-b border-line bg-surface-soft">
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2">
           {title && (
             <span className="text-xs font-bold uppercase tracking-wider text-ink">
               {title}
@@ -908,6 +935,7 @@ export default function GMDUpdateTable({
             Showing {filteredRows.length.toLocaleString("en-IN")} of{" "}
             {rows.length.toLocaleString("en-IN")} records
           </span>
+          {toolbarExtra}
         </div>
         <div className="flex items-center gap-2">
           <div className="relative">

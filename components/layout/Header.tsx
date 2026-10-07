@@ -185,15 +185,6 @@ export default function Header({
                         Development
                       </Link>
                     </li>
-                    <li>
-                      <Link
-                        href="/engineering-data"
-                        onClick={handleLinkClick}
-                        className={currentPage === 'engineering-data' ? 'active' : ''}
-                      >
-                        Engineering Data
-                      </Link>
-                    </li>
                   </ul>
                 </div>
               </li>
@@ -247,6 +238,15 @@ export default function Header({
                     <li>
                       <Link href="/development" onClick={handleLinkClick}>
                         Development
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/engineering-data"
+                        onClick={handleLinkClick}
+                        className={currentPage === 'engineering-data' ? 'active' : ''}
+                      >
+                        Engineering Data
                       </Link>
                     </li>
                   </ul>

@@ -33,6 +33,12 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
+# Google Sheets OAuth secrets — read by lib/googleAuth.ts.
+# credentials.json holds the OAuth client id/secret; token.json holds the
+# refresh token. Neither may be committed.
+credentials.json
+token.json
+
 # vercel
 .vercel
 
