@@ -5,7 +5,6 @@ import { useRouter, useSearchParams } from "next/navigation";
 
 import EngineeringDataTabs from "./EngineeringDataTabs";
 import TechnicalTablePanel from "./TechnicalTablePanel";
-import SyncFromSheetButton from "./SyncFromSheetButton";
 import { VISIBLE_TABS, resolveTab } from "@/lib/gmd/tableConfig";
 import type { DensityPair } from "@/lib/gmd/types";
 
@@ -17,8 +16,10 @@ import type { DensityPair } from "@/lib/gmd/types";
  * table is shareable and survives a reload. `router.replace` keeps it out of the
  * history stack, so Back still leaves the page instead of walking the tabs.
  *
- * `dataNonce` is bumped after a sheet sync; the panel includes it in its fetch
- * deps, so the visible tab reloads its rows without a full remount.
+ * Syncing is per-tab and lives in each table's header (`TechnicalTablePanel`),
+ * which reloads itself after a sync — so this page does not coordinate it. It
+ * only owns the density reference strip: that is fetched once here because the
+ * panel remounts on every tab switch and would otherwise re-request it.
  *
  * Must be rendered inside a Suspense boundary: `useSearchParams` opts the tree
  * out of static rendering, and `app/engineering-data/page.tsx` provides it.
@@ -26,15 +27,11 @@ import type { DensityPair } from "@/lib/gmd/types";
 export default function EngineeringDataPage() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const [dataNonce, setDataNonce] = useState(0);
   const [densityPairs, setDensityPairs] = useState<DensityPair[]>([]);
 
-  // Fetch the density reference once for the whole page rather than per tab:
-  // the panel is keyed on the tab, so it remounts on every switch and would
-  // otherwise re-request this on each one. Re-runs after a sync.
   useEffect(() => {
     const controller = new AbortController();
-    fetch(`/api/engineering-data/density?r=${dataNonce}`, {
+    fetch("/api/engineering-data/density", {
       signal: controller.signal,
       cache: "no-store",
     })
@@ -54,7 +51,7 @@ export default function EngineeringDataPage() {
       // strip simply does not render.
       .catch(() => undefined);
     return () => controller.abort();
-  }, [dataNonce]);
+  }, []);
 
   const activeKey = resolveTab(searchParams.get("tab")).key;
 
@@ -90,13 +87,6 @@ export default function EngineeringDataPage() {
       </section>
 
       <section className="container py-8">
-        <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
-          <p className="text-sm text-ink-muted">
-            Values are stored locally and update when the sheet is synced.
-          </p>
-          <SyncFromSheetButton onSynced={() => setDataNonce((n) => n + 1)} />
-        </div>
-
         <div className="overflow-hidden rounded-xl border border-line bg-white shadow-sm">
           <EngineeringDataTabs
             tabs={VISIBLE_TABS}
@@ -106,12 +96,10 @@ export default function EngineeringDataPage() {
           <div className="p-4">
             {/* Keyed on the tab so switching remounts the panel: the new tab
                 starts in its loading state instead of briefly showing the
-                previous tab's rows. `dataNonce` refreshes rows in place after a
-                sync. */}
+                previous tab's rows. */}
             <TechnicalTablePanel
               key={activeTab.key}
               tab={activeTab}
-              dataNonce={dataNonce}
               densityPairs={densityPairs}
             />
           </div>

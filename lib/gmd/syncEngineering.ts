@@ -1,8 +1,9 @@
 import type { Prisma } from "@/generated/prisma/client";
 import { prisma } from "@/lib/prisma";
-import { ENGINEERING_TABS } from "./tableConfig";
+import { ENGINEERING_TABS, findTab } from "./tableConfig";
 import { fetchEngineeringSheet } from "./googleSheets";
 import { rowToRecord } from "./engineeringModels";
+import type { EngineeringTab } from "./types";
 
 /**
  * Sheet -> Postgres sync for the Engineering Data tables.
@@ -16,12 +17,15 @@ import { rowToRecord } from "./engineeringModels";
  * silently duplicate rows. A full replace is idempotent and cheap at ~630 rows.
  *
  * A failure on one tab is reported per-tab instead of aborting the whole run,
- * so one mis-typed sheet header cannot block the other four from updating.
+ * so one mis-typed sheet header cannot block the others from updating.
  */
 
 export type TabSyncResult =
   | { tabKey: string; ok: true; totalRows: number; syncedAt: string }
   | { tabKey: string; ok: false; error: string };
+
+/** Guard key for a whole-workbook sync (the `?tab=`-less request). */
+const ALL_TABS_KEY = "__all__";
 
 /**
  * Replaces the stored rows for one tab. The casts are the one place the
@@ -81,60 +85,95 @@ async function replaceTab(
   }
 }
 
-/** Dedupe guard so two quick clicks cannot run concurrent syncs. */
-let inFlight: Promise<TabSyncResult[]> | null = null;
-let lastSyncAt = 0;
+/** Reads the sheet, maps it, and replaces the tab's rows. Throws on failure. */
+async function syncOneTab(tab: EngineeringTab): Promise<TabSyncResult> {
+  try {
+    const { rows } = await fetchEngineeringSheet(tab);
+    const records = rows.map((row, index) => ({
+      rowIndex: index,
+      ...rowToRecord(tab.key, row),
+    }));
 
-/** Epoch ms of the last completed sync, or 0 if none this process. */
-export function getLastSyncAt(): number {
-  return lastSyncAt;
+    await replaceTab(tab.key, records);
+
+    const syncedAt = new Date();
+    await prisma.engineeringSync.upsert({
+      where: { tabKey: tab.key },
+      create: { tabKey: tab.key, syncedAt, totalRows: records.length },
+      update: { syncedAt, totalRows: records.length },
+    });
+
+    return {
+      tabKey: tab.key,
+      ok: true,
+      totalRows: records.length,
+      syncedAt: syncedAt.toISOString(),
+    };
+  } catch (err) {
+    return {
+      tabKey: tab.key,
+      ok: false,
+      error: err instanceof Error ? err.message : "Sync failed.",
+    };
+  }
 }
 
-export async function syncAllEngineeringTabs(): Promise<TabSyncResult[]> {
-  if (inFlight) return inFlight;
+/**
+ * Dedupe guard and last-run clock, keyed by guard key (a tab key, or
+ * `ALL_TABS_KEY`). Per-tab keys are what let the header Sync button work on one
+ * table without the cooldown of a *different* table blocking it — and what stop
+ * two quick clicks on the same tab from stacking.
+ */
+const inFlight = new Map<string, Promise<TabSyncResult[]>>();
+const lastSyncAt = new Map<string, number>();
 
-  inFlight = (async () => {
+/**
+ * Epoch ms of the last completed sync for a tab, or of the last whole-workbook
+ * sync when `tabKey` is omitted. `0` means no sync this process.
+ */
+export function getLastSyncAt(tabKey?: string): number {
+  return lastSyncAt.get(tabKey ?? ALL_TABS_KEY) ?? 0;
+}
+
+async function syncTabs(
+  tabs: EngineeringTab[],
+  guardKey: string,
+): Promise<TabSyncResult[]> {
+  const existing = inFlight.get(guardKey);
+  if (existing) return existing;
+
+  const run = (async () => {
     const results: TabSyncResult[] = [];
-
-    for (const tab of ENGINEERING_TABS) {
-      try {
-        const { rows } = await fetchEngineeringSheet(tab);
-        const records = rows.map((row, index) => ({
-          rowIndex: index,
-          ...rowToRecord(tab.key, row),
-        }));
-
-        await replaceTab(tab.key, records);
-
-        const syncedAt = new Date();
-        await prisma.engineeringSync.upsert({
-          where: { tabKey: tab.key },
-          create: { tabKey: tab.key, syncedAt, totalRows: records.length },
-          update: { syncedAt, totalRows: records.length },
-        });
-
-        results.push({
-          tabKey: tab.key,
-          ok: true,
-          totalRows: records.length,
-          syncedAt: syncedAt.toISOString(),
-        });
-      } catch (err) {
-        results.push({
-          tabKey: tab.key,
-          ok: false,
-          error: err instanceof Error ? err.message : "Sync failed.",
-        });
-      }
+    for (const tab of tabs) {
+      results.push(await syncOneTab(tab));
     }
-
     return results;
   })();
 
+  inFlight.set(guardKey, run);
+
   try {
-    return await inFlight;
+    return await run;
   } finally {
-    lastSyncAt = Date.now();
-    inFlight = null;
+    const now = Date.now();
+    lastSyncAt.set(guardKey, now);
+    // A whole-workbook sync also counts as a sync of each tab it covered, so a
+    // per-tab request right afterwards still respects the cooldown.
+    for (const tab of tabs) lastSyncAt.set(tab.key, now);
+    inFlight.delete(guardKey);
   }
+}
+
+/** Syncs a single tab. Throws if the key is unknown. */
+export async function syncEngineeringTab(
+  tabKey: string,
+): Promise<TabSyncResult[]> {
+  const tab = findTab(tabKey);
+  if (!tab) throw new Error(`Unknown engineering tab: ${tabKey}`);
+  return syncTabs([tab], tab.key);
+}
+
+/** Syncs all tabs. */
+export async function syncAllEngineeringTabs(): Promise<TabSyncResult[]> {
+  return syncTabs(ENGINEERING_TABS, ALL_TABS_KEY);
 }

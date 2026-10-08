@@ -1050,7 +1050,7 @@ export default function GMDUpdateTable({
                         }`}
                       >
                         <div className="flex items-center gap-1.5 min-w-0">
-                          <span className={wrapCells ? "break-words" : "truncate"}>
+                          <span className={wrapCells ? "wrap-break-word" : "truncate"}>
                             {group.label}
                           </span>
                           {activeCount > 0 && (
@@ -1171,7 +1171,7 @@ export default function GMDUpdateTable({
                       }`}
                       onClick={() => handleSort(idx)}
                     >
-                      <span className={wrapCells ? "break-words" : "truncate"}>
+                      <span className={wrapCells ? "wrap-break-word" : "truncate"}>
                         {header}
                       </span>
                       {isSorted && (
