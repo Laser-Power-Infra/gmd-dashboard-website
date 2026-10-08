@@ -130,6 +130,7 @@ export default function TechnicalTablePanel({
             onSelect={setSelectedIndex}
             statusColumns={tab.statusColumns}
             numericColumns={tab.numericColumns}
+            hiddenColumns={tab.hiddenColumns}
             defaultColumnWidths={tab.defaultColumnWidths}
             wrapCells={tab.wrapCells}
             maxHeight="70vh"

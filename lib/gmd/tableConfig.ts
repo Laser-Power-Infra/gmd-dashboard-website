@@ -34,6 +34,13 @@ export type EngineeringTab = {
   dataRange: string;
   /** Column captions, in order. Indexes match the row arrays. */
   columns: string[];
+  /**
+   * How many of the leading `columns` are sourced from the sheet. Any beyond
+   * this are **app-managed**: the sync never reads or writes them, while the
+   * read path still emits them (empty until populated from the DB/UI).
+   * Defaults to all columns being sheet-sourced.
+   */
+  sheetColumnCount?: number;
   /** Captions rendered right-aligned in a tabular-nums face. */
   numericColumns: ReadonlySet<string>;
   /** Captions rendered as a status pill rather than plain text. */
@@ -42,6 +49,12 @@ export type EngineeringTab = {
   defaultColumnWidths?: Record<string, number>;
   /** Word-wrap captions and values onto as many lines as they need. */
   wrapCells?: boolean;
+  /**
+   * Captions hidden from the table and the Excel export. Their data is still
+   * fetched and stored — this is presentation only, so un-hiding a column is a
+   * one-line config edit with no backend work.
+   */
+  hiddenColumns?: string[];
   /**
    * Kept in the sync (its data is written to the DB) but omitted from the
    * subtab bar. Used for DENSITY, whose values are referenced by the other tabs
@@ -131,6 +144,18 @@ const FLANGE_COLUMNS = [
   "BODY PRESSURE",
   "STANDARDS",
   "FLANGE TYPE",
+  // App-managed (not read from the sheet — see `sheetColumnCount` on the tab).
+  "DENSITY (gm/cm^3)",
+  "Total Waight in KG",
+  "TOTAL WEIGHT WITH (+)TOLERANCE",
+  "TOTAL .WEIGHT (KG) Approx AS PER IS",
+  "TOTAL WEIGHT WITH (-)TOLERANCE",
+  "COST AS PER IS",
+  "BOLT LENGTH (MM)",
+  "BOLT DIA (MM)",
+  "BOLT WEIGHT FOR CS (KG)",
+  "BOLT WEIGHT FOR SS (KG)",
+  "BOLT WEIGHT FOR AS (KG)",
 ];
 
 const FLANGE_NUMERIC = new Set([
@@ -156,7 +181,22 @@ const FLANGE_NUMERIC = new Set([
   "RAISED FACE THICKNESS TOLERANCE (- MM)",
   "SEAT PRESSURE",
   "BODY PRESSURE",
+  // App-managed columns (numeric).
+  "DENSITY (gm/cm^3)",
+  "Total Waight in KG",
+  "TOTAL WEIGHT WITH (+)TOLERANCE",
+  "TOTAL .WEIGHT (KG) Approx AS PER IS",
+  "TOTAL WEIGHT WITH (-)TOLERANCE",
+  "COST AS PER IS",
+  "BOLT LENGTH (MM)",
+  "BOLT DIA (MM)",
+  "BOLT WEIGHT FOR CS (KG)",
+  "BOLT WEIGHT FOR SS (KG)",
+  "BOLT WEIGHT FOR AS (KG)",
 ]);
+
+/** How many of Flange's leading columns come from the sheet (A..Y). */
+export const FLANGE_SHEET_COLUMN_COUNT = 25;
 
 /* -------------------------------------------------------------------------- */
 /* GEAR BOX — gid 1266518282, headers in row 1, columns C..AG                  */
@@ -289,6 +329,23 @@ export const ENGINEERING_TABS: EngineeringTab[] = [
     gid: 0,
     dataRange: "A3:Y",
     columns: FLANGE_COLUMNS,
+    // First 25 columns (A..Y) come from the sheet; the last 11 are app-managed.
+    sheetColumnCount: FLANGE_SHEET_COLUMN_COUNT,
+    // App-managed columns are hidden from the UI for now. They stay in the data
+    // model and the API response; remove an entry here to surface it.
+    hiddenColumns: [
+      "DENSITY (gm/cm^3)",
+      "Total Waight in KG",
+      "TOTAL WEIGHT WITH (+)TOLERANCE",
+      "TOTAL .WEIGHT (KG) Approx AS PER IS",
+      "TOTAL WEIGHT WITH (-)TOLERANCE",
+      "COST AS PER IS",
+      "BOLT LENGTH (MM)",
+      "BOLT DIA (MM)",
+      "BOLT WEIGHT FOR CS (KG)",
+      "BOLT WEIGHT FOR SS (KG)",
+      "BOLT WEIGHT FOR AS (KG)",
+    ],
     numericColumns: FLANGE_NUMERIC,
     statusColumns: EMPTY_STATUS,
     defaultColumnWidths: {
@@ -297,6 +354,18 @@ export const ENGINEERING_TABS: EngineeringTab[] = [
       "RAISED FACE THICKNESS of flange": 180,
       "RAISED FACE THICKNESS TOLERANCE (+ MM)": 190,
       "RAISED FACE THICKNESS TOLERANCE (- MM)": 190,
+      // App-managed columns — long captions, so widen them.
+      "DENSITY (gm/cm^3)": 160,
+      "Total Waight in KG": 150,
+      "TOTAL WEIGHT WITH (+)TOLERANCE": 200,
+      "TOTAL .WEIGHT (KG) Approx AS PER IS": 240,
+      "TOTAL WEIGHT WITH (-)TOLERANCE": 200,
+      "COST AS PER IS": 130,
+      "BOLT LENGTH (MM)": 140,
+      "BOLT DIA (MM)": 130,
+      "BOLT WEIGHT FOR CS (KG)": 180,
+      "BOLT WEIGHT FOR SS (KG)": 180,
+      "BOLT WEIGHT FOR AS (KG)": 180,
     },
     wrapCells: true,
   },

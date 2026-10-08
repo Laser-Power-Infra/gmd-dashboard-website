@@ -1,4 +1,5 @@
 import { getAccessToken } from "@/lib/googleAuth";
+import { sheetFieldCount } from "./engineeringModels";
 import type { EngineeringTab } from "./types";
 
 /**
@@ -25,9 +26,10 @@ type SheetsValuesResponse = {
 };
 
 /**
- * Rows are padded/truncated to the tab's column count so a short row cannot
- * shift cells leftwards, and entirely-empty rows (the sheet has thousands of
- * trailing blank grid rows) are dropped.
+ * Rows are padded/truncated to the tab's **sheet-backed** column count (see
+ * `sheetColumnCount`) so a short row cannot shift cells leftwards, and
+ * entirely-empty rows (the sheet has thousands of trailing blank grid rows) are
+ * dropped. App-managed columns are not part of this width at all.
  */
 export async function fetchEngineeringSheet(
   tab: EngineeringTab,
@@ -55,7 +57,7 @@ export async function fetchEngineeringSheet(
   }
 
   const json = (await res.json()) as SheetsValuesResponse;
-  const columnCount = tab.columns.length;
+  const columnCount = sheetFieldCount(tab.key);
   const rows: unknown[][] = [];
 
   for (const rawRow of json.values ?? []) {

@@ -167,6 +167,20 @@ model Flange {
   bodyPressure                        String?
   standards                           String?
   flangeType                          String?
+  // App-managed columns: they come from the sheet's Z–AK range, which the sync
+  // deliberately does not read. Populated from the DB / UI only, and never
+  // touched by a sheet sync. See `sheetColumnCount` in lib/gmd/tableConfig.ts.
+  densityGmCm3                        String?
+  totalWeightKg                       String?
+  totalWeightTolerancePlus            String?
+  totalWeightApproxAsPerIs            String?
+  totalWeightToleranceMinus           String?
+  costAsPerIs                         String?
+  boltLengthMm                        String?
+  boltDiaMm                           String?
+  boltWeightCsKg                      String?
+  boltWeightSsKg                      String?
+  boltWeightAsKg                      String?
   syncedAt                            DateTime @default(now())
   createdAt                           DateTime @default(now())
   updatedAt                           DateTime @updatedAt
