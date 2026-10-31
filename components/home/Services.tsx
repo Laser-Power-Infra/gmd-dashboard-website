@@ -1,19 +1,19 @@
 const servicesData = [
   {
     id: 1,
-    image: '/uploads/2025/04/service.jpg',
+    image: '/uploads/2025/04/service.webp',
     title: 'LEAK REPAIR SERVICES',
     desc: 'Immediate sealing of leaks in valves connections or body. Online leak sealing without shutting down operations.',
   },
   {
     id: 2,
-    image: '/uploads/2025/09/IMG_4648.jpg',
+    image: '/uploads/2025/09/IMG_4648.webp',
     title: 'PREVENTIVE MAINTENANCE SERVICES',
     desc: 'Scheduled maintenance to ensure valve longevity and prevent unexpected failures. Cleaning, lubrication, and part replacement.',
   },
   {
     id: 3,
-    image: '/uploads/2025/04/service5.jpg',
+    image: '/uploads/2025/04/service5.webp',
     title: 'EMERGENCY REPAIR SERVICES',
     desc: 'Immediate troubleshooting and repair of valve failures to minimize downtime.',
   },

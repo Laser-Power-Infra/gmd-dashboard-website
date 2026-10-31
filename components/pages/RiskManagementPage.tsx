@@ -49,7 +49,7 @@ export default function RiskManagementPage() {
         {/* Block 1: Left Image, Right Text */}
         <section className="risk-block block-alternate container">
           <div className="risk-image animate-slide-right">
-            <img src="/uploads/2025/06/futuristic-industry-engineering-concept-scaled.jpg" alt="Industrial Risk Management" />
+            <img src="/uploads/2025/06/futuristic-industry-engineering-concept-scaled.webp" alt="Industrial Risk Management" />
           </div>
           <div className="risk-text animate-slide-left">
             <div className="section-badge">11.1 General</div>
@@ -174,7 +174,7 @@ export default function RiskManagementPage() {
         {/* Block 4: Left Image, Right Text (Hazard & Emergency) */}
         <section className="risk-block block-alternate container">
           <div className="risk-image animate-slide-right">
-            <img src="/uploads/2025/06/worker-indoors-with-pipes-repairs-industrial-water-supply-system-water-supply-diagnostics-600x400.jpg" alt="Emergency Response" />
+            <img src="/uploads/2025/06/worker-indoors-with-pipes-repairs-industrial-water-supply-system-water-supply-diagnostics-600x400.webp" alt="Emergency Response" />
           </div>
           <div className="risk-text animate-slide-left">
             <div className="section-badge">11.3 - 11.6 Protocol</div>

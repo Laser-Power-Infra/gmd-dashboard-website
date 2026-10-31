@@ -75,7 +75,7 @@ export default function SafetyPlanPage() {
             </div>
           </div>
           <div className="safety-image hidden-slide-right">
-            <img src="/uploads/2025/03/aboutus01-600x480.jpg" alt="Safety and Health" />
+            <img src="/uploads/2025/03/aboutus01-600x480.webp" alt="Safety and Health" />
           </div>
         </div>
       </section>
@@ -121,7 +121,7 @@ export default function SafetyPlanPage() {
             </div>
           </div>
           <div className="safety-image hidden-slide-left">
-            <img src="/uploads/2025/03/blog01-600x400.jpg" alt="Emergency Preparedness" />
+            <img src="/uploads/2025/03/blog01-600x400.webp" alt="Emergency Preparedness" />
           </div>
         </div>
       </section>
@@ -145,7 +145,7 @@ export default function SafetyPlanPage() {
             </div>
           </div>
           <div className="safety-image hidden-slide-right">
-            <img src="/uploads/2025/03/blog02-1024x576.jpg" alt="Quality Assurance" />
+            <img src="/uploads/2025/03/blog02-1024x576.webp" alt="Quality Assurance" />
           </div>
         </div>
       </section>

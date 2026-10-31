@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   description:
     'GM Dalui & Sons Pvt. Ltd. - manufacturers of valves. Our valves are delivered in an extensive variety of materials and compositions and we can custom produce your design.',
   icons: {
-    icon: '/uploads/2025/04/header-final-logo.png',
+    icon: '/uploads/2025/04/header-final-logo.webp',
   },
 };
 

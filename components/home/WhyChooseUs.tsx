@@ -77,7 +77,7 @@ export default function WhyChooseUs() {
           <div className="choose-graphics-container">
             <div className="choose-deco-block"></div>
             <div className="choose-image-card">
-              <img src="/uploads/2025/04/MISSION.jpg" alt="Industrial valve installation grid" />
+              <img src="/uploads/2025/04/MISSION.webp" alt="Industrial valve installation grid" />
             </div>
           </div>
         </div>

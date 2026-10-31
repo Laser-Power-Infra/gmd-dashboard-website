@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     'Request a tailored cost quotation for our high-performance valves and accessories.',
   icons: {
-    icon: '/uploads/2025/04/header-final-logo.png',
+    icon: '/uploads/2025/04/header-final-logo.webp',
   },
 };
 

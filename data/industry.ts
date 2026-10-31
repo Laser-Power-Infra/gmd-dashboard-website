@@ -13,7 +13,7 @@ export const industryData: IndustrySection[] = [
     "isImageCards": true,
     "rows": [
       {
-        "image": "/usages_img/Metal Seated Sluice Valve img.png",
+        "image": "/usages_img/Metal Seated Sluice Valve img.webp",
         "data": [
           "Metal Seated Sluice Valve",
           "50â€“1200",
@@ -23,7 +23,7 @@ export const industryData: IndustrySection[] = [
         ]
       },
       {
-        "image": "/usages_img/Resilient Seated Gate Valveonly.png",
+        "image": "/usages_img/Resilient Seated Gate Valveonly.webp",
         "data": [
           "Resilient Seated Gate Valve",
           "50â€“1600",
@@ -33,7 +33,7 @@ export const industryData: IndustrySection[] = [
         ]
       },
       {
-        "image": "/usages_img/Rising Stem Gate Valve.png",
+        "image": "/usages_img/Rising Stem Gate Valve.webp",
         "data": [
           "Rising Stem Gate Valve",
           "50â€“1000",
@@ -43,7 +43,7 @@ export const industryData: IndustrySection[] = [
         ]
       },
       {
-        "image": "/usages_img/Non-Rising Stem Gate Valve.png",
+        "image": "/usages_img/Non-Rising Stem Gate Valve.webp",
         "data": [
           "Non-Rising Stem Gate Valve",
           "50â€“1600",
@@ -65,7 +65,7 @@ export const industryData: IndustrySection[] = [
     ],
     "rows": [
       {
-        "image": "/usages_img/Swing Check Valve (including 700 DN & above).png",
+        "image": "/usages_img/Swing Check Valve (including 700 DN & above).webp",
         "data": [
           "Swing Check Valve (including 700 DN & above)",
           "50â€“2000",
@@ -75,7 +75,7 @@ export const industryData: IndustrySection[] = [
         ]
       },
       {
-        "image": "/usages_img/Non-Slam (Silent) Check Valve.png",
+        "image": "/usages_img/Non-Slam (Silent) Check Valve.webp",
         "data": [
           "Non-Slam (Silent) Check Valve",
           "40â€“1600",
@@ -85,7 +85,7 @@ export const industryData: IndustrySection[] = [
         ]
       },
       {
-        "image": "/usages_img/Dual Plate Check Valve.png",
+        "image": "/usages_img/Dual Plate Check Valve.webp",
         "data": [
           "Dual Plate Check Valve",
           "50â€“2000",
@@ -95,7 +95,7 @@ export const industryData: IndustrySection[] = [
         ]
       },
       {
-        "image": "/usages_img/Tilting Disc Check Valve.png",
+        "image": "/usages_img/Tilting Disc Check Valve.webp",
         "data": [
           "Tilting Disc Check Valve",
           "100â€“2000",
@@ -118,7 +118,7 @@ export const industryData: IndustrySection[] = [
     ],
     "rows": [
       {
-        "image": "/usages_img/Concentric Butterfly Valve.png",
+        "image": "/usages_img/Concentric Butterfly Valve.webp",
         "data": [
           "Concentric Butterfly Valve",
           "50â€“3600",
@@ -128,7 +128,7 @@ export const industryData: IndustrySection[] = [
         ]
       },
       {
-        "image": "/usages_img/Double Eccentric (High Performance).png",
+        "image": "/usages_img/Double Eccentric (High Performance).webp",
         "data": [
           "Double Eccentric (High Performance)",
           "150â€“3600",
@@ -138,7 +138,7 @@ export const industryData: IndustrySection[] = [
         ]
       },
       {
-        "image": "/usages_img/Triple Eccentric Metal Seated.png",
+        "image": "/usages_img/Triple Eccentric Metal Seated.webp",
         "data": [
           "Triple Eccentric Metal Seated",
           "150â€“2000",
@@ -161,7 +161,7 @@ export const industryData: IndustrySection[] = [
     ],
     "rows": [
       {
-        "image": "/usages_img/Floating Ball Valve.png",
+        "image": "/usages_img/Floating Ball Valve.webp",
         "data": [
           "Floating Ball Valve",
           "15â€“600",
@@ -171,7 +171,7 @@ export const industryData: IndustrySection[] = [
         ]
       },
       {
-        "image": "/usages_img/Trunnion Mounted Ball Valve.png",
+        "image": "/usages_img/Trunnion Mounted Ball Valve.webp",
         "data": [
           "Trunnion Mounted Ball Valve",
           "50â€“1200",
@@ -181,7 +181,7 @@ export const industryData: IndustrySection[] = [
         ]
       },
       {
-        "image": "/usages_img/Fire Safe Ball Valve.png",
+        "image": "/usages_img/Fire Safe Ball Valve.webp",
         "data": [
           "Fire Safe Ball Valve",
           "15â€“600",
@@ -204,7 +204,7 @@ export const industryData: IndustrySection[] = [
     ],
     "rows": [
       {
-        "image": "/usages_img/Globe Valve.png",
+        "image": "/usages_img/Globe Valve.webp",
         "data": [
           "Globe Valve",
           "15â€“600",
@@ -214,7 +214,7 @@ export const industryData: IndustrySection[] = [
         ]
       },
       {
-        "image": "/usages_img/Stop Valve.png",
+        "image": "/usages_img/Stop Valve.webp",
         "data": [
           "Stop Valve",
           "15â€“300",
@@ -237,7 +237,7 @@ export const industryData: IndustrySection[] = [
     ],
     "rows": [
       {
-        "image": "/usages_img/Single Orifice Air Valve.png",
+        "image": "/usages_img/Single Orifice Air Valve.webp",
         "data": [
           "Single Orifice Air Valve",
           "25â€“300",
@@ -247,7 +247,7 @@ export const industryData: IndustrySection[] = [
         ]
       },
       {
-        "image": "/usages_img/Double Orifice  Kinetic Air Valve img.png",
+        "image": "/usages_img/Double Orifice  Kinetic Air Valve img.webp",
         "data": [
           "Double Orifice / Kinetic Air Valve",
           "50â€“300",
@@ -257,7 +257,7 @@ export const industryData: IndustrySection[] = [
         ]
       },
       {
-        "image": "/usages_img/Combination Air Valve create img.png",
+        "image": "/usages_img/Combination Air Valve create img.webp",
         "data": [
           "Combination Air Valve",
           "50â€“300",
@@ -267,7 +267,7 @@ export const industryData: IndustrySection[] = [
         ]
       },
       {
-        "image": "/usages_img/Tamper-Proof Air Valve.png",
+        "image": "/usages_img/Tamper-Proof Air Valve.webp",
         "data": [
           "Tamper-Proof Air Valve",
           "25â€“300",
@@ -277,7 +277,7 @@ export const industryData: IndustrySection[] = [
         ]
       },
       {
-        "image": "/usages_img/Air Release Valve.png",
+        "image": "/usages_img/Air Release Valve.webp",
         "data": [
           "Air Release Valve",
           "15â€“150",
@@ -300,7 +300,7 @@ export const industryData: IndustrySection[] = [
     ],
     "rows": [
       {
-        "image": "/usages_img/2-Way Solenoid Valve.png",
+        "image": "/usages_img/2-Way Solenoid Valve.webp",
         "data": [
           "2-Way Solenoid Valve",
           "10â€“150",
@@ -310,7 +310,7 @@ export const industryData: IndustrySection[] = [
         ]
       },
       {
-        "image": "/usages_img/3-Way4-Way Solenoid Valve.png",
+        "image": "/usages_img/3-Way4-Way Solenoid Valve.webp",
         "data": [
           "3-Way/4-Way Solenoid Valve",
           "10â€“100",
@@ -320,7 +320,7 @@ export const industryData: IndustrySection[] = [
         ]
       },
       {
-        "image": "/usages_img/High Pressure Solenoid Valve.png",
+        "image": "/usages_img/High Pressure Solenoid Valve.webp",
         "data": [
           "High Pressure Solenoid Valve",
           "10â€“50",
@@ -343,7 +343,7 @@ export const industryData: IndustrySection[] = [
     ],
     "rows": [
       {
-        "image": "/usages_img/Pilot Operated PRV.png",
+        "image": "/usages_img/Pilot Operated PRV.webp",
         "data": [
           "Pilot Operated PRV",
           "50â€“600",
@@ -353,7 +353,7 @@ export const industryData: IndustrySection[] = [
         ]
       },
       {
-        "image": "/usages_img/Direct Acting PRV.png",
+        "image": "/usages_img/Direct Acting PRV.webp",
         "data": [
           "Direct Acting PRV",
           "15â€“150",
@@ -363,7 +363,7 @@ export const industryData: IndustrySection[] = [
         ]
       },
       {
-        "image": "/usages_img/Waterworks PRV.png",
+        "image": "/usages_img/Waterworks PRV.webp",
         "data": [
           "Waterworks PRV",
           "25â€“300",
@@ -386,7 +386,7 @@ export const industryData: IndustrySection[] = [
     ],
     "rows": [
       {
-        "image": "/usages_img/Safety Relief Valve.png",
+        "image": "/usages_img/Safety Relief Valve.webp",
         "data": [
           "Safety Relief Valve",
           "15â€“600",
@@ -396,7 +396,7 @@ export const industryData: IndustrySection[] = [
         ]
       },
       {
-        "image": "/usages_img/Spring Loaded Safety Valve.png",
+        "image": "/usages_img/Spring Loaded Safety Valve.webp",
         "data": [
           "Spring Loaded Safety Valve",
           "15â€“300",
@@ -406,7 +406,7 @@ export const industryData: IndustrySection[] = [
         ]
       },
       {
-        "image": "/usages_img/Pilot Operated Relief Valve.png",
+        "image": "/usages_img/Pilot Operated Relief Valve.webp",
         "data": [
           "Pilot Operated Relief Valve",
           "25â€“800",
@@ -429,7 +429,7 @@ export const industryData: IndustrySection[] = [
     ],
     "rows": [
       {
-        "image": "/usages_img/Y-Type Strainer.png",
+        "image": "/usages_img/Y-Type Strainer.webp",
         "data": [
           "Y-Type Strainer",
           "15â€“1200",
@@ -439,7 +439,7 @@ export const industryData: IndustrySection[] = [
         ]
       },
       {
-        "image": "/usages_img/Basket Strainer  img.png",
+        "image": "/usages_img/Basket Strainer  img.webp",
         "data": [
           "Basket Strainer",
           "50â€“1400",
@@ -461,7 +461,7 @@ export const industryData: IndustrySection[] = [
     ],
     "rows": [
       {
-        "image": "/usages_img/Foot Valve with Strainer.png",
+        "image": "/usages_img/Foot Valve with Strainer.webp",
         "data": [
           "Foot Valve with Strainer",
           "50â€“1200",
@@ -470,7 +470,7 @@ export const industryData: IndustrySection[] = [
         ]
       },
       {
-        "image": "/usages_img/Reflux Foot Valve img.png",
+        "image": "/usages_img/Reflux Foot Valve img.webp",
         "data": [
           "Reflux Foot Valve",
           "50â€“1200",
@@ -491,7 +491,7 @@ export const industryData: IndustrySection[] = [
     ],
     "rows": [
       {
-        "image": "/usages_img/Automatic Float Valve.png",
+        "image": "/usages_img/Automatic Float Valve.webp",
         "data": [
           "Automatic Float Valve",
           "25â€“300",
@@ -512,7 +512,7 @@ export const industryData: IndustrySection[] = [
     ],
     "rows": [
       {
-        "image": "/usages_img/img Uni-Directional Knife Gate.png",
+        "image": "/usages_img/img Uni-Directional Knife Gate.webp",
         "data": [
           "Uni-Directional Knife Gate",
           "50â€“1200",
@@ -521,7 +521,7 @@ export const industryData: IndustrySection[] = [
         ]
       },
       {
-        "image": "/usages_img/Bi-Directional Knife Gate img.png",
+        "image": "/usages_img/Bi-Directional Knife Gate img.webp",
         "data": [
           "Bi-Directional Knife Gate",
           "50â€“1200",
@@ -542,7 +542,7 @@ export const industryData: IndustrySection[] = [
     ],
     "rows": [
       {
-        "image": "/usages_img/. DIAPHRAGM VALVES Weir Type img.png",
+        "image": "/usages_img/. DIAPHRAGM VALVES Weir Type img.webp",
         "data": [
           "Weir Type",
           "15â€“350",
@@ -551,7 +551,7 @@ export const industryData: IndustrySection[] = [
         ]
       },
       {
-        "image": "/usages_img/DIAPHRAGM VALVES Straight.png",
+        "image": "/usages_img/DIAPHRAGM VALVES Straight.webp",
         "data": [
           "Straight Through Type",
           "15â€“350",
@@ -572,7 +572,7 @@ export const industryData: IndustrySection[] = [
     ],
     "rows": [
       {
-        "image": "/usages_img/Eccentric Plug Valve img.png",
+        "image": "/usages_img/Eccentric Plug Valve img.webp",
         "data": [
           "Eccentric Plug Valve",
           "50â€“1600",
@@ -581,7 +581,7 @@ export const industryData: IndustrySection[] = [
         ]
       },
       {
-        "image": "/usages_img/Lubricated Plug Valve img.png",
+        "image": "/usages_img/Lubricated Plug Valve img.webp",
         "data": [
           "Lubricated Plug Valve",
           "15â€“600",
@@ -602,7 +602,7 @@ export const industryData: IndustrySection[] = [
     ],
     "rows": [
       {
-        "image": "/usages_img/Manual Pinch Valve.png",
+        "image": "/usages_img/Manual Pinch Valve.webp",
         "data": [
           "Manual Pinch Valve",
           "25â€“1200",
@@ -611,7 +611,7 @@ export const industryData: IndustrySection[] = [
         ]
       },
       {
-        "image": "/usages_img/Air Operated Pinch Valve  img.png",
+        "image": "/usages_img/Air Operated Pinch Valve  img.webp",
         "data": [
           "Air Operated Pinch Valve",
           "25â€“1200",

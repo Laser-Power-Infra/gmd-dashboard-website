@@ -350,67 +350,67 @@ export default function Purchase() {
       if (name.includes('CLASS 150#')) return '/purchase img/Cast Steel Gate Valve (Class 150#).jpeg';
       if (name.includes('CLASS 300#')) return '/purchase img/Cast Steel Gate Valve (Class 300#).jpeg';
       if (name.includes('CLASS 800#')) return '/purchase img/Forged Steel Gate Valve (Class 800#).jpeg';
-      if (name.includes('METAL TO METAL') && name.includes('NON-RISING')) return '/purchase img/Metal Seated Sluice Valve (non Rising).jpeg';
-      if (name.includes('METAL TO METAL') && name.includes('RISING')) return '/purchase img/Metal Seated Sluice Valve (Rising Spindle).jpeg';
-      if (name.includes('NON-RISING')) return '/purchase img/Sluice valve (non rising).jpeg';
-      if (name.includes('RISING')) return '/purchase img/Sluice valve (Rising Spindle) resilent Seated.jpeg';
-      return '/purchase img/Sluice Gate Valve.jpeg';
+      if (name.includes('METAL TO METAL') && name.includes('NON-RISING')) return '/purchase img/Metal Seated Sluice Valve (non Rising).webp';
+      if (name.includes('METAL TO METAL') && name.includes('RISING')) return '/purchase img/Metal Seated Sluice Valve (Rising Spindle).webp';
+      if (name.includes('NON-RISING')) return '/purchase img/Sluice valve (non rising).webp';
+      if (name.includes('RISING')) return '/purchase img/Sluice valve (Rising Spindle) resilent Seated.webp';
+      return '/purchase img/Sluice Gate Valve.webp';
     }
 
     // Butterfly Valves
     if (name.includes('BUTTERFLY VALVE')) {
-      if (name.includes('WAFER TYPE')) return '/purchase img/Wafer Type butterfly valve.jpeg';
-      if (name.includes('LUG TYPE') && name.includes('METAL TO METAL')) return '/purchase img/Lug type (Metal to Metal ) butterfly valve.jpeg';
-      if (name.includes('LUG TYPE')) return '/purchase img/Lug type (Metal to Rubber) butterfly valve.jpeg';
-      if (name.includes('FLANGE TYPE') && name.includes('METAL')) return '/purchase img/Double Flange Metal Seated Butterfly Valve.jpeg';
-      if (name.includes('FLANGE TYPE')) return '/purchase img/Double Flange Resilent Seated Butterfly Valve.jpeg';
-      return '/purchase img/Double Flange Resilent Seated Butterfly Valve.jpeg';
+      if (name.includes('WAFER TYPE')) return '/purchase img/Wafer Type butterfly valve.webp';
+      if (name.includes('LUG TYPE') && name.includes('METAL TO METAL')) return '/purchase img/Lug type (Metal to Metal ) butterfly valve.webp';
+      if (name.includes('LUG TYPE')) return '/purchase img/Lug type (Metal to Rubber) butterfly valve.webp';
+      if (name.includes('FLANGE TYPE') && name.includes('METAL')) return '/purchase img/Double Flange Metal Seated Butterfly Valve.webp';
+      if (name.includes('FLANGE TYPE')) return '/purchase img/Double Flange Resilent Seated Butterfly Valve.webp';
+      return '/purchase img/Double Flange Resilent Seated Butterfly Valve.webp';
     }
 
     // Ball Valves
     if (name.includes('BALL VALVE')) {
-      if (name.includes('2-PIECE')) return '/purchase img/2 piece ball valve.jpeg';
-      if (name.includes('3-PIECE')) return '/purchase img/3 piece ball valve.jpeg';
-      if (name.includes('SCREWED')) return '/purchase img/screw ball valve.jpeg';
-      return '/purchase img/3 piece ball valve.jpeg';
+      if (name.includes('2-PIECE')) return '/purchase img/2 piece ball valve.webp';
+      if (name.includes('3-PIECE')) return '/purchase img/3 piece ball valve.webp';
+      if (name.includes('SCREWED')) return '/purchase img/screw ball valve.webp';
+      return '/purchase img/3 piece ball valve.webp';
     }
 
     // Check Valves & DPCV
-    if (name.includes('DPCV')) return '/purchase img/Dual Plate Check Valve (API594).jpeg';
-    if (name.includes('CHECK VALVE')) return '/purchase img/Non return check valve (IS5312, Part-1.jpeg';
+    if (name.includes('DPCV')) return '/purchase img/Dual Plate Check Valve (API594).webp';
+    if (name.includes('CHECK VALVE')) return '/purchase img/Non return check valve (IS5312, Part-1.webp';
 
     // Diaphragm Valves
-    if (name.includes('DIAPHRAGM')) return '/purchase img/Diaphragm Valve.jpeg';
+    if (name.includes('DIAPHRAGM')) return '/purchase img/Diaphragm Valve.webp';
 
     // Dismantling Joints
-    if (name.includes('DISMANTLING')) return '/purchase img/Dismantling joint.jpeg';
+    if (name.includes('DISMANTLING')) return '/purchase img/Dismantling joint.webp';
 
     // Float Valves
-    if (name.includes('FLOAT')) return '/purchase img/Float Valve.jpeg';
+    if (name.includes('FLOAT')) return '/purchase img/Float Valve.webp';
 
     // Globe Valves
-    if (name.includes('GLOBE')) return '/purchase img/Globe Valve.jpeg';
+    if (name.includes('GLOBE')) return '/purchase img/Globe Valve.webp';
 
     // Air Valves
-    if (name.includes('AIR VALVE') || name.includes('KINETIC')) return '/purchase img/Kinetic Air Valve (DK type).jpeg';
+    if (name.includes('AIR VALVE') || name.includes('KINETIC')) return '/purchase img/Kinetic Air Valve (DK type).webp';
 
     // Flanges
-    if (name.includes('FLANGE') && !name.includes('BUTTERFLY')) return '/purchase img/MS companion flange.jpeg';
+    if (name.includes('FLANGE') && !name.includes('BUTTERFLY')) return '/purchase img/MS companion flange.webp';
 
     // Pressure Relief Valves
-    if (name.includes('RELIEF')) return '/purchase img/Pressure relief valve (Spring loaded).jpeg';
+    if (name.includes('RELIEF')) return '/purchase img/Pressure relief valve (Spring loaded).webp';
 
     // Knife Gate Valves
-    if (name.includes('KNIFE GATE')) return '/purchase img/knife gate Valve.jpeg';
+    if (name.includes('KNIFE GATE')) return '/purchase img/knife gate Valve.webp';
 
     // Needle Valves
-    if (name.includes('NEEDLE')) return '/purchase img/needle valve.jpeg';
+    if (name.includes('NEEDLE')) return '/purchase img/needle valve.webp';
 
     // Pressure Reducing Valves (PRV)
-    if (name.includes('REDUCING') || name.includes('PRV')) return '/purchase img/pressure reducing valve.jpeg';
+    if (name.includes('REDUCING') || name.includes('PRV')) return '/purchase img/pressure reducing valve.webp';
 
     // Solenoid Valves
-    if (name.includes('SOLENOID')) return '/purchase img/solenoid Valve.jpeg';
+    if (name.includes('SOLENOID')) return '/purchase img/solenoid Valve.webp';
 
     // Fallback
     return '/uploads/valves.jpg';
