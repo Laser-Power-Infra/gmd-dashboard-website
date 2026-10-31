@@ -4,6 +4,7 @@ export default function ContactPage() {
       {/* Top Section with Maps */}
       <section className="contact-maps-section">
         <div className="container">
+          <h1 className="form-page-title">Contact GM Dalui &amp; Sons</h1>
           <div className="maps-grid">
             {/* Head Office */}
             <div className="map-card">

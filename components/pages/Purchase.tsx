@@ -1,97 +1,45 @@
 'use client';
 
-import { useState, useEffect, useRef, useCallback } from 'react';
-import type { ChangeEvent, PointerEvent } from 'react';
-import { RAZORPAY_KEY_ID } from '@/lib/purchaseConfig';
+import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
+import type { FormEvent, PointerEvent } from 'react';
 
-interface MasterItem {
+import DebouncedSearchInput from '@/components/technical/DebouncedSearchInput';
+import { buildStock, type MasterRow, type StockItem } from '@/app/purchase/catalog';
+
+interface CartItem {
+  key: string;
   itemCode: string;
-  itemName: string;
-  category: string;
+  name: string;
+  title: string;
   unit: string;
-}
-
-interface CartItem extends MasterItem {
+  image: string | null;
+  size: string | null;
+  pressure: string | null;
+  /** Units held in stock, for the "x of N in stock" hint. */
+  inStock: number;
   quantity: string;
   remarks: string;
 }
 
-interface ParsedSpecs {
-  size: string | null;
-  pressure: string | null;
-  title: string;
-  specs: { label: string; value: string }[];
+interface BuyerDetails {
+  name: string;
+  company: string;
+  email: string;
+  phone: string;
+  message: string;
 }
 
-const parseItemSpecs = (itemName: string): ParsedSpecs => {
-  const name = (itemName || '').trim();
-  const upper = name.toUpperCase();
+const EMPTY_BUYER: BuyerDetails = { name: '', company: '', email: '', phone: '', message: '' };
 
-  const sizeMatch = name.match(/\b(\d+)\s*MM\b/i);
-  const size = sizeMatch ? `${sizeMatch[1]}MM` : null;
+const ENQUIRY_EMAIL = 'info@gmdalui.co.in';
 
-  const pnMatch = name.match(/\bPN-?\s*(\d+)\b/i);
-  const classMatch = name.match(/\bCLASS\s*(\d+)/i);
-  const pressure = pnMatch
-    ? `PN-${pnMatch[1]}`
-    : classMatch
-      ? `Class ${classMatch[1]}#`
-      : null;
-
-  const specs: { label: string; value: string }[] = [];
-
-  if (/METAL TO METAL/.test(upper)) specs.push({ label: 'Seat', value: 'Metal to Metal' });
-  else if (/METAL TO RUBBER|RESILE?NT SEATED/.test(upper)) specs.push({ label: 'Seat', value: 'Metal to Rubber' });
-
-  if (/LEVER OPERATED/.test(upper)) specs.push({ label: 'Operation', value: 'Lever' });
-  else if (/GEAR OPERATED|GEAR BOX|GEAR$|GEAR /.test(upper)) specs.push({ label: 'Operation', value: 'Gear' });
-  else if (/HW OP|HANDWHEEL|HAND WHEEL/.test(upper)) specs.push({ label: 'Operation', value: 'Handwheel' });
-
-  if (/DOUBLE FLANGE/.test(upper)) specs.push({ label: 'End', value: 'Double Flanged' });
-  else if (/FLANGE TYPE|FLANGE END|FLANGE/.test(upper)) specs.push({ label: 'End', value: 'Flanged' });
-  else if (/WAFER/.test(upper)) specs.push({ label: 'End', value: 'Wafer' });
-  else if (/BUTT WELD/.test(upper)) specs.push({ label: 'End', value: 'Butt Weld' });
-  else if (/SCREWED|THREADED/.test(upper)) specs.push({ label: 'End', value: 'Screwed' });
-
-  if (/DUCTILE IRON/.test(upper)) specs.push({ label: 'MOC', value: 'Ductile Iron' });
-  else if (/CAST STEEL|CARBON STEEL/.test(upper)) specs.push({ label: 'MOC', value: 'Cast Steel' });
-  else if (/BRONZE|BRASS|GUN METAL/.test(upper)) specs.push({ label: 'MOC', value: 'Bronze' });
-  else if (/STAINLESS/.test(upper)) specs.push({ label: 'MOC', value: 'Stainless Steel' });
-
-  if (/2-PIECE/.test(upper)) specs.push({ label: 'Design', value: '2-Piece' });
-  else if (/3-PIECE/.test(upper)) specs.push({ label: 'Design', value: '3-Piece' });
-
-  const title = name
-    .replace(/\b\d+\s*MM\b/gi, ' ')
-    .replace(/\bPN-?\s*\d+\b/gi, ' ')
-    .replace(/\bCLASS\s*\d+\s*#?/gi, ' ')
-    .replace(/\s+/g, ' ')
-    .trim();
-
-  return { size, pressure, title: title || name, specs };
-};
+const ALL = 'All';
+const PAGE_SIZE = 12;
 
 const TILT_MAX_DEG = 5;
 const TILT_EASE = 0.075;
 const GLIDE_EASE = 0.12;
 const RETURN_EASE = 0.1;
-
-/* Consumables / tools / stationery lines that are not part of the valve catalog.
-   Matched as a case-insensitive prefix so variants such as
-   "TOOLS & FIXTURES 6NM AIR WRENCH..." are covered too. */
-const EXCLUDED_ITEM_PREFIXES = [
-  'CONSUMABLES ENAMEL PAINT- BLUE',
-  'CONSUMABLES THINNER STD',
-  'OIL & LUBE GREASE STD',
-  'PRINTING & STATIONERY',
-  'WASTAGE BUBBLE WRAP PLASTIC',
-  'TOOLS & FIXTURES',
-];
-
-const isExcludedItem = (itemName: string) => {
-  const name = (itemName || '').toUpperCase();
-  return EXCLUDED_ITEM_PREFIXES.some((prefix) => name.startsWith(prefix));
-};
 
 interface TiltState {
   el: HTMLDivElement;
@@ -235,41 +183,49 @@ function useCardTilt() {
   return { onPointerMove, onPointerEnter, onPointerLeave };
 }
 
-declare global {
-  interface Window {
-    Razorpay?: new (options: Record<string, unknown>) => { open: () => void };
-  }
+/** Plain-text enquiry, used for the "email it yourself" fallback link. */
+function enquiryText(buyer: BuyerDetails, items: CartItem[]): string {
+  const lines = items.map(
+    (i, n) =>
+      `${n + 1}. ${i.name} [${i.itemCode}] - qty ${Number(i.quantity) > 0 ? i.quantity : 1} ${i.unit}` +
+      (i.remarks ? ` - ${i.remarks}` : '')
+  );
+  return [
+    `Name: ${buyer.name}`,
+    `Company: ${buyer.company || '-'}`,
+    `Email: ${buyer.email}`,
+    `Phone: ${buyer.phone}`,
+    '',
+    'Items:',
+    ...lines,
+    '',
+    buyer.message ? `Notes: ${buyer.message}` : '',
+  ].join('\n');
 }
 
-const loadRazorpay = (): Promise<boolean> => {
-  return new Promise((resolve) => {
-    const script = document.createElement('script');
-    script.src = 'https://checkout.razorpay.com/v1/checkout.js';
-
-    script.onload = () => resolve(true);
-    script.onerror = () => resolve(false);
-
-    document.body.appendChild(script);
-  });
-};
-
 export default function Purchase() {
-  const [masterItems, setMasterItems] = useState<MasterItem[]>([]);
+  const [stock, setStock] = useState<StockItem[]>([]);
+  const [loadError, setLoadError] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('All');
-  const [selectedSubCategory, setSelectedSubCategory] = useState('All');
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [hoveredCategory, setHoveredCategory] = useState<string | null>(null);
-  const [displayCount, setDisplayCount] = useState(12);
+  const [typeFilter, setTypeFilter] = useState(ALL);
+  const [sizeFilter, setSizeFilter] = useState(ALL);
+  const [pnFilter, setPnFilter] = useState(ALL);
+  const [mocFilter, setMocFilter] = useState(ALL);
+  const [displayCount, setDisplayCount] = useState(PAGE_SIZE);
 
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const [cartStep, setCartStep] = useState<'list' | 'checkout'>('list');
+  const [cartStep, setCartStep] = useState<'list' | 'form' | 'sent'>('list');
+  const [buyer, setBuyer] = useState<BuyerDetails>(EMPTY_BUYER);
+  const [formErrors, setFormErrors] = useState<Partial<Record<keyof BuyerDetails, string>>>({});
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [sentSnapshot, setSentSnapshot] = useState('');
   const [fabPulse, setFabPulse] = useState(0);
   const tilt = useCardTilt();
 
-  const openCart = useCallback(() => {
-    setCartStep('list');
+  const openCart = useCallback((step: 'list' | 'form' = 'list') => {
+    setCartStep(step);
     setIsCartOpen(true);
   }, []);
 
@@ -298,253 +254,164 @@ export default function Purchase() {
     };
   }, [isCartOpen]);
 
-  // Fetch the extracted items on mount
+  // The JSON is one row per physical unit; buildStock collapses it to one entry
+  // per item carrying the unit count as `qty`.
   useEffect(() => {
     fetch('/purchaseItems.json')
       .then((res) => res.json())
-      .then((data: MasterItem[]) => setMasterItems(data.filter((item) => !isExcludedItem(item.itemName))))
-      .catch((err) => console.error('Error loading master items:', err));
+      .then((data: MasterRow[]) => setStock(buildStock(data)))
+      .catch((err) => {
+        console.error('Error loading stock list:', err);
+        setLoadError(true);
+      });
   }, []);
 
-  // Helper to extract base category name (words before any number)
-  const extractCategoryName = (name: string): string | null => {
-    if (!name) return null;
-    const parts = name.split(' ');
-    const cat: string[] = [];
-    for (const p of parts) {
-      if (/\d/.test(p)) break;
-      cat.push(p);
+  const options = useMemo(() => {
+    const types = new Set<string>();
+    const sizes = new Map<number, string>();
+    const pns = new Set<string>();
+    const mocs = new Set<string>();
+    for (const item of stock) {
+      types.add(item.type);
+      if (item.size && item.sizeMm !== null) sizes.set(item.sizeMm, item.size);
+      if (item.pressure) pns.add(item.pressure);
+      if (item.moc) mocs.add(item.moc);
     }
-    const result = cat.join(' ').trim();
-    return result ? result : name.split(' ').slice(0, 2).join(' ');
+    return {
+      types: [...types].sort(),
+      sizes: [...sizes.entries()].sort((a, b) => a[0] - b[0]).map(([, label]) => label),
+      pns: [...pns].sort(),
+      mocs: [...mocs].sort(),
+    };
+  }, [stock]);
+
+  const filteredItems = useMemo(() => {
+    const term = searchTerm.trim().toLowerCase();
+    return stock.filter((item) => {
+      if (term && !item.name.toLowerCase().includes(term) && !item.itemCode.toLowerCase().includes(term))
+        return false;
+      if (typeFilter !== ALL && item.type !== typeFilter) return false;
+      if (sizeFilter !== ALL && item.size !== sizeFilter) return false;
+      if (pnFilter !== ALL && item.pressure !== pnFilter) return false;
+      if (mocFilter !== ALL && item.moc !== mocFilter) return false;
+      return true;
+    });
+  }, [stock, searchTerm, typeFilter, sizeFilter, pnFilter, mocFilter]);
+
+  const displayedItems = filteredItems.slice(0, displayCount);
+  const hasMore = displayCount < filteredItems.length;
+  const activeFilters = [typeFilter, sizeFilter, pnFilter, mocFilter].filter((f) => f !== ALL).length;
+
+  const commitSearch = useCallback((val: string) => {
+    setSearchTerm(val);
+    setDisplayCount(PAGE_SIZE);
+  }, []);
+
+  const resetFilters = () => {
+    setSearchTerm('');
+    setTypeFilter(ALL);
+    setSizeFilter(ALL);
+    setPnFilter(ALL);
+    setMocFilter(ALL);
+    setDisplayCount(PAGE_SIZE);
   };
 
-  // Derive unique categories from item names
-  const uniqueCategories = Array.from(
-    new Set(
-      masterItems
-        .map((item) => extractCategoryName(item.itemName))
-        .filter((cat): cat is string => !!cat && cat.trim() !== '')
-    )
-  ).sort();
-
-  // Derive sub-categories based on selected category or hovered category
-  const getSubCategoriesFor = (cat: string): string[] => {
-    return Array.from(
-      new Set(
-        masterItems
-          .filter((item) => extractCategoryName(item.itemName) === cat)
-          .map((item) => item.itemName)
-          .filter(Boolean)
-      )
-    ).sort();
-  };
-
-  // Helper to get image based on item name keywords
-  const getItemImage = (itemName: string): string => {
-    if (!itemName) return '/uploads/valves.jpg'; // default fallback
-    const name = itemName.toUpperCase();
-
-    // Sluice Valves
-    if (name.includes('SLUICE VALVE') || name.includes('GATE VALVE')) {
-      if (name.includes('CLASS 150#')) return '/purchase img/Cast Steel Gate Valve (Class 150#).jpeg';
-      if (name.includes('CLASS 300#')) return '/purchase img/Cast Steel Gate Valve (Class 300#).jpeg';
-      if (name.includes('CLASS 800#')) return '/purchase img/Forged Steel Gate Valve (Class 800#).jpeg';
-      if (name.includes('METAL TO METAL') && name.includes('NON-RISING')) return '/purchase img/Metal Seated Sluice Valve (non Rising).webp';
-      if (name.includes('METAL TO METAL') && name.includes('RISING')) return '/purchase img/Metal Seated Sluice Valve (Rising Spindle).webp';
-      if (name.includes('NON-RISING')) return '/purchase img/Sluice valve (non rising).webp';
-      if (name.includes('RISING')) return '/purchase img/Sluice valve (Rising Spindle) resilent Seated.webp';
-      return '/purchase img/Sluice Gate Valve.webp';
-    }
-
-    // Butterfly Valves
-    if (name.includes('BUTTERFLY VALVE')) {
-      if (name.includes('WAFER TYPE')) return '/purchase img/Wafer Type butterfly valve.webp';
-      if (name.includes('LUG TYPE') && name.includes('METAL TO METAL')) return '/purchase img/Lug type (Metal to Metal ) butterfly valve.webp';
-      if (name.includes('LUG TYPE')) return '/purchase img/Lug type (Metal to Rubber) butterfly valve.webp';
-      if (name.includes('FLANGE TYPE') && name.includes('METAL')) return '/purchase img/Double Flange Metal Seated Butterfly Valve.webp';
-      if (name.includes('FLANGE TYPE')) return '/purchase img/Double Flange Resilent Seated Butterfly Valve.webp';
-      return '/purchase img/Double Flange Resilent Seated Butterfly Valve.webp';
-    }
-
-    // Ball Valves
-    if (name.includes('BALL VALVE')) {
-      if (name.includes('2-PIECE')) return '/purchase img/2 piece ball valve.webp';
-      if (name.includes('3-PIECE')) return '/purchase img/3 piece ball valve.webp';
-      if (name.includes('SCREWED')) return '/purchase img/screw ball valve.webp';
-      return '/purchase img/3 piece ball valve.webp';
-    }
-
-    // Check Valves & DPCV
-    if (name.includes('DPCV')) return '/purchase img/Dual Plate Check Valve (API594).webp';
-    if (name.includes('CHECK VALVE')) return '/purchase img/Non return check valve (IS5312, Part-1.webp';
-
-    // Diaphragm Valves
-    if (name.includes('DIAPHRAGM')) return '/purchase img/Diaphragm Valve.webp';
-
-    // Dismantling Joints
-    if (name.includes('DISMANTLING')) return '/purchase img/Dismantling joint.webp';
-
-    // Float Valves
-    if (name.includes('FLOAT')) return '/purchase img/Float Valve.webp';
-
-    // Globe Valves
-    if (name.includes('GLOBE')) return '/purchase img/Globe Valve.webp';
-
-    // Air Valves
-    if (name.includes('AIR VALVE') || name.includes('KINETIC')) return '/purchase img/Kinetic Air Valve (DK type).webp';
-
-    // Flanges
-    if (name.includes('FLANGE') && !name.includes('BUTTERFLY')) return '/purchase img/MS companion flange.webp';
-
-    // Pressure Relief Valves
-    if (name.includes('RELIEF')) return '/purchase img/Pressure relief valve (Spring loaded).webp';
-
-    // Knife Gate Valves
-    if (name.includes('KNIFE GATE')) return '/purchase img/knife gate Valve.webp';
-
-    // Needle Valves
-    if (name.includes('NEEDLE')) return '/purchase img/needle valve.webp';
-
-    // Pressure Reducing Valves (PRV)
-    if (name.includes('REDUCING') || name.includes('PRV')) return '/purchase img/pressure reducing valve.webp';
-
-    // Solenoid Valves
-    if (name.includes('SOLENOID')) return '/purchase img/solenoid Valve.webp';
-
-    // Fallback
-    return '/uploads/valves.jpg';
-  };
-
-  // Handle Search Input & Filter
-  const filteredItems = masterItems.filter((item) => {
-    // Search match
-    let matchesSearch = true;
-    if (searchTerm.trim()) {
-      const term = searchTerm.toLowerCase();
-      matchesSearch =
-        Boolean(item.itemName && item.itemName.toLowerCase().includes(term)) ||
-        Boolean(item.itemCode && item.itemCode.toLowerCase().includes(term));
-    }
-
-    // Category match
-    let matchesCategory = true;
-    if (selectedCategory !== 'All') {
-      const itemCat = extractCategoryName(item.itemName);
-      matchesCategory = itemCat === selectedCategory;
-    }
-
-    // Sub-Category match
-    let matchesSubCategory = true;
-    if (selectedSubCategory !== 'All') {
-      matchesSubCategory = item.itemName === selectedSubCategory;
-    }
-
-    return matchesSearch && matchesCategory && matchesSubCategory;
-  });
-
-  const uniqueFilteredItems = filteredItems.filter(
-    (item, index, self) => index === self.findIndex((t) => t.itemCode === item.itemCode)
-  );
-
-  const displayedItems = uniqueFilteredItems.slice(0, displayCount);
-  const hasMore = displayCount < uniqueFilteredItems.length;
-
-  const handleLoadMore = () => {
-    setDisplayCount((prev) => prev + 12);
-  };
-
-  const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(e.target.value);
-    setDisplayCount(12); // Reset count on new search
-  };
-
-  const handleAddItem = (masterItem: MasterItem) => {
-    // Check if already added
-    if (cartItems.some((i) => i.itemCode === masterItem.itemCode)) {
-      alert('This item is already in your purchase list!');
-      return;
-    }
-
-    setCartItems([
-      ...cartItems,
-      {
-        ...masterItem,
-        quantity: '1',
-        remarks: '',
-      },
-    ]);
+  const handleAddItem = (item: StockItem, andEnquire = false) => {
+    setCartItems((prev) => {
+      if (prev.some((i) => i.key === item.key)) return prev;
+      return [
+        ...prev,
+        {
+          key: item.key,
+          itemCode: item.itemCode,
+          name: item.name,
+          title: item.title,
+          unit: item.unit,
+          image: item.image,
+          size: item.size,
+          pressure: item.pressure,
+          inStock: item.qty,
+          quantity: '1',
+          remarks: '',
+        },
+      ];
+    });
     setFabPulse((n) => n + 1);
+    if (andEnquire) openCart('form');
   };
 
   const handleRemoveItem = (index: number) => {
-    const updatedItems = [...cartItems];
-    updatedItems.splice(index, 1);
-    setCartItems(updatedItems);
-
-    if (updatedItems.length === 0) {
-      setIsCartOpen(false);
-      setCartStep('list');
-    }
-  };
-
-  const handleCartChange = (index: number, field: keyof Pick<CartItem, 'quantity' | 'remarks'>, value: string) => {
-    const updatedItems = [...cartItems];
-    updatedItems[index][field] = value;
-    setCartItems(updatedItems);
-  };
-
-  const handlePayment = async () => {
-    const res = await loadRazorpay();
-
-    if (!res) {
-      alert('Razorpay SDK failed to load');
-      return;
-    }
-
-    const options = {
-      key: RAZORPAY_KEY_ID, // Test Key Placeholder
-      amount: 500000, // ₹500
-      currency: 'INR',
-      name: 'GM Dalui & Sons',
-      description: 'Purchase Order Payment',
-      handler: function (response: { razorpay_payment_id: string }) {
-        alert('Payment Successful! Payment ID: ' + response.razorpay_payment_id);
-        console.log('Payment details:', response);
-        console.log('Purchased Items:', cartItems);
-        setCartItems([]); // Clear cart after successful payment
+    setCartItems((prev) => {
+      const next = prev.filter((_, i) => i !== index);
+      if (next.length === 0) {
         setIsCartOpen(false);
         setCartStep('list');
-      },
-      theme: {
-        color: '#111827',
-      },
-    };
-
-    if (!window.Razorpay) {
-      alert('Razorpay SDK failed to load');
-      return;
-    }
-    const paymentObject = new window.Razorpay(options);
-    paymentObject.open();
+      }
+      return next;
+    });
   };
 
-  const handleSubmit = () => {
-    if (cartItems.length === 0) {
-      alert('Please add at least one item to purchase.');
+  const handleCartChange = (index: number, field: 'quantity' | 'remarks', value: string) => {
+    setCartItems((prev) => prev.map((item, i) => (i === index ? { ...item, [field]: value } : item)));
+  };
+
+  const handleBuyerChange = (field: keyof BuyerDetails, value: string) => {
+    setBuyer((prev) => ({ ...prev, [field]: value }));
+    setFormErrors((prev) => (prev[field] ? { ...prev, [field]: undefined } : prev));
+  };
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    setSubmitError(null);
+
+    const errors: Partial<Record<keyof BuyerDetails, string>> = {};
+    if (buyer.name.trim().length < 2) errors.name = 'Full name is required';
+    if (!/\S+@\S+\.\S+/.test(buyer.email.trim())) errors.email = 'Enter a valid email address';
+    if (buyer.phone.trim().length < 6) errors.phone = 'Enter a valid phone number';
+    if (Object.keys(errors).length > 0) {
+      setFormErrors(errors);
       return;
     }
-    // Proceed to payment
-    handlePayment();
+
+    setSubmitting(true);
+    try {
+      const res = await fetch('/api/purchase-enquiry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...buyer,
+          items: cartItems.map((i) => ({
+            itemCode: i.itemCode,
+            itemName: i.name,
+            quantity: Number(i.quantity) > 0 ? Number(i.quantity) : 1,
+            remarks: i.remarks,
+          })),
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok || !data.ok) {
+        const fieldError = data.errors && Object.values(data.errors).flat()[0];
+        throw new Error(fieldError || data.error || 'Could not send your enquiry.');
+      }
+      setSentSnapshot(enquiryText(buyer, cartItems));
+      setCartStep('sent');
+      setCartItems([]);
+      setBuyer(EMPTY_BUYER);
+    } catch (err) {
+      setSubmitError(err instanceof Error ? err.message : 'Could not send your enquiry.');
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
     <div className="purchase-page-wrapper">
       <div className="purchase-hero">
         <div className="container">
-          <h1 className="purchase-hero-title">Purchase Request</h1>
+          <h1 className="purchase-hero-title">Ready Stock Catalogue</h1>
           <p className="purchase-hero-subtitle">
-            Browse our catalog or search for specific items to add to your purchase list.
+            Valves and spares available from our Howrah stock. Build a list and request a quotation &mdash;
+            pricing is confirmed by our sales team against your requirement.
           </p>
         </div>
       </div>
@@ -552,131 +419,99 @@ export default function Purchase() {
       <div className="container">
         {/* Search & Filter Section */}
         <div className="purchase-search-section">
-          <div className="filter-controls-container" style={{ display: 'flex', gap: '15px', flexWrap: 'wrap', marginBottom: '20px' }}>
-            <div className="search-box-container static-search" style={{ flex: 1, margin: 0 }}>
-              <i className="fas fa-search search-icon"></i>
-              <input
-                type="text"
-                className="purchase-search-input"
-                placeholder="Search by Item Code or Description (e.g. SLUICE VALVE 40MM)"
+          <div className="filter-controls-container">
+            <div className="search-box-container static-search">
+              <i className="fas fa-search search-icon" aria-hidden="true"></i>
+              <DebouncedSearchInput
                 value={searchTerm}
-                onChange={handleSearchChange}
+                onCommit={commitSearch}
+                placeholder="Search by item code or description (e.g. SLUICE VALVE 40MM)"
+                className="purchase-search-input"
               />
               {searchTerm && (
-                <button className="clear-search-btn" onClick={() => setSearchTerm('')}>
-                  <i className="fas fa-times"></i>
+                <button className="clear-search-btn" onClick={() => commitSearch('')} aria-label="Clear search">
+                  <i className="fas fa-times" aria-hidden="true"></i>
                 </button>
               )}
             </div>
 
-            <div className="category-filter-container custom-dropdown-container">
-              {/* Invisible Backdrop for closing on outside click */}
-              {isDropdownOpen && (
-                <div
-                  className="dropdown-backdrop"
-                  style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', zIndex: 999 }}
-                  onClick={() => {
-                    setIsDropdownOpen(false);
-                    setHoveredCategory(null);
+            <div className="purchase-filter-row">
+              <label className="purchase-filter">
+                <span>Type</span>
+                <select
+                  value={typeFilter}
+                  onChange={(e) => {
+                    setTypeFilter(e.target.value);
+                    setDisplayCount(PAGE_SIZE);
                   }}
-                />
-              )}
-
-              <button
-                className="custom-dropdown-btn"
-                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                style={{ position: 'relative', zIndex: 1000 }}
-              >
-                {selectedSubCategory !== 'All'
-                  ? selectedSubCategory
-                  : selectedCategory !== 'All'
-                  ? selectedCategory
-                  : 'All Item Types'}
-                <i className="fas fa-chevron-down"></i>
-              </button>
-
-              {isDropdownOpen && (
-                <div
-                  className="custom-dropdown-panel"
-                  style={{ display: 'flex', position: 'absolute', top: '100%', left: 0, zIndex: 1000, marginTop: '5px' }}
-                  onMouseLeave={() => setHoveredCategory(null)}
                 >
-                  {/* Main Menu */}
-                  <ul className="custom-dropdown-menu" style={{ position: 'relative', top: 0, left: 0, marginTop: 0, boxShadow: '0 10px 25px rgba(0,0,0,0.1)' }}>
-                    <li
-                      className="custom-dropdown-item"
-                      onClick={() => {
-                        setSelectedCategory('All');
-                        setSelectedSubCategory('All');
-                        setIsDropdownOpen(false);
-                        setDisplayCount(12);
-                      }}
-                      onMouseEnter={() => setHoveredCategory(null)}
-                    >
-                      All Item Types
-                    </li>
-                    {uniqueCategories.map((cat) => (
-                      <li
-                        key={cat}
-                        className={`custom-dropdown-item has-submenu ${hoveredCategory === cat ? 'active-hover' : ''}`}
-                        onMouseEnter={() => setHoveredCategory(cat)}
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setSelectedCategory(cat);
-                          setSelectedSubCategory('All');
-                          setIsDropdownOpen(false);
-                          setDisplayCount(12);
-                        }}
-                      >
-                        <span>{cat}</span>
-                        <i className="fas fa-chevron-right"></i>
-                      </li>
-                    ))}
-                  </ul>
+                  <option value={ALL}>All types</option>
+                  {options.types.map((t) => (
+                    <option key={t} value={t}>
+                      {t}
+                    </option>
+                  ))}
+                </select>
+              </label>
 
-                  {/* Submenu renders next to main menu when hovering */}
-                  {hoveredCategory && (
-                    <ul
-                      className="custom-submenu"
-                      style={{
-                        position: 'relative',
-                        top: 0,
-                        left: 0,
-                        marginLeft: '10px',
-                        boxShadow: '0 10px 25px rgba(0,0,0,0.15)',
-                        borderLeft: '2px solid #0b1c47',
-                      }}
-                    >
-                      <li
-                        className="custom-submenu-item"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setSelectedCategory(hoveredCategory);
-                          setSelectedSubCategory('All');
-                          setIsDropdownOpen(false);
-                          setDisplayCount(12);
-                        }}
-                      >
-                        <strong>All {hoveredCategory}s</strong>
-                      </li>
-                      {getSubCategoriesFor(hoveredCategory).map((subCat) => (
-                        <li
-                          key={subCat}
-                          className="custom-submenu-item"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            setSelectedCategory(hoveredCategory);
-                            setSelectedSubCategory(subCat);
-                            setIsDropdownOpen(false);
-                            setDisplayCount(12);
-                          }}
-                        >
-                          {subCat}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
+              <label className="purchase-filter">
+                <span>Size</span>
+                <select
+                  value={sizeFilter}
+                  onChange={(e) => {
+                    setSizeFilter(e.target.value);
+                    setDisplayCount(PAGE_SIZE);
+                  }}
+                >
+                  <option value={ALL}>All sizes</option>
+                  {options.sizes.map((s) => (
+                    <option key={s} value={s}>
+                      {s}
+                    </option>
+                  ))}
+                </select>
+              </label>
+
+              <label className="purchase-filter">
+                <span>Pressure</span>
+                <select
+                  value={pnFilter}
+                  onChange={(e) => {
+                    setPnFilter(e.target.value);
+                    setDisplayCount(PAGE_SIZE);
+                  }}
+                >
+                  <option value={ALL}>All ratings</option>
+                  {options.pns.map((p) => (
+                    <option key={p} value={p}>
+                      {p}
+                    </option>
+                  ))}
+                </select>
+              </label>
+
+              <label className="purchase-filter">
+                <span>MOC</span>
+                <select
+                  value={mocFilter}
+                  onChange={(e) => {
+                    setMocFilter(e.target.value);
+                    setDisplayCount(PAGE_SIZE);
+                  }}
+                >
+                  <option value={ALL}>All materials</option>
+                  {options.mocs.map((m) => (
+                    <option key={m} value={m}>
+                      {m}
+                    </option>
+                  ))}
+                </select>
+              </label>
+
+              {(activeFilters > 0 || searchTerm) && (
+                <button type="button" className="purchase-filter-reset" onClick={resetFilters}>
+                  <i className="fas fa-rotate-left" aria-hidden="true"></i> Reset
+                </button>
               )}
             </div>
           </div>
@@ -684,77 +519,97 @@ export default function Purchase() {
 
         {/* Catalog Grid */}
         <div className="catalog-section">
-          <h2 className="section-heading">Available Items</h2>
+          <h2 className="section-heading">
+            Available Items
+            {stock.length > 0 && <span className="result-count">{filteredItems.length} of {stock.length}</span>}
+          </h2>
+
           <div className="purchase-grid">
-            {displayedItems.map((item) => {
-              const parsed = parseItemSpecs(item.itemName);
+            {displayedItems.map((item) => (
+              <div key={item.key} className="purchase-card catalog-card" {...tilt}>
+                <span className="card-accent-bar" aria-hidden="true" />
+                <span className="card-glare" aria-hidden="true" />
 
-              return (
-                <div key={item.itemCode} className="purchase-card catalog-card" {...tilt}>
-                  <span className="card-accent-bar" aria-hidden="true" />
-                  <span className="card-glare" aria-hidden="true" />
+                <div className="purchase-media">
+                  {item.image ? (
+                    <img src={item.image} alt={item.title} className="purchase-media-img" loading="lazy" />
+                  ) : (
+                    <div className="purchase-media-placeholder" role="img" aria-label="No photo available">
+                      <i className="fas fa-cubes" aria-hidden="true"></i>
+                      <span>Photo on request</span>
+                    </div>
+                  )}
 
-                  <div className="purchase-media">
-                    <img
-                      src={getItemImage(item.itemName)}
-                      alt={parsed.title}
-                      className="purchase-media-img"
-                      loading="lazy"
-                    />
+                  {item.size && (
+                    <span className="size-badge-overlay">
+                      <i className="fas fa-ruler-combined badge-icon" aria-hidden="true"></i>
+                      {item.size}
+                    </span>
+                  )}
 
-                    {parsed.size && (
-                      <span className="size-badge-overlay">
-                        <i className="fas fa-ruler-combined badge-icon" aria-hidden="true"></i>
-                        {parsed.size}
-                      </span>
-                    )}
+                  {item.pressure && (
+                    <span className="pressure-badge-overlay">
+                      <i className="fas fa-gauge-high badge-icon" aria-hidden="true"></i>
+                      {item.pressure}
+                    </span>
+                  )}
+                </div>
 
-                    {parsed.pressure && (
-                      <span className="pressure-badge-overlay">
-                        <i className="fas fa-gauge-high badge-icon" aria-hidden="true"></i>
-                        {parsed.pressure}
-                      </span>
-                    )}
+                <div className="purchase-body">
+                  <div className="purchase-meta">
+                    <span className="item-cat-badge">{item.category}</span>
+                    <span className="stock-badge">
+                      <i className="fas fa-circle-check" aria-hidden="true"></i>
+                      Ready stock &middot; {item.qty} {item.unit}
+                    </span>
                   </div>
 
-                  <div className="purchase-body">
-                    <div className="purchase-meta">
-                      <span className="item-cat-badge">{item.category}</span>
+                  <h3 className="item-title">{item.title}</h3>
+                  <p className="item-code-line">Code {item.itemCode}</p>
+
+                  {item.specs.length > 0 && (
+                    <div className="spec-chips">
+                      {item.specs.map((spec, i) => (
+                        <span key={`${spec.label}-${i}`} className="spec-chip">
+                          <em>{spec.label}</em>
+                          {spec.value}
+                        </span>
+                      ))}
                     </div>
+                  )}
 
-                    <h3 className="item-title">{parsed.title}</h3>
-
-                    {parsed.specs.length > 0 && (
-                      <div className="spec-chips">
-                        {parsed.specs.map((spec, i) => (
-                          <span key={`${spec.label}-${i}`} className="spec-chip">
-                            <em>{spec.label}</em>
-                            {spec.value}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-
-                    <div className="catalog-action">
-                      <button className="btn-add-to-cart" onClick={() => handleAddItem(item)}>
-                        <i className="fas fa-plus"></i> Add to List
-                      </button>
-                    </div>
+                  <div className="catalog-action">
+                    <button className="btn-request-quote" onClick={() => handleAddItem(item, true)}>
+                      <i className="fas fa-file-invoice" aria-hidden="true"></i> Request Quote
+                    </button>
+                    <button className="btn-add-to-cart" onClick={() => handleAddItem(item)}>
+                      <i className={cartItems.some((i) => i.key === item.key) ? 'fas fa-check' : 'fas fa-plus'}></i>{' '}
+                      {cartItems.some((i) => i.key === item.key) ? 'In list' : 'Add to List'}
+                    </button>
                   </div>
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </div>
 
-          {uniqueFilteredItems.length === 0 && (
+          {loadError && (
             <div className="empty-catalog-message">
-              <p>No items found matching &quot;{searchTerm}&quot;</p>
+              <p>The stock list could not be loaded. Please refresh, or email {ENQUIRY_EMAIL}.</p>
+            </div>
+          )}
+
+          {!loadError && stock.length > 0 && filteredItems.length === 0 && (
+            <div className="empty-catalog-message">
+              <p>No items match your filters.</p>
+              <button type="button" className="btn-load-more" onClick={resetFilters}>
+                Clear filters
+              </button>
             </div>
           )}
 
           {hasMore && (
             <div className="load-more-container">
-              <button className="btn-load-more" onClick={handleLoadMore}>
+              <button className="btn-load-more" onClick={() => setDisplayCount((prev) => prev + PAGE_SIZE)}>
                 View More
               </button>
             </div>
@@ -766,12 +621,12 @@ export default function Purchase() {
           <button
             type="button"
             className="cart-fab"
-            onClick={openCart}
-            aria-label={`Open purchase list, ${cartItems.length} item${cartItems.length === 1 ? '' : 's'}`}
+            onClick={() => openCart('list')}
+            aria-label={`Open enquiry list, ${cartItems.length} item${cartItems.length === 1 ? '' : 's'}`}
             key={fabPulse}
           >
-            <i className="fas fa-cart-shopping fab-icon" aria-hidden="true"></i>
-            <span className="cart-fab-label">Purchase List</span>
+            <i className="fas fa-clipboard-list fab-icon" aria-hidden="true"></i>
+            <span className="cart-fab-label">Enquiry List</span>
             <span className="cart-fab-badge">{cartItems.length}</span>
           </button>
         )}
@@ -787,11 +642,11 @@ export default function Purchase() {
             onClick={(e) => e.stopPropagation()}
             role="dialog"
             aria-modal="true"
-            aria-label="Your Purchase List"
+            aria-label="Your enquiry list"
           >
             <div className="cart-drawer-header">
               <div className="cart-drawer-heading">
-                {cartStep === 'checkout' && (
+                {cartStep === 'form' && (
                   <button
                     type="button"
                     className="cart-back-btn"
@@ -803,81 +658,94 @@ export default function Purchase() {
                 )}
                 <div>
                   <h2 className="cart-drawer-title">
-                    {cartStep === 'checkout' ? 'Review & Pay' : 'Your Purchase List'}
+                    {cartStep === 'sent' ? 'Enquiry Sent' : cartStep === 'form' ? 'Your Details' : 'Your Enquiry List'}
                   </h2>
                   <span className="cart-drawer-sub">
-                    {cartItems.length} item{cartItems.length === 1 ? '' : 's'}
-                    {cartStep === 'checkout' ? ' · confirm quantity and remarks' : ''}
+                    {cartStep === 'sent'
+                      ? 'We will respond with a quotation'
+                      : `${cartItems.length} item${cartItems.length === 1 ? '' : 's'}${
+                          cartStep === 'form' ? ' · no prices shown until we quote' : ''
+                        }`}
                   </span>
                 </div>
               </div>
 
-              <button
-                type="button"
-                className="cart-drawer-close"
-                onClick={closeCart}
-                aria-label="Close purchase list"
-              >
+              <button type="button" className="cart-drawer-close" onClick={closeCart} aria-label="Close enquiry list">
                 <i className="fas fa-times" aria-hidden="true"></i>
               </button>
             </div>
 
             <div className="cart-drawer-body">
-              {cartItems.length === 0 ? (
+              {cartStep === 'sent' ? (
+                <div className="cart-drawer-empty">
+                  <i className="fas fa-circle-check" aria-hidden="true"></i>
+                  <p>Thank you &mdash; your enquiry has been received.</p>
+                  <span>
+                    Our sales team will come back with a quotation. You can also send the same list straight from your
+                    mail app:
+                  </span>
+                  <a
+                    className="btn-load-more"
+                    href={`mailto:${ENQUIRY_EMAIL}?subject=${encodeURIComponent(
+                      'Stock enquiry from gmdalui.co.in'
+                    )}&body=${encodeURIComponent(sentSnapshot)}`}
+                  >
+                    <i className="fas fa-envelope" aria-hidden="true"></i> Email a copy to {ENQUIRY_EMAIL}
+                  </a>
+                </div>
+              ) : cartItems.length === 0 ? (
                 <div className="cart-drawer-empty">
                   <i className="fas fa-box-open" aria-hidden="true"></i>
-                  <p>Your purchase list is empty.</p>
-                  <span>Add items from the catalog to get started.</span>
+                  <p>Your enquiry list is empty.</p>
+                  <span>Add items from the catalogue to get started.</span>
                 </div>
               ) : cartStep === 'list' ? (
                 <ul className="cart-rows">
-                  {cartItems.map((item, index) => {
-                    const parsed = parseItemSpecs(item.itemName);
-                    const overlayText = parsed.size || parsed.pressure;
-                    const qty = Number(item.quantity) > 0 ? Number(item.quantity) : 1;
+                  {cartItems.map((item, index) => (
+                    <li key={item.key} className="cart-row">
+                      <div className="cart-row-thumb">
+                        {item.image ? (
+                          <img src={item.image} alt={item.title} />
+                        ) : (
+                          <i className="fas fa-cubes" aria-hidden="true"></i>
+                        )}
+                        {(item.size || item.pressure) && (
+                          <span className="cart-row-badge">{item.size || item.pressure}</span>
+                        )}
+                      </div>
 
-                    return (
-                      <li key={`cart-${item.itemCode}`} className="cart-row">
-                        <div className="cart-row-thumb">
-                          <img src={getItemImage(item.itemName)} alt={parsed.title} />
-                          {overlayText && <span className="cart-row-badge">{overlayText}</span>}
+                      <div className="cart-row-meta">
+                        <h3 className="cart-row-title">{item.title}</h3>
+                        <div className="cart-row-sub">
+                          <span className="cart-qty-pill">
+                            Qty <strong>{Number(item.quantity) > 0 ? item.quantity : 1}</strong> {item.unit}
+                          </span>
+                          <span className="cart-stock-note">{item.inStock} in stock</span>
                         </div>
+                      </div>
 
-                        <div className="cart-row-meta">
-                          <h3 className="cart-row-title">{parsed.title}</h3>
-                          <div className="cart-row-sub">
-                            <span className="cart-qty-pill">
-                              Qty <strong>{qty}</strong> {item.unit}
-                            </span>
-                          </div>
-                        </div>
-
-                        <button
-                          type="button"
-                          className="cart-remove-btn"
-                          onClick={() => handleRemoveItem(index)}
-                          aria-label={`Remove ${parsed.title}`}
-                          title="Remove Item"
-                        >
-                          <i className="fas fa-trash-alt" aria-hidden="true"></i>
-                        </button>
-                      </li>
-                    );
-                  })}
+                      <button
+                        type="button"
+                        className="cart-remove-btn"
+                        onClick={() => handleRemoveItem(index)}
+                        aria-label={`Remove ${item.title}`}
+                        title="Remove item"
+                      >
+                        <i className="fas fa-trash-alt" aria-hidden="true"></i>
+                      </button>
+                    </li>
+                  ))}
                 </ul>
               ) : (
-                <ul className="cart-rows">
-                  {cartItems.map((item, index) => {
-                    const parsed = parseItemSpecs(item.itemName);
-
-                    return (
-                      <li key={`checkout-${item.itemCode}`} className="cart-row cart-checkout-row">
-                        <div className="cart-row-thumb">
-                          <img src={getItemImage(item.itemName)} alt={parsed.title} />
-                        </div>
-
+                <form id="purchase-enquiry-form" className="enquiry-form" onSubmit={handleSubmit} noValidate>
+                  <ul className="cart-rows">
+                    {cartItems.map((item, index) => (
+                      <li key={item.key} className="cart-row cart-checkout-row">
                         <div className="cart-row-meta">
-                          <h3 className="cart-row-title">{parsed.title}</h3>
+                          <h3 className="cart-row-title">{item.title}</h3>
+                          <span className="cart-stock-note">
+                            Code {item.itemCode} &middot; {item.inStock} in stock
+                          </span>
 
                           <div className="cart-checkout-fields">
                             <input
@@ -887,15 +755,15 @@ export default function Purchase() {
                               onChange={(e) => handleCartChange(index, 'quantity', e.target.value)}
                               className="purchase-input"
                               min="1"
-                              aria-label={`Quantity for ${parsed.title}`}
+                              aria-label={`Quantity for ${item.title}`}
                             />
                             <textarea
-                              placeholder="Remarks (Optional)"
+                              placeholder="Remarks (optional)"
                               value={item.remarks}
                               onChange={(e) => handleCartChange(index, 'remarks', e.target.value)}
                               className="purchase-textarea"
                               rows={2}
-                              aria-label={`Remarks for ${parsed.title}`}
+                              aria-label={`Remarks for ${item.title}`}
                             />
                           </div>
                         </div>
@@ -904,27 +772,104 @@ export default function Purchase() {
                           type="button"
                           className="cart-remove-btn"
                           onClick={() => handleRemoveItem(index)}
-                          aria-label={`Remove ${parsed.title}`}
-                          title="Remove Item"
+                          aria-label={`Remove ${item.title}`}
+                          title="Remove item"
                         >
                           <i className="fas fa-trash-alt" aria-hidden="true"></i>
                         </button>
                       </li>
-                    );
-                  })}
-                </ul>
+                    ))}
+                  </ul>
+
+                  <div className="enquiry-fields">
+                    <div className="purchase-form-group">
+                      <label htmlFor="enq-name">
+                        Full Name <span className="req">*</span>
+                      </label>
+                      <input
+                        id="enq-name"
+                        className={`purchase-input ${formErrors.name ? 'input-error' : ''}`}
+                        value={buyer.name}
+                        onChange={(e) => handleBuyerChange('name', e.target.value)}
+                        autoComplete="name"
+                      />
+                      {formErrors.name && <span className="error-text">{formErrors.name}</span>}
+                    </div>
+
+                    <div className="purchase-form-group">
+                      <label htmlFor="enq-company">Company</label>
+                      <input
+                        id="enq-company"
+                        className="purchase-input"
+                        value={buyer.company}
+                        onChange={(e) => handleBuyerChange('company', e.target.value)}
+                        autoComplete="organization"
+                      />
+                    </div>
+
+                    <div className="purchase-form-group">
+                      <label htmlFor="enq-email">
+                        Email <span className="req">*</span>
+                      </label>
+                      <input
+                        id="enq-email"
+                        type="email"
+                        className={`purchase-input ${formErrors.email ? 'input-error' : ''}`}
+                        value={buyer.email}
+                        onChange={(e) => handleBuyerChange('email', e.target.value)}
+                        autoComplete="email"
+                      />
+                      {formErrors.email && <span className="error-text">{formErrors.email}</span>}
+                    </div>
+
+                    <div className="purchase-form-group">
+                      <label htmlFor="enq-phone">
+                        Phone <span className="req">*</span>
+                      </label>
+                      <input
+                        id="enq-phone"
+                        type="tel"
+                        className={`purchase-input ${formErrors.phone ? 'input-error' : ''}`}
+                        value={buyer.phone}
+                        onChange={(e) => handleBuyerChange('phone', e.target.value)}
+                        autoComplete="tel"
+                      />
+                      {formErrors.phone && <span className="error-text">{formErrors.phone}</span>}
+                    </div>
+
+                    <div className="purchase-form-group full-width-field">
+                      <label htmlFor="enq-message">Requirement notes</label>
+                      <textarea
+                        id="enq-message"
+                        className="purchase-textarea"
+                        rows={3}
+                        value={buyer.message}
+                        onChange={(e) => handleBuyerChange('message', e.target.value)}
+                        placeholder="Delivery location, required despatch date, inspection or test certificate needs."
+                      />
+                    </div>
+                  </div>
+
+                  {submitError && <p className="error-text enquiry-error">{submitError}</p>}
+                </form>
               )}
             </div>
 
-            {cartItems.length > 0 && (
+            {cartStep !== 'sent' && cartItems.length > 0 && (
               <div className="cart-drawer-footer">
                 {cartStep === 'list' ? (
-                  <button type="button" className="btn-primary cart-footer-btn" onClick={() => setCartStep('checkout')}>
-                    Proceed to Checkout <i className="fas fa-arrow-right" aria-hidden="true"></i>
+                  <button type="button" className="btn-primary cart-footer-btn" onClick={() => setCartStep('form')}>
+                    Request Quote <i className="fas fa-arrow-right" aria-hidden="true"></i>
                   </button>
                 ) : (
-                  <button type="button" onClick={handleSubmit} className="btn-primary cart-footer-btn">
-                    Submit Request &amp; Pay <i className="fas fa-credit-card" aria-hidden="true"></i>
+                  <button
+                    type="submit"
+                    form="purchase-enquiry-form"
+                    className="btn-primary cart-footer-btn"
+                    disabled={submitting}
+                  >
+                    {submitting ? 'Sending…' : 'Send Enquiry'}{' '}
+                    <i className="fas fa-paper-plane" aria-hidden="true"></i>
                   </button>
                 )}
               </div>

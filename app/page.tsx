@@ -5,6 +5,11 @@ import Products from '@/components/home/Products';
 import WhyChooseUs from '@/components/home/WhyChooseUs';
 import VisionMission from '@/components/home/VisionMission';
 import Clients from '@/components/home/Clients';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/' },
+};
 
 export default function HomePage() {
   return (

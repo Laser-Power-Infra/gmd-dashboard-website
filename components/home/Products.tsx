@@ -7,7 +7,7 @@ const products = [
   },
   {
     id: 2,
-    image: '/uploads/2025/04/product3-1.webp',
+    image: '/valve img/WhatsApp Image 2026-06-16 at 12.33.30 PM.webp',
     title: 'Air Valves',
     desc: 'An air valve from DALUI is designed to manage air within pipelines, addressing both air release and vacuum conditions.',
   },
@@ -39,7 +39,7 @@ export default function Products() {
           {products.map((product) => (
             <div className="product-card-v2" key={product.id}>
               <div className="product-image-v2">
-                <img src={product.image} alt={product.title} />
+                <img src={product.image} alt={product.title} loading="lazy" />
               </div>
               <div className="product-info-overlay">
                 <h3>{product.title}</h3>

@@ -26,7 +26,13 @@ interface ClassicManual {
   safety: string[] | { items: string[]; image?: string } | null;
 }
 
-export default function ValveManualSection({ valveId }: { valveId: string }) {
+export default function ValveManualSection({
+  valveId,
+  pdfHref,
+}: {
+  valveId: string;
+  pdfHref: string | null;
+}) {
   const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
@@ -71,7 +77,7 @@ export default function ValveManualSection({ valveId }: { valveId: string }) {
   }
 
   if (data.isModern) {
-    return <ModernManualLayout data={data} />;
+    return <ModernManualLayout data={data} pdfHref={pdfHref} />;
   }
 
   // Legacy classic layout (kept for parity; no classic manuals in current data)

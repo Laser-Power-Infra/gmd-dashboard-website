@@ -40,6 +40,7 @@ export default function Clients() {
               <img
                 src={logo.src}
                 alt={logo.alt}
+                loading="lazy"
                 onError={(e) => {
                   // If logo fails to load (e.g. not copied or missing), fallback to simple text
                   const target = e.target as HTMLImageElement;

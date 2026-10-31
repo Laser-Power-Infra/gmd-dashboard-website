@@ -40,13 +40,41 @@ import AdminNavSlot from '@/components/layout/AdminNavSlot';
 import AuthNavSlot from '@/components/layout/AuthNavSlot';
 import { Toaster } from 'sonner';
 import { Suspense } from 'react';
+import JsonLd, {
+  SITE_URL,
+  SITE_NAME,
+  OG_IMAGE,
+  organizationJsonLd,
+} from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'GM Dalui & Sons Pvt. Ltd. | Value Engineering Excellence',
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: 'GM Dalui & Sons | Industrial Valve Manufacturer, Kolkata',
+    template: '%s | GM Dalui & Sons',
+  },
   description:
-    'GM Dalui & Sons Pvt. Ltd. - manufacturers of valves. Our valves are delivered in an extensive variety of materials and compositions and we can custom produce your design.',
+    'Industrial valve manufacturer in Kolkata, India. Butterfly, sluice, air release, check, globe, ball, control and pressure relief valves, custom built to your design.',
   icons: {
     icon: '/uploads/2025/04/header-final-logo.webp',
+  },
+  // No title/description here: Next fills og:title and og:description from each
+  // page's own title/description, so leaving them unset keeps shares per-page.
+  openGraph: {
+    type: 'website',
+    siteName: SITE_NAME,
+    locale: 'en_IN',
+    images: [
+      {
+        url: OG_IMAGE,
+        width: 1199,
+        height: 672,
+        alt: 'GM Dalui & Sons industrial valves',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
   },
 };
 
@@ -63,6 +91,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         />
       </head>
       <body>
+        <JsonLd data={organizationJsonLd} />
         <QuoteProvider>
           <div className="app-wrapper">
             <Header

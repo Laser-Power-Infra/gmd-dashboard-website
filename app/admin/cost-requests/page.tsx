@@ -1,6 +1,12 @@
 import { prisma } from '@/lib/prisma';
+import type { Metadata } from 'next';
 
 export const dynamic = 'force-dynamic';
+
+export const metadata: Metadata = {
+  title: 'Cost Requests',
+  robots: { index: false, follow: false },
+};
 
 const STATUS_BADGE: Record<string, string> = {
   NEW: 'bg-blue-100 text-blue-700',

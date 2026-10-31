@@ -1,4 +1,6 @@
-export default function ManualsHero() {
+// On a manual detail page the manual's own title is the h1, so the banner drops to h2.
+export default function ManualsHero({ heading = 'h1' }: { heading?: 'h1' | 'h2' }) {
+  const Heading = heading;
   return (
     <section className="warranty-hero">
       <div className="hero-decor-shape-top-left"></div>
@@ -14,7 +16,7 @@ export default function ManualsHero() {
 
         {/* Center: Styled title */}
         <div className="hero-center-title">
-          <h1 className="warranty-title-text">MANUALS OF VALVE</h1>
+          <Heading className="warranty-title-text">MANUALS OF VALVE</Heading>
         </div>
       </div>
     </section>

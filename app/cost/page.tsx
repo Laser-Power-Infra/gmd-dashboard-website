@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   icons: {
     icon: '/uploads/2025/04/header-final-logo.webp',
   },
+  robots: { index: false, follow: false },
 };
 
 /**

@@ -30,7 +30,7 @@ export default function Services() {
           {servicesData.map((service) => (
             <div className="service-card" key={service.id}>
               <div className="service-image">
-                <img src={service.image} alt={service.title} />
+                <img src={service.image} alt={service.title} loading="lazy" />
               </div>
               <div className="service-body">
                 <h3>{service.title}</h3>
