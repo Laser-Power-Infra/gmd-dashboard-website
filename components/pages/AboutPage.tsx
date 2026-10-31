@@ -33,39 +33,39 @@ function useCountUp(endVal: number, duration = 1500, trigger = true) {
 
 // Government Client Logos
 const govLogos = [
-  { src: '/uploads/2025/04/logo6.png', alt: 'Client Logo 6' },
-  { src: '/uploads/2025/04/logo8.png', alt: 'Client Logo 8' },
-  { src: '/uploads/2025/04/logo9.png', alt: 'Client Logo 9' },
-  { src: '/uploads/2025/04/logo10.png', alt: 'Client Logo 10' },
-  { src: '/uploads/2025/04/logo-7.png', alt: 'Client Logo 7' },
-  { src: '/uploads/2025/04/logo11-1.jpg', alt: 'Client Logo 11' },
-  { src: '/uploads/2025/04/logo12.jpg', alt: 'Client Logo 12' },
-  { src: '/uploads/2025/04/logo13-4.jpg', alt: 'Client Logo 13' },
-  { src: '/uploads/2025/04/logo14.jpg', alt: 'Client Logo 14' },
+  { src: '/uploads/2025/04/logo6.webp', alt: 'Client Logo 6' },
+  { src: '/uploads/2025/04/logo8.webp', alt: 'Client Logo 8' },
+  { src: '/uploads/2025/04/logo9.webp', alt: 'Client Logo 9' },
+  { src: '/uploads/2025/04/logo10.webp', alt: 'Client Logo 10' },
+  { src: '/uploads/2025/04/logo-7.webp', alt: 'Client Logo 7' },
+  { src: '/uploads/2025/04/logo11-1.webp', alt: 'Client Logo 11' },
+  { src: '/uploads/2025/04/logo12.webp', alt: 'Client Logo 12' },
+  { src: '/uploads/2025/04/logo13-4.webp', alt: 'Client Logo 13' },
+  { src: '/uploads/2025/04/logo14.webp', alt: 'Client Logo 14' },
 ];
 
 // Private Client Logos
 const privateLogos = [
-  { src: '/uploads/2025/04/logo1-1.png', alt: 'Client Logo 1' },
-  { src: '/uploads/2025/04/logo5-1.png', alt: 'Client Logo 5' },
-  { src: '/uploads/2025/04/logo14-1.png', alt: 'Client Logo 14-1' },
-  { src: '/uploads/2025/04/logo2-1.png', alt: 'Client Logo 2' },
-  { src: '/uploads/2025/04/logo3-1.png', alt: 'Client Logo 3' },
-  { src: '/uploads/2025/04/logo16-1.jpg', alt: 'Client Logo 16' },
-  { src: '/uploads/2025/04/images-1.jpg', alt: 'Client Logo Images 1' },
-  { src: '/uploads/2025/04/logo-16-1.jpg', alt: 'Client Logo 16-1' },
-  { src: '/uploads/2025/04/logo17-1.jpg', alt: 'Client Logo 17' },
+  { src: '/uploads/2025/04/logo1-1.webp', alt: 'Client Logo 1' },
+  { src: '/uploads/2025/04/logo5-1.webp', alt: 'Client Logo 5' },
+  { src: '/uploads/2025/04/logo14-1.webp', alt: 'Client Logo 14-1' },
+  { src: '/uploads/2025/04/logo2-1.webp', alt: 'Client Logo 2' },
+  { src: '/uploads/2025/04/logo3-1.webp', alt: 'Client Logo 3' },
+  { src: '/uploads/2025/04/logo16-1.webp', alt: 'Client Logo 16' },
+  { src: '/uploads/2025/04/images-1.webp', alt: 'Client Logo Images 1' },
+  { src: '/uploads/2025/04/logo-16-1.webp', alt: 'Client Logo 16-1' },
+  { src: '/uploads/2025/04/logo17-1.webp', alt: 'Client Logo 17' },
 ];
 
 // Certificates
 const certificates = [
-  '/uploads/2025/04/certified-logo-5-1.png',
-  '/uploads/2025/04/certified-logo-5.png',
-  '/uploads/2025/04/certified-logo-6.png',
-  '/uploads/2025/04/certified-logo-7-1.png',
-  '/uploads/2025/04/certified-logo1-1.png',
-  '/uploads/2025/04/certified-logo3.png',
-  '/uploads/2025/04/certified-logo4.png',
+  '/uploads/2025/04/certified-logo-5-1.webp',
+  '/uploads/2025/04/certified-logo-5.webp',
+  '/uploads/2025/04/certified-logo-6.webp',
+  '/uploads/2025/04/certified-logo-7-1.webp',
+  '/uploads/2025/04/certified-logo1-1.webp',
+  '/uploads/2025/04/certified-logo3.webp',
+  '/uploads/2025/04/certified-logo4.webp',
 ];
 
 // Map Locator Pins (Coordinates in percentage: left, top)
@@ -144,7 +144,7 @@ export default function AboutPage() {
       {/* 1. Header Banner */}
       <section
         className="about-banner"
-        style={{ backgroundImage: "url('/uploads/2025/04/service5.jpg')" }}
+        style={{ backgroundImage: "url('/uploads/2025/04/service5.webp')" }}
       >
         <div className="about-banner-content reveal reveal-fade">
           <h1 className="about-banner-title">
@@ -163,7 +163,7 @@ export default function AboutPage() {
               <div className="about-graphics-inner">
                 <div className="about-graphics-deco"></div>
                 <div className="about-graphics-img">
-                  <img src="/uploads/2025/04/banner-image3.jpg" alt="GM Dalui & Sons Plant" />
+                  <img src="/uploads/2025/04/banner-image3.webp" alt="GM Dalui & Sons Plant" />
                 </div>
               </div>
             </div>
@@ -329,7 +329,7 @@ export default function AboutPage() {
               <div className="relative">
                 <div className="absolute top-4 left-4 w-full h-full bg-[#8a4f50]/5 rounded-xl -z-10"></div>
                 <img
-                  src="/uploads/2025/04/MISSION.jpg"
+                  src="/uploads/2025/04/MISSION.webp"
                   alt="Industrial valves network installation"
                   className="rounded-lg shadow-xl w-full object-cover max-h-[400px]"
                 />
@@ -413,7 +413,7 @@ export default function AboutPage() {
             {/* Map Image with Pulsing Pins */}
             <div className="about-map-container reveal reveal-left">
               <div className="about-map-inner">
-                <img src="/uploads/2025/05/Untitled-design-2.jpg" alt="GM Dalui Footprints Across India" />
+                <img src="/uploads/2025/05/Untitled-design-2.webp" alt="GM Dalui Footprints Across India" />
 
                 {/* Interactive Pulsing Map Pins */}
                 {mapPins.map((pin, index) => (

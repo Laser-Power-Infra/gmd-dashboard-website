@@ -155,7 +155,7 @@ export default function ValveManualSection({ valveId }: { valveId: string }) {
               <div className="manual-image-col">
                 <div className="manual-img-container">
                   <img
-                    src={classic.transportation.image2 || '/uploads/2025/06/54a382b8-fa1e-4110-b69d-c67f142bbf5c.jpg'}
+                    src={classic.transportation.image2 || '/uploads/2025/06/54a382b8-fa1e-4110-b69d-c67f142bbf5c.webp'}
                     alt="Storage"
                     className="manual-asset-img"
                   />
@@ -208,7 +208,7 @@ export default function ValveManualSection({ valveId }: { valveId: string }) {
               <div className="manual-image-col">
                 <div className="manual-img-container">
                   <img
-                    src={classic.installation.image2 || '/uploads/2025/06/construction-site-inspector-making-report-scaled.jpg'}
+                    src={classic.installation.image2 || '/uploads/2025/06/construction-site-inspector-making-report-scaled.webp'}
                     alt="Installation Guidelines"
                     className="manual-asset-img"
                   />
@@ -228,7 +228,7 @@ export default function ValveManualSection({ valveId }: { valveId: string }) {
                   <div className={`manual-row alternating-row ${!isEven ? 'reverse-row' : ''}`} key={idx} style={{ marginBottom: '40px' }}>
                     <div className="manual-image-col">
                       <div className="manual-img-container">
-                        <img src={item.image || '/uploads/2025/06/view-male-engineer-work-engineers-day-celebration-scaled.jpg'} alt={item.issue} className="manual-asset-img" />
+                        <img src={item.image || '/uploads/2025/06/view-male-engineer-work-engineers-day-celebration-scaled.webp'} alt={item.issue} className="manual-asset-img" />
                         <div className="img-frame-accent"></div>
                       </div>
                     </div>
@@ -306,7 +306,7 @@ export default function ValveManualSection({ valveId }: { valveId: string }) {
               </div>
               <div className="manual-image-col">
                 <div className="manual-img-container">
-                  <img src={classic.safety && !Array.isArray(classic.safety) && classic.safety.image ? classic.safety.image : '/uploads/2025/06/colleagues-with-safety-equipment-working-with-blueprints.jpg'} alt="Safety Production Site" className="manual-asset-img" />
+                  <img src={classic.safety && !Array.isArray(classic.safety) && classic.safety.image ? classic.safety.image : '/uploads/2025/06/colleagues-with-safety-equipment-working-with-blueprints.webp'} alt="Safety Production Site" className="manual-asset-img" />
                   <div className="img-frame-accent"></div>
                 </div>
               </div>

@@ -78,7 +78,7 @@ export default function Header({
       <div className="main-nav-bar">
         <div className="container nav-container">
           <Link href="/" className="site-logo" onClick={handleLinkClick}>
-            <img src="/uploads/2025/04/header-final-logo.png" alt="GM Dalui & Sons Logo" />
+            <img src="/uploads/2025/04/header-final-logo.webp" alt="GM Dalui & Sons Logo" />
           </Link>
 
           {/* Desktop Navigation Links */}

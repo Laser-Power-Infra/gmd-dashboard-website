@@ -5,7 +5,7 @@ export const otherProducts: OtherProduct[] = [
     id: 'prod-0',
     name: 'Single-Flanged Dismantling Joints',
     category: 'Other Accessories',
-    image: '/other accessories/single flange dismantling.png',
+    image: '/other accessories/single flange dismantling.webp',
     size: 'Up to 2000 mm',
     usage: [
       'Facilitates the installation and removal of valves, meters, or other components from a pipeline.',
@@ -17,7 +17,7 @@ export const otherProducts: OtherProduct[] = [
     id: 'prod-1',
     name: 'Rubber Bellows (Stainless Steel Bellows)',
     category: 'Other Accessories',
-    image: '/other accessories/rubber bellows.png',
+    image: '/other accessories/rubber bellows.webp',
     size: 'Up to 2000 mm',
     usage: [
       'Absorbs thermal expansion and contraction in pipelines.',
@@ -30,7 +30,7 @@ export const otherProducts: OtherProduct[] = [
     id: 'prod-2',
     name: 'Basket Strainers',
     category: 'Other Accessories',
-    image: '/other accessories/basket strainers.png',
+    image: '/other accessories/basket strainers.webp',
     usage: [
       'Provides larger debris removal capacity.',
       'Protects valves and other downstream equipment from damage.',
@@ -41,7 +41,7 @@ export const otherProducts: OtherProduct[] = [
     id: 'prod-3',
     name: 'Temporary Cone or Tee Strainers',
     category: 'Other Accessories',
-    image: '/other accessories/cone strainers.png',
+    image: '/other accessories/cone strainers.webp',
     usage: [
       'Used during commissioning to filter out debris, particles, & contaminants from the fluid stream.',
       'Protects valves and other downstream equipment from damage.',
@@ -52,7 +52,7 @@ export const otherProducts: OtherProduct[] = [
     id: 'prod-4',
     name: 'Weld-Neck Flanges',
     category: 'Other Accessories',
-    image: '/other accessories/wewld neck flange.png',
+    image: '/other accessories/wewld neck flange.webp',
     usage: [
       'Provides a secure and leak-proof connection between valves and piping systems.',
       'Facilitates easy installation, removal, and maintenance of valves.',
@@ -63,7 +63,7 @@ export const otherProducts: OtherProduct[] = [
     id: 'prod-5',
     name: 'Slip-On Flanges',
     category: 'Other Accessories',
-    image: '/other accessories/slip flange.png',
+    image: '/other accessories/slip flange.webp',
     usage: [
       'Provides a secure and leak-proof connection between valves and piping systems.',
       'Facilitates easy installation, removal, and maintenance of valves.',
@@ -74,7 +74,7 @@ export const otherProducts: OtherProduct[] = [
     id: 'prod-6',
     name: 'Blind Flanges',
     category: 'Other Accessories',
-    image: '/other accessories/blind flange.png',
+    image: '/other accessories/blind flange.webp',
     usage: [
       'Provides a secure and leak-proof connection between valves and piping systems.',
       'Facilitates easy installation, removal, and maintenance of valves.',
@@ -85,7 +85,7 @@ export const otherProducts: OtherProduct[] = [
     id: 'prod-7',
     name: 'Threaded Flanges',
     category: 'Other Accessories',
-    image: '/other accessories/threaded  flange.png',
+    image: '/other accessories/threaded  flange.webp',
     usage: [
       'Provides a secure and leak-proof connection between valves and piping systems.',
       'Facilitates easy installation, removal, and maintenance of valves.',
@@ -96,7 +96,7 @@ export const otherProducts: OtherProduct[] = [
     id: 'prod-8',
     name: 'Mechanical Indicators (Lever/Scale type)',
     category: 'Other Accessories',
-    image: '/other accessories/mechanical indicators.png',
+    image: '/other accessories/mechanical indicators.webp',
     usage: [
       'Displays whether the valve is open, closed, or in an intermediate position.',
       'Essential for manual valves and automated systems.'
@@ -106,7 +106,7 @@ export const otherProducts: OtherProduct[] = [
     id: 'prod-9',
     name: 'Electrical Indicators (Limit switches with LED displays)',
     category: 'Other Accessories',
-    image: '/other accessories/electrical indicator.png',
+    image: '/other accessories/electrical indicator.webp',
     usage: [
       'Displays whether the valve is open, closed, or in an intermediate position.',
       'Essential for manual valves and automated systems.'
@@ -116,7 +116,7 @@ export const otherProducts: OtherProduct[] = [
     id: 'prod-10',
     name: 'Mechanical Switches',
     category: 'Other Accessories',
-    image: '/other accessories/mechanical switches.png',
+    image: '/other accessories/mechanical switches.webp',
     usage: [
       'Sends a signal to the control system indicating valve position.',
       'Common in automated and safety-critical systems.'
@@ -126,7 +126,7 @@ export const otherProducts: OtherProduct[] = [
     id: 'prod-11',
     name: 'Proximity Sensors (Magnetic or Inductive)',
     category: 'Other Accessories',
-    image: '/other accessories/proximity sensors.png',
+    image: '/other accessories/proximity sensors.webp',
     usage: [
       'Sends a signal to the control system indicating valve position.',
       'Common in automated and safety-critical systems.'
@@ -136,7 +136,7 @@ export const otherProducts: OtherProduct[] = [
     id: 'prod-12',
     name: 'Direct-Acting Solenoid Valves',
     category: 'Other Accessories',
-    image: '/other accessories/direct acting solenoid.png',
+    image: '/other accessories/direct acting solenoid.webp',
     usage: [
       'Controls the flow of air, gas, or fluid to actuators or pneumatic valves.',
       'Enables remote operation of valves.'
@@ -146,7 +146,7 @@ export const otherProducts: OtherProduct[] = [
     id: 'prod-13',
     name: 'Pilot-Operated Solenoid Valves',
     category: 'Other Accessories',
-    image: '/other accessories/pilot operated.png',
+    image: '/other accessories/pilot operated.webp',
     usage: [
       'Controls the flow of air, gas, or fluid to actuators or pneumatic valves.',
       'Enables remote operation of valves.'
@@ -156,7 +156,7 @@ export const otherProducts: OtherProduct[] = [
     id: 'prod-14',
     name: 'Pneumatic Actuators (Air-Operated)',
     category: 'Other Accessories',
-    image: '/other accessories/pneumatic  air operated.png',
+    image: '/other accessories/pneumatic  air operated.webp',
     usage: [
       'Automates valve operation for opening, closing, or throttling.',
       'Protects valves and other downstream equipment from damage.',
@@ -167,7 +167,7 @@ export const otherProducts: OtherProduct[] = [
     id: 'prod-15',
     name: 'Hydraulic Actuators (Fluid-Operated)',
     category: 'Other Accessories',
-    image: '/other accessories/hydraullic  fluid operated.png',
+    image: '/other accessories/hydraullic  fluid operated.webp',
     usage: [
       'Automates valve operation for opening, closing, or throttling.',
       'Protects valves and other downstream equipment from damage.',
@@ -178,7 +178,7 @@ export const otherProducts: OtherProduct[] = [
     id: 'prod-16',
     name: 'Electric Actuators (Motor-Driven)',
     category: 'Other Accessories',
-    image: '/other accessories/electric motor driven.png',
+    image: '/other accessories/electric motor driven.webp',
     usage: [
       'Automates valve operation for opening, closing, or throttling.',
       'Protects valves and other downstream equipment from damage.',
@@ -189,7 +189,7 @@ export const otherProducts: OtherProduct[] = [
     id: 'prod-17',
     name: 'Pneumatic Valve Positioners',
     category: 'Other Accessories',
-    image: '/other accessories/pneumatic valve positioner.png',
+    image: '/other accessories/pneumatic valve positioner.webp',
     usage: [
       'Provides a secure and leak-proof connection between valves and piping systems.',
       'Facilitates easy installation, removal, and maintenance of valves.',
@@ -200,7 +200,7 @@ export const otherProducts: OtherProduct[] = [
     id: 'prod-18',
     name: 'Electro-Pneumatic Valve Positioners',
     category: 'Other Accessories',
-    image: '/other accessories/electro pneumatic.png',
+    image: '/other accessories/electro pneumatic.webp',
     usage: [
       'Provides a secure and leak-proof connection between valves and piping systems.',
       'Facilitates easy installation, removal, and maintenance of valves.',
@@ -211,7 +211,7 @@ export const otherProducts: OtherProduct[] = [
     id: 'prod-19',
     name: 'Spiral Wound Gaskets',
     category: 'Other Accessories',
-    image: '/other accessories/spiral wound gasket.png',
+    image: '/other accessories/spiral wound gasket.webp',
     usage: [
       'Creates a leak-tight seal between valve flanges and piping connections.',
       'Supports high-pressure and high-temperature applications.'
@@ -221,7 +221,7 @@ export const otherProducts: OtherProduct[] = [
     id: 'prod-20',
     name: 'Ring-Type Joint (RTJ) Gaskets',
     category: 'Other Accessories',
-    image: '/other accessories/ring gasket.png',
+    image: '/other accessories/ring gasket.webp',
     usage: [
       'Creates a leak-tight seal between valve flanges and piping connections.',
       'Supports high-pressure and high-temperature applications.'
@@ -231,7 +231,7 @@ export const otherProducts: OtherProduct[] = [
     id: 'prod-21',
     name: 'Plugged or Capped Connections',
     category: 'Other Accessories',
-    image: '/other accessories/plugged and crapped  connections.png',
+    image: '/other accessories/plugged and crapped  connections.webp',
     usage: [
       'Releases trapped fluids or gases for maintenance or safety.',
       'Prevents overpressure or contamination buildup.'
@@ -241,7 +241,7 @@ export const otherProducts: OtherProduct[] = [
     id: 'prod-22',
     name: 'Integrated Drain or Vent Valves',
     category: 'Other Accessories',
-    image: '/other accessories/integrated drain or vent valve.png',
+    image: '/other accessories/integrated drain or vent valve.webp',
     usage: [
       'Releases trapped fluids or gases for maintenance or safety.',
       'Prevents overpressure or contamination buildup.'
@@ -251,7 +251,7 @@ export const otherProducts: OtherProduct[] = [
     id: 'prod-23',
     name: 'Inline Silencers',
     category: 'Other Accessories',
-    image: '/other accessories/inline silencer.png',
+    image: '/other accessories/inline silencer.webp',
     usage: [
       'Reduces noise caused by high-velocity fluid or gas flow through valves.',
       'Improves workplace safety and comfort.'
@@ -261,7 +261,7 @@ export const otherProducts: OtherProduct[] = [
     id: 'prod-24',
     name: 'Exhaust Mufflers',
     category: 'Other Accessories',
-    image: '/other accessories/exhaust mufflers.png',
+    image: '/other accessories/exhaust mufflers.webp',
     usage: [
       'Reduces noise caused by high-velocity fluid or gas flow through valves.',
       'Improves workplace safety and comfort.'
@@ -271,7 +271,7 @@ export const otherProducts: OtherProduct[] = [
     id: 'prod-25',
     name: 'Analog Pressure Gauges',
     category: 'Other Accessories',
-    image: '/other accessories/analog pressure gauge.png',
+    image: '/other accessories/analog pressure gauge.webp',
     usage: [
       'Monitors fluid pressure or flow rate near the valve.',
       'Helps in troubleshooting and system optimization.'
@@ -281,7 +281,7 @@ export const otherProducts: OtherProduct[] = [
     id: 'prod-26',
     name: 'Digital Flowmeters',
     category: 'Other Accessories',
-    image: '/other accessories/digital flowmeters.png',
+    image: '/other accessories/digital flowmeters.webp',
     usage: [
       'Monitors fluid pressure or flow rate near the valve.',
       'Helps in troubleshooting and system optimization.'
@@ -291,7 +291,7 @@ export const otherProducts: OtherProduct[] = [
     id: 'prod-27',
     name: 'Fixed-Length Extension Stems',
     category: 'Other Accessories',
-    image: '/other accessories/fixed length  extension stems.png',
+    image: '/other accessories/fixed length  extension stems.webp',
     usage: [
       'Allows operation of valves in hard-to-reach areas (e.g., high or underground installations).' 
     ]
@@ -300,7 +300,7 @@ export const otherProducts: OtherProduct[] = [
     id: 'prod-28',
     name: 'Chain-Operated Extensions',
     category: 'Other Accessories',
-    image: '/other accessories/chain operated extension.png',
+    image: '/other accessories/chain operated extension.webp',
     usage: [
       'Allows operation of valves in hard-to-reach areas (e.g., high or underground installations).',
       'Chain wheels are used for overhead valves.'
@@ -310,7 +310,7 @@ export const otherProducts: OtherProduct[] = [
     id: 'prod-29',
     name: 'Removable Thermal Insulation Covers',
     category: 'Other Accessories',
-    image: '/other accessories/removal thermal insulation.png',
+    image: '/other accessories/removal thermal insulation.webp',
     usage: [
       'Maintains fluid temperature within the valve.',
       'Prevents heat loss or freezing in extreme conditions.'
@@ -320,7 +320,7 @@ export const otherProducts: OtherProduct[] = [
     id: 'prod-30',
     name: 'Custom-Molded Insulation Jackets',
     category: 'Other Accessories',
-    image: '/other accessories/custom molded insulation.png',
+    image: '/other accessories/custom molded insulation.webp',
     usage: [
       'Maintains fluid temperature within the valve.',
       'Prevents heat loss or freezing in extreme conditions.'
@@ -330,7 +330,7 @@ export const otherProducts: OtherProduct[] = [
     id: 'prod-31',
     name: 'Padlockable Handles',
     category: 'Other Accessories',
-    image: '/other accessories/padlockable handles.png',
+    image: '/other accessories/padlockable handles.webp',
     usage: [
       'Prevents unauthorized operation of the valve.',
       'Common in safety-critical or hazardous environments.'
@@ -340,7 +340,7 @@ export const otherProducts: OtherProduct[] = [
     id: 'prod-32',
     name: 'Interlocking Systems',
     category: 'Other Accessories',
-    image: '/other accessories/interlocking system.png',
+    image: '/other accessories/interlocking system.webp',
     usage: [
       'Prevents unauthorized operation of the valve.',
       'Common in safety-critical or hazardous environments.'
@@ -350,7 +350,7 @@ export const otherProducts: OtherProduct[] = [
     id: 'prod-33',
     name: 'Analog Feedback Systems (4-20mA signals)',
     category: 'Other Accessories',
-    image: '/other accessories/analog feedback.png',
+    image: '/other accessories/analog feedback.webp',
     usage: [
       'Sends real-time valve status to control systems.',
       'Integral to process monitoring and automation.'
@@ -360,7 +360,7 @@ export const otherProducts: OtherProduct[] = [
     id: 'prod-34',
     name: 'Digital Feedback Systems (HART or Fieldbus)',
     category: 'Other Accessories',
-    image: '/other accessories/digital feeback.png',
+    image: '/other accessories/digital feeback.webp',
     usage: [
       'Sends real-time valve status to control systems.',
       'Integral to process monitoring and automation.'
@@ -370,7 +370,7 @@ export const otherProducts: OtherProduct[] = [
     id: 'prod-35',
     name: 'Y Strainer',
     category: 'Other Accessories',
-    image: '/valve img/ChatGPT Image Jun 9, 2026, 03_31_28 PM.png',
+    image: '/valve img/ChatGPT Image Jun 9, 2026, 03_31_28 PM.webp',
     usage: [
       'Available in Cast Iron, Ductile Iron, SG Iron, Cast Steel, Stainless Steel, Copper Alloy, Duplex.',
       'Used in pipelines to protect equipment from debris.',

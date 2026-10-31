@@ -7,7 +7,7 @@ const otherValves = [
   {
     id: 'foot-valve',
     name: 'Foot Valve',
-    image: '/uploads/2025/05/others-valve.jpg',
+    image: '/uploads/2025/05/others-valve.webp',
     features: 'A mesh strainer and spring-loaded mechanism.',
     application: 'Used at the inlet of a pump to maintain prime and prevent backflow, commonly used in well systems.',
     sizeRange: '26-600',

@@ -73,7 +73,7 @@ export default function AboutUs() {
             <div className="graphics-container">
               <div className="deco-block"></div>
               <div className="about-image-card">
-                <img src="/uploads/2025/04/banner-image3.jpg" alt="Industrial piping system layout" />
+                <img src="/uploads/2025/04/banner-image3.webp" alt="Industrial piping system layout" />
               </div>
             </div>
           </div>

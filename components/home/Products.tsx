@@ -1,19 +1,19 @@
 const products = [
   {
     id: 1,
-    image: '/uploads/2025/04/product1-1.jpg',
+    image: '/uploads/2025/04/product1-1.webp',
     title: 'Sluice Valves',
     desc: 'Our sluice valves offer exceptional performance for various applications. Constructed from Cast Iron, Cast Steel, S.G. Iron or mild steel fabricated.',
   },
   {
     id: 2,
-    image: '/uploads/2025/04/product3-1.jpg',
+    image: '/uploads/2025/04/product3-1.webp',
     title: 'Air Valves',
     desc: 'An air valve from DALUI is designed to manage air within pipelines, addressing both air release and vacuum conditions.',
   },
   {
     id: 3,
-    image: '/uploads/2025/04/product4.jpg',
+    image: '/uploads/2025/04/product4.webp',
     title: 'Strainers',
     desc: 'Our strainers filter out debris, particles & contaminants from the fluid stream to improve overall system efficiency and reliability.',
   },
