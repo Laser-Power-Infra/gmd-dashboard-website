@@ -282,3 +282,31 @@ model EngineeringSync {
 
   @@map("engineering_sync")
 }
+
+/// Website enquiries: the Get a Quote modal, the valve detail form and the
+/// /purchase stock list all land here.
+///
+/// The row is the record of the enquiry, not the email. Mail is best-effort on
+/// top (lib/notify.ts), and `mailed` says whether it actually went out, so the
+/// admin list doubles as the chase list while ENQUIRY_* is unconfigured.
+///
+/// `details` is the same rendered text the email carries - one column instead
+/// of per-kind columns, so adding a field to a form needs no migration.
+model Enquiry {
+  id        String   @id @default(cuid())
+  kind      String
+  name      String
+  company   String   @default("")
+  email     String
+  phone     String
+  message   String   @default("")
+  subject   String
+  details   String
+  mailed    Boolean  @default(false)
+  status    String   @default("NEW")
+  createdAt DateTime @default(now())
+
+  @@index([createdAt])
+  @@index([email])
+  @@map("enquiries")
+}

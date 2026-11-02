@@ -14,7 +14,14 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { buildStock, cleanItemName, isExcludedItem, stockKey } from '../app/purchase/catalog.ts';
+import {
+  buildStock,
+  cleanItemName,
+  getItemImage,
+  isComponentLine,
+  isExcludedItem,
+  stockKey,
+} from '../app/purchase/catalog.ts';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const rows = JSON.parse(fs.readFileSync(path.join(root, 'public', 'purchaseItems.json'), 'utf8'));
@@ -37,7 +44,7 @@ const excluded = rows.filter((r) => isExcludedItem(r.itemName)).length;
 const stock = buildStock(rows);
 const totalQty = stock.reduce((sum, i) => sum + i.qty, 0);
 
-assert.equal(totalQty + excluded, rows.length, 'stock quantities must account for every source row');
+assert.equal(totalQty + excluded, rows.length, 'row counts must account for every source row');
 assert.equal(new Set(stock.map((i) => i.key)).size, stock.length, 'listing keys must be unique');
 assert.ok(
   stock.every((i) => !/-\d{3,}$/.test(i.name)),
@@ -47,7 +54,6 @@ assert.ok(
   stock.every((i) => !/ {2}/.test(i.name) && i.name === i.name.trim()),
   'no displayed name may carry double or edge whitespace'
 );
-assert.ok(stock.every((i) => i.qty >= 1), 'every entry holds at least one unit');
 
 /* Codes that legitimately carry two different specs stay as separate entries. */
 const perCode = new Map();
@@ -72,6 +78,66 @@ const missing = [...new Set(stock.map((i) => i.image).filter(Boolean))].filter(
 );
 assert.deepEqual(missing, [], 'every matched image path must exist under public/');
 
+/* ── Acceptance criteria for the stock sale ──────────────── */
+
+/* "No item name shows an internal code" - the -NNNN suffix is checked above;
+   a bare code (RSD120013, or a leaked #N/A) must not leak into a name either. */
+assert.ok(
+  stock.every((i) => !/\b[A-Z]{2,3}\d{6,}\b/.test(i.name) && !i.name.includes('#N/A')),
+  'no displayed name may contain a bare item code'
+);
+assert.ok(
+  stock.every((i) => !/-\d{3,}$/.test(i.title)),
+  'no card heading may keep the internal -NNNN code suffix'
+);
+
+/* "Each item shows photo + stock qty (or ready-stock tag)" - the card renders a
+   photo or the "Photo on request" panel, so `image` must be a usable path or
+   exactly null, never an empty/undefined value that would render a broken <img>. */
+assert.ok(
+  stock.every((i) => i.image === null || (typeof i.image === 'string' && i.image.startsWith('/'))),
+  'image must be an absolute public path or null, so the fallback panel can take over'
+);
+/* The ready-stock tag is unconditional on the card, but it is only honest while
+   every entry really did come from at least one source row. */
+assert.ok(stock.every((i) => Number.isInteger(i.qty) && i.qty >= 1), 'every item needs a row count');
+
+/* "Price or Request Quote on every item" - no price is known, so every card must
+   fall to Request Quote. Guards against a half-done price rollout later. */
+assert.ok(
+  stock.every((i) => !('price' in i) || i.price == null),
+  'no item may carry a price until Puja approves them; every card shows Request Quote'
+);
+
+/* A component must never borrow the photo of the valve it belongs to. */
+const wrongPhoto = stock.filter((i) => i.image && isComponentLine(i.name, i.category));
+assert.deepEqual(
+  wrongPhoto.map((i) => i.name),
+  [],
+  'no component line may show a finished-valve photo'
+);
+
+/* getItemImage must stay pure and category-aware. */
+assert.equal(getItemImage(''), null);
+assert.equal(getItemImage('BUTTERFLY VALVE 600MM DISC DUCTILE IRON STD', 'CASTING'), null);
+assert.equal(getItemImage('SPARE 20 x 110 HEX BOLT & NUT STAINLESS STEEL AISI 304', 'BOLTS & NUTS'), null);
+assert.equal(
+  getItemImage('SLUICE GATE 450X450MM PN-16 HW OP DUCTILE IRON FLANGE TYPE', 'TRADING VALVES'),
+  '/purchase img/Sluice Gate Valve.webp'
+);
+/* "CONTROL-DIAPHRAGM TYPE" is actuation, not a diaphragm valve. */
+assert.equal(
+  getItemImage('PRESSURE REDUCING VALVE 150MM PN-16 FLOW REGULATION DUCTILE IRON CONTROL-DIAPHRAGM TYPE', 'TRADING VALVES'),
+  '/purchase img/pressure reducing valve.webp'
+);
+/* "SPRING LOADED" is an attribute of a whole valve, not a component noun. */
+assert.ok(getItemImage('PRESSURE REDUCING VALVE 80MM PN-16 SPRING LOADED DUCTILE IRON SAFETY', 'TRADING VALVES'));
+
+/* Photo coverage is reported below; this floor makes a regression fail loudly
+   rather than quietly shrinking the catalogue's photos. */
+const covered = stock.filter((i) => i.image).length;
+assert.ok(covered >= 357, `photo coverage regressed: ${covered} < 357`);
+
 /* ── Report ──────────────────────────────────────────────── */
 const withImage = stock.filter((i) => i.image).length;
 const noImageByCategory = {};
@@ -79,9 +145,9 @@ for (const i of stock) if (!i.image) noImageByCategory[i.category] = (noImageByC
 
 console.log(`source rows            ${rows.length}`);
 console.log(`excluded (consumables) ${excluded}`);
-console.log(`listed items           ${stock.length}   (units: ${totalQty})`);
+console.log(`listed items           ${stock.length}   (source rows grouped: ${totalQty})`);
 console.log(`codes split by spec    ${splitCodes.length}  ${splitCodes.map(([c]) => c).join(', ')}`);
-console.log(`max units on one item  ${Math.max(...stock.map((i) => i.qty))}`);
+console.log(`max rows on one item   ${Math.max(...stock.map((i) => i.qty))}   (NOT published as a stock figure)`);
 console.log('');
 console.log('parse hit-rate per filter dimension');
 console.log(`  type      ${pct(stock.filter((i) => i.type).length, stock.length)}`);
@@ -89,7 +155,8 @@ console.log(`  size      ${pct(stock.filter((i) => i.size).length, stock.length)
 console.log(`  pressure  ${pct(stock.filter((i) => i.pressure).length, stock.length)}`);
 console.log(`  MOC       ${pct(stock.filter((i) => i.moc).length, stock.length)}`);
 console.log('');
-console.log(`photo match ${pct(withImage, stock.length)}`);
+console.log(`photo match ${pct(withImage, stock.length)}   (floor asserted: 357)`);
+console.log(`"Photo on request" fallback ${pct(stock.length - withImage, stock.length)}`);
 console.log('  no photo, by category:');
 for (const [cat, n] of Object.entries(noImageByCategory).sort((a, b) => b[1] - a[1]))
   console.log(`    ${cat.padEnd(20)} ${n}`);

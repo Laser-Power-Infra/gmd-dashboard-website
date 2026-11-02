@@ -23,18 +23,27 @@ export type NotifyResult =
   | { ok: true }
   | { ok: false; reason: 'not-configured' | 'send-failed'; detail: string };
 
+/**
+ * Which of the three env vars above are missing. The one source of truth for
+ * "is enquiry mail set up", so /api/health can answer it without ever reading
+ * a value. Presence only - the key, the sender and the recipient must never
+ * leave the server.
+ */
+export function missingEnquiryConfig(): string[] {
+  return [
+    !process.env.ENQUIRY_API_KEY && 'ENQUIRY_API_KEY',
+    !process.env.ENQUIRY_FROM && 'ENQUIRY_FROM',
+    !process.env.ENQUIRY_TO && 'ENQUIRY_TO',
+  ].filter((name): name is string => Boolean(name));
+}
+
 export async function sendEnquiry(subject: string, body: string): Promise<NotifyResult> {
   const apiKey = process.env.ENQUIRY_API_KEY;
   const from = process.env.ENQUIRY_FROM;
   const to = process.env.ENQUIRY_TO;
 
   if (!apiKey || !from || !to) {
-    const missing = [
-      !apiKey && 'ENQUIRY_API_KEY',
-      !from && 'ENQUIRY_FROM',
-      !to && 'ENQUIRY_TO',
-    ].filter(Boolean);
-    const detail = `email is not configured (missing ${missing.join(', ')})`;
+    const detail = `email is not configured (missing ${missingEnquiryConfig().join(', ')})`;
     console.error('[enquiry] NOT SENT - %s. Full enquiry below so it is not lost:\n%s\n%s', detail, subject, body);
     return { ok: false, reason: 'not-configured', detail };
   }

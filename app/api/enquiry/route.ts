@@ -2,7 +2,7 @@ import { z } from 'zod';
 
 import { otherProducts } from '@/data/otherProducts';
 import { valvesData } from '@/data/valves';
-import { sendEnquiry } from '@/lib/notify';
+import { recordEnquiry } from '@/lib/enquiryStore';
 
 import { enquirySchema, type EnquiryInput } from './schema';
 
@@ -17,6 +17,9 @@ import { enquirySchema, type EnquiryInput } from './schema';
  * data/valves.ts and data/otherProducts.ts by id, and the pressure/operation
  * the browser sends must be one this product actually offers. Nothing the
  * client calls the product is used in the email.
+ *
+ * The enquiry is saved through lib/enquiryStore.ts and only then emailed, so a
+ * server with no ENQUIRY_* credentials still keeps every enquiry.
  */
 
 function resolveValve(valveId: string) {
@@ -110,8 +113,19 @@ export async function POST(request: Request) {
     ].join('\n');
   }
 
-  const sent = await sendEnquiry(subject, text);
-  if (!sent.ok) {
+  const { saved, sent } = await recordEnquiry({
+    kind: data.kind,
+    name: data.name,
+    company: data.company,
+    email: data.email,
+    phone: data.phone,
+    message: data.message,
+    subject,
+    details: text,
+  });
+
+  // Only a lost enquiry is an error to the customer: a saved row is enough.
+  if (!saved && !sent.ok) {
     return Response.json(
       {
         ok: false,

@@ -36,6 +36,12 @@ export default async function AdminLayout({ children }: { children: React.ReactN
               >
                 Cost Requests
               </Link>
+              <Link
+                href="/admin/enquiries"
+                className="font-medium text-[#8a4f50] hover:text-[#6e3e3f]"
+              >
+                Enquiries
+              </Link>
               {/* Role management is DEVELOPER-only. */}
               {isDeveloper && (
                 <Link

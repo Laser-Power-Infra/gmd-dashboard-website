@@ -1,9 +1,17 @@
 /**
  * Display-layer catalogue logic for /purchase.
  *
- * `public/purchaseItems.json` is a raw stock dump: one row per physical unit,
- * so the same item code repeats once per unit held. Nothing here mutates that
- * file - names are cleaned and specs are parsed on read.
+ * `public/purchaseItems.json` is a raw dump of four columns - code, name,
+ * category, unit - with no quantity and no date. Rows repeat, and the repeat
+ * count was read as "units held". That reading is NOT established:
+ *   - 94 of 125 distinct bolt lines appear exactly once (nobody stocks one bolt);
+ *   - occurrences of one item are scattered across the file (index 4 and 1322),
+ *     and the novelty curve has no step, so it is not per-location snapshots;
+ *   - butterfly-valve DRIVE STUB appears exactly twice for all 10 sizes, which
+ *     tracks the two stubs per valve rather than independent stock;
+ *   - one itemCode is a leaked Excel "#N/A", so this is a hand-built sheet.
+ * `qty` is therefore kept as a row count for grouping only and is not shown to
+ * buyers. Nothing here mutates the file - names are cleaned and specs parsed on read.
  *
  * Kept free of React and of `@/` aliases so `scripts/check-purchase-catalog.mjs`
  * can import it under plain node.
@@ -24,7 +32,7 @@ export interface StockItem {
   name: string;
   category: string;
   unit: string;
-  /** Units held in stock = number of source rows that collapsed into this entry. */
+  /** Number of source rows that collapsed into this entry. NOT a confirmed stock figure. */
   qty: number;
   size: string | null;
   sizeMm: number | null;
@@ -124,14 +132,47 @@ export function parseItemSpecs(itemName: string): ParsedSpecs {
   return { size, sizeMm, pressure, moc, title: title || name, specs };
 }
 
+/* `public/purchase img/` holds photos of complete valves only. A line that is a
+   loose component of a valve must never borrow the photo of the valve it belongs
+   to: a buyer shown an assembled butterfly valve on a bare disc casting can order
+   the wrong part. These five categories hold components exclusively, so they are
+   rejected wholesale. */
+const COMPONENT_CATEGORIES = new Set([
+  'CASTING',
+  'SS SPARES',
+  'BRONZE ITEMS',
+  'RUBBER ITEMS',
+  'BOLTS & NUTS',
+]);
+
+/* SPARES mixes complete valves with components, so it is filtered on the
+   component noun instead. Verified against the whole dump: these fire on 19
+   genuine component lines and on no complete valve. "SPRING" is deliberately
+   absent - "PRESSURE REDUCING VALVE ... SPRING LOADED" is a whole valve.
+   shortcut: BBD is read as a Body/Bonnet/Disc casting set and so gets no photo;
+   if Puja confirms it means a light-duty complete valve, drop BBD from this list. */
+const COMPONENT_NOUN =
+  /\b(BODY|BONNET|DISC|WEDGE|GLAND|COVER|BUSH|SPINDLE|STUB|SEAT RING|SEAL KIT|GASKET|ROD|RETAINER|HEADSTOCK|NOZZLE|NIPPLE|BOLT|NUT|WASHER|SCREW|MOUNTAIN|ENDCAP|FLOAT GUIDE|BBD)\b/;
+
+/** True when the line is a part of a valve rather than a valve. */
+export function isComponentLine(itemName: string, category?: string): boolean {
+  if (category && COMPONENT_CATEGORIES.has(category.toUpperCase())) return true;
+  return COMPONENT_NOUN.test((itemName || '').toUpperCase());
+}
+
 /**
  * Keyword match against `public/purchase img/`. Returns null when the folder
- * has no photo for this line (spares, bolts, castings, actuators) so the card
- * can show a placeholder instead of a broken <img>.
+ * has no photo that truthfully shows this line (components, bolts, actuators,
+ * gear boxes) so the card can show the "Photo on request" panel instead.
  */
-export function getItemImage(itemName: string): string | null {
+export function getItemImage(itemName: string, category?: string): string | null {
   const name = (itemName || '').toUpperCase();
   if (!name) return null;
+  if (isComponentLine(name, category)) return null;
+
+  // A sluice gate is a penstock gate, not a sluice valve - and it is what
+  // "Sluice Gate Valve.webp" actually depicts.
+  if (name.includes('SLUICE GATE')) return '/purchase img/Sluice Gate Valve.webp';
 
   if (name.includes('SLUICE VALVE') || name.includes('GATE VALVE')) {
     if (name.includes('KNIFE GATE')) return '/purchase img/knife gate Valve.webp';
@@ -140,7 +181,8 @@ export function getItemImage(itemName: string): string | null {
     if (name.includes('METAL TO METAL')) return '/purchase img/Metal Seated Sluice Valve (Rising Spindle).webp';
     if (name.includes('NON-RISING')) return '/purchase img/Sluice valve (non rising).webp';
     if (name.includes('RISING')) return '/purchase img/Sluice valve (Rising Spindle) resilent Seated.webp';
-    return '/purchase img/Sluice Gate Valve.webp';
+    // Rising vs non-rising is not stated, and the two look different - no honest pick.
+    return null;
   }
 
   if (name.includes('BUTTERFLY VALVE')) {
@@ -161,7 +203,9 @@ export function getItemImage(itemName: string): string | null {
   if (name.includes('DPCV')) return '/purchase img/Dual Plate Check Valve (API594).webp';
   if (name.includes('CHECK VALVE') || name.includes('FOOT VALVE'))
     return '/purchase img/Non return check valve (IS5312, Part-1.webp';
-  if (name.includes('DIAPHRAGM')) return '/purchase img/Diaphragm Valve.webp';
+  // "CONTROL-DIAPHRAGM TYPE" is the actuation of a PRV or solenoid valve, not a
+  // diaphragm valve - match the product, so those fall through to their own photo.
+  if (name.includes('DIAPHRAGM VALVE')) return '/purchase img/Diaphragm Valve.webp';
   if (name.includes('DISMANTLING')) return '/purchase img/Dismantling joint.webp';
   if (name.includes('FLOAT')) return '/purchase img/Float Valve.webp';
   if (name.includes('GLOBE')) return '/purchase img/Globe Valve.webp';
@@ -169,7 +213,10 @@ export function getItemImage(itemName: string): string | null {
   if (name.includes('AIR VALVE') || name.includes('KINETIC') || name.startsWith('TPAV'))
     return '/purchase img/Kinetic Air Valve (DK type).webp';
   if (name.includes('FLANGE')) return '/purchase img/MS companion flange.webp';
-  if (name.includes('RELIEF')) return '/purchase img/Pressure relief valve (Spring loaded).webp';
+  // The one "PRESSURE REDUCING VALVE ... SPRING LOADED ... SAFETY" line contradicts
+  // itself; SPRING LOADED + SAFETY match this photo and rule out the pilot PRV one.
+  if (name.includes('RELIEF') || (name.includes('SAFETY') && name.includes('SPRING LOADED')))
+    return '/purchase img/Pressure relief valve (Spring loaded).webp';
   if (name.includes('NEEDLE')) return '/purchase img/needle valve.webp';
   if (name.includes('REDUCING') || name.includes('PRV')) return '/purchase img/pressure reducing valve.webp';
   if (name.includes('SOLENOID')) return '/purchase img/solenoid Valve.webp';
@@ -199,8 +246,8 @@ export function stockKey(itemCode: string, cleanedName: string): string {
 }
 
 /**
- * Collapses the per-unit rows into one entry per item, carrying the unit count
- * as `qty`. Insertion order is preserved so the listing matches the source dump.
+ * Collapses repeated rows into one entry per item, carrying the row count as
+ * `qty`. Insertion order is preserved so the listing matches the source dump.
  */
 export function buildStock(rows: MasterRow[]): StockItem[] {
   const byKey = new Map<string, StockItem>();
@@ -232,7 +279,7 @@ export function buildStock(rows: MasterRow[]): StockItem[] {
       type: itemType(name),
       title: parsed.title,
       specs: parsed.specs,
-      image: getItemImage(name),
+      image: getItemImage(name, row.category),
     });
   }
 

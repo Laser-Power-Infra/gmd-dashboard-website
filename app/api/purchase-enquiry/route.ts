@@ -3,7 +3,7 @@ import path from 'path';
 import { z } from 'zod';
 
 import { cleanItemName, isExcludedItem, stockKey, type MasterRow } from '@/app/purchase/catalog';
-import { sendEnquiry } from '@/lib/notify';
+import { recordEnquiry } from '@/lib/enquiryStore';
 
 /**
  * POST /api/purchase-enquiry
@@ -13,12 +13,8 @@ import { sendEnquiry } from '@/lib/notify';
  * re-resolved against `public/purchaseItems.json` on the server, so the emailed
  * description/category/stock figure is ours and not whatever the browser sent.
  *
- * The enquiry is emailed through lib/notify.ts. It is not persisted: there is
- * no Prisma model for it.
- *
- * shortcut: no DB row, so a send failure leaves only the server log as the
- * record. Add a model (the /cost form's `prisma.costRequest.create` is the
- * house pattern) if enquiry volume ever needs tracking or retry.
+ * The enquiry is saved through lib/enquiryStore.ts and only then emailed, so a
+ * server with no ENQUIRY_* credentials still keeps every enquiry.
  */
 
 const enquirySchema = z.object({
@@ -137,8 +133,19 @@ export async function POST(request: Request) {
     `Received: ${new Date().toISOString()}`,
   ].join('\n');
 
-  const sent = await sendEnquiry(`Stock enquiry: ${lines.length} item(s) - ${name}`, text);
-  if (!sent.ok) {
+  const { saved, sent } = await recordEnquiry({
+    kind: 'purchase',
+    name,
+    company,
+    email,
+    phone,
+    message,
+    subject: `Stock enquiry: ${lines.length} item(s) - ${name}`,
+    details: text,
+  });
+
+  // Only a lost enquiry is an error to the customer: a saved row is enough.
+  if (!saved && !sent.ok) {
     return Response.json(
       {
         ok: false,

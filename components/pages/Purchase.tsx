@@ -15,8 +15,6 @@ interface CartItem {
   image: string | null;
   size: string | null;
   pressure: string | null;
-  /** Units held in stock, for the "x of N in stock" hint. */
-  inStock: number;
   quantity: string;
   remarks: string;
 }
@@ -254,8 +252,8 @@ export default function Purchase() {
     };
   }, [isCartOpen]);
 
-  // The JSON is one row per physical unit; buildStock collapses it to one entry
-  // per item carrying the unit count as `qty`.
+  // buildStock collapses repeated rows to one entry per item. `qty` counts those
+  // rows; it is not a confirmed stock figure, so it is not shown to buyers.
   useEffect(() => {
     fetch('/purchaseItems.json')
       .then((res) => res.json())
@@ -330,7 +328,6 @@ export default function Purchase() {
           image: item.image,
           size: item.size,
           pressure: item.pressure,
-          inStock: item.qty,
           quantity: '1',
           remarks: '',
         },
@@ -558,14 +555,23 @@ export default function Purchase() {
                 <div className="purchase-body">
                   <div className="purchase-meta">
                     <span className="item-cat-badge">{item.category}</span>
+                    {/* The source dump carries no quantity column - `item.qty` is only a
+                        count of repeated rows, and that reading is contradicted by the
+                        data (see catalog.ts), so no figure is published to buyers.
+                        shortcut: ready-stock tag with no number, which is the acceptance
+                        criterion's own alternative; restore `· {item.qty} {item.unit}`
+                        once Puja confirms how to read stock quantities. */}
                     <span className="stock-badge">
                       <i className="fas fa-circle-check" aria-hidden="true"></i>
-                      Ready stock &middot; {item.qty} {item.unit}
+                      Ready stock
                     </span>
                   </div>
 
                   <h3 className="item-title">{item.title}</h3>
-                  <p className="item-code-line">Code {item.itemCode}</p>
+                  {/* One source row carries a leaked Excel "#N/A" instead of a code. */}
+                  {/^[A-Z0-9]{3,}$/i.test(item.itemCode) && (
+                    <p className="item-code-line">Code {item.itemCode}</p>
+                  )}
 
                   {item.specs.length > 0 && (
                     <div className="spec-chips">
@@ -720,7 +726,7 @@ export default function Purchase() {
                           <span className="cart-qty-pill">
                             Qty <strong>{Number(item.quantity) > 0 ? item.quantity : 1}</strong> {item.unit}
                           </span>
-                          <span className="cart-stock-note">{item.inStock} in stock</span>
+                          <span className="cart-stock-note">Ready stock</span>
                         </div>
                       </div>
 
@@ -743,9 +749,7 @@ export default function Purchase() {
                       <li key={item.key} className="cart-row cart-checkout-row">
                         <div className="cart-row-meta">
                           <h3 className="cart-row-title">{item.title}</h3>
-                          <span className="cart-stock-note">
-                            Code {item.itemCode} &middot; {item.inStock} in stock
-                          </span>
+                          <span className="cart-stock-note">Code {item.itemCode}</span>
 
                           <div className="cart-checkout-fields">
                             <input
