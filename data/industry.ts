@@ -542,7 +542,7 @@ export const industryData: IndustrySection[] = [
     ],
     "rows": [
       {
-        "image": "/usages_img/. DIAPHRAGM VALVES Weir Type img.webp",
+        "image": "/usages_img/DIAPHRAGM VALVES Weir Type img.webp",
         "data": [
           "Weir Type",
           "15â€“350",

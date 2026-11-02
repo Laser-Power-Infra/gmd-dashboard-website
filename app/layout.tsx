@@ -53,8 +53,9 @@ export const metadata: Metadata = {
     default: 'GM Dalui & Sons | Industrial Valve Manufacturer, Kolkata',
     template: '%s | GM Dalui & Sons',
   },
+  // 159 chars: the home page inherits this, and Google truncates around 160.
   description:
-    'Industrial valve manufacturer in Kolkata, India. Butterfly, sluice, air release, check, globe, ball, control and pressure relief valves, custom built to your design.',
+    'ISO 9001:2015 certified industrial valve manufacturer in Kolkata, India. Butterfly, sluice, air release, check, globe, ball and control valves, built to order.',
   icons: {
     icon: '/uploads/2025/04/header-final-logo.webp',
   },
@@ -67,8 +68,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: OG_IMAGE,
-        width: 1199,
-        height: 672,
+        width: 1200,
+        height: 630,
         alt: 'GM Dalui & Sons industrial valves',
       },
     ],
@@ -82,6 +83,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en">
       <head>
+        {/* Font Awesome is a render-blocking stylesheet on a third origin; warm the connection first. */}
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossOrigin="anonymous" />
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"

@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useEffect } from 'react';
 
 export default function RiskManagementPage() {
@@ -49,7 +50,13 @@ export default function RiskManagementPage() {
         {/* Block 1: Left Image, Right Text */}
         <section className="risk-block block-alternate container">
           <div className="risk-image animate-slide-right">
-            <img src="/uploads/2025/06/futuristic-industry-engineering-concept-scaled.webp" alt="Industrial Risk Management" />
+            <Image
+              src="/uploads/2025/06/futuristic-industry-engineering-concept-scaled.webp"
+              alt="Engineers reviewing plant risk data on a control room display"
+              width={1600}
+              height={1081}
+              sizes="(max-width: 992px) 100vw, 50vw"
+            />
           </div>
           <div className="risk-text animate-slide-left">
             <div className="section-badge">11.1 General</div>
@@ -131,7 +138,13 @@ export default function RiskManagementPage() {
           </div>
           <div className="risk-image animate-slide-left">
             {/* Using another available image for visual variety */}
-            <img src="/uploads/2025/06/logistics-transportation-container-cargo-ship-cargo-plane-with-working-crane-bridge-shipyard-sunrise-logistic-import-export-transport-industry-background-ai-generative-scaled.jpg" alt="Environmental Safety" />
+            <Image
+              src="/uploads/2025/06/colleagues-with-safety-equipment-working-with-blueprints.webp"
+              alt="Two colleagues in hard hats and hi-vis vests going over site blueprints"
+              width={1600}
+              height={1066}
+              sizes="(max-width: 992px) 100vw, 50vw"
+            />
           </div>
         </section>
 
@@ -174,7 +187,13 @@ export default function RiskManagementPage() {
         {/* Block 4: Left Image, Right Text (Hazard & Emergency) */}
         <section className="risk-block block-alternate container">
           <div className="risk-image animate-slide-right">
-            <img src="/uploads/2025/06/worker-indoors-with-pipes-repairs-industrial-water-supply-system-water-supply-diagnostics-600x400.webp" alt="Emergency Response" />
+            <Image
+              src="/uploads/2025/06/worker-indoors-with-pipes-repairs-industrial-water-supply-system-water-supply-diagnostics-600x400.webp"
+              alt="Worker diagnosing a fault on an indoor industrial water supply line"
+              width={600}
+              height={400}
+              sizes="(max-width: 992px) 100vw, 50vw"
+            />
           </div>
           <div className="risk-text animate-slide-left">
             <div className="section-badge">11.3 - 11.6 Protocol</div>

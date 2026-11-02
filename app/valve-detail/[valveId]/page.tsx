@@ -1,10 +1,12 @@
 import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import { valvesData } from '@/data/valves';
 import { otherProducts } from '@/data/otherProducts';
 import ValveDetailPage from '@/components/pages/ValveDetailPage';
 import { getValveImageMap } from '@/lib/valveImages';
 import JsonLd, {
   SITE_NAME,
+  breadcrumbJsonLd,
   clamp,
   pageTitle,
   productJsonLd,
@@ -27,6 +29,7 @@ function findProduct(valveId: string) {
       category: valve.category,
       image: valve.image,
       description: valve.description,
+      parent: { name: 'Valves', path: '/valves' },
     };
   }
   const product = otherProducts.find((p) => p.id === valveId);
@@ -36,6 +39,7 @@ function findProduct(valveId: string) {
       category: product.category,
       image: product.image,
       description: product.usage.join(' '),
+      parent: { name: 'Valve Accessories', path: '/other-products' },
     };
   }
   return null;
@@ -48,7 +52,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { valveId } = await params;
   const product = findProduct(valveId);
-  if (!product) return { title: 'Valve Details' };
+  // Unknown slug: ValveDetailPage falls back to the first valve, so keep that
+  // duplicate out of the index instead of letting any URL rank as a soft 404.
+  if (!product)
+    return { title: 'Valve Details', robots: { index: false, follow: false } };
 
   const description = clamp(
     `${product.name} manufacturer in Kolkata. ${product.description}`
@@ -74,18 +81,29 @@ export default async function Page({ params }: { params: Promise<{ valveId: stri
   const { valveId } = await params;
   const imageMap = getValveImageMap();
   const product = findProduct(valveId);
+  // Unknown slug: 404 rather than letting ValveDetailPage fall back to the first
+  // valve, which served the wrong product under a 200.
+  if (!product) notFound();
   return (
     <>
       {product && (
-        <JsonLd
-          data={productJsonLd({
-            name: product.name,
-            description: clamp(product.description, 300),
-            image: product.image,
-            path: `/valve-detail/${valveId}`,
-            category: product.category,
-          })}
-        />
+        <>
+          <JsonLd
+            data={productJsonLd({
+              name: product.name,
+              description: clamp(product.description, 300),
+              image: product.image,
+              path: `/valve-detail/${valveId}`,
+              category: product.category,
+            })}
+          />
+          <JsonLd
+            data={breadcrumbJsonLd([
+              product.parent,
+              { name: product.name, path: `/valve-detail/${valveId}` },
+            ])}
+          />
+        </>
       )}
       <ValveDetailPage valveId={valveId} imageMap={imageMap} />
     </>

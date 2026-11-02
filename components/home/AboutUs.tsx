@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useEffect, useState, useRef } from 'react';
 
 // Counter Hook to animate numbers smoothly
@@ -33,7 +34,13 @@ function useCountUp(target: number, duration = 2000, trigger = false) {
   return count;
 }
 
-export default function AboutUs() {
+export default function AboutUs({
+  valveTypesCount: valveTypes,
+  clientLogosCount: clientLogos,
+}: {
+  valveTypesCount: number;
+  clientLogosCount: number;
+}) {
   const [isInView, setIsInView] = useState(false);
   const sectionRef = useRef<HTMLElement | null>(null);
 
@@ -61,8 +68,8 @@ export default function AboutUs() {
   }, []);
 
   // Counts below are the site's own catalogue figures, not marketing claims
-  const valveTypesCount = useCountUp(11, 1500, isInView);
-  const clientLogosCount = useCountUp(18, 1500, isInView);
+  const valveTypesCount = useCountUp(valveTypes, 1500, isInView);
+  const clientLogosCount = useCountUp(clientLogos, 1500, isInView);
 
   return (
     <section id="about-us" className="about-section" ref={sectionRef}>
@@ -73,7 +80,13 @@ export default function AboutUs() {
             <div className="graphics-container">
               <div className="deco-block"></div>
               <div className="about-image-card">
-                <img src="/uploads/2025/04/banner-image3.webp" alt="Industrial piping system layout" loading="lazy" />
+                {/* fill: the card is already position:absolute and sized by its parent. */}
+                <Image
+                  src="/uploads/2025/04/banner-image3.webp"
+                  alt="Bank of GM Dalui valves installed on an industrial pipeline manifold"
+                  fill
+                  sizes="(max-width: 992px) 100vw, 45vw"
+                />
               </div>
             </div>
           </div>

@@ -81,10 +81,13 @@ export default function ValveDetailPage({ valveId, imageMap = {} }: { valveId: s
             <div className="detail-hero-graphic-col">
               <div className="detail-valve-image-container">
                 {imageMap[normalizeName(valve.name)] || valve.image ? (
+                  // This is the LCP element of the valve detail page: load it first,
+                  // never lazily.
                   <img
                     src={imageMap[normalizeName(valve.name)] || valve.image}
                     alt={valve.name}
                     className="detail-valve-img"
+                    fetchPriority="high"
                   />
                 ) : (
                   <div className="detail-valve-img-placeholder">
@@ -230,7 +233,7 @@ export default function ValveDetailPage({ valveId, imageMap = {} }: { valveId: s
                       <div className="butterfly-type-card" key={cardIdx}>
                         {card.image && (
                           <div className="type-card-img-wrapper">
-                            <img src={card.image} alt={card.title} />
+                            <img src={card.image} alt={card.title} loading="lazy" />
                           </div>
                         )}
                         <div className="type-card-content">

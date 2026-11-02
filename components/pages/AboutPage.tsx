@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
 
 // Custom Count Up hook for stats counter animation
@@ -31,41 +32,43 @@ function useCountUp(endVal: number, duration = 1500, trigger = true) {
   return count;
 }
 
+// alt is the organisation each mark belongs to, read off the artwork; width/height are
+// the files' intrinsic pixel sizes, used only to reserve the right aspect ratio.
 // Government Client Logos
 const govLogos = [
-  { src: '/uploads/2025/04/logo6.webp', alt: 'Client Logo 6' },
-  { src: '/uploads/2025/04/logo8.webp', alt: 'Client Logo 8' },
-  { src: '/uploads/2025/04/logo9.webp', alt: 'Client Logo 9' },
-  { src: '/uploads/2025/04/logo10.webp', alt: 'Client Logo 10' },
-  { src: '/uploads/2025/04/logo-7.webp', alt: 'Client Logo 7' },
-  { src: '/uploads/2025/04/logo11-1.webp', alt: 'Client Logo 11' },
-  { src: '/uploads/2025/04/logo12.webp', alt: 'Client Logo 12' },
-  { src: '/uploads/2025/04/logo13-4.webp', alt: 'Client Logo 13' },
-  { src: '/uploads/2025/04/logo14.webp', alt: 'Client Logo 14' },
+  { src: '/uploads/2025/04/logo6.webp', alt: 'Tata Steel', width: 262, height: 155 },
+  { src: '/uploads/2025/04/logo8.webp', alt: 'Power Grid Corporation of India', width: 262, height: 155 },
+  { src: '/uploads/2025/04/logo9.webp', alt: 'ISCO', width: 262, height: 155 },
+  { src: '/uploads/2025/04/logo10.webp', alt: 'GAIL (India) Limited', width: 262, height: 155 },
+  { src: '/uploads/2025/04/logo-7.webp', alt: 'SAIL — Steel Authority of India Limited', width: 262, height: 155 },
+  { src: '/uploads/2025/04/logo11-1.webp', alt: 'NTPC Limited', width: 281, height: 165 },
+  { src: '/uploads/2025/04/logo12.webp', alt: 'BHEL — Bharat Heavy Electricals Limited', width: 250, height: 200 },
+  { src: '/uploads/2025/04/logo13-4.webp', alt: 'FCIL — Fertiliser Corporation of India Limited', width: 124, height: 132 },
+  { src: '/uploads/2025/04/logo14.webp', alt: 'Vizag Steel — Rashtriya Ispat Nigam Limited', width: 157, height: 138 },
 ];
 
 // Private Client Logos
 const privateLogos = [
-  { src: '/uploads/2025/04/logo1-1.webp', alt: 'Client Logo 1' },
-  { src: '/uploads/2025/04/logo5-1.webp', alt: 'Client Logo 5' },
-  { src: '/uploads/2025/04/logo14-1.webp', alt: 'Client Logo 14-1' },
-  { src: '/uploads/2025/04/logo2-1.webp', alt: 'Client Logo 2' },
-  { src: '/uploads/2025/04/logo3-1.webp', alt: 'Client Logo 3' },
-  { src: '/uploads/2025/04/logo16-1.webp', alt: 'Client Logo 16' },
-  { src: '/uploads/2025/04/images-1.webp', alt: 'Client Logo Images 1' },
-  { src: '/uploads/2025/04/logo-16-1.webp', alt: 'Client Logo 16-1' },
-  { src: '/uploads/2025/04/logo17-1.webp', alt: 'Client Logo 17' },
+  { src: '/uploads/2025/04/logo1-1.webp', alt: 'Tata Projects', width: 250, height: 131 },
+  { src: '/uploads/2025/04/logo5-1.webp', alt: 'LCC Projects Pvt. Ltd.', width: 262, height: 132 },
+  { src: '/uploads/2025/04/logo14-1.webp', alt: 'L&T Construction', width: 380, height: 95 },
+  { src: '/uploads/2025/04/logo2-1.webp', alt: 'Adani Power', width: 250, height: 131 },
+  { src: '/uploads/2025/04/logo3-1.webp', alt: 'NCC Limited', width: 250, height: 131 },
+  { src: '/uploads/2025/04/logo16-1.webp', alt: 'GVPR Engineers', width: 178, height: 64 },
+  { src: '/uploads/2025/04/images-1.webp', alt: 'Blue Star', width: 218, height: 63 },
+  { src: '/uploads/2025/04/logo-16-1.webp', alt: 'Shapoorji Pallonji', width: 225, height: 93 },
+  { src: '/uploads/2025/04/logo17-1.webp', alt: 'Wilo', width: 192, height: 93 },
 ];
 
 // Certificates
 const certificates = [
-  '/uploads/2025/04/certified-logo-5-1.webp',
-  '/uploads/2025/04/certified-logo-5.webp',
-  '/uploads/2025/04/certified-logo-6.webp',
-  '/uploads/2025/04/certified-logo-7-1.webp',
-  '/uploads/2025/04/certified-logo1-1.webp',
-  '/uploads/2025/04/certified-logo3.webp',
-  '/uploads/2025/04/certified-logo4.webp',
+  { src: '/uploads/2025/04/certified-logo-5-1.webp', alt: 'WRAS — Water Regulations Advisory Scheme approval', width: 250, height: 81 },
+  { src: '/uploads/2025/04/certified-logo-5.webp', alt: 'ISO 9001:2015 certified company', width: 134, height: 134 },
+  { src: '/uploads/2025/04/certified-logo-6.webp', alt: 'American Water Works Association membership', width: 234, height: 109 },
+  { src: '/uploads/2025/04/certified-logo-7-1.webp', alt: 'BIS — Bureau of Indian Standards certification', width: 175, height: 119 },
+  { src: '/uploads/2025/04/certified-logo1-1.webp', alt: 'CE marking', width: 250, height: 179 },
+  { src: '/uploads/2025/04/certified-logo3.webp', alt: 'BSI certification', width: 250, height: 122 },
+  { src: '/uploads/2025/04/certified-logo4.webp', alt: 'ASTM International membership', width: 250, height: 122 },
 ];
 
 // Map Locator Pins (Coordinates in percentage: left, top)
@@ -77,12 +80,10 @@ const mapPins = [
   { name: 'Bengaluru', left: '44%', top: '76%', delay: '0.8s' },
 ];
 
-export default function AboutPage() {
+export default function AboutPage({ valveTypesCount: valveTypes }: { valveTypesCount: number }) {
   const [statsTriggered, setStatsTriggered] = useState(false);
-  const [progressTriggered, setProgressTriggered] = useState(false);
 
   const statsRef = useRef<HTMLDivElement | null>(null);
-  const progressRef = useRef<HTMLElement | null>(null);
 
   // Intersection Observer to trigger reveals and hook updates
   useEffect(() => {
@@ -113,31 +114,17 @@ export default function AboutPage() {
       { threshold: 0.1 }
     );
 
-    // 3. Observer for triggering progress bars fill
-    const progressObserver = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setProgressTriggered(true);
-          progressObserver.unobserve(entry.target);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
     if (statsRef.current) statsObserver.observe(statsRef.current);
-    if (progressRef.current) progressObserver.observe(progressRef.current);
 
     return () => {
       revealObserver.disconnect();
-      if (statsRef.current) statsObserver.disconnect();
-      if (progressRef.current) progressObserver.disconnect();
+      statsObserver.disconnect();
     };
   }, []);
 
-  // Stats values
-  const supplyHistoryCount = useCountUp(70, 1500, statsTriggered);
-  const productionCount = useCountUp(7500, 1500, statsTriggered);
-  const happyClientsCount = useCountUp(98, 1500, statsTriggered);
+  // Counts below are the site's own catalogue figures, not marketing claims
+  const valveTypesCount = useCountUp(valveTypes, 1500, statsTriggered);
+  const clientLogosCount = useCountUp(govLogos.length + privateLogos.length, 1500, statsTriggered);
 
   return (
     <div className="about-page-wrapper bg-[#f8f9fa]">
@@ -163,7 +150,13 @@ export default function AboutPage() {
               <div className="about-graphics-inner">
                 <div className="about-graphics-deco"></div>
                 <div className="about-graphics-img">
-                  <img src="/uploads/2025/04/banner-image3.webp" alt="GM Dalui & Sons Plant" />
+                  {/* fill: the wrapper is already position:absolute and sized by its parent. */}
+                  <Image
+                    src="/uploads/2025/04/banner-image3.webp"
+                    alt="Valves and pipework at the GM Dalui & Sons manufacturing plant"
+                    fill
+                    sizes="(max-width: 992px) 100vw, 45vw"
+                  />
                 </div>
               </div>
             </div>
@@ -197,34 +190,22 @@ export default function AboutPage() {
                   <i className="fas fa-chart-bar"></i>
                 </div>
                 <div className="about-stat-number">
-                  {supplyHistoryCount}%
+                  {valveTypesCount}
                 </div>
                 <div className="about-stat-label">
-                  Supply History
+                  Valve Types Manufactured
                 </div>
               </div>
 
               <div className="about-stat-item reveal" style={{ transitionDelay: '0.25s' }}>
                 <div className="about-stat-icon">
-                  <i className="fas fa-hands"></i>
-                </div>
-                <div className="about-stat-number">
-                  {productionCount}+
-                </div>
-                <div className="about-stat-label">
-                  Our Production
-                </div>
-              </div>
-
-              <div className="about-stat-item reveal" style={{ transitionDelay: '0.4s' }}>
-                <div className="about-stat-icon">
                   <i className="fas fa-users"></i>
                 </div>
                 <div className="about-stat-number">
-                  {happyClientsCount}%
+                  {clientLogosCount}
                 </div>
                 <div className="about-stat-label">
-                  Happy Clients
+                  Client Organisations Served
                 </div>
               </div>
             </div>
@@ -271,7 +252,7 @@ export default function AboutPage() {
       </section>
 
       {/* 4. What We Stand For Section (Progress bars & Strengths) */}
-      <section ref={progressRef} className="about-page-section bg-slate">
+      <section className="about-page-section bg-slate">
         <div className="container">
           <div className="about-two-col-grid">
             {/* Left: Text and Progress Bars */}
@@ -293,44 +274,18 @@ export default function AboutPage() {
                   <span>Customer centric approach dedicated service teams for seamless support.</span>
                 </li>
               </ul>
-
-              {/* Progress Bars container */}
-              <div className="about-progress-container">
-                <div className="about-progress-group reveal" style={{ transitionDelay: '0.4s' }}>
-                  <div className="about-progress-labels">
-                    <span>Production Excellence</span>
-                    <span>75%</span>
-                  </div>
-                  <div className="about-progress-bar-bg">
-                    <div
-                      className="about-progress-bar-fill"
-                      style={{ width: progressTriggered ? '75%' : '0%' }}
-                    ></div>
-                  </div>
-                </div>
-
-                <div className="about-progress-group reveal" style={{ transitionDelay: '0.5s' }}>
-                  <div className="about-progress-labels">
-                    <span>Supply History Success</span>
-                    <span>93%</span>
-                  </div>
-                  <div className="about-progress-bar-bg">
-                    <div
-                      className="about-progress-bar-fill"
-                      style={{ width: progressTriggered ? '93%' : '0%' }}
-                    ></div>
-                  </div>
-                </div>
-              </div>
             </div>
 
             {/* Right: Side Graphic Image */}
             <div className="reveal reveal-right">
               <div className="relative">
                 <div className="absolute top-4 left-4 w-full h-full bg-[#8a4f50]/5 rounded-xl -z-10"></div>
-                <img
+                <Image
                   src="/uploads/2025/04/MISSION.webp"
-                  alt="Industrial valves network installation"
+                  alt="Rows of finished valves on the GM Dalui assembly floor"
+                  width={814}
+                  height={543}
+                  sizes="(max-width: 992px) 100vw, 45vw"
                   className="rounded-lg shadow-xl w-full object-cover max-h-[400px]"
                 />
               </div>
@@ -356,7 +311,7 @@ export default function AboutPage() {
                   className="about-logo-item reveal"
                   style={{ transitionDelay: `${index * 0.08}s` }}
                 >
-                  <img src={logo.src} alt={logo.alt} />
+                  <Image src={logo.src} alt={logo.alt} width={logo.width} height={logo.height} sizes="160px" />
                 </div>
               ))}
             </div>
@@ -376,7 +331,7 @@ export default function AboutPage() {
                   className="about-logo-item reveal"
                   style={{ transitionDelay: `${index * 0.08}s` }}
                 >
-                  <img src={logo.src} alt={logo.alt} />
+                  <Image src={logo.src} alt={logo.alt} width={logo.width} height={logo.height} sizes="160px" />
                 </div>
               ))}
             </div>
@@ -393,13 +348,13 @@ export default function AboutPage() {
           </div>
 
           <div className="about-certs-slider">
-            {certificates.map((certSrc, idx) => (
+            {certificates.map((cert, idx) => (
               <div
-                key={idx}
+                key={cert.src}
                 className="about-cert-item reveal"
                 style={{ transitionDelay: `${idx * 0.1}s` }}
               >
-                <img src={certSrc} alt={`Accreditation Badge ${idx + 1}`} />
+                <Image src={cert.src} alt={cert.alt} width={cert.width} height={cert.height} sizes="130px" />
               </div>
             ))}
           </div>
@@ -413,7 +368,13 @@ export default function AboutPage() {
             {/* Map Image with Pulsing Pins */}
             <div className="about-map-container reveal reveal-left">
               <div className="about-map-inner">
-                <img src="/uploads/2025/05/Untitled-design-2.webp" alt="GM Dalui Footprints Across India" />
+                <Image
+                  src="/uploads/2025/05/Untitled-design-2.webp"
+                  alt="Map of India marking GM Dalui & Sons sites in Kolkata, Delhi, Mumbai, Chennai and Bengaluru"
+                  width={500}
+                  height={500}
+                  sizes="(max-width: 992px) 100vw, 45vw"
+                />
 
                 {/* Interactive Pulsing Map Pins */}
                 {mapPins.map((pin, index) => (
@@ -442,16 +403,6 @@ export default function AboutPage() {
                 <p>
                   Our high-performance industrial valves are successfully installed in large water supplies, steel manufacturing complexes, petrochemical plants, and infrastructure installations nationwide.
                 </p>
-                <div className="pt-4 grid grid-cols-2 gap-4">
-                  <div className="p-4 bg-[#f8f9fa] border-l-4 border-[#8a4f50] rounded-r-lg">
-                    <div className="font-extrabold text-[#8a4f50] text-2xl">25+</div>
-                    <div className="text-slate-500 text-xs uppercase font-bold mt-1">States Covered</div>
-                  </div>
-                  <div className="p-4 bg-[#f8f9fa] border-l-4 border-[#f59019] rounded-r-lg">
-                    <div className="font-extrabold text-[#f59019] text-2xl">500+</div>
-                    <div className="text-slate-500 text-xs uppercase font-bold mt-1">Major Installs</div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>

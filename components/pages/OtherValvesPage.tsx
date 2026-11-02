@@ -82,7 +82,7 @@ export default function OtherValvesPage() {
               <div className="other-valve-grid-card">
                 <div className="grid-card-badge">Illustration</div>
                 <div className="grid-card-content img-content-box">
-                  <img src={v.image} alt={v.name} className="grid-card-img" />
+                  <img src={v.image} alt={v.name} className="grid-card-img" loading="lazy" />
                 </div>
               </div>
 

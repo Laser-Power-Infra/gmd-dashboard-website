@@ -3,22 +3,23 @@ import path from 'path';
 import { z } from 'zod';
 
 import { cleanItemName, isExcludedItem, stockKey, type MasterRow } from '@/app/purchase/catalog';
+import { sendEnquiry } from '@/lib/notify';
 
 /**
  * POST /api/purchase-enquiry
  *
  * Receives a stock enquiry from /purchase: buyer contact details plus the item
  * list they built. Buyer fields are validated with zod, and the item lines are
- * re-resolved against `public/purchaseItems.json` on the server, so the stored
+ * re-resolved against `public/purchaseItems.json` on the server, so the emailed
  * description/category/stock figure is ours and not whatever the browser sent.
  *
- * shortcut: the validated enquiry is only written to the server log - this repo
- * has no mail transport and no Prisma model for it. Wire it to one (the /cost
- * form's `prisma.costRequest.create` is the house pattern) before launch; see
- * the deployment note in the handover.
+ * The enquiry is emailed through lib/notify.ts. It is not persisted: there is
+ * no Prisma model for it.
+ *
+ * shortcut: no DB row, so a send failure leaves only the server log as the
+ * record. Add a model (the /cost form's `prisma.costRequest.create` is the
+ * house pattern) if enquiry volume ever needs tracking or retry.
  */
-
-const ENQUIRY_RECIPIENT = 'info@gmdalui.co.in';
 
 const enquirySchema = z.object({
   name: z.string().trim().min(2, 'Name is required').max(100),
@@ -115,11 +116,40 @@ export async function POST(request: Request) {
   }
 
   const { name, company, email, phone, message } = parsed.data;
-  console.info(
-    '[purchase-enquiry] for %s:',
-    ENQUIRY_RECIPIENT,
-    JSON.stringify({ receivedAt: new Date().toISOString(), name, company, email, phone, message, lines })
-  );
+  const text = [
+    'New stock enquiry from the /purchase catalogue.',
+    '',
+    `Name:    ${name}`,
+    `Company: ${company || '-'}`,
+    `Email:   ${email}`,
+    `Phone:   ${phone}`,
+    '',
+    'Message:',
+    message || '-',
+    '',
+    `Items (${lines.length}):`,
+    ...lines.map(
+      (l) =>
+        `  ${l.itemCode}  ${l.itemName}  [${l.category}]  qty ${l.quantity} ${l.unit}  ` +
+        `(in stock: ${l.inStock})${l.remarks ? `  remarks: ${l.remarks}` : ''}`
+    ),
+    '',
+    `Received: ${new Date().toISOString()}`,
+  ].join('\n');
 
-  return Response.json({ ok: true, items: lines.length, recipient: ENQUIRY_RECIPIENT });
+  const sent = await sendEnquiry(`Stock enquiry: ${lines.length} item(s) - ${name}`, text);
+  if (!sent.ok) {
+    return Response.json(
+      {
+        ok: false,
+        error:
+          sent.reason === 'not-configured'
+            ? 'Enquiries cannot be sent from this server yet. Please contact us directly so your request is not lost.'
+            : 'We could not send your enquiry just now. Please try again, or contact us directly.',
+      },
+      { status: 503 }
+    );
+  }
+
+  return Response.json({ ok: true, items: lines.length });
 }

@@ -24,6 +24,8 @@ const INITIAL_FORM: QuoteFormData = {
 export default function GetQuoteModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   const [formData, setFormData] = useState<QuoteFormData>(INITIAL_FORM);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSending, setIsSending] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   if (!isOpen) return null;
 
@@ -32,15 +34,32 @@ export default function GetQuoteModal({ isOpen, onClose }: { isOpen: boolean; on
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    // Simulate API request
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData(INITIAL_FORM);
-      onClose();
-    }, 2000);
+    setSubmitError(null);
+    setIsSending(true);
+    try {
+      const res = await fetch('/api/enquiry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ kind: 'quote', ...formData }),
+      });
+      const data = await res.json();
+      if (!res.ok || !data.ok) {
+        const fieldError = data.errors && Object.values(data.errors).flat()[0];
+        throw new Error((fieldError as string) || data.error || 'Could not send your request.');
+      }
+      setIsSubmitted(true);
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setFormData(INITIAL_FORM);
+        onClose();
+      }, 2000);
+    } catch (err) {
+      setSubmitError(err instanceof Error ? err.message : 'Could not send your request.');
+    } finally {
+      setIsSending(false);
+    }
   };
 
   return (
@@ -145,8 +164,15 @@ export default function GetQuoteModal({ isOpen, onClose }: { isOpen: boolean; on
               ></textarea>
             </div>
 
-            <button type="submit" className="btn-submit">
-              Submit Request <i className="fas fa-paper-plane"></i>
+            {/* Inline colour: styles/ is owned elsewhere and has no modal error class. */}
+            {submitError && (
+              <p role="alert" style={{ color: '#c0392b', margin: '0.5rem 0 0' }}>
+                {submitError}
+              </p>
+            )}
+
+            <button type="submit" className="btn-submit" disabled={isSending}>
+              {isSending ? 'Sending…' : 'Submit Request'} <i className="fas fa-paper-plane"></i>
             </button>
           </form>
         )}

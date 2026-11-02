@@ -201,6 +201,7 @@ export default function ValvesPage({ imageMap = {} }: { imageMap?: Record<string
                           src={imageMap[normalizeName(valve.name)] || valve.image}
                           alt={valve.name}
                           className="valve-card-img"
+                          loading="lazy"
                         />
                       ) : (
                         <div className="valve-card-img-placeholder">

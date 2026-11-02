@@ -17,7 +17,7 @@ export default function OtherProductsPage() {
             {otherProducts.map((p) => (
               <div className="other-product-card" key={p.id}>
                 <div className="card-image-wrapper">
-                  <img src={p.image} alt={p.name} className="card-product-img" />
+                  <img src={p.image} alt={p.name} className="card-product-img" loading="lazy" />
                 </div>
                 <div className="card-content-wrapper">
                   <span className="card-category-badge">Piping & Controls</span>

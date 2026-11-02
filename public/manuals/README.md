@@ -1,36 +1,71 @@
-# Valve user manual PDFs
+# Valve user manual PDFs — rename table
 
-Drop the 18 DALUI user-manual PDFs in this folder, renamed exactly as listed below.
-Each file is served at `/manuals/<slug>.pdf` and is picked up automatically by the
-"Download PDF" button on `/manuals/<slug>` — no code change is needed.
+**What to do:** put the 18 DALUI user-manual PDFs into *this* folder
+(`public/manuals/`), each renamed exactly as the last column says. Nothing else
+is needed — no code change, no list to update. The "Download PDF" button on
+`/manuals/<slug>` picks the file up automatically on the next deploy.
 
-Until a file is present, that page shows a "Print Manual" button (browser print /
-save-as-PDF of the on-page manual) instead of a broken download link.
+Until a file is in this folder, that page shows a **Print Manual** button
+(print / save-as-PDF of the on-page manual) instead of a broken download link.
+That is intentional — a missing page is never offered as a download.
 
-Source: Google Drive folder
-https://drive.google.com/drive/folders/19Mzo3x3-ruSHcQmaBJ_PdtuT-zfi_oMU
+Source of the PDFs: Google Drive folder
+<https://drive.google.com/drive/folders/19Mzo3x3-ruSHcQmaBJ_PdtuT-zfi_oMU>
 
-| Source PDF from Drive | Rename to (drop in this folder) |
-|---|---|
-| GMD_User_Manual_01_Butterfly_Valves.pdf | butterfly.pdf |
-| GMD_User_Manual_02_Sluice_Gate_Valves.pdf | sluice-gate.pdf |
-| GMD_User_Manual_03_Dual_Plate_Check_Valves.pdf | dual-check.pdf |
-| GMD_User_Manual_04_Non_Return_Reflux_Valves.pdf | non-return.pdf |
-| GMD_User_Manual_05_Air_Valves_Kinetic_Double_Acting.pdf | air-valve.pdf |
-| GMD_User_Manual_06_Globe_Valves.pdf | globe-valve.pdf |
-| GMD_User_Manual_07_Ball_Valves_Floating_Trunnion_Mounted.pdf | ball-valve.pdf |
-| GMD_User_Manual_08_Pressure_Reducing_Valves_PRV.pdf | prv.pdf |
-| GMD_User_Manual_09_Foot_Valves_with_Strainer.pdf | foot-valve.pdf |
-| GMD_User_Manual_10_Pressure_Relief_Valves_Safety_Valves.pdf | safety-relief.pdf |
-| GMD_User_Manual_11_Tamper_Proof_Air_Valves.pdf | tamper-proof.pdf |
-| GMD_User_Manual_12_Zero_Velocity_Non_Slam_Valves.pdf | zero-velocity-valve.pdf |
-| GMD_User_Manual_13_Control_Valves.pdf | control-valve.pdf |
-| GMD_User_Manual_14_Flow_Control_Valves_Plunger_Type.pdf | flow-control-plunger.pdf |
-| GMD_User_Manual_15_Wide_Type_Strainers.pdf | wide-type-strainer.pdf |
-| GMD_User_Manual_16_Plug_Valves.pdf | plug-valve.pdf |
-| GMD_User_Manual_17_Needle_Valves.pdf | needle-valve.pdf |
-| GMD_User_Manual_18_Pressure_Release_Valves.pdf | pressure-release-valve.pdf |
+## Rules for the new filename
 
-Note: `data/manuals.ts` also contains a `y-strainer` manual. It has no matching
-entry in `data/valves.ts`, so it is not linked from `/manuals` and has no PDF in
-the Drive set.
+1. Copy the name from the **Save the file as** column *character for character*,
+   including the hyphens. Do not add a date, a version or a copy suffix.
+2. All lower case. No spaces, no capitals, no underscores, no brackets.
+3. The extension must be `.pdf` (lower case). On Windows, turn on
+   *View → File name extensions* in Explorer first, otherwise you can end up
+   with `butterfly.pdf.pdf`, which will not work.
+4. One PDF per row. Do not put the files in a sub-folder.
+
+## The 18 files
+
+The Drive filenames are not reproduced here on purpose — identify each PDF by
+what is written on its cover page (the **Manual title** column), which is also
+the heading shown on the website page. Row order is the order the cards appear
+on <https://gmdalui.co.in/manuals>, top-left to bottom-right.
+
+| # | Card on the /manuals page | Manual title (on the PDF cover) | Save the file as |
+|---|---|---|---|
+| 1 | Butterfly Valve | MANUAL OF BUTTERFLY VALVES | `butterfly.pdf` |
+| 2 | Sluice Gate Valve / Gate Valve | MANUAL OF SLUICE VALVES | `sluice-gate.pdf` |
+| 3 | Dual Plate Check Valve | MANUAL OF CHECK VALVES | `dual-check.pdf` |
+| 4 | Non Return Valve (Reflux Valve) | MANUAL OF NON-RETURN VALVES (NRV) | `non-return.pdf` |
+| 5 | Air Valve (Kinetic/Double Act) | MANUAL OF AIR VALVES | `air-valve.pdf` |
+| 6 | Globe Valve | MANUAL OF GLOBE VALVES | `globe-valve.pdf` |
+| 7 | Ball Valve (Floating/Trunnion) | MANUAL OF BALL VALVES (FLOATING & TRUNNION MOUNTED) | `ball-valve.pdf` |
+| 8 | Pressure Reducing Valve (PRV) | MANUAL OF PRESSURE REDUCING VALVES (PRV) | `prv.pdf` |
+| 9 | Foot Valve (with Strainer) | MANUAL OF FOOT VALVES (WITH STRAINER) | `foot-valve.pdf` |
+| 10 | Pressure Relief Valve (Safety Valve) | MANUAL OF PRESSURE RELIEF VALVES (SAFETY VALVES) | `safety-relief.pdf` |
+| 11 | Tamper Proof / Air Valve | MANUAL OF TAMPER PROOF AIR VALVES | `tamper-proof.pdf` |
+| 12 | Zero Velocity (Non-Slam) | MANUAL OF ZERO VELOCITY VALVES | `zero-velocity-valve.pdf` |
+| 13 | Control Valve | MANUAL OF CONTROL VALVES | `control-valve.pdf` |
+| 14 | Flow Control Valve (Plunger Type) | MANUAL OF FLOW CONTROL VALVES (PLUNGER TYPE) | `flow-control-plunger.pdf` |
+| 15 | Wide Type Strainer | MANUAL OF WIDE TYPE STRAINERS | `wide-type-strainer.pdf` |
+| 16 | Plug Valve | MANUAL OF PLUG VALVES | `plug-valve.pdf` |
+| 17 | Needle Valve | MANUAL OF NEEDLE VALVES | `needle-valve.pdf` |
+| 18 | Pressure Release Valve | MANUAL OF PRESSURE RELEASE VALVES | `pressure-release-valve.pdf` |
+
+### A 19th manual exists on the site, with no PDF
+
+`MANUAL OF Y STRAINERS` is in `data/manuals.ts` and renders at
+`/manuals/y-strainer`, but there is no Y-strainer card on `/manuals` (no entry
+in `data/valves.ts`), so nothing on the site links to it. It is not part of the
+18-PDF Drive set. If the client ever supplies one, it must be saved as
+`y-strainer.pdf`; the page will then offer it, but the page still has to be
+reached by its URL directly.
+
+## Checking the drop-in
+
+After copying the files in, run from the project root:
+
+```
+node scripts/check-manuals.mjs
+```
+
+It lists every manual with its PDF status and exits non-zero while any PDF is
+missing. With all 18 in place it should report only `y-strainer` as missing.

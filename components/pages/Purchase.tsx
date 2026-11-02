@@ -705,7 +705,7 @@ export default function Purchase() {
                     <li key={item.key} className="cart-row">
                       <div className="cart-row-thumb">
                         {item.image ? (
-                          <img src={item.image} alt={item.title} />
+                          <img src={item.image} alt={item.title} loading="lazy" />
                         ) : (
                           <i className="fas fa-cubes" aria-hidden="true"></i>
                         )}

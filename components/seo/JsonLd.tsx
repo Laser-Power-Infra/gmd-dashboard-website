@@ -1,8 +1,9 @@
 export const SITE_URL = 'https://gmdalui.co.in';
 export const SITE_NAME = 'GM Dalui & Sons Pvt. Ltd.';
 
-/** Default share image: the widest landscape hero slide we already ship (1199x672). */
-export const OG_IMAGE = '/uploads/2025/09/IMG_4648.webp';
+// JPEG, not the WebP original: WhatsApp and Facebook do not reliably render a WebP og:image.
+// Generated 1200x630 from /uploads/2025/09/IMG_4648.webp via sharp.
+export const OG_IMAGE = '/og-image.jpg';
 
 const LOGO = `${SITE_URL}/uploads/2025/04/header-final-logo.webp`;
 
@@ -74,6 +75,20 @@ export function productJsonLd({
     ...(category ? { category } : {}),
     brand: { '@type': 'Brand', name: SITE_NAME },
     manufacturer: { '@id': `${SITE_URL}/#organization` },
+  };
+}
+
+/** BreadcrumbList for a nested route. "Home" is prepended; pass the rest in order. */
+export function breadcrumbJsonLd(trail: { name: string; path: string }[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [{ name: 'Home', path: '/' }, ...trail].map((crumb, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: crumb.name,
+      item: `${SITE_URL}${encodeURI(crumb.path)}`,
+    })),
   };
 }
 

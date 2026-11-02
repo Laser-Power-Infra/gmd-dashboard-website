@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   description:
     'Submit a performance review of GM Dalui valves in service so we can track field reliability and feed findings back into design and manufacture.',
   alternates: { canonical: '/performance-review' },
+  robots: { index: false, follow: false },
 };
 
 export default function Page() {

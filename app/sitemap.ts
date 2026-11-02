@@ -15,7 +15,6 @@ const staticRoutes: [path: string, priority: number][] = [
   ['/usages', 0.7],
   ['/product-industry', 0.7],
   ['/manuals', 0.7],
-  ['/engineering-data', 0.5],
   ['/contact', 0.8],
   ['/purchase', 0.6],
   ['/amc', 0.6],
@@ -25,7 +24,6 @@ const staticRoutes: [path: string, priority: number][] = [
   ['/risk-management', 0.5],
   ['/safety-plan', 0.5],
   ['/complaints', 0.4],
-  ['/performance-review', 0.4],
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function WhyChooseUs() {
   return (
     <section id="why-choose-us" className="choose-section">
@@ -19,7 +21,13 @@ export default function WhyChooseUs() {
           <div className="choose-graphics-container">
             <div className="choose-deco-block"></div>
             <div className="choose-image-card">
-              <img src="/uploads/2025/04/MISSION.webp" alt="Industrial valve installation grid" loading="lazy" />
+              {/* fill: the card is already position:absolute and sized by its parent. */}
+              <Image
+                src="/uploads/2025/04/MISSION.webp"
+                alt="Rows of finished valves on the GM Dalui assembly floor"
+                fill
+                sizes="(max-width: 992px) 100vw, 45vw"
+              />
             </div>
           </div>
         </div>

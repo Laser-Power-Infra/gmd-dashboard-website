@@ -4,7 +4,7 @@ import ComplaintsPage from '@/components/pages/ComplaintsPage';
 export const metadata: Metadata = {
   title: 'Register a Valve Complaint',
   description:
-    'Report a problem with a GM Dalui valve or order. Our support team logs every complaint and responds with a corrective action plan.',
+    'Report a problem with a GM Dalui valve or order. Our support team logs every complaint, investigates the cause and replies with a corrective action plan.',
   alternates: { canonical: '/complaints' },
 };
 
