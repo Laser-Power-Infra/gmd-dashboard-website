@@ -251,6 +251,35 @@ saveThrows = false;
   assert.match(rows[0].details, new RegExp(item.itemCode), 'the stored item list must name the resolved item');
 }
 
+/* ── /cost: a request must carry at least one complete item ─ */
+{
+  const { costRequestSchema, costErrors } = await import(pathToFileURL(path.join(root, 'lib/schemas/cost.ts')).href);
+  const ITEM = {
+    valveType: 'Sluice Valve',
+    size: 'DN 300',
+    pressure: 'PN 16',
+    material: 'Ductile Iron',
+    endConnection: 'Flanged',
+    quantity: '4',
+  };
+  const COST = { name: 'Alok Das', company: 'Industrial Ent.', email: 'alok@example.com', gst: '19ABCDE1234F1Z5', items: [ITEM] };
+  const badCost = (input, key) => {
+    const r = costRequestSchema.safeParse(input);
+    assert.equal(r.success, false);
+    if (key) assert.ok(key in costErrors(r.error), `expected an error on ${key}`);
+  };
+
+  assert.equal(costRequestSchema.parse(COST).items[0].quantity, 4, 'item quantity must be coerced');
+  badCost({ ...COST, items: [] }, 'items');                                  // the blank request
+  badCost({ ...COST, items: undefined }, 'items');                           // no items field at all
+  badCost({ ...COST, items: [{ ...ITEM, quantity: 0 }] }, 'items.0.quantity');
+  badCost({ ...COST, items: [{ ...ITEM, quantity: 1.5 }] }, 'items.0.quantity');
+  badCost({ ...COST, items: [{ ...ITEM, size: '  ' }] }, 'items.0.size');
+  badCost({ ...COST, items: [ITEM, { ...ITEM, material: '' }] }, 'items.1.material');
+  badCost({ ...COST, items: [{ ...ITEM, valveType: 'Gold Valve' }] }, 'items.0.valveType');
+  console.log('cost requests      empty / incomplete items rejected');
+}
+
 globalThis.fetch = realFetch;
 console.error = realError;
 

@@ -30,6 +30,10 @@ interface BuyerDetails {
 const EMPTY_BUYER: BuyerDetails = { name: '', company: '', email: '', phone: '', message: '' };
 
 const ENQUIRY_EMAIL = 'info@gmdalui.co.in';
+const CART_STORAGE_KEY = 'gmd-enquiry-list';
+
+/** Whole number >= 1, as a string for the input; blank or junk becomes 1. */
+const clampQty = (value: string | number) => String(Math.max(1, Math.floor(Number(value)) || 1));
 
 const ALL = 'All';
 const PAGE_SIZE = 12;
@@ -185,7 +189,7 @@ function useCardTilt() {
 function enquiryText(buyer: BuyerDetails, items: CartItem[]): string {
   const lines = items.map(
     (i, n) =>
-      `${n + 1}. ${i.name} [${i.itemCode}] - qty ${Number(i.quantity) > 0 ? i.quantity : 1} ${i.unit}` +
+      `${n + 1}. ${i.name} [${i.itemCode}] - qty ${clampQty(i.quantity)} ${i.unit}` +
       (i.remarks ? ` - ${i.remarks}` : '')
   );
   return [
@@ -251,6 +255,28 @@ export default function Purchase() {
       document.body.style.overflow = previous;
     };
   }, [isCartOpen]);
+
+  // Keep the enquiry list across reloads. Load once, then save on every change.
+  const cartLoaded = useRef(false);
+  useEffect(() => {
+    try {
+      const saved = JSON.parse(localStorage.getItem(CART_STORAGE_KEY) ?? '[]');
+      // Read after hydration, not in useState, so the server HTML (empty list) matches the first client render.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      if (Array.isArray(saved) && saved.length > 0) setCartItems(saved);
+    } catch {
+      // Private mode or corrupt data: start with an empty list.
+    }
+    cartLoaded.current = true;
+  }, []);
+  useEffect(() => {
+    if (!cartLoaded.current) return;
+    try {
+      localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cartItems));
+    } catch {
+      // Storage unavailable: the list still works for this visit.
+    }
+  }, [cartItems]);
 
   // buildStock collapses repeated rows to one entry per item. `qty` counts those
   // rows; it is not a confirmed stock figure, so it is not shown to buyers.
@@ -380,7 +406,7 @@ export default function Purchase() {
           items: cartItems.map((i) => ({
             itemCode: i.itemCode,
             itemName: i.name,
-            quantity: Number(i.quantity) > 0 ? Number(i.quantity) : 1,
+            quantity: Number(clampQty(i.quantity)),
             remarks: i.remarks,
           })),
         }),
@@ -723,8 +749,33 @@ export default function Purchase() {
                       <div className="cart-row-meta">
                         <h3 className="cart-row-title">{item.title}</h3>
                         <div className="cart-row-sub">
-                          <span className="cart-qty-pill">
-                            Qty <strong>{Number(item.quantity) > 0 ? item.quantity : 1}</strong> {item.unit}
+                          <span className="cart-qty-stepper">
+                            <button
+                              type="button"
+                              onClick={() => handleCartChange(index, 'quantity', clampQty(Number(item.quantity) - 1))}
+                              disabled={Number(item.quantity) <= 1}
+                              aria-label={`Decrease quantity of ${item.title}`}
+                            >
+                              −
+                            </button>
+                            <input
+                              type="number"
+                              min="1"
+                              step="1"
+                              inputMode="numeric"
+                              value={item.quantity}
+                              onChange={(e) => handleCartChange(index, 'quantity', e.target.value)}
+                              onBlur={(e) => handleCartChange(index, 'quantity', clampQty(e.target.value))}
+                              aria-label={`Quantity for ${item.title}`}
+                            />
+                            <button
+                              type="button"
+                              onClick={() => handleCartChange(index, 'quantity', clampQty(Number(item.quantity) + 1))}
+                              aria-label={`Increase quantity of ${item.title}`}
+                            >
+                              +
+                            </button>
+                            <span className="cart-qty-unit">{item.unit}</span>
                           </span>
                           <span className="cart-stock-note">Ready stock</span>
                         </div>
@@ -757,8 +808,10 @@ export default function Purchase() {
                               placeholder="Quantity"
                               value={item.quantity}
                               onChange={(e) => handleCartChange(index, 'quantity', e.target.value)}
+                              onBlur={(e) => handleCartChange(index, 'quantity', clampQty(e.target.value))}
                               className="purchase-input"
                               min="1"
+                              step="1"
                               aria-label={`Quantity for ${item.title}`}
                             />
                             <textarea

@@ -826,17 +826,39 @@
   gap: 8px;
 }
 
-.cart-qty-pill {
-  font-size: 0.7rem;
+.cart-qty-stepper {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
   font-weight: 600;
   color: #41464d;
-  background: #f6f7f9;
-  border: 1px solid #e6e8ec;
-  border-radius: 999px;
-  padding: 3px 9px;
 }
 
-.cart-qty-pill strong {
+.cart-qty-stepper button {
+  width: 28px;
+  height: 28px;
+  border: 1px solid #e6e8ec;
+  border-radius: 50%;
+  background: #f6f7f9;
+  color: var(--color-primary);
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.cart-qty-stepper button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.cart-qty-stepper input {
+  width: 3.5rem;
+  height: 28px;
+  border: 1px solid #e6e8ec;
+  border-radius: 6px;
+  text-align: center;
+  font: inherit;
   color: var(--color-primary);
 }
 

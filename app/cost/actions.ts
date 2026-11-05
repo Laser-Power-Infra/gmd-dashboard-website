@@ -2,11 +2,8 @@
 
 import { prisma } from '@/lib/prisma';
 import { getCurrentUser } from '@/lib/auth/session';
-import {
-  costRequestSchema,
-  type CostRequestFormState,
-  type CostRequestInput,
-} from '@/lib/schemas/cost';
+import { sendEnquiry } from '@/lib/notify';
+import { costErrors, costRequestSchema, type CostRequestFormState } from '@/lib/schemas/cost';
 
 /**
  * Server action that handles a cost request submission from the /cost form.
@@ -15,53 +12,72 @@ import {
  * CostRequest row (userId), so each submission is linked to its owner. A
  * normal user later sees only their own rows on /cost, while admins/developers
  * see everything on /admin/cost-requests.
+ *
+ * Items arrive as one JSON field and are re-validated here with the same
+ * schema the page uses, so a request without items cannot be saved even if
+ * the page check is bypassed. The row is the record; mail is best-effort.
  */
 export async function submitCostRequest(
   _prevState: CostRequestFormState,
   formData: FormData
 ): Promise<CostRequestFormState> {
-  const input: CostRequestInput = {
+  let items: unknown = [];
+  try {
+    items = JSON.parse(formData.get('items')?.toString() || '[]');
+  } catch {
+    return { ok: false, errors: { items: 'Add at least one item' } };
+  }
+
+  const parsed = costRequestSchema.safeParse({
     name: formData.get('fullName')?.toString() ?? '',
     company: formData.get('company')?.toString() ?? '',
     email: formData.get('email')?.toString() ?? '',
     gst: formData.get('gstNumber')?.toString() ?? '',
-  };
-
-  const parsed = costRequestSchema.safeParse(input);
+    items,
+  });
 
   if (!parsed.success) {
-    return {
-      ok: false,
-      errors: parsed.error.flatten().fieldErrors,
-    };
+    return { ok: false, errors: costErrors(parsed.error) };
   }
 
   // Only signed-in users can submit (the /cost page is gated by requireAuth).
   const user = await getCurrentUser();
   if (!user) {
-    return {
-      ok: false,
-      errors: {
-        name: ['You must be signed in to submit a request.'],
-      },
-    };
+    return { ok: false, errors: { name: 'You must be signed in to submit a request.' } };
   }
 
+  const data = parsed.data;
   try {
-    await prisma.costRequest.create({
-      data: {
-        ...parsed.data,
-        userId: user.id,
-      },
-    });
-    return { ok: true };
+    await prisma.costRequest.create({ data: { ...data, userId: user.id } });
   } catch (err) {
     console.error('Failed to save cost request:', err);
     return {
       ok: false,
-      errors: {
-        name: ['Something went wrong while saving your request. Please try again.'],
-      },
+      errors: { name: 'Something went wrong while saving your request. Please try again.' },
     };
   }
+
+  // sendEnquiry logs the full request itself on failure; the saved row is enough for the customer.
+  await sendEnquiry(
+    `Cost estimate request: ${data.items.length} item(s) - ${data.company}`,
+    [
+      'New cost estimate request from /cost.',
+      '',
+      `Name:    ${data.name}`,
+      `Company: ${data.company}`,
+      `Email:   ${data.email}`,
+      `GSTIN:   ${data.gst}`,
+      '',
+      `Items (${data.items.length}):`,
+      ...data.items.map(
+        (i, n) =>
+          `  ${n + 1}. ${i.valveType}, ${i.size}, ${i.pressure}, ${i.material}, ${i.endConnection} - qty ${i.quantity}` +
+          (i.remarks ? `  remarks: ${i.remarks}` : '')
+      ),
+      '',
+      `Received: ${new Date().toISOString()}`,
+    ].join('\n')
+  );
+
+  return { ok: true };
 }

@@ -1,5 +1,6 @@
 import { prisma } from '@/lib/prisma';
 import type { Metadata } from 'next';
+import { costItemLines } from '@/lib/schemas/cost';
 
 export const dynamic = 'force-dynamic';
 
@@ -23,6 +24,18 @@ function formatDate(date: Date): string {
     hour: '2-digit',
     minute: '2-digit',
   }).format(date);
+}
+
+function ItemList({ items }: { items: unknown }) {
+  const lines = costItemLines(items);
+  if (lines.length === 0) return <span className="text-xs italic text-red-500">No items</span>;
+  return (
+    <ul className="list-disc space-y-0.5 pl-4 text-xs">
+      {lines.map((line, i) => (
+        <li key={i}>{line}</li>
+      ))}
+    </ul>
+  );
 }
 
 export default async function CostRequestsPage() {
@@ -56,6 +69,7 @@ export default async function CostRequestsPage() {
                 <th className="px-4 py-3 font-semibold">Company</th>
                 <th className="px-4 py-3 font-semibold">Email</th>
                 <th className="px-4 py-3 font-semibold">GSTIN</th>
+                <th className="px-4 py-3 font-semibold">Items</th>
                 <th className="px-4 py-3 font-semibold">Status</th>
                 <th className="px-4 py-3 font-semibold">Submitted</th>
               </tr>
@@ -67,6 +81,9 @@ export default async function CostRequestsPage() {
                   <td className="px-4 py-3 text-slate-600">{req.company}</td>
                   <td className="px-4 py-3 text-slate-600">{req.email}</td>
                   <td className="px-4 py-3 font-mono text-slate-600">{req.gst}</td>
+                  <td className="px-4 py-3 text-slate-600">
+                    <ItemList items={req.items} />
+                  </td>
                   <td className="px-4 py-3">
                     <span
                       className={`inline-block rounded-full px-2.5 py-0.5 text-xs font-bold ${STATUS_BADGE[req.status] ?? 'bg-slate-100 text-slate-600'}`}
