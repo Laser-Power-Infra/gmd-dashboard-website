@@ -1,36 +1,45 @@
 'use client';
 
-import { useActionState } from 'react';
-import { loginAction } from '@/lib/auth/actions';
-import type { AuthFormState } from '@/lib/auth/schemas';
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { getSession, signIn } from 'next-auth/react';
 import PasswordInput from '@/components/auth/PasswordInput';
 
 /**
- * Client-side login form.
- *
- * Uses React 19's `useActionState` to call the `loginAction` server action:
- *   - The server validates, verifies the password, creates the session, and
- *     redirects (role-aware) on success.
- *   - On failure it returns an error state which we render below the form.
- *
- * `next` is carried as a hidden input so the action knows where to redirect.
- * It is sanitized on the server (must be an internal path starting with '/').
+ * Client-side login form using NextAuth's credentials sign-in.
+ * On success, routes to `next` (internal paths only) or a role-based default.
  */
-
-const INITIAL_STATE: AuthFormState = { ok: false };
-
 export default function LoginForm({ next }: { next: string | null }) {
-  const [state, formAction, isPending] = useActionState(loginAction, INITIAL_STATE);
+  const router = useRouter();
+  const [error, setError] = useState<string | null>(null);
+  const [isPending, setPending] = useState(false);
+
+  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setPending(true);
+    setError(null);
+    const form = new FormData(e.currentTarget);
+    const res = await signIn('credentials', {
+      email: form.get('email'),
+      password: form.get('password'),
+      redirect: false,
+    });
+    if (!res?.ok) {
+      setError('Invalid email or password');
+      setPending(false);
+      return;
+    }
+    const session = await getSession();
+    const safeNext = next?.startsWith('/') && !next.startsWith('//') ? next : null;
+    router.push(safeNext ?? (session?.user.role === 'USER' ? '/cost' : '/admin/cost-requests'));
+    router.refresh();
+  }
 
   return (
-    <form action={formAction} className="space-y-5" noValidate>
-      {/* Hidden field so the server knows where to send the user back. */}
-      {next && <input type="hidden" name="next" value={next} />}
-
-      {/* Global error (e.g. wrong credentials) */}
-      {state.message && (
+    <form onSubmit={onSubmit} className="space-y-5" noValidate>
+      {error && (
         <p className="rounded-md border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-600">
-          {state.message}
+          {error}
         </p>
       )}
 
@@ -47,9 +56,6 @@ export default function LoginForm({ next }: { next: string | null }) {
           placeholder="name@company.com"
           className="w-full rounded-md border border-gray-300 bg-slate-50 px-4 py-3 text-gray-900 placeholder:text-gray-400 focus:border-[#7b3e41] focus:outline-none focus:ring-2 focus:ring-[#7b3e41]"
         />
-        {state.errors?.email && (
-          <p className="mt-1 text-xs font-medium text-red-500">{state.errors.email[0]}</p>
-        )}
       </div>
 
       {/* Password */}
@@ -63,9 +69,6 @@ export default function LoginForm({ next }: { next: string | null }) {
           autoComplete="current-password"
           placeholder="••••••••"
         />
-        {state.errors?.password && (
-          <p className="mt-1 text-xs font-medium text-red-500">{state.errors.password[0]}</p>
-        )}
       </div>
 
       {/* Submit */}

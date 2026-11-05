@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { requireAdmin } from '@/lib/auth/require-auth';
-import { logoutAction } from '@/lib/auth/actions';
+import SignOutButton from '@/components/auth/SignOutButton';
 import { getCurrentUser } from '@/lib/auth/session';
 
 /**
@@ -56,15 +56,9 @@ export default async function AdminLayout({ children }: { children: React.ReactN
               </div>
             )}
 
-            {/* Sign out is a server action invoked from a plain form. */}
-            <form action={logoutAction}>
-              <button
-                type="submit"
-                className="rounded-md border border-slate-300 bg-white px-3 py-1.5 text-sm font-medium text-slate-600 transition hover:bg-slate-50"
-              >
-                Sign out
-              </button>
-            </form>
+            <SignOutButton className="rounded-md border border-slate-300 bg-white px-3 py-1.5 text-sm font-medium text-slate-600 transition hover:bg-slate-50">
+              Sign out
+            </SignOutButton>
 
             <Link href="/" className="text-sm text-slate-500 hover:text-slate-700">
               <i className="fas fa-arrow-left mr-1"></i> Back to Site
