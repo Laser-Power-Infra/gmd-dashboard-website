@@ -2,7 +2,9 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    unoptimized: true,
+    // false, not true: sharp is installed and there is no static export, so Next can
+    // resize and re-encode. Left on, every next/image was a plain <img> with extra steps.
+    unoptimized: false,
   },
   turbopack: {
     root: __dirname,
@@ -10,7 +12,7 @@ const nextConfig: NextConfig = {
   // Allow the LAN IP to load dev JS bundles in development. Without this,
   // Next.js 16 blocks cross-origin requests to dev resources, so pages
   // render HTML but never hydrate (buttons/forms go dead).
-  allowedDevOrigins: ['192.168.1.196','192.168.1.190'],
+  allowedDevOrigins: ['192.168.1.196','192.168.1.190','192.168.1.200'],
   // output:'standalone'
 };
 

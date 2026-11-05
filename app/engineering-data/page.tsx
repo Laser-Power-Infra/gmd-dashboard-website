@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   icons: {
     icon: '/uploads/2025/04/header-final-logo.webp',
   },
+  alternates: { canonical: '/engineering-data' },
+  // Internal commercial data (stock, BOMs, contract review) — reachable by link, kept out of search.
+  robots: { index: false, follow: false },
 };
 
 /**

@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useEffect, useState, useRef } from 'react';
 
 // Counter Hook to animate numbers smoothly
@@ -33,7 +34,13 @@ function useCountUp(target: number, duration = 2000, trigger = false) {
   return count;
 }
 
-export default function AboutUs() {
+export default function AboutUs({
+  valveTypesCount: valveTypes,
+  clientLogosCount: clientLogos,
+}: {
+  valveTypesCount: number;
+  clientLogosCount: number;
+}) {
   const [isInView, setIsInView] = useState(false);
   const sectionRef = useRef<HTMLElement | null>(null);
 
@@ -45,7 +52,8 @@ export default function AboutUs() {
           observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.2 }
+      // threshold 0: this section is taller than a small viewport, so 20% of it may never be visible at once and the counters would stay at 0
+      { threshold: 0 }
     );
 
     if (sectionRef.current) {
@@ -59,10 +67,9 @@ export default function AboutUs() {
     };
   }, []);
 
-  // Set up counts
-  const supplyHistoryCount = useCountUp(70, 1500, isInView);
-  const productionCount = useCountUp(7500, 1800, isInView);
-  const clientsCount = useCountUp(98, 1500, isInView);
+  // Counts below are the site's own catalogue figures, not marketing claims
+  const valveTypesCount = useCountUp(valveTypes, 1500, isInView);
+  const clientLogosCount = useCountUp(clientLogos, 1500, isInView);
 
   return (
     <section id="about-us" className="about-section" ref={sectionRef}>
@@ -73,7 +80,13 @@ export default function AboutUs() {
             <div className="graphics-container">
               <div className="deco-block"></div>
               <div className="about-image-card">
-                <img src="/uploads/2025/04/banner-image3.webp" alt="Industrial piping system layout" />
+                {/* fill: the card is already position:absolute and sized by its parent. */}
+                <Image
+                  src="/uploads/2025/04/banner-image3.webp"
+                  alt="Bank of GM Dalui valves installed on an industrial pipeline manifold"
+                  fill
+                  sizes="(max-width: 992px) 100vw, 45vw"
+                />
               </div>
             </div>
           </div>
@@ -83,10 +96,10 @@ export default function AboutUs() {
             <div className="section-badge">ABOUT US</div>
             <h2 className="section-title">We Have Been Working Very Efficiently</h2>
             <p className="about-text">
-              At GM Dalui &amp; Sons Pvt. Ltd. We believe in engineering and excellence and redefining industry standards. Decades of expertise in manufacturing and innovation, our journey has been one of relentless progress and commitment to quality.
+              At GM Dalui &amp; Sons Pvt. Ltd., we believe in engineering, in excellence and in redefining industry standards. With decades of expertise in manufacturing and innovation, our journey has been one of relentless progress and commitment to quality.
             </p>
             <p className="about-text">
-              GM Dalui &amp; Sons Pvt.Ltd. is transforming! With cutting-edge modernization, innovation, unwavering commitment to excellence, we are redefining industry standards. The future is here - bigger, bolder, and better than ever! Stay with us on this journey of growth and success.
+              GM Dalui &amp; Sons Pvt. Ltd. is transforming! With cutting-edge modernization, innovation and an unwavering commitment to excellence, we are redefining industry standards. The future is here - bigger, bolder, and better than ever! Stay with us on this journey of growth and success.
             </p>
             <blockquote className="about-quote">
               &quot;We are entering a bold new era - one driven by modernization, advanced technology, and customer-centric solutions.&quot;
@@ -102,18 +115,8 @@ export default function AboutUs() {
                 <i className="fas fa-chart-bar"></i>
               </div>
               <div className="stat-info">
-                <h3>{supplyHistoryCount}%</h3>
-                <p>Supply History</p>
-              </div>
-            </div>
-
-            <div className="stat-card">
-              <div className="stat-icon">
-                <i className="fas fa-hands"></i>
-              </div>
-              <div className="stat-info">
-                <h3>{productionCount}+</h3>
-                <p>Our Production</p>
+                <h3>{valveTypesCount}</h3>
+                <p>Valve Types Manufactured</p>
               </div>
             </div>
 
@@ -122,8 +125,8 @@ export default function AboutUs() {
                 <i className="fas fa-users"></i>
               </div>
               <div className="stat-info">
-                <h3>{clientsCount}%</h3>
-                <p>Happy Clients</p>
+                <h3>{clientLogosCount}</h3>
+                <p>Client Organisations Served</p>
               </div>
             </div>
           </div>

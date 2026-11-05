@@ -59,17 +59,6 @@ export default function Header({
             <a href="/Quality_Manual.pdf" target="_blank" rel="noopener noreferrer" style={{ backgroundColor: '#fb923c', color: '#fff', padding: '4px 12px', borderRadius: '4px', fontWeight: 'bold', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.85rem' }}>
               <i className="fas fa-download"></i> Download QA
             </a>
-            <div className="social-links">
-              <a href="https://twitter.com/sitepad" target="_blank" rel="noreferrer" aria-label="Twitter">
-                <i className="fab fa-twitter"></i>
-              </a>
-              <a href="https://facebook.com/sitepad" target="_blank" rel="noreferrer" aria-label="Facebook">
-                <i className="fab fa-facebook-f"></i>
-              </a>
-              <a href="https://linkedin.com/sitepad" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-                <i className="fab fa-linkedin-in"></i>
-              </a>
-            </div>
           </div>
         </div>
       </div>

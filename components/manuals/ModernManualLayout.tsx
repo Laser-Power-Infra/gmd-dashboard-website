@@ -4,7 +4,29 @@ import { useEffect, useRef } from 'react';
 import type { Manual, ManualBlock } from '@/types';
 import PrintableManual from './PrintableManual';
 
-export default function ModernManualLayout({ data }: { data: Manual }) {
+const actionButtonStyle = {
+  display: 'inline-flex',
+  alignItems: 'center',
+  gap: '8px',
+  backgroundColor: '#fb923c',
+  color: '#fff',
+  padding: '10px 20px',
+  borderRadius: '6px',
+  border: 'none',
+  cursor: 'pointer',
+  fontWeight: 'bold',
+  fontSize: '1rem',
+  textDecoration: 'none',
+  boxShadow: '0 4px 10px rgba(251, 146, 60, 0.3)',
+} as const;
+
+export default function ModernManualLayout({
+  data,
+  pdfHref,
+}: {
+  data: Manual;
+  pdfHref: string | null;
+}) {
   const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
@@ -96,25 +118,15 @@ export default function ModernManualLayout({ data }: { data: Manual }) {
         <h1 className="modern-main-title">{data.title}</h1>
         <div className="title-underline"></div>
         <div className="no-print" style={{ position: 'absolute', right: '0', top: '50%', transform: 'translateY(-50%)' }}>
-          <button
-            onClick={() => window.print()}
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '8px',
-              backgroundColor: '#fb923c',
-              color: '#fff',
-              padding: '10px 20px',
-              borderRadius: '6px',
-              border: 'none',
-              cursor: 'pointer',
-              fontWeight: 'bold',
-              fontSize: '1rem',
-              boxShadow: '0 4px 10px rgba(251, 146, 60, 0.3)',
-            }}
-          >
-            <i className="fas fa-file-pdf"></i> Download PDF
-          </button>
+          {pdfHref ? (
+            <a href={pdfHref} download style={actionButtonStyle}>
+              <i className="fas fa-file-pdf"></i> Download PDF
+            </a>
+          ) : (
+            <button onClick={() => window.print()} style={actionButtonStyle}>
+              <i className="fas fa-print"></i> Print Manual
+            </button>
+          )}
         </div>
       </div>
 

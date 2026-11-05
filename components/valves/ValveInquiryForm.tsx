@@ -30,6 +30,8 @@ export default function ValveInquiryForm({ valve }: { valve: DetailValve }) {
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSending, setIsSending] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [validationErrors, setValidationErrors] = useState<ValidationErrors>({});
 
   // Handle Form Change
@@ -49,8 +51,9 @@ export default function ValveInquiryForm({ valve }: { valve: DetailValve }) {
   };
 
   // Form Submit Validation
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    setSubmitError(null);
     const errors: ValidationErrors = {};
     if (!formData.name.trim()) errors.name = 'Full name is required';
     if (!formData.email.trim()) {
@@ -71,8 +74,25 @@ export default function ValveInquiryForm({ valve }: { valve: DetailValve }) {
       return;
     }
 
-    // Submit Success Simulation
-    setIsSubmitted(true);
+    setIsSending(true);
+    try {
+      const res = await fetch('/api/enquiry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        // valve.id only - the server resolves the product name and specs itself.
+        body: JSON.stringify({ kind: 'valve', valveId: valve.id, ...formData }),
+      });
+      const data = await res.json();
+      if (!res.ok || !data.ok) {
+        const fieldError = data.errors && Object.values(data.errors).flat()[0];
+        throw new Error((fieldError as string) || data.error || 'Could not send your inquiry.');
+      }
+      setIsSubmitted(true);
+    } catch (err) {
+      setSubmitError(err instanceof Error ? err.message : 'Could not send your inquiry.');
+    } finally {
+      setIsSending(false);
+    }
   };
 
   return (
@@ -205,8 +225,14 @@ export default function ValveInquiryForm({ valve }: { valve: DetailValve }) {
             </div>
           </div>
 
-          <button type="submit" className="submit-inquiry-btn">
-            Submit Proposal Request <i className="fas fa-paper-plane send-icon"></i>
+          {submitError && (
+            <span className="error-text" role="alert">
+              {submitError}
+            </span>
+          )}
+
+          <button type="submit" className="submit-inquiry-btn" disabled={isSending}>
+            {isSending ? 'Sending…' : 'Submit Proposal Request'} <i className="fas fa-paper-plane send-icon"></i>
           </button>
         </form>
       )}

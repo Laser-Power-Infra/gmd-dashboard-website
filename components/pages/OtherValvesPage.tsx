@@ -46,7 +46,7 @@ export default function OtherValvesPage() {
       {/* Title block */}
       <section className="types-heading-section">
         <div className="container">
-          <h2 className="types-section-title">Types Of Other Valves</h2>
+          <h1 className="types-section-title">Types Of Other Valves</h1>
         </div>
       </section>
 
@@ -82,7 +82,7 @@ export default function OtherValvesPage() {
               <div className="other-valve-grid-card">
                 <div className="grid-card-badge">Illustration</div>
                 <div className="grid-card-content img-content-box">
-                  <img src={v.image} alt={v.name} className="grid-card-img" />
+                  <img src={v.image} alt={v.name} className="grid-card-img" loading="lazy" />
                 </div>
               </div>
 

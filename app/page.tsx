@@ -5,6 +5,13 @@ import Products from '@/components/home/Products';
 import WhyChooseUs from '@/components/home/WhyChooseUs';
 import VisionMission from '@/components/home/VisionMission';
 import Clients from '@/components/home/Clients';
+import { clientLogos } from '@/data/clients';
+import { valvesData } from '@/data/valves';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/' },
+};
 
 export default function HomePage() {
   return (
@@ -13,7 +20,8 @@ export default function HomePage() {
         <Hero />
       </div>
       <div id="about-us">
-        <AboutUs />
+        {/* Counted on the server so these figures can't drift out of date. */}
+        <AboutUs valveTypesCount={valvesData.length} clientLogosCount={clientLogos.length} />
       </div>
       <div id="services">
         <Services />

@@ -69,7 +69,7 @@ export default function ValveCarouselSection({ section }: { section: IndustrySec
                   onClick={(e) => handleItemClick(e, idx)}
                 >
                   {row.image ? (
-                    <img src={row.image} alt={row.data[0]} />
+                    <img src={row.image} alt={row.data[0]} loading="lazy" />
                   ) : (
                     <div style={{ color: '#9ca3af', fontSize: '0.8rem', textAlign: 'center' }}>Image Coming Soon</div>
                   )}

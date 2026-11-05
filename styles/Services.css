@@ -22,6 +22,7 @@
 }
 
 .service-image {
+  position: relative; /* anchor for next/image fill */
   width: 100%;
   height: 240px;
   overflow: hidden;

@@ -1,6 +1,12 @@
 import { prisma } from '@/lib/prisma';
 import { requireDeveloper } from '@/lib/auth/require-auth';
 import UserRoleSelect from '@/components/admin/UserRoleSelect';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'User Roles',
+  robots: { index: false, follow: false },
+};
 
 /**
  * /admin/users — role management page (DEVELOPER only).

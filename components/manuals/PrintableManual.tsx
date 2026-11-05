@@ -56,9 +56,9 @@ export default function PrintableManual({ data }: { data: Manual | null }) {
       {/* Cover Page */}
       <div className="print-cover-page">
         <div className="print-logo-container">
-          <img src="/logo.png" alt="G.M.DALUI & SONS" className="print-logo" />
+          <img src="/uploads/2025/04/header-final-logo.webp" alt="G.M.DALUI & SONS" className="print-logo" />
         </div>
-        <h1 className="print-main-title">{data.title}</h1>
+        <h2 className="print-main-title">{data.title}</h2>
         <h2 className="print-subtitle">Installation, Operation &amp; Maintenance Manual</h2>
         <div className="print-company-info">
           <p><strong>G.M.DALUI &amp; SONS PRIVATE LIMITED</strong></p>
