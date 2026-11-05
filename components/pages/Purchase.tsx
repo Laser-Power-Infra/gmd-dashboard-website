@@ -580,7 +580,10 @@ export default function Purchase() {
 
                 <div className="purchase-body">
                   <div className="purchase-meta">
-                    <span className="item-cat-badge">{item.category}</span>
+                    {/* "TRADING VALVES" is an internal ERP stock class, not meant for buyers. */}
+                    {item.category !== 'TRADING VALVES' && (
+                      <span className="item-cat-badge">{item.category}</span>
+                    )}
                     {/* The source dump carries no quantity column - `item.qty` is only a
                         count of repeated rows, and that reading is contradicted by the
                         data (see catalog.ts), so no figure is published to buyers.
