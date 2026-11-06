@@ -4,7 +4,6 @@ import { useState } from 'react';
 import type { ReactNode } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useQuote } from './QuoteProvider';
 
 function activePage(pathname: string): string {
   if (pathname === '/' || pathname === '') return 'home';
@@ -24,7 +23,6 @@ export default function Header({
   desktopAuthSlot?: ReactNode;
   mobileAuthSlot?: ReactNode;
 }) {
-  const { openQuote } = useQuote();
   const pathname = usePathname();
   const currentPage = activePage(pathname);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -262,13 +260,10 @@ export default function Header({
             </ul>
           </nav>
 
-          {/* Get Quote button and Hamburger Menu Toggler */}
+          {/* Hamburger Menu Toggler */}
           <div className="nav-actions">
             {desktopAuthSlot}
             {desktopAdminSlot}
-            <button className="btn-quote" onClick={() => { closeMobileMenu(); openQuote(); }}>
-              <span className="btn-quote-inner">Get Quote</span>
-            </button>
             <button className="hamburger-menu" onClick={toggleMobileMenu} aria-label="Toggle navigation">
               <i className={isMobileMenuOpen ? 'fas fa-times' : 'fas fa-bars'}></i>
             </button>
@@ -320,11 +315,6 @@ export default function Header({
             <li><Link href="/cost" onClick={handleLinkClick}>Cost</Link></li>
             {mobileAuthSlot}
             {mobileAdminSlot}
-            <li className="mobile-action-li">
-              <button className="btn-mobile-quote" onClick={() => { closeMobileMenu(); openQuote(); }}>
-                Get Quote
-              </button>
-            </li>
           </ul>
         </nav>
       </div>

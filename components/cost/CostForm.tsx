@@ -30,7 +30,6 @@ const EMPTY_ITEM: ItemDraft = {
 };
 
 const ITEM_TEXT_FIELDS: { key: keyof ItemDraft; label: string; placeholder: string }[] = [
-  { key: 'size', label: 'Size', placeholder: 'e.g. DN 300 / 12"' },
   { key: 'pressure', label: 'Pressure Rating', placeholder: 'e.g. PN 16' },
   { key: 'material', label: 'Material', placeholder: 'e.g. Ductile Iron' },
   { key: 'endConnection', label: 'End Connection', placeholder: 'e.g. Flanged' },
@@ -217,6 +216,21 @@ export default function CostForm() {
                       ))}
                     </select>
                     <FieldError error={err('valveType')} />
+                  </div>
+
+                  <div className="flex flex-col">
+                    <label htmlFor={id('size')} className={labelClass}>
+                      Size <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      id={id('size')}
+                      type="text"
+                      placeholder='e.g. DN 300 / 12"'
+                      value={item.size}
+                      onChange={(e) => updateItem(index, 'size', e.target.value)}
+                      className={inputClass(err('size'))}
+                    />
+                    <FieldError error={err('size')} />
                   </div>
 
                   <div className="flex flex-col">
