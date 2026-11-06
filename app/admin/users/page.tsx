@@ -19,6 +19,8 @@ export default async function AdminUsersPage() {
       id: true,
       name: true,
       email: true,
+      contactNumber: true,
+      gstNumber: true,
       role: true,
       createdAt: true,
     },
@@ -39,6 +41,8 @@ export default async function AdminUsersPage() {
             <tr>
               <th className="px-4 py-3 font-semibold">Name</th>
               <th className="px-4 py-3 font-semibold">Email</th>
+              <th className="px-4 py-3 font-semibold">Contact</th>
+              <th className="px-4 py-3 font-semibold">GST Number</th>
               <th className="px-4 py-3 font-semibold">Role</th>
               <th className="px-4 py-3 font-semibold">Created</th>
             </tr>
@@ -55,6 +59,10 @@ export default async function AdminUsersPage() {
                   )}
                 </td>
                 <td className="px-4 py-3 text-slate-600">{u.email}</td>
+                <td className="px-4 py-3 text-slate-600">{u.contactNumber ?? '—'}</td>
+                <td className="px-4 py-3 font-mono text-xs uppercase text-slate-600">
+                  {u.gstNumber ?? '—'}
+                </td>
                 <td className="px-4 py-3">
                   <UserRoleSelect
                     userId={u.id}

@@ -26,6 +26,17 @@
   margin: 0 auto;
 }
 
+/* Sign In / Sign Out control, moved here from the site header */
+.purchase-hero-auth {
+  margin-top: 22px;
+  display: flex;
+  justify-content: center;
+}
+
+.purchase-hero-auth .btn-quote {
+  font-family: var(--font-family-body);
+}
+
 .section-heading {
   font-size: 1.8rem;
   font-weight: 700;

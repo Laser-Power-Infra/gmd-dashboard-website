@@ -80,13 +80,15 @@ export async function registerAction(
     name: formData.get('name'),
     email: formData.get('email'),
     password: formData.get('password'),
+    contactNumber: formData.get('contactNumber'),
+    gstNumber: formData.get('gstNumber'),
   });
 
   if (!parsed.success) {
     return { ok: false, errors: parsed.error.flatten().fieldErrors };
   }
 
-  const { name, email, password } = parsed.data;
+  const { name, email, password, contactNumber, gstNumber } = parsed.data;
 
   // Make sure the email is not already taken.
   const existing = await prisma.user.findUnique({ where: { email } });
@@ -101,6 +103,8 @@ export async function registerAction(
       name,
       email,
       passwordHash: await hashPassword(password),
+      contactNumber,
+      gstNumber: gstNumber ?? null,
       role: 'USER',
     },
   });

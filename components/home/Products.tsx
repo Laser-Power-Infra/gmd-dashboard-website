@@ -27,7 +27,7 @@ export default function Products() {
         <div className="products-header">
           <div>
             <div className="section-badge">OUR PRODUCT</div>
-            <h2 className="section-title">Product That We Sale</h2>
+            <h2 className="section-title">Products That We Sell</h2>
           </div>
           <a href="#about-us" className="btn-primary btn-skew desktop-only">
             Know More

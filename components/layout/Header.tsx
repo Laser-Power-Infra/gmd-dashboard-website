@@ -4,7 +4,10 @@ import { useState } from 'react';
 import type { ReactNode } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useQuote } from './QuoteProvider';
+// Temporarily disabled: the Get Quote button is hidden from the header for now.
+// Restore the import (and the `openQuote` binding in the component body) along
+// with the two commented buttons below to bring the feature back.
+// import { useQuote } from './QuoteProvider';
 
 function activePage(pathname: string): string {
   if (pathname === '/' || pathname === '') return 'home';
@@ -16,15 +19,12 @@ function activePage(pathname: string): string {
 export default function Header({
   desktopAdminSlot,
   mobileAdminSlot,
-  desktopAuthSlot,
-  mobileAuthSlot,
 }: {
   desktopAdminSlot?: ReactNode;
   mobileAdminSlot?: ReactNode;
-  desktopAuthSlot?: ReactNode;
-  mobileAuthSlot?: ReactNode;
 }) {
-  const { openQuote } = useQuote();
+  // Temporarily disabled: see the commented import above.
+  // const { openQuote } = useQuote();
   const pathname = usePathname();
   const currentPage = activePage(pathname);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -275,11 +275,12 @@ export default function Header({
 
           {/* Get Quote button and Hamburger Menu Toggler */}
           <div className="nav-actions">
-            {desktopAuthSlot}
             {desktopAdminSlot}
-            <button className="btn-quote" onClick={() => { closeMobileMenu(); openQuote(); }}>
-              <span className="btn-quote-inner">Get Quote</span>
-            </button>
+{/* Temporarily disabled: Get Quote button.
+          <button className="btn-quote" onClick={() => { closeMobileMenu(); openQuote(); }}>
+            <span className="btn-quote-inner">Get Quote</span>
+          </button>
+          */}
             <button className="hamburger-menu" onClick={toggleMobileMenu} aria-label="Toggle navigation">
               <i className={isMobileMenuOpen ? 'fas fa-times' : 'fas fa-bars'}></i>
             </button>
@@ -329,13 +330,14 @@ export default function Header({
             </li>
             <li><Link href="/#footer" onClick={handleLinkClick}>Contact</Link></li>
             <li><Link href="/cost" onClick={handleLinkClick}>Cost</Link></li>
-            {mobileAuthSlot}
             {mobileAdminSlot}
+            {/* Temporarily disabled: mobile Get Quote button.
             <li className="mobile-action-li">
               <button className="btn-mobile-quote" onClick={() => { closeMobileMenu(); openQuote(); }}>
                 Get Quote
               </button>
             </li>
+            */}
           </ul>
         </nav>
       </div>

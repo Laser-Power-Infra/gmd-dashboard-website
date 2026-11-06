@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef, useCallback } from 'react';
-import type { ChangeEvent, PointerEvent } from 'react';
+import type { ChangeEvent, PointerEvent, ReactNode } from 'react';
 import { RAZORPAY_KEY_ID } from '@/lib/purchaseConfig';
 
 interface MasterItem {
@@ -253,7 +253,7 @@ const loadRazorpay = (): Promise<boolean> => {
   });
 };
 
-export default function Purchase() {
+export default function Purchase({ authSlot }: { authSlot?: ReactNode }) {
   const [masterItems, setMasterItems] = useState<MasterItem[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -546,6 +546,7 @@ export default function Purchase() {
           <p className="purchase-hero-subtitle">
             Browse our catalog or search for specific items to add to your purchase list.
           </p>
+          {authSlot && <div className="purchase-hero-auth">{authSlot}</div>}
         </div>
       </div>
 

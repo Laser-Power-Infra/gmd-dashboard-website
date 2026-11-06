@@ -37,7 +37,6 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import QuoteModalHost from '@/components/layout/QuoteModalHost';
 import AdminNavSlot from '@/components/layout/AdminNavSlot';
-import AuthNavSlot from '@/components/layout/AuthNavSlot';
 import { Toaster } from 'sonner';
 import { Suspense } from 'react';
 
@@ -66,16 +65,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <QuoteProvider>
           <div className="app-wrapper">
             <Header
-              desktopAuthSlot={
-                <Suspense fallback={null}>
-                  <AuthNavSlot variant="desktop" />
-                </Suspense>
-              }
-              mobileAuthSlot={
-                <Suspense fallback={null}>
-                  <AuthNavSlot variant="mobile" />
-                </Suspense>
-              }
               desktopAdminSlot={
                 <Suspense fallback={null}>
                   <AdminNavSlot variant="desktop" />

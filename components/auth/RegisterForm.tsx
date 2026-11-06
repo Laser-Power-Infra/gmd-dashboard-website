@@ -62,6 +62,44 @@ export default function RegisterForm() {
         )}
       </div>
 
+      {/* Contact Number */}
+      <div className="flex flex-col">
+        <label htmlFor="contactNumber" className="mb-1 text-xs font-bold uppercase tracking-wide text-gray-700">
+          Contact Number
+        </label>
+        <input
+          id="contactNumber"
+          name="contactNumber"
+          type="tel"
+          inputMode="numeric"
+          autoComplete="tel"
+          maxLength={10}
+          placeholder="10-digit mobile number"
+          className="w-full rounded-md border border-gray-300 bg-slate-50 px-4 py-3 text-gray-900 placeholder:text-gray-400 focus:border-[#7b3e41] focus:outline-none focus:ring-2 focus:ring-[#7b3e41]"
+        />
+        {state.errors?.contactNumber && (
+          <p className="mt-1 text-xs font-medium text-red-500">{state.errors.contactNumber[0]}</p>
+        )}
+      </div>
+
+      {/* GST Number (optional) */}
+      <div className="flex flex-col">
+        <label htmlFor="gstNumber" className="mb-1 text-xs font-bold uppercase tracking-wide text-gray-700">
+          GST Number <span className="font-normal normal-case text-gray-400">(optional)</span>
+        </label>
+        <input
+          id="gstNumber"
+          name="gstNumber"
+          type="text"
+          maxLength={15}
+          placeholder="15-character GSTIN, e.g. 19ABCDE1234F1Z5"
+          className="w-full rounded-md border border-gray-300 bg-slate-50 px-4 py-3 uppercase text-gray-900 placeholder:normal-case placeholder:text-gray-400 focus:border-[#7b3e41] focus:outline-none focus:ring-2 focus:ring-[#7b3e41]"
+        />
+        {state.errors?.gstNumber && (
+          <p className="mt-1 text-xs font-medium text-red-500">{state.errors.gstNumber[0]}</p>
+        )}
+      </div>
+
       {/* Password */}
       <div className="flex flex-col">
         <label htmlFor="password" className="mb-1 text-xs font-bold uppercase tracking-wide text-gray-700">

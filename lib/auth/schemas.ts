@@ -18,7 +18,17 @@ export const loginSchema = z.object({
 });
 export type LoginInput = z.infer<typeof loginSchema>;
 
-/** Registration form: name + email + password (min 8 chars). */
+/** Indian mobile number: 10 digits starting 6-9. */
+const CONTACT_RE = /^[6-9][0-9]{9}$/;
+
+/** GSTIN: 15 chars = 2-digit state + 5-letter PAN + 4-digit entity + 1 letter + 1 alnum + Z + 1 alnum. */
+const GSTIN_RE = /^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z][1-9A-Z]Z[0-9A-Z]$/;
+
+/** Treat a blank form field as "not provided" so optional fields accept ''. */
+const blankToUndefined = (value: unknown) =>
+  typeof value === 'string' && value.trim() === '' ? undefined : value;
+
+/** Registration form: name + email + password + contact number (+ optional GSTIN). */
 export const registerSchema = z.object({
   name: z
     .string()
@@ -29,6 +39,22 @@ export const registerSchema = z.object({
   password: z
     .string()
     .min(8, { message: 'Password must be at least 8 characters' }),
+  contactNumber: z.preprocess(
+    (v) => (typeof v === 'string' ? v.replace(/[\s-]/g, '') : v),
+    z
+      .string()
+      .trim()
+      .regex(CONTACT_RE, { message: 'Enter a valid 10-digit contact number' })
+  ),
+  gstNumber: z.preprocess(
+    blankToUndefined,
+    z
+      .string()
+      .trim()
+      .toUpperCase()
+      .regex(GSTIN_RE, { message: 'Enter a valid 15-character GST number' })
+      .optional()
+  ),
 });
 export type RegisterInput = z.infer<typeof registerSchema>;
 
@@ -42,6 +68,11 @@ export type RoleUpdateInput = z.infer<typeof roleUpdateSchema>;
 /** Return shape for the login / register / role actions. */
 export type AuthFormState = {
   ok: boolean;
-  errors?: Partial<Record<'name' | 'email' | 'password' | 'role', string[]>>;
+  errors?: Partial<
+    Record<
+      'name' | 'email' | 'password' | 'contactNumber' | 'gstNumber' | 'role',
+      string[]
+    >
+  >;
   message?: string;
 };

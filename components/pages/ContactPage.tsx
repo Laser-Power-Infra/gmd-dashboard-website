@@ -14,47 +14,45 @@ export default function ContactPage() {
               <div className="map-iframe-container">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.21234!2d88.433!3d22.572!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02755ec48a822f%3A0x1cbcf20488fcf6f2!2sAdventz%20Infinity%405!5e0!3m2!1sen!2sin!4v1"
-                  width="100%"
-                  height={300}
-                  style={{ border: 0 }}
-                  allowFullScreen
+                  title="Head Office Map"
                   loading="lazy"
+                  allowFullScreen
+                  referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
               </div>
             </div>
 
-            {/* Factory Address */}
+            {/* Factory Address - Ruisanda */}
             <div className="map-card">
-              <h2 className="map-heading">Factory Address</h2>
-              <div className="factory-addresses">
-                <div className="factory-col">
-                  <p className="map-address">
-                    Vidyasagar Industrial Park, Plot No. F1, Ruisanda, Rupnarayanpur, Jafala, Gole Bazar, Kharagpur, Paschim Medinipur, West Bengal, 721301
-                  </p>
-                  <div className="map-iframe-container">
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.697072551465!2d87.32297131542618!3d22.32731854756306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1d43a6b8f8d227%3A0x6b8f8f8f8f8f8f8!2sVidyasagar%20Industrial%20Park!5e0!3m2!1sen!2sin!4v1"
-                      width="100%"
-                      height={200}
-                      style={{ border: 0 }}
-                      loading="lazy"
-                    ></iframe>
-                  </div>
-                </div>
-                <div className="factory-col">
-                  <p className="map-address">
-                    Vivekananda Industrial Estate, Balitikuri, Bakultala, Howrah- 711113, W.B. India
-                  </p>
-                  <div className="map-iframe-container">
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.7460677579737!2d88.29177831543085!3d22.58855423807204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0279c6d3d9d7b9%3A0x8e8e8e8e8e8e8e8!2sVivekananda%20Industrial%20Estate!5e0!3m2!1sen!2sin!4v1"
-                      width="100%"
-                      height={200}
-                      style={{ border: 0 }}
-                      loading="lazy"
-                    ></iframe>
-                  </div>
-                </div>
+              <h2 className="map-heading">Factory Address &mdash; Ruisanda</h2>
+              <p className="map-address">
+                Vidyasagar Industrial Park, Plot No. F1, Ruisanda, Rupnarayanpur, Jafala, Gole Bazar, Kharagpur, Paschim Medinipur, West Bengal, 721301
+              </p>
+              <div className="map-iframe-container">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.697072551465!2d87.32297131542618!3d22.32731854756306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1d43a6b8f8d227%3A0x6b8f8f8f8f8f8f8!2sVidyasagar%20Industrial%20Park!5e0!3m2!1sen!2sin!4v1"
+                  title="Factory Address Ruisanda Map"
+                  loading="lazy"
+                  allowFullScreen
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+            </div>
+
+            {/* Factory Address - Howrah */}
+            <div className="map-card">
+              <h2 className="map-heading">Factory Address &mdash; Howrah</h2>
+              <p className="map-address">
+                Vivekananda Industrial Estate, Balitikuri, Bakultala, Howrah- 711113, W.B. India
+              </p>
+              <div className="map-iframe-container">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.7460677579737!2d88.29177831543085!3d22.58855423807204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0279c6d3d9d7b9%3A0x8e8e8e8e8e8e8e8!2sVivekananda%20Industrial%20Estate!5e0!3m2!1sen!2sin!4v1"
+                  title="Factory Address Howrah Map"
+                  loading="lazy"
+                  allowFullScreen
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
               </div>
             </div>
           </div>

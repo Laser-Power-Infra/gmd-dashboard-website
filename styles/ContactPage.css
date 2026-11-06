@@ -13,8 +13,9 @@
 
 .maps-grid {
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 40px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  align-items: stretch;
 }
 
 .map-card {
@@ -37,23 +38,22 @@
   line-height: 1.6;
 }
 
-.factory-addresses {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-}
-
-.factory-col {
-  display: flex;
-  flex-direction: column;
-}
-
+/* Every map gets the same fixed height so the three are identical and their
+   bottom edges line up, regardless of how long each address runs. */
 .map-iframe-container {
   width: 100%;
+  height: 250px;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   margin-top: auto;
+}
+
+.map-iframe-container iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 .contact-form-section {
@@ -187,6 +187,12 @@
 }
 
 /* Responsive */
+@media (max-width: 1199px) {
+  .maps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 991px) {
   .maps-grid, .contact-form-grid {
     grid-template-columns: 1fr;
@@ -201,7 +207,7 @@
 }
 
 @media (max-width: 768px) {
-  .factory-addresses {
-    grid-template-columns: 1fr;
+  .map-iframe-container {
+    height: 220px;
   }
 }
