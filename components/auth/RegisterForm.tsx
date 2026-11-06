@@ -44,6 +44,25 @@ export default function RegisterForm() {
         )}
       </div>
 
+      {/* Company */}
+      <div className="flex flex-col">
+        <label htmlFor="company" className="mb-1 text-xs font-bold uppercase tracking-wide text-gray-700">
+          Company
+        </label>
+        <input
+          id="company"
+          name="company"
+          type="text"
+          autoComplete="organization"
+          maxLength={150}
+          placeholder="Company name"
+          className="w-full rounded-md border border-gray-300 bg-slate-50 px-4 py-3 text-gray-900 placeholder:text-gray-400 focus:border-[#7b3e41] focus:outline-none focus:ring-2 focus:ring-[#7b3e41]"
+        />
+        {state.errors?.company && (
+          <p className="mt-1 text-xs font-medium text-red-500">{state.errors.company[0]}</p>
+        )}
+      </div>
+
       {/* Email */}
       <div className="flex flex-col">
         <label htmlFor="email" className="mb-1 text-xs font-bold uppercase tracking-wide text-gray-700">
@@ -82,10 +101,10 @@ export default function RegisterForm() {
         )}
       </div>
 
-      {/* GST Number (optional) */}
+      {/* GST Number */}
       <div className="flex flex-col">
         <label htmlFor="gstNumber" className="mb-1 text-xs font-bold uppercase tracking-wide text-gray-700">
-          GST Number <span className="font-normal normal-case text-gray-400">(optional)</span>
+          GST Number
         </label>
         <input
           id="gstNumber"

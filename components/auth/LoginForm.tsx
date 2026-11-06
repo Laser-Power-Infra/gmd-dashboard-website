@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import { getSession, signIn } from 'next-auth/react';
 import PasswordInput from '@/components/auth/PasswordInput';
 
@@ -10,7 +9,6 @@ import PasswordInput from '@/components/auth/PasswordInput';
  * On success, routes to `next` (internal paths only) or a role-based default.
  */
 export default function LoginForm({ next }: { next: string | null }) {
-  const router = useRouter();
   const [error, setError] = useState<string | null>(null);
   const [isPending, setPending] = useState(false);
 
@@ -31,8 +29,8 @@ export default function LoginForm({ next }: { next: string | null }) {
     }
     const session = await getSession();
     const safeNext = next?.startsWith('/') && !next.startsWith('//') ? next : null;
-    router.push(safeNext ?? (session?.user.role === 'USER' ? '/cost' : '/admin/cost-requests'));
-    router.refresh();
+    // Hard navigation: a failed/slow RSC fetch from router.push left the form stuck on "Signing in…".
+    window.location.assign(safeNext ?? (session?.user.role === 'USER' ? '/cost' : '/admin/cost-requests'));
   }
 
   return (

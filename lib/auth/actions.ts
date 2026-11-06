@@ -29,6 +29,7 @@ export async function registerAction(
 ): Promise<AuthFormState> {
   const parsed = registerSchema.safeParse({
     name: formData.get('name'),
+    company: formData.get('company'),
     email: formData.get('email'),
     password: formData.get('password'),
     contactNumber: formData.get('contactNumber'),
@@ -39,7 +40,7 @@ export async function registerAction(
     return { ok: false, errors: parsed.error.flatten().fieldErrors };
   }
 
-  const { name, email, password, contactNumber, gstNumber } = parsed.data;
+  const { name, company, email, password, contactNumber, gstNumber } = parsed.data;
 
   // Make sure the email is not already taken.
   const existing = await prisma.user.findUnique({ where: { email } });
@@ -52,10 +53,11 @@ export async function registerAction(
   await prisma.user.create({
     data: {
       name,
+      company,
       email,
       passwordHash: await hashPassword(password),
       contactNumber,
-      gstNumber: gstNumber ?? null,
+      gstNumber,
       role: 'USER',
     },
   });

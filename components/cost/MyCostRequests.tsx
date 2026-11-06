@@ -1,5 +1,7 @@
 import { prisma } from '@/lib/prisma';
 import { costItemLines } from '@/lib/schemas/cost';
+import PayButton from './PayButton';
+import { canPayOnline, formatRupees } from '@/lib/razorpay';
 
 /**
  * "My Requests" — the signed-in USER's own cost submissions, shown on the
@@ -11,6 +13,7 @@ const STATUS_BADGE: Record<string, string> = {
   NEW: 'bg-blue-100 text-blue-700',
   CONTACTED: 'bg-amber-100 text-amber-700',
   QUOTED: 'bg-green-100 text-green-700',
+  PAID: 'bg-emerald-600 text-white',
   CLOSED: 'bg-slate-200 text-slate-600',
 };
 
@@ -45,6 +48,7 @@ export default async function MyCostRequests({ userId }: { userId: string }) {
               <th className="px-4 py-3 font-semibold">Items</th>
               <th className="px-4 py-3 font-semibold">Status</th>
               <th className="px-4 py-3 font-semibold">Submitted</th>
+              <th className="px-4 py-3 font-semibold">Payment</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-100">
@@ -65,6 +69,22 @@ export default async function MyCostRequests({ userId }: { userId: string }) {
                   </span>
                 </td>
                 <td className="px-4 py-3 text-gray-500">{formatDate(req.createdAt)}</td>
+                <td className="px-4 py-3">
+                  {req.status === 'QUOTED' && canPayOnline(req.quotedAmount) ? (
+                    <PayButton costRequestId={req.id} amountPaise={req.quotedAmount} />
+                  ) : req.status === 'QUOTED' && req.quotedAmount ? (
+                    <span className="text-xs text-gray-600">
+                      Quoted {formatRupees(req.quotedAmount)}. Our team will send the quotation by email.
+                    </span>
+                  ) : req.status === 'PAID' ? (
+                    <span className="text-xs text-gray-600">
+                      Paid {formatRupees(req.quotedAmount ?? 0)}
+                      {req.paidAt && ` on ${formatDate(req.paidAt)}`}
+                    </span>
+                  ) : (
+                    <span className="text-gray-400">-</span>
+                  )}
+                </td>
               </tr>
             ))}
           </tbody>
