@@ -4,8 +4,8 @@ import { useState, useActionState, startTransition } from 'react';
 import type { FormEvent } from 'react';
 import { Send, Loader2, Check, Plus, Trash2 } from 'lucide-react';
 import { costErrors, costRequestSchema, type CostRequestFormState } from '@/lib/schemas/cost';
-import { QUOTE_VALVE_TYPES } from '@/app/api/enquiry/schema';
 import { submitCostRequest } from '@/app/cost/actions';
+import type { CostFormOptions, CostLookupField } from '@/lib/lookupOptions';
 
 const INITIAL_STATE: CostRequestFormState = { ok: false };
 
@@ -29,11 +29,12 @@ const EMPTY_ITEM: ItemDraft = {
   remarks: '',
 };
 
-const ITEM_TEXT_FIELDS: { key: keyof ItemDraft; label: string; placeholder: string }[] = [
-  { key: 'pressure', label: 'Pressure Rating', placeholder: 'e.g. PN 16' },
-  { key: 'material', label: 'Material', placeholder: 'e.g. Ductile Iron' },
-  { key: 'endConnection', label: 'End Connection', placeholder: 'e.g. Flanged' },
-];
+const SELECT_LABELS: Record<CostLookupField, string> = {
+  valveType: 'Valve Type',
+  size: 'Size',
+  pressure: 'Pressure Rating',
+  material: 'Material',
+};
 
 const inputClass = (error?: string) =>
   `w-full rounded-md border px-4 py-3 text-gray-900 bg-slate-50 placeholder-gray-400 shadow-sm transition-colors focus:border-[#7b3e41] focus:outline-none focus:ring-2 focus:ring-[#7b3e41] ${
@@ -47,7 +48,7 @@ function FieldError({ error }: { error?: string }) {
   return <p className="mt-1 text-xs font-medium text-red-500">{error}</p>;
 }
 
-export default function CostForm() {
+export default function CostForm({ options }: { options: CostFormOptions }) {
   const [state, formAction, isPending] = useActionState(submitCostRequest, INITIAL_STATE);
   const [clientErrors, setClientErrors] = useState<Record<string, string> | null>(null);
   const [dismissed, setDismissed] = useState(false);
@@ -181,6 +182,27 @@ export default function CostForm() {
           {items.map((item, index) => {
             const err = (key: string) => errors[`items.${index}.${key}`];
             const id = (key: string) => `item-${index}-${key}`;
+            const select = (key: CostLookupField) => (
+              <div className="flex flex-col">
+                <label htmlFor={id(key)} className={labelClass}>
+                  {SELECT_LABELS[key]} <span className="text-red-500">*</span>
+                </label>
+                <select
+                  id={id(key)}
+                  value={item[key]}
+                  onChange={(e) => updateItem(index, key, e.target.value)}
+                  className={inputClass(err(key))}
+                >
+                  <option value="">Select {SELECT_LABELS[key].toLowerCase()}</option>
+                  {options[key].map((v) => (
+                    <option key={v} value={v}>
+                      {v}
+                    </option>
+                  ))}
+                </select>
+                <FieldError error={err(key)} />
+              </div>
+            );
             return (
               <div key={index} className="rounded-lg border border-gray-200 bg-white p-4">
                 <div className="mb-3 flex items-center justify-between">
@@ -198,40 +220,8 @@ export default function CostForm() {
                 </div>
 
                 <div className="grid gap-4 sm:grid-cols-2">
-                  <div className="flex flex-col">
-                    <label htmlFor={id('valveType')} className={labelClass}>
-                      Valve Type <span className="text-red-500">*</span>
-                    </label>
-                    <select
-                      id={id('valveType')}
-                      value={item.valveType}
-                      onChange={(e) => updateItem(index, 'valveType', e.target.value)}
-                      className={inputClass(err('valveType'))}
-                    >
-                      <option value="">Select type</option>
-                      {QUOTE_VALVE_TYPES.map((t) => (
-                        <option key={t} value={t}>
-                          {t}
-                        </option>
-                      ))}
-                    </select>
-                    <FieldError error={err('valveType')} />
-                  </div>
-
-                  <div className="flex flex-col">
-                    <label htmlFor={id('size')} className={labelClass}>
-                      Size <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                      id={id('size')}
-                      type="text"
-                      placeholder='e.g. DN 300 / 12"'
-                      value={item.size}
-                      onChange={(e) => updateItem(index, 'size', e.target.value)}
-                      className={inputClass(err('size'))}
-                    />
-                    <FieldError error={err('size')} />
-                  </div>
+                  {select('valveType')}
+                  {select('size')}
 
                   <div className="flex flex-col">
                     <label htmlFor={id('quantity')} className={labelClass}>
@@ -250,22 +240,23 @@ export default function CostForm() {
                     <FieldError error={err('quantity')} />
                   </div>
 
-                  {ITEM_TEXT_FIELDS.map(({ key, label, placeholder }) => (
-                    <div key={key} className="flex flex-col">
-                      <label htmlFor={id(key)} className={labelClass}>
-                        {label} <span className="text-red-500">*</span>
-                      </label>
-                      <input
-                        id={id(key)}
-                        type="text"
-                        placeholder={placeholder}
-                        value={item[key]}
-                        onChange={(e) => updateItem(index, key, e.target.value)}
-                        className={inputClass(err(key))}
-                      />
-                      <FieldError error={err(key)} />
-                    </div>
-                  ))}
+                  {select('pressure')}
+                  {select('material')}
+
+                  <div className="flex flex-col">
+                    <label htmlFor={id('endConnection')} className={labelClass}>
+                      End Connection <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      id={id('endConnection')}
+                      type="text"
+                      placeholder="e.g. Flanged"
+                      value={item.endConnection}
+                      onChange={(e) => updateItem(index, 'endConnection', e.target.value)}
+                      className={inputClass(err('endConnection'))}
+                    />
+                    <FieldError error={err('endConnection')} />
+                  </div>
 
                   <div className="flex flex-col sm:col-span-2">
                     <label htmlFor={id('remarks')} className={labelClass}>

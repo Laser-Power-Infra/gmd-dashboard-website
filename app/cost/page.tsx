@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import CostForm from '@/components/cost/CostForm';
 import MyCostRequests from '@/components/cost/MyCostRequests';
 import { requireAuth } from '@/lib/auth/require-auth';
+import { getCostFormOptions } from '@/lib/lookupOptions';
 
 export const metadata: Metadata = {
   title: 'Request a Cost Estimate',
@@ -24,6 +25,7 @@ export const metadata: Metadata = {
 export default async function CostPage() {
   // Security gate: any signed-in user may view this page.
   const user = await requireAuth();
+  const options = await getCostFormOptions();
 
   return (
     <section className="flex min-h-screen items-start justify-center bg-[#f3f5f8] px-4 py-12">
@@ -49,7 +51,7 @@ export default async function CostPage() {
         </div>
 
         {/* Form Card */}
-        <CostForm />
+        <CostForm options={options} />
 
         {/* The signed-in user's own submissions */}
         <MyCostRequests userId={user.id} />

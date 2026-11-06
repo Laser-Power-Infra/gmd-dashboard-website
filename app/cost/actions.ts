@@ -3,6 +3,7 @@
 import { prisma } from '@/lib/prisma';
 import { getCurrentUser } from '@/lib/auth/session';
 import { sendEnquiry } from '@/lib/notify';
+import { getCostFormOptions, type CostLookupField } from '@/lib/lookupOptions';
 import { costErrors, costRequestSchema, type CostRequestFormState } from '@/lib/schemas/cost';
 
 /**
@@ -39,6 +40,16 @@ export async function submitCostRequest(
   if (!parsed.success) {
     return { ok: false, errors: costErrors(parsed.error) };
   }
+
+  // Dropdown values must still be live lookup options (the page check is bypassable).
+  const options = await getCostFormOptions();
+  const optionErrors: Record<string, string> = {};
+  parsed.data.items.forEach((item, n) => {
+    for (const field of Object.keys(options) as CostLookupField[]) {
+      if (!options[field].includes(item[field])) optionErrors[`items.${n}.${field}`] = 'Select a value from the list';
+    }
+  });
+  if (Object.keys(optionErrors).length) return { ok: false, errors: optionErrors };
 
   // Only signed-in users can submit (the /cost page is gated by requireAuth).
   const user = await getCurrentUser();

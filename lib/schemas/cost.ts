@@ -1,12 +1,12 @@
 import { z } from 'zod';
 
-import { QUOTE_VALVE_TYPES } from '@/app/api/enquiry/schema';
-
 const required = (label: string) =>
   z.string().trim().min(1, { message: `${label} is required` }).max(100, { message: `${label} is too long` });
 
+// valveType/size/pressure/material are LookupOption dropdowns; the server action
+// also checks each value is a live option (see lib/lookupOptions.ts).
 export const costItemSchema = z.object({
-  valveType: z.enum(QUOTE_VALVE_TYPES, { message: 'Select a valve type' }),
+  valveType: required('Valve type'),
   size: required('Size'),
   pressure: required('Pressure rating'),
   material: required('Material'),
