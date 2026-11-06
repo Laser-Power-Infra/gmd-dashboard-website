@@ -1,4 +1,5 @@
 import { missingEnquiryConfig } from '@/lib/notify';
+import { missingRazorpayConfig } from '@/lib/razorpay';
 
 /**
  * GET /api/health - public. Anything added here is world-readable.
@@ -12,6 +13,7 @@ export async function GET() {
   return Response.json({
     status: 'ok',
     mail: missingEnquiryConfig().length === 0 ? 'configured' : 'not-configured',
+    razorpay: missingRazorpayConfig().length === 0 ? 'configured' : 'not-configured',
     uptime: process.uptime(),
     timestamp: new Date().toISOString(),
   }, {

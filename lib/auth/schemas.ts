@@ -24,17 +24,18 @@ const CONTACT_RE = /^[6-9][0-9]{9}$/;
 /** GSTIN: 15 chars = 2-digit state + 5-letter PAN + 4-digit entity + 1 letter + 1 alnum + Z + 1 alnum. */
 const GSTIN_RE = /^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z][1-9A-Z]Z[0-9A-Z]$/;
 
-/** Treat a blank form field as "not provided" so optional fields accept ''. */
-const blankToUndefined = (value: unknown) =>
-  typeof value === 'string' && value.trim() === '' ? undefined : value;
-
-/** Registration form: name + email + password + contact number (+ optional GSTIN). */
+/** Registration form: name + company + email + password + contact number + GSTIN. */
 export const registerSchema = z.object({
   name: z
     .string()
     .trim()
     .min(2, { message: 'Name must be at least 2 characters' })
     .max(100, { message: 'Name must be 100 characters or fewer' }),
+  company: z
+    .string()
+    .trim()
+    .min(2, { message: 'Company is required' })
+    .max(150, { message: 'Company must be 150 characters or fewer' }),
   email: z.string().trim().email({ message: 'Enter a valid email address' }),
   password: z
     .string()
@@ -46,15 +47,11 @@ export const registerSchema = z.object({
       .trim()
       .regex(CONTACT_RE, { message: 'Enter a valid 10-digit contact number' })
   ),
-  gstNumber: z.preprocess(
-    blankToUndefined,
-    z
-      .string()
-      .trim()
-      .toUpperCase()
-      .regex(GSTIN_RE, { message: 'Enter a valid 15-character GST number' })
-      .optional()
-  ),
+  gstNumber: z
+    .string()
+    .trim()
+    .toUpperCase()
+    .regex(GSTIN_RE, { message: 'Enter a valid 15-character GST number' }),
 });
 export type RegisterInput = z.infer<typeof registerSchema>;
 
@@ -70,7 +67,7 @@ export type AuthFormState = {
   ok: boolean;
   errors?: Partial<
     Record<
-      'name' | 'email' | 'password' | 'contactNumber' | 'gstNumber' | 'role',
+      'name' | 'company' | 'email' | 'password' | 'contactNumber' | 'gstNumber' | 'role',
       string[]
     >
   >;

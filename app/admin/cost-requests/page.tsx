@@ -1,6 +1,8 @@
 import { prisma } from '@/lib/prisma';
 import type { Metadata } from 'next';
 import { costItemLines } from '@/lib/schemas/cost';
+import QuoteAmountForm from '@/components/admin/QuoteAmountForm';
+import { canPayOnline, formatRupees } from '@/lib/razorpay';
 
 export const dynamic = 'force-dynamic';
 
@@ -13,6 +15,7 @@ const STATUS_BADGE: Record<string, string> = {
   NEW: 'bg-blue-100 text-blue-700',
   CONTACTED: 'bg-amber-100 text-amber-700',
   QUOTED: 'bg-green-100 text-green-700',
+  PAID: 'bg-emerald-600 text-white',
   CLOSED: 'bg-slate-200 text-slate-600',
 };
 
@@ -72,6 +75,7 @@ export default async function CostRequestsPage() {
                 <th className="px-4 py-3 font-semibold">Items</th>
                 <th className="px-4 py-3 font-semibold">Status</th>
                 <th className="px-4 py-3 font-semibold">Submitted</th>
+                <th className="px-4 py-3 font-semibold">Quote / Payment</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100">
@@ -92,6 +96,23 @@ export default async function CostRequestsPage() {
                     </span>
                   </td>
                   <td className="px-4 py-3 text-slate-500">{formatDate(req.createdAt)}</td>
+                  <td className="px-4 py-3">
+                    {req.status === 'PAID' ? (
+                      <div className="text-xs text-slate-600">
+                        <div>Paid {formatRupees(req.quotedAmount ?? 0)}</div>
+                        <div className="font-mono text-slate-500">{req.razorpayPaymentId}</div>
+                      </div>
+                    ) : (
+                      <div className="flex flex-col gap-1">
+                        <QuoteAmountForm id={req.id} quotedPaise={req.quotedAmount} />
+                        {req.status === 'QUOTED' && req.quotedAmount && (
+                          <span className="text-xs text-slate-500">
+                            {canPayOnline(req.quotedAmount) ? 'Customer can pay online' : 'Over 20 lakh: send quotation by email'}
+                          </span>
+                        )}
+                      </div>
+                    )}
+                  </td>
                 </tr>
               ))}
             </tbody>

@@ -17,6 +17,7 @@ model User {
   emailVerified DateTime?
   image         String?
   passwordHash  String?
+  company       String?
   gstNumber     String?
   contactNumber String?
   role          String    @default("USER")
@@ -82,9 +83,16 @@ model CostRequest {
   gst       String
   /// [{ valveType, size, pressure, material, endConnection, quantity, remarks }] - see lib/schemas/cost.ts
   items     Json     @default("[]")
+  /// NEW | CONTACTED | QUOTED | PAID | CLOSED
   status    String   @default("NEW")
   userId    String?
   user      User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  /// Quote in paise, set by an admin. One Razorpay order per request, reused
+  /// across retries; re-quoting clears the order because its amount is fixed.
+  quotedAmount      Int?
+  razorpayOrderId   String?   @unique
+  razorpayPaymentId String?   @unique
+  paidAt            DateTime?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
