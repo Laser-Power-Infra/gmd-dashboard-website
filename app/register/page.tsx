@@ -1,6 +1,12 @@
 import Link from 'next/link';
 import { Suspense } from 'react';
+import type { Metadata } from 'next';
 import RegisterForm from '@/components/auth/RegisterForm';
+
+export const metadata: Metadata = {
+  title: 'Create Account',
+  robots: { index: false, follow: false },
+};
 
 /**
  * /register — public page for creating a USER account.

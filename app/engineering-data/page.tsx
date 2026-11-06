@@ -7,8 +7,11 @@ export const metadata: Metadata = {
   description:
     'Live engineering tables for raw material, bills of material, contract review, supply history, BIS status and physical stock.',
   icons: {
-    icon: '/uploads/2025/04/header-final-logo.png',
+    icon: '/uploads/2025/04/header-final-logo.webp',
   },
+  alternates: { canonical: '/engineering-data' },
+  // Internal commercial data (stock, BOMs, contract review) — reachable by link, kept out of search.
+  robots: { index: false, follow: false },
 };
 
 /**

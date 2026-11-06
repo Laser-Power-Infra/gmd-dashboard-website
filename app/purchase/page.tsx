@@ -1,6 +1,14 @@
 import { Suspense } from 'react';
+import type { Metadata } from 'next';
 import Purchase from '@/components/pages/Purchase';
 import AuthNavSlot from '@/components/layout/AuthNavSlot';
+
+export const metadata: Metadata = {
+  title: 'Request to Purchase Valves',
+  description:
+    'Build a purchase request for GM Dalui industrial valves and pipeline accessories. Select items, quantities and sizes and send it to our sales desk.',
+  alternates: { canonical: '/purchase' },
+};
 
 /**
  * /purchase — catalog + purchase request flow.

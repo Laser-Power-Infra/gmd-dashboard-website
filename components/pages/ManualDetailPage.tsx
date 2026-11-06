@@ -3,10 +3,16 @@ import ManualsHero from '@/components/manuals/ManualsHero';
 import ManualsFooterPrompt from '@/components/manuals/ManualsFooterPrompt';
 import ValveManualSection from '@/components/manuals/ValveManualSection';
 
-export default function ManualDetailPage({ valveId }: { valveId: string }) {
+export default function ManualDetailPage({
+  valveId,
+  pdfHref,
+}: {
+  valveId: string;
+  pdfHref: string | null;
+}) {
   return (
     <div className="warranty-page-wrapper">
-      <ManualsHero />
+      <ManualsHero heading="h2" />
 
       {/* Main content body */}
       <section className="warranty-content-section">
@@ -18,7 +24,7 @@ export default function ManualDetailPage({ valveId }: { valveId: string }) {
               </Link>
             </div>
 
-            <ValveManualSection valveId={valveId} />
+            <ValveManualSection valveId={valveId} pdfHref={pdfHref} />
           </div>
         </div>
       </section>

@@ -163,31 +163,33 @@
 
 /* Background image assignments */
 .img-blue-valve {
-  background-image: url('/uploads/2025/04/product1-1.jpg');
+  background-image: url('/uploads/2025/04/product1-1.webp');
 }
 
 .img-welder {
-  background-image: url('/uploads/2025/09/IMG_4648.jpg');
+  background-image: url('/uploads/2025/09/IMG_4648.webp');
 }
 
 .img-tech-assembly {
-  background-image: url('/uploads/2025/09/IMG_4646.jpg');
+  background-image: url('/uploads/2025/09/IMG_4646.webp');
 }
 
 .img-valve-workshop {
-  background-image: url('/uploads/2025/09/IMG_4645.jpg');
+  background-image: url('/uploads/2025/09/IMG_4645.webp');
 }
 
+/* Was IMG_4646-1.webp, a byte-identical copy of IMG_4646.webp: two names meant the
+   browser downloaded the same 124 KB twice on first load. */
 .img-quality-check {
-  background-image: url('/uploads/2025/09/IMG_4646-1.jpg');
+  background-image: url('/uploads/2025/09/IMG_4646.webp');
 }
 
 .img-blue-pipes {
-  background-image: url('/uploads/2025/04/hero_pipes_blue.jpg');
+  background-image: url('/uploads/2025/04/hero_pipes_blue.webp');
 }
 
 .img-yellow-pipes {
-  background-image: url('/uploads/2025/04/hero_pipes_yellow.jpg');
+  background-image: url('/uploads/2025/04/hero_pipes_yellow.webp');
 }
 
 /* Slide 0 Coordinates & Animation */
@@ -250,10 +252,17 @@
 .hero-slider-dot {
   width: 10px;
   height: 10px;
+  padding: 0;
+  border: none;
   border-radius: 50%;
   background-color: #ced4da;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.hero-slider-dot:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
 }
 
 .hero-slider-dot.active {

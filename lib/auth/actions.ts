@@ -3,10 +3,9 @@
 import { redirect } from 'next/navigation';
 import { revalidatePath } from 'next/cache';
 import { prisma } from '@/lib/prisma';
-import { hashPassword, verifyPassword } from '@/lib/auth/password';
-import { createSession, destroySession, getCurrentUser } from '@/lib/auth/session';
+import { hashPassword } from '@/lib/auth/password';
+import { getCurrentUser } from '@/lib/auth/session';
 import {
-  loginSchema,
   registerSchema,
   roleUpdateSchema,
   type AuthFormState,
@@ -19,54 +18,6 @@ import {
  * called from client forms via `useActionState`, so each one receives
  * `(prevState, formData)` and returns the next state object.
  */
-
-// ---------------------------------------------------------------------------
-// LOGIN
-// ---------------------------------------------------------------------------
-
-export async function loginAction(
-  _prevState: AuthFormState,
-  formData: FormData
-): Promise<AuthFormState> {
-  const parsed = loginSchema.safeParse({
-    email: formData.get('email'),
-    password: formData.get('password'),
-  });
-
-  if (!parsed.success) {
-    return { ok: false, errors: parsed.error.flatten().fieldErrors };
-  }
-
-  const { email, password } = parsed.data;
-
-  // Look the user up by email.
-  const user = await prisma.user.findUnique({ where: { email } });
-
-  // Same message whether the user is missing OR the password is wrong,
-  // so attackers can't learn which emails are registered.
-  const fail = (): AuthFormState => ({
-    ok: false,
-    message: 'Invalid email or password',
-  });
-
-  if (!user?.passwordHash) return fail();
-
-  const valid = await verifyPassword(password, user.passwordHash);
-  if (!valid) return fail();
-
-  // Create the session (DB row + httpOnly cookie).
-  await createSession(user.id);
-
-  // Decide where to send the user based on role:
-  //  - Normal USER  -> the /cost page (submit + see their own requests)
-  //  - ADMIN/DEV    -> the admin page (see ALL submissions)
-  const next = formData.get('next')?.toString() ?? '';
-  const safeNext = next.startsWith('/') && !next.startsWith('//') ? next : null;
-  const target =
-    safeNext ?? (user.role === 'USER' ? '/cost' : '/admin/cost-requests');
-
-  redirect(target);
-}
 
 // ---------------------------------------------------------------------------
 // REGISTER
@@ -111,15 +62,6 @@ export async function registerAction(
 
   // Send the new user to the login page to sign in.
   redirect('/login?registered=1');
-}
-
-// ---------------------------------------------------------------------------
-// LOGOUT
-// ---------------------------------------------------------------------------
-
-export async function logoutAction(): Promise<void> {
-  await destroySession();
-  redirect('/');
 }
 
 // ---------------------------------------------------------------------------

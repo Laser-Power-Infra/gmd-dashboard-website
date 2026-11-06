@@ -2936,7 +2936,7 @@ export const manualsData: Record<string, Manual> = {
           },
           {
             "type": "text",
-            "text": "Website: www.gmdalui.com"
+            "text": "Website: www.gmdalui.co.in"
           },
           {
             "type": "text",
@@ -7486,6 +7486,2018 @@ export const manualsData: Record<string, Manual> = {
           {
             "type": "text",
             "text": "Maintain installation records, pressure settings, maintenance logs, inspection reports, operational records, and warranty documentation throughout the service life of the valve for operational reference and warranty support."
+          }
+        ]
+      }
+    ]
+  },
+  "control-valve": {
+    "isModern": true,
+    "title": "MANUAL OF CONTROL VALVES",
+    "sections": [
+      {
+        "title": "1. Introduction",
+        "blocks": [
+          {
+            "type": "subtitle",
+            "text": "Scope"
+          },
+          {
+            "type": "text",
+            "text": "This manual provides guidelines for the installation, operation, maintenance, inspection, warranty coverage, and service procedures for Control Valves used in water supply, wastewater, process, and industrial pipeline systems."
+          },
+          {
+            "type": "subtitle",
+            "text": "Applications"
+          },
+          {
+            "type": "text",
+            "text": "Control Valves regulate flow, pressure, level, or temperature by modulating the valve opening in response to a signal from a controller or pilot system. They are commonly used in:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Water Treatment Plants",
+              "Water Distribution Networks",
+              "Pumping Stations",
+              "Sewage Treatment Plants",
+              "Industrial Process Pipelines",
+              "Boiler Feed and Steam Systems",
+              "Chemical and Petrochemical Plants",
+              "Power Plant Auxiliary Systems"
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Purpose"
+          },
+          {
+            "type": "text",
+            "text": "The Control Valve is the final control element of a regulating loop. The actuator positions the plug or disc against the seat so that the flow area, and therefore the controlled variable, follows the command signal."
+          }
+        ]
+      },
+      {
+        "title": "2. Installation Guidelines",
+        "blocks": [
+          {
+            "type": "subtitle",
+            "text": "Pre-Installation Inspection"
+          },
+          {
+            "type": "text",
+            "text": "Before installation:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Verify valve size, pressure rating, trim characteristic, and material specifications against the datasheet.",
+              "Inspect the valve, actuator, and positioner for transportation damage.",
+              "Confirm the actuator fail-safe action (fail-open or fail-close) matches the process requirement.",
+              "Remove all protective covers, flange protectors, and packaging materials."
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Pipeline Preparation"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Clean and flush the pipeline before installation.",
+              "Remove debris, welding slag, scale, and foreign particles.",
+              "Install an upstream strainer where the medium may carry solids.",
+              "Ensure proper pipeline alignment so that no pipe stress is transferred to the valve body."
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Installation Position"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Install with the flow direction arrow matching the actual direction of flow.",
+              "Preferred orientation is a horizontal line with the actuator vertically upright.",
+              "Provide straight pipe runs upstream and downstream as given in the project hydraulic design.",
+              "Provide isolation valves and a manual bypass line where uninterrupted service is required."
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Instrument and Utility Connections"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Connect clean, dry, oil-free instrument air to the actuator and positioner.",
+              "Use the air supply pressure stated on the actuator nameplate.",
+              "Route and terminate control and feedback cabling as per the project wiring diagram.",
+              "Protect tubing and cabling from mechanical damage and heat sources."
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Installation Precautions"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Support the valve and actuator independently where their weight is significant.",
+              "Maintain clearance above and around the actuator for calibration and removal.",
+              "Tighten flange bolts evenly in a diagonal sequence.",
+              "Do not use the actuator or positioner as a lifting point."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "3. Operation Instructions",
+        "blocks": [
+          {
+            "type": "subtitle",
+            "text": "Initial Startup"
+          },
+          {
+            "type": "ordered-list",
+            "items": [
+              "Confirm the pipeline is flushed and the upstream strainer is clean.",
+              "Apply the rated instrument air supply and verify there are no leaks.",
+              "Stroke the valve fully open and fully closed and confirm smooth travel against the position indicator.",
+              "Verify the positioner calibration at 0%, 50%, and 100% of signal.",
+              "Confirm the fail-safe position on loss of air and on loss of signal.",
+              "Pressurise the line gradually and check all joints for leakage.",
+              "Place the loop in automatic and observe stable control."
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Normal Operation"
+          },
+          {
+            "type": "text",
+            "text": "During operation:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "The controller signal is converted by the positioner into actuator movement.",
+              "The plug or disc modulates the flow area to hold the controlled variable at setpoint.",
+              "The position feedback confirms that the valve has reached the demanded travel.",
+              "Continuous operation very close to the seat should be avoided to limit trim wear."
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Operating Precautions"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Operate within the rated pressure, differential pressure, and temperature limits.",
+              "Avoid prolonged operation under cavitating or flashing conditions.",
+              "Do not throttle with a valve selected for isolation duty only.",
+              "Isolate and depressurise before any adjustment to the packing or trim.",
+              "Report hunting, sluggish response, or audible noise for investigation."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "4. Maintenance Schedule",
+        "blocks": [
+          {
+            "type": "subtitle",
+            "text": "Monthly Inspection"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Inspect for body, bonnet, and packing leakage.",
+              "Check instrument air supply pressure and air filter condition.",
+              "Verify that the position indicator agrees with the control signal.",
+              "Observe control loop stability."
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Quarterly Inspection"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Drain the air filter regulator and replace the filter element if contaminated.",
+              "Check the actuator stem and linkage for free movement.",
+              "Inspect and tighten the packing gland where leakage is observed.",
+              "Clean the upstream strainer.",
+              "Inspect external coating for corrosion."
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Annual Inspection"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Perform a full stroke test and record the travel against signal.",
+              "Recalibrate the positioner and confirm the fail-safe action.",
+              "Dismantle and inspect the plug, seat, cage, and guide bushes for wear or erosion.",
+              "Replace packing, gaskets, and O-rings.",
+              "Check actuator springs and diaphragm condition.",
+              "Carry out seat leakage testing after reassembly.",
+              "Record all findings in the maintenance log."
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Recommended Spare Parts"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Plug / Disc Assembly",
+              "Seat Ring",
+              "Cage or Trim Set",
+              "Stem",
+              "Packing Set",
+              "Actuator Diaphragm",
+              "Actuator Spring",
+              "O-Rings & Gaskets",
+              "Positioner Service Kit",
+              "Fasteners"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "5. Warranty Coverage",
+        "blocks": [
+          {
+            "type": "table",
+            "headers": [
+              "Component",
+              "Warranty Coverage"
+            ],
+            "rows": [
+              [
+                "Valve Body",
+                "24 Months"
+              ],
+              [
+                "Bonnet Assembly",
+                "24 Months"
+              ],
+              [
+                "Actuator Housing",
+                "24 Months"
+              ],
+              [
+                "Plug / Disc Assembly",
+                "12 Months"
+              ],
+              [
+                "Seat Ring & Cage",
+                "12 Months"
+              ],
+              [
+                "Stem",
+                "12 Months"
+              ],
+              [
+                "Positioner & Accessories",
+                "12 Months"
+              ],
+              [
+                "Actuator Diaphragm & Springs",
+                "12 Months"
+              ],
+              [
+                "Packing, O-Rings & Seals",
+                "12 Months"
+              ],
+              [
+                "Coating & Painting",
+                "12 Months"
+              ]
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Warranty Exclusions"
+          },
+          {
+            "type": "text",
+            "text": "Warranty does not cover:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Improper installation.",
+              "Damage caused by debris or contaminated media.",
+              "Operation beyond rated pressure, differential pressure, or temperature.",
+              "Damage from cavitation or flashing outside the specified duty.",
+              "Contaminated, wet, or oily instrument air supply.",
+              "Unauthorized modification or recalibration by untrained personnel.",
+              "Corrosion due to incompatible media.",
+              "Normal wear and tear."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "6. Expected Service Life",
+        "blocks": [
+          {
+            "type": "table",
+            "headers": [
+              "Material of Construction",
+              "Expected Life"
+            ],
+            "rows": [
+              [
+                "Cast Iron Body",
+                "15–20 Years"
+              ],
+              [
+                "Ductile Iron Body",
+                "20–30 Years"
+              ],
+              [
+                "Cast Steel Body",
+                "20–25 Years"
+              ],
+              [
+                "Stainless Steel Body",
+                "25+ Years"
+              ],
+              [
+                "Stainless Steel Trim",
+                "10–15 Years"
+              ],
+              [
+                "PTFE Packing",
+                "10–15 Years"
+              ],
+              [
+                "EPDM Seals",
+                "8–12 Years"
+              ],
+              [
+                "NBR Seals",
+                "6–10 Years"
+              ],
+              [
+                "Actuator Diaphragm",
+                "8–12 Years"
+              ]
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Factors Affecting Service Life"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Fluid Cleanliness",
+              "Differential Pressure Across the Trim",
+              "Frequency and Range of Modulation",
+              "Instrument Air Quality",
+              "Maintenance Practices",
+              "Corrosion Exposure",
+              "Operating Environment"
+            ]
+          },
+          {
+            "type": "text",
+            "text": "Clean instrument air and regular trim inspection significantly extend service life."
+          }
+        ]
+      },
+      {
+        "title": "7. Customer Responsibilities",
+        "blocks": [
+          {
+            "type": "text",
+            "text": "The customer shall:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Ensure proper installation as per this manual.",
+              "Supply clean, dry, oil-free instrument air at the rated pressure.",
+              "Operate within rated limits.",
+              "Keep upstream strainers clean.",
+              "Conduct routine inspections and calibration checks.",
+              "Maintain installation, calibration, and maintenance records.",
+              "Use approved spare parts.",
+              "Report abnormalities promptly."
+            ]
+          },
+          {
+            "type": "text",
+            "text": "Failure to comply may affect warranty eligibility."
+          }
+        ]
+      },
+      {
+        "title": "8. Warranty Claim Procedure",
+        "blocks": [
+          {
+            "type": "subtitle",
+            "text": "Step 1 – Claim Submission"
+          },
+          {
+            "type": "text",
+            "text": "Provide:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Purchase Order Number",
+              "Invoice Copy",
+              "Valve Identification Details",
+              "Installation Date",
+              "Operating Conditions",
+              "Calibration Records",
+              "Description of Defect",
+              "Photographs of Installation"
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Step 2 – Technical Evaluation"
+          },
+          {
+            "type": "text",
+            "text": "The submitted information will be reviewed to determine:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Installation compliance",
+              "Operating conditions",
+              "Maintenance history",
+              "Warranty applicability"
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Step 3 – Inspection"
+          },
+          {
+            "type": "text",
+            "text": "Where necessary:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Site inspection may be conducted.",
+              "Valve may be requested for factory examination."
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Step 4 – Resolution"
+          },
+          {
+            "type": "text",
+            "text": "Based on technical findings, one of the following may be provided:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Repair",
+              "Component Replacement",
+              "Valve Replacement",
+              "Technical Recommendations"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Safety Precautions",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "Isolate, depressurize, and drain the line before maintenance.",
+              "Disconnect and vent the instrument air supply before working on the actuator.",
+              "Never defeat the spring retention on spring-return actuators; stored energy can cause injury.",
+              "Wear appropriate PPE during servicing.",
+              "Follow all site safety regulations and lockout procedures.",
+              "Use approved lifting methods for large-size valves and actuators."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Document Retention",
+        "blocks": [
+          {
+            "type": "text",
+            "text": "Maintain installation records, calibration certificates, maintenance logs, inspection reports, and warranty documentation throughout the service life of the Control Valve for future reference and warranty support."
+          }
+        ]
+      }
+    ]
+  },
+  "flow-control-plunger": {
+    "isModern": true,
+    "title": "MANUAL OF FLOW CONTROL VALVES (PLUNGER TYPE)",
+    "sections": [
+      {
+        "title": "1. Introduction",
+        "blocks": [
+          {
+            "type": "subtitle",
+            "text": "Scope"
+          },
+          {
+            "type": "text",
+            "text": "This manual provides guidelines for the installation, operation, maintenance, inspection, warranty coverage, and service procedures for Plunger Type Flow Control Valves used in water supply, hydropower, and industrial pipeline systems."
+          },
+          {
+            "type": "subtitle",
+            "text": "Applications"
+          },
+          {
+            "type": "text",
+            "text": "Plunger Valves regulate flow and pressure by moving an axial plunger over a fixed seat cylinder. The symmetrical annular flow path gives low noise and high cavitation resistance, which makes them suitable for high differential pressure throttling duties such as:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Water Transmission Mains",
+              "Reservoir Inlet and Outlet Control",
+              "Pump Station Discharge Control",
+              "Turbine Bypass and Hydropower Plants",
+              "Water Treatment Plants",
+              "Pressure Breaking Chambers",
+              "Flow Metering and Distribution Chambers",
+              "Industrial Process Water Systems"
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Purpose"
+          },
+          {
+            "type": "text",
+            "text": "The Plunger Valve provides precise, stable regulation across a wide flow range and can also be used as a slow-closing shut-off device to limit surge during pump start and stop sequences."
+          }
+        ]
+      },
+      {
+        "title": "2. Installation Guidelines",
+        "blocks": [
+          {
+            "type": "subtitle",
+            "text": "Pre-Installation Inspection"
+          },
+          {
+            "type": "text",
+            "text": "Before installation:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Verify valve size, pressure rating, trim configuration, and material specifications against the datasheet.",
+              "Inspect the valve, actuator, and gearbox for transportation damage.",
+              "Confirm the plunger moves freely over its full travel.",
+              "Remove all protective covers, flange protectors, and packaging materials."
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Pipeline Preparation"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Clean and flush the pipeline before installation.",
+              "Remove debris, welding slag, stones, rust, and foreign particles.",
+              "Ensure proper pipeline alignment and that flanges are parallel.",
+              "Provide adequate anchoring and thrust restraint for the pipeline."
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Installation Position"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Install with the flow direction arrow matching the actual direction of flow.",
+              "Horizontal installation with the actuator upright is preferred.",
+              "Provide the straight pipe runs upstream and downstream specified in the hydraulic design.",
+              "Where sustained cavitation is possible, maintain the downstream back pressure assumed in the design.",
+              "Provide isolation valves on both sides for servicing."
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Mounting Requirements"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Support the valve independently; do not let it carry pipeline loads.",
+              "Maintain clearance above the valve for removal of the actuator and internals.",
+              "Tighten flange bolts evenly in a diagonal sequence.",
+              "Do not use the actuator or gearbox as a lifting point."
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Installation Precautions"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Ensure the chamber is drained and ventilated where the valve is installed below ground.",
+              "Route power and control cabling clear of moving parts and heat sources.",
+              "Protect the valve from site dust and construction debris until commissioning.",
+              "Do not operate the valve to clear debris from the pipeline."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "3. Operation Instructions",
+        "blocks": [
+          {
+            "type": "subtitle",
+            "text": "Initial Startup"
+          },
+          {
+            "type": "ordered-list",
+            "items": [
+              "Confirm the pipeline is flushed and free of debris.",
+              "Confirm the actuator power supply and control signal are correct.",
+              "Stroke the valve fully open and fully closed and verify the end limits and position indicator.",
+              "Set the opening and closing times as given in the surge analysis.",
+              "Fill the line slowly with the valve partly open to avoid air entrapment.",
+              "Check all joints and the gland for leakage.",
+              "Place the valve in its normal control mode and observe stable operation."
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Normal Operation"
+          },
+          {
+            "type": "text",
+            "text": "During operation:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "The plunger moves axially over the seat cylinder to vary the annular flow area.",
+              "Flow or pressure is regulated smoothly over the valve travel.",
+              "Slow opening and closing limits surge pressures in the pipeline.",
+              "The position indicator shows the actual plunger travel."
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Operating Precautions"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Operate within the rated pressure, differential pressure, and temperature limits.",
+              "Avoid prolonged operation at very small openings where cavitation can occur.",
+              "Do not exceed the opening and closing times derived from the surge study.",
+              "Do not operate the handwheel or gearbox against a seized plunger.",
+              "Report vibration, noise, or erratic travel for investigation."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "4. Maintenance Schedule",
+        "blocks": [
+          {
+            "type": "subtitle",
+            "text": "Monthly Inspection"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Inspect the body, flanges, and gland for leakage.",
+              "Verify that the position indicator agrees with the command.",
+              "Listen for abnormal noise or vibration during travel.",
+              "Check the actuator enclosure for water ingress."
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Quarterly Inspection"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Operate the valve through its full travel to prevent seizure.",
+              "Check and top up gearbox lubrication.",
+              "Inspect and adjust the packing gland where leakage is observed.",
+              "Inspect external coating and touch up damaged areas.",
+              "Verify chamber drainage."
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Annual Inspection"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Record the full stroke time in both directions.",
+              "Dismantle and inspect the plunger, seat ring, and guide bushes for wear or cavitation damage.",
+              "Inspect the trim or slotted cylinder where fitted.",
+              "Replace packing, gaskets, and O-rings.",
+              "Inspect the stem and thrust bearings.",
+              "Re-verify the end limits after reassembly and carry out seat leakage testing.",
+              "Record all findings in the maintenance log."
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Recommended Spare Parts"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Plunger Assembly",
+              "Seat Ring",
+              "Trim / Slotted Cylinder",
+              "Guide Bushes",
+              "Stem",
+              "Packing Set",
+              "O-Rings & Gaskets",
+              "Thrust Bearings",
+              "Gearbox Service Kit",
+              "Fasteners"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "5. Warranty Coverage",
+        "blocks": [
+          {
+            "type": "table",
+            "headers": [
+              "Component",
+              "Warranty Coverage"
+            ],
+            "rows": [
+              [
+                "Valve Body",
+                "24 Months"
+              ],
+              [
+                "Cover Assembly",
+                "24 Months"
+              ],
+              [
+                "Plunger Assembly",
+                "24 Months"
+              ],
+              [
+                "Actuator / Gearbox Housing",
+                "24 Months"
+              ],
+              [
+                "Seat Ring",
+                "12 Months"
+              ],
+              [
+                "Trim / Slotted Cylinder",
+                "12 Months"
+              ],
+              [
+                "Stem & Guide Bushes",
+                "12 Months"
+              ],
+              [
+                "Packing, O-Rings & Seals",
+                "12 Months"
+              ],
+              [
+                "Coating & Painting",
+                "12 Months"
+              ]
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Warranty Exclusions"
+          },
+          {
+            "type": "text",
+            "text": "Warranty does not cover:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Improper installation.",
+              "Damage caused by debris or contaminated water.",
+              "Cavitation damage from operation outside the specified duty point.",
+              "Surge damage caused by operating times shorter than those specified.",
+              "Operation beyond rated pressure or differential pressure.",
+              "Unauthorized modifications.",
+              "Corrosion due to incompatible media.",
+              "Normal wear and tear."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "6. Expected Service Life",
+        "blocks": [
+          {
+            "type": "table",
+            "headers": [
+              "Material of Construction",
+              "Expected Life"
+            ],
+            "rows": [
+              [
+                "Cast Iron Body",
+                "15–20 Years"
+              ],
+              [
+                "Ductile Iron Body",
+                "20–30 Years"
+              ],
+              [
+                "Cast Steel Body",
+                "20–25 Years"
+              ],
+              [
+                "Stainless Steel Body",
+                "25+ Years"
+              ],
+              [
+                "Stainless Steel Trim & Plunger",
+                "15–20 Years"
+              ],
+              [
+                "Bronze Guide Bushes",
+                "10–15 Years"
+              ],
+              [
+                "PTFE Packing",
+                "10–15 Years"
+              ],
+              [
+                "EPDM Seals",
+                "8–12 Years"
+              ],
+              [
+                "NBR Seals",
+                "6–10 Years"
+              ]
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Factors Affecting Service Life"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Water Quality",
+              "Differential Pressure Across the Trim",
+              "Cavitation Exposure",
+              "Frequency of Operation",
+              "Maintenance Practices",
+              "Corrosion Exposure",
+              "Operating Environment"
+            ]
+          },
+          {
+            "type": "text",
+            "text": "Operating within the designed cavitation limits significantly extends trim and seat life."
+          }
+        ]
+      },
+      {
+        "title": "7. Customer Responsibilities",
+        "blocks": [
+          {
+            "type": "text",
+            "text": "The customer shall:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Ensure proper installation as per this manual.",
+              "Operate within rated limits and within the designed duty range.",
+              "Maintain the opening and closing times given in the surge analysis.",
+              "Maintain chamber drainage and actuator weather protection.",
+              "Conduct routine inspections and exercise the valve periodically.",
+              "Maintain installation and maintenance records.",
+              "Use approved spare parts.",
+              "Report abnormalities promptly."
+            ]
+          },
+          {
+            "type": "text",
+            "text": "Failure to comply may affect warranty eligibility."
+          }
+        ]
+      },
+      {
+        "title": "8. Warranty Claim Procedure",
+        "blocks": [
+          {
+            "type": "subtitle",
+            "text": "Step 1 – Claim Submission"
+          },
+          {
+            "type": "text",
+            "text": "Provide:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Purchase Order Number",
+              "Invoice Copy",
+              "Valve Identification Details",
+              "Installation Date",
+              "Operating Conditions",
+              "Description of Defect",
+              "Photographs of Installation"
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Step 2 – Technical Evaluation"
+          },
+          {
+            "type": "text",
+            "text": "The submitted information will be reviewed to determine:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Installation compliance",
+              "Operating conditions",
+              "Maintenance history",
+              "Warranty applicability"
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Step 3 – Inspection"
+          },
+          {
+            "type": "text",
+            "text": "Where necessary:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Site inspection may be conducted.",
+              "Valve may be requested for factory examination."
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Step 4 – Resolution"
+          },
+          {
+            "type": "text",
+            "text": "Based on technical findings, one of the following may be provided:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Repair",
+              "Component Replacement",
+              "Valve Replacement",
+              "Technical Recommendations"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Safety Precautions",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "Isolate, depressurize, and drain the line before maintenance.",
+              "Isolate and lock out the actuator power supply before working on the valve.",
+              "Never place hands or tools inside the valve bore while it is energised.",
+              "Wear appropriate PPE during servicing.",
+              "Follow all site safety regulations and confined space procedures for valve chambers.",
+              "Use approved lifting methods for large-size valves and actuators."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Document Retention",
+        "blocks": [
+          {
+            "type": "text",
+            "text": "Maintain installation records, surge study and operating time settings, maintenance logs, inspection reports, and warranty documentation throughout the service life of the Flow Control Valve for future reference and warranty support."
+          }
+        ]
+      }
+    ]
+  },
+  "wide-type-strainer": {
+    "isModern": true,
+    "title": "MANUAL OF WIDE TYPE STRAINERS",
+    "sections": [
+      {
+        "title": "1. Introduction",
+        "blocks": [
+          {
+            "type": "subtitle",
+            "text": "Scope"
+          },
+          {
+            "type": "text",
+            "text": "This manual provides guidelines for the installation, operation, maintenance, inspection, warranty coverage, and service procedures for Wide Type Strainers used in water, wastewater, and industrial piping systems."
+          },
+          {
+            "type": "subtitle",
+            "text": "Applications"
+          },
+          {
+            "type": "text",
+            "text": "Wide Type Strainers are mechanical filtration devices with a large screen area relative to the pipe bore, which gives a low pressure drop and long intervals between cleaning. They are commonly used in:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Water Transmission Pipelines",
+              "Water Distribution Networks",
+              "Pumping Stations",
+              "Water Treatment Plants",
+              "Sewage Treatment Plants",
+              "Irrigation Systems",
+              "Industrial Process Pipelines",
+              "Fire Protection Systems"
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Purpose"
+          },
+          {
+            "type": "text",
+            "text": "The primary function of a Wide Type Strainer is to retain solids and debris carried by the fluid and so prevent damage to:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Pumps and Impellers",
+              "Control Valves and Pressure Reducing Valves",
+              "Flow Meters",
+              "Heat Exchangers",
+              "Nozzles and Spray Systems",
+              "Downstream Process Equipment"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "2. Installation Guidelines",
+        "blocks": [
+          {
+            "type": "subtitle",
+            "text": "Pre-Installation Inspection"
+          },
+          {
+            "type": "text",
+            "text": "Before installation:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Verify strainer size, pressure rating, screen perforation or mesh size, and material specifications.",
+              "Inspect the body, cover, and screen for transportation damage.",
+              "Confirm the screen is undamaged, correctly seated, and free from blockage.",
+              "Remove all protective covers and packaging materials."
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Pipeline Preparation"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Clean and flush the pipeline before installation.",
+              "Remove debris, welding slag, stones, rust, and foreign particles.",
+              "Ensure proper pipeline alignment and that flanges are parallel."
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Installation Position"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Install with the flow direction arrow matching the actual direction of flow.",
+              "Install upstream of the equipment to be protected.",
+              "Mount in a horizontal line with the screen chamber below the horizontal centreline so that collected solids settle away from the flow.",
+              "Provide isolation valves on both sides, and a bypass where uninterrupted service is required."
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Clearance and Access"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Provide clearance in line with the cover for full withdrawal of the screen.",
+              "Provide a drain connection with a valve at the lowest point.",
+              "Provide pressure gauge tappings upstream and downstream to monitor the differential pressure.",
+              "Support the strainer independently; do not let it carry pipeline loads."
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Installation Precautions"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Do not use the strainer as a pipe anchor.",
+              "Tighten cover and flange bolts evenly in a diagonal sequence.",
+              "Replace the cover gasket whenever the cover is removed.",
+              "Do not commission the system without the screen in place."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "3. Operation Instructions",
+        "blocks": [
+          {
+            "type": "subtitle",
+            "text": "Initial Startup"
+          },
+          {
+            "type": "ordered-list",
+            "items": [
+              "Confirm the screen is correctly installed and the cover is fully tightened.",
+              "Open the isolation valves slowly and fill the line.",
+              "Vent trapped air where a vent connection is provided.",
+              "Check the body, cover, and drain connection for leakage.",
+              "Record the clean differential pressure as the reference for future cleaning."
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Normal Operation"
+          },
+          {
+            "type": "text",
+            "text": "During operation:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Fluid passes through the screen and solids are retained inside the screen chamber.",
+              "Differential pressure across the strainer rises as the screen loads with debris.",
+              "A rising differential pressure is the indication that cleaning is due.",
+              "Cleaning requires the strainer to be isolated and depressurised unless a blow-down arrangement is provided."
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Operating Precautions"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Monitor the differential pressure regularly, especially during commissioning when debris loading is highest.",
+              "Do not allow the screen to block completely; a collapsed screen passes debris downstream.",
+              "Operate within rated pressure and temperature limits.",
+              "Never open the cover while the line is pressurised.",
+              "Do not run the system with a damaged or omitted screen."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "4. Maintenance Schedule",
+        "blocks": [
+          {
+            "type": "subtitle",
+            "text": "Monthly Inspection"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Record the differential pressure across the strainer.",
+              "Inspect the body, cover joint, and drain valve for leakage.",
+              "Operate the drain valve to remove settled solids where a blow-down is fitted."
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Quarterly Inspection"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Isolate, depressurise, and drain the strainer.",
+              "Remove and clean the screen.",
+              "Inspect the screen for distortion, perforation damage, or corrosion.",
+              "Clean the body cavity of accumulated solids.",
+              "Replace the cover gasket and refit the cover.",
+              "Inspect external coating for corrosion."
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Annual Inspection"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Carry out a detailed inspection of the body, cover, and screen seating surfaces.",
+              "Replace the screen if distorted, perforated, or heavily corroded.",
+              "Replace gaskets, O-rings, and the drain plug seal.",
+              "Check fasteners and replace any that are corroded.",
+              "Re-record the clean differential pressure after reassembly.",
+              "Record all findings in the maintenance log."
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Recommended Spare Parts"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Screen Element",
+              "Cover Gasket",
+              "O-Rings",
+              "Drain Plug / Drain Valve",
+              "Cover Fasteners",
+              "Body Gasket Set"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "5. Warranty Coverage",
+        "blocks": [
+          {
+            "type": "table",
+            "headers": [
+              "Component",
+              "Warranty Coverage"
+            ],
+            "rows": [
+              [
+                "Strainer Body",
+                "24 Months"
+              ],
+              [
+                "Cover Assembly",
+                "24 Months"
+              ],
+              [
+                "Screen Housing",
+                "24 Months"
+              ],
+              [
+                "Stainless Steel Screen",
+                "12 Months"
+              ],
+              [
+                "Drain Plug",
+                "12 Months"
+              ],
+              [
+                "O-Rings & Gaskets",
+                "12 Months"
+              ],
+              [
+                "Fasteners",
+                "12 Months"
+              ],
+              [
+                "Coating & Painting",
+                "12 Months"
+              ]
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Warranty Exclusions"
+          },
+          {
+            "type": "text",
+            "text": "Warranty shall not cover:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Damage caused by clogged screens.",
+              "Improper installation.",
+              "Corrosion due to incompatible media.",
+              "Mechanical damage during maintenance.",
+              "Operation beyond rated conditions.",
+              "Unauthorized modifications.",
+              "Normal wear and tear."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "6. Expected Service Life",
+        "blocks": [
+          {
+            "type": "table",
+            "headers": [
+              "Material of Construction",
+              "Expected Life"
+            ],
+            "rows": [
+              [
+                "Cast Iron Body",
+                "15–20 Years"
+              ],
+              [
+                "Ductile Iron Body",
+                "20–30 Years"
+              ],
+              [
+                "Cast Steel Body",
+                "20–25 Years"
+              ],
+              [
+                "Stainless Steel Body",
+                "25+ Years"
+              ],
+              [
+                "Stainless Steel Screen",
+                "10–15 Years"
+              ],
+              [
+                "EPDM Gaskets",
+                "8–12 Years"
+              ],
+              [
+                "PTFE Gaskets",
+                "10–15 Years"
+              ]
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Factors Affecting Service Life"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Fluid Cleanliness",
+              "Solids Loading",
+              "Pressure Conditions",
+              "Temperature Conditions",
+              "Maintenance Frequency",
+              "Corrosion Exposure",
+              "Operating Environment"
+            ]
+          },
+          {
+            "type": "text",
+            "text": "Routine cleaning significantly extends screen and strainer life."
+          }
+        ]
+      },
+      {
+        "title": "7. Customer Responsibilities",
+        "blocks": [
+          {
+            "type": "text",
+            "text": "The customer shall:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Ensure proper installation as per this manual.",
+              "Monitor differential pressure and clean the screen before it blocks.",
+              "Operate within rated limits.",
+              "Use the correct screen perforation or mesh size for the duty.",
+              "Conduct routine inspections.",
+              "Maintain installation, cleaning, and maintenance records.",
+              "Use approved spare parts.",
+              "Report abnormalities promptly."
+            ]
+          },
+          {
+            "type": "text",
+            "text": "Failure to comply may affect warranty eligibility."
+          }
+        ]
+      },
+      {
+        "title": "8. Warranty Claim Procedure",
+        "blocks": [
+          {
+            "type": "subtitle",
+            "text": "Step 1 – Claim Submission"
+          },
+          {
+            "type": "text",
+            "text": "Provide:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Purchase Order Number",
+              "Invoice Copy",
+              "Strainer Identification Details",
+              "Installation Date",
+              "Operating Conditions",
+              "Cleaning Records",
+              "Description of Defect",
+              "Photographs of Installation"
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Step 2 – Technical Evaluation"
+          },
+          {
+            "type": "text",
+            "text": "The submitted information will be reviewed to determine:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Installation compliance",
+              "Operating conditions",
+              "Maintenance history",
+              "Warranty applicability"
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Step 3 – Inspection"
+          },
+          {
+            "type": "text",
+            "text": "Where necessary:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Site inspection may be conducted.",
+              "Strainer may be requested for factory examination."
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Step 4 – Resolution"
+          },
+          {
+            "type": "text",
+            "text": "Based on technical findings, one of the following may be provided:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Repair",
+              "Component Replacement",
+              "Strainer Replacement",
+              "Technical Recommendations"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Safety Precautions",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "Isolate, depressurize, and drain the strainer before removing the cover.",
+              "Never loosen cover bolts while the line is under pressure.",
+              "Take care with hot fluids and with media that may be hazardous when the cover is opened.",
+              "Wear appropriate PPE during servicing.",
+              "Follow all site safety regulations.",
+              "Use approved lifting methods for large-size strainers and covers."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Document Retention",
+        "blocks": [
+          {
+            "type": "text",
+            "text": "Maintain installation records, maintenance logs, cleaning schedules, inspection reports, and warranty documentation throughout the service life of the Wide Type Strainer for operational reference and warranty support."
+          }
+        ]
+      }
+    ]
+  },
+  "needle-valve": {
+    "isModern": true,
+    "title": "MANUAL OF NEEDLE VALVES",
+    "sections": [
+      {
+        "title": "1. Introduction",
+        "blocks": [
+          {
+            "type": "subtitle",
+            "text": "Scope"
+          },
+          {
+            "type": "text",
+            "text": "This manual provides guidelines for the installation, operation, maintenance, inspection, warranty coverage, and service procedures for Needle Valves used in instrumentation, sampling, and industrial piping systems."
+          },
+          {
+            "type": "subtitle",
+            "text": "Applications"
+          },
+          {
+            "type": "text",
+            "text": "Needle Valves use a tapered conical plug and a fine stem thread to give precise, repeatable throttling of small flows. They are commonly used in:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Instrument and Gauge Isolation",
+              "Sampling and Drain Points",
+              "Pressure Gauge and Transmitter Lines",
+              "Flow Metering Loops",
+              "Hydraulic and Pneumatic Control Circuits",
+              "Water Treatment Plant Dosing Lines",
+              "Industrial Process Pipelines",
+              "Laboratory and Test Rigs"
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Purpose"
+          },
+          {
+            "type": "text",
+            "text": "The Needle Valve provides fine flow regulation and tight shut-off on small bore lines, and is also used to dampen pressure pulsations so that instruments are protected from surge and rapid fluctuation."
+          }
+        ]
+      },
+      {
+        "title": "2. Installation Guidelines",
+        "blocks": [
+          {
+            "type": "subtitle",
+            "text": "Pre-Installation Inspection"
+          },
+          {
+            "type": "text",
+            "text": "Before installation:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Verify valve size, pressure rating, end connection type, and material specifications against the datasheet.",
+              "Inspect the valve for transportation or handling damage.",
+              "Confirm the stem turns freely over its full travel.",
+              "Remove all protective end caps and packaging materials immediately before fitting."
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Line Preparation"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Clean and flush the line before installation.",
+              "Remove debris, swarf, thread sealant residue, and foreign particles.",
+              "Ensure tube ends are cut square, deburred, and clean.",
+              "Ensure the line is properly aligned so that no stress is transferred to the valve body."
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Installation Position"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Install with the flow direction arrow matching the actual direction of flow where the valve is marked.",
+              "The valve may be installed in any orientation; handwheel upright is preferred for drainage and access.",
+              "Provide clearance for the handwheel and for removal of the bonnet.",
+              "Support small bore tubing adjacent to the valve to prevent vibration fatigue."
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Making the Connections"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Hold the valve body with a spanner on the flats; never apply torque through the bonnet or handwheel.",
+              "Use the sealant or tape recommended for the thread type, applied clear of the first thread.",
+              "Tighten compression fittings to the fitting manufacturer's specified number of turns.",
+              "Do not overtighten; excessive torque distorts the body and the seat."
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Installation Precautions"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Do not use the valve as a support for instruments or tubing.",
+              "Protect the valve from site dust and construction debris until commissioning.",
+              "Keep the valve closed during pipeline flushing.",
+              "Confirm media compatibility with the body, trim, and packing materials."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "3. Operation Instructions",
+        "blocks": [
+          {
+            "type": "subtitle",
+            "text": "Initial Startup"
+          },
+          {
+            "type": "ordered-list",
+            "items": [
+              "Confirm the line is flushed and the connections are correctly made.",
+              "Close the valve by turning the handwheel clockwise until it seats lightly.",
+              "Pressurise the line gradually and check all joints and the gland for leakage.",
+              "Open the valve slowly, counting the turns from the closed position.",
+              "Adjust to the required flow and record the number of turns as the reference setting."
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Normal Operation"
+          },
+          {
+            "type": "text",
+            "text": "During operation:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "The tapered needle moves axially into the seat to vary the flow area.",
+              "The fine stem thread gives precise and repeatable adjustment.",
+              "Small movements of the handwheel produce small, controlled changes in flow.",
+              "The valve holds its setting until deliberately readjusted."
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Operating Precautions"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Close by hand only; do not use extension bars or power tools on the handwheel.",
+              "Do not force the needle hard onto the seat, as this damages both and causes leakage.",
+              "Operate within the rated pressure and temperature limits.",
+              "Avoid using a needle valve for frequent on-off duty; it is intended for regulation.",
+              "Isolate and depressurise before adjusting or repacking the gland."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "4. Maintenance Schedule",
+        "blocks": [
+          {
+            "type": "subtitle",
+            "text": "Monthly Inspection"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Inspect the body, end connections, and gland for leakage.",
+              "Verify the valve holds its set position.",
+              "Check that the handwheel and stem turn without binding.",
+              "Inspect adjacent tubing supports for vibration damage."
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Quarterly Inspection"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Operate the valve through its full travel to prevent seizure.",
+              "Tighten the packing gland evenly where minor leakage is observed.",
+              "Clean the stem threads and external surfaces.",
+              "Inspect external coating or plating for corrosion."
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Annual Inspection"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Isolate, depressurise, and remove the valve where practicable.",
+              "Dismantle and inspect the needle and seat for wear, scoring, or erosion.",
+              "Inspect the stem thread and bonnet threads.",
+              "Replace the packing set, gaskets, and O-rings.",
+              "Lubricate the stem thread with a lubricant compatible with the media.",
+              "Carry out seat leakage testing after reassembly.",
+              "Record all findings in the maintenance log."
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Recommended Spare Parts"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Needle / Stem Assembly",
+              "Seat Ring",
+              "Packing Set",
+              "Bonnet Gasket",
+              "O-Rings",
+              "Gland Nut",
+              "Handwheel",
+              "Fasteners"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "5. Warranty Coverage",
+        "blocks": [
+          {
+            "type": "table",
+            "headers": [
+              "Component",
+              "Warranty Coverage"
+            ],
+            "rows": [
+              [
+                "Valve Body",
+                "24 Months"
+              ],
+              [
+                "Bonnet Assembly",
+                "24 Months"
+              ],
+              [
+                "Needle / Stem Assembly",
+                "12 Months"
+              ],
+              [
+                "Seat Ring",
+                "12 Months"
+              ],
+              [
+                "Packing Set",
+                "12 Months"
+              ],
+              [
+                "O-Rings & Gaskets",
+                "12 Months"
+              ],
+              [
+                "Handwheel & Fasteners",
+                "12 Months"
+              ],
+              [
+                "Coating & Plating",
+                "12 Months"
+              ]
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Warranty Exclusions"
+          },
+          {
+            "type": "text",
+            "text": "Warranty does not cover:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Improper installation or overtightened connections.",
+              "Seat damage caused by excessive closing force.",
+              "Damage caused by debris or contaminated media.",
+              "Operation beyond rated pressure or temperature.",
+              "Use as a frequent on-off isolation valve.",
+              "Unauthorized modifications.",
+              "Corrosion due to incompatible media.",
+              "Normal wear and tear."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "6. Expected Service Life",
+        "blocks": [
+          {
+            "type": "table",
+            "headers": [
+              "Material of Construction",
+              "Expected Life"
+            ],
+            "rows": [
+              [
+                "Cast Steel Body",
+                "20–25 Years"
+              ],
+              [
+                "Stainless Steel Body",
+                "25+ Years"
+              ],
+              [
+                "Forged Brass Body",
+                "15–20 Years"
+              ],
+              [
+                "Stainless Steel Needle & Stem",
+                "10–15 Years"
+              ],
+              [
+                "PTFE Packing",
+                "10–15 Years"
+              ],
+              [
+                "Graphite Packing",
+                "8–12 Years"
+              ],
+              [
+                "PTFE Seat",
+                "8–12 Years"
+              ],
+              [
+                "NBR Seals",
+                "6–10 Years"
+              ]
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Factors Affecting Service Life"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Fluid Cleanliness",
+              "Frequency of Adjustment",
+              "Closing Force Applied",
+              "Pressure and Temperature Conditions",
+              "Vibration Exposure",
+              "Maintenance Practices",
+              "Corrosion Exposure"
+            ]
+          },
+          {
+            "type": "text",
+            "text": "Gentle seating and clean media significantly extend needle and seat life."
+          }
+        ]
+      },
+      {
+        "title": "7. Customer Responsibilities",
+        "blocks": [
+          {
+            "type": "text",
+            "text": "The customer shall:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Ensure proper installation as per this manual.",
+              "Close the valve by hand only, without excessive force.",
+              "Operate within rated limits.",
+              "Keep upstream filters and strainers clean.",
+              "Conduct routine inspections.",
+              "Maintain installation and maintenance records.",
+              "Use approved spare parts.",
+              "Report abnormalities promptly."
+            ]
+          },
+          {
+            "type": "text",
+            "text": "Failure to comply may affect warranty eligibility."
+          }
+        ]
+      },
+      {
+        "title": "8. Warranty Claim Procedure",
+        "blocks": [
+          {
+            "type": "subtitle",
+            "text": "Step 1 – Claim Submission"
+          },
+          {
+            "type": "text",
+            "text": "Provide:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Purchase Order Number",
+              "Invoice Copy",
+              "Valve Identification Details",
+              "Installation Date",
+              "Operating Conditions",
+              "Description of Defect",
+              "Photographs of Installation"
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Step 2 – Technical Evaluation"
+          },
+          {
+            "type": "text",
+            "text": "The submitted information will be reviewed to determine:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Installation compliance",
+              "Operating conditions",
+              "Maintenance history",
+              "Warranty applicability"
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Step 3 – Inspection"
+          },
+          {
+            "type": "text",
+            "text": "Where necessary:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Site inspection may be conducted.",
+              "Valve may be requested for factory examination."
+            ]
+          },
+          {
+            "type": "subtitle",
+            "text": "Step 4 – Resolution"
+          },
+          {
+            "type": "text",
+            "text": "Based on technical findings, one of the following may be provided:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Repair",
+              "Component Replacement",
+              "Valve Replacement",
+              "Technical Recommendations"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Safety Precautions",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "Isolate, depressurize, and drain the line before maintenance.",
+              "Never loosen the bonnet or gland nut while the line is under pressure.",
+              "Open valves on instrument and sampling lines slowly; trapped pressure can be released violently.",
+              "Take care with hot or hazardous media released at sampling and drain points.",
+              "Wear appropriate PPE during servicing.",
+              "Follow all site safety regulations and lockout procedures."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Document Retention",
+        "blocks": [
+          {
+            "type": "text",
+            "text": "Maintain installation records, flow setting references, maintenance logs, inspection reports, and warranty documentation throughout the service life of the Needle Valve for future reference and warranty support."
           }
         ]
       }

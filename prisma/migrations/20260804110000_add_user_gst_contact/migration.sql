@@ -1,3 +1,3 @@
 -- AlterTable
-ALTER TABLE "users" ADD COLUMN     "gstNumber" TEXT,
-ADD COLUMN     "contactNumber" TEXT;
+ALTER TABLE "users" ADD COLUMN "gstNumber" TEXT,
+ADD COLUMN "contactNumber" TEXT;

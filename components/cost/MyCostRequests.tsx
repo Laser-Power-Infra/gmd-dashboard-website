@@ -1,4 +1,5 @@
 import { prisma } from '@/lib/prisma';
+import { costItemLines } from '@/lib/schemas/cost';
 
 /**
  * "My Requests" — the signed-in USER's own cost submissions, shown on the
@@ -41,6 +42,7 @@ export default async function MyCostRequests({ userId }: { userId: string }) {
             <tr>
               <th className="px-4 py-3 font-semibold">Company</th>
               <th className="px-4 py-3 font-semibold">GSTIN</th>
+              <th className="px-4 py-3 font-semibold">Items</th>
               <th className="px-4 py-3 font-semibold">Status</th>
               <th className="px-4 py-3 font-semibold">Submitted</th>
             </tr>
@@ -50,6 +52,11 @@ export default async function MyCostRequests({ userId }: { userId: string }) {
               <tr key={req.id} className="hover:bg-gray-50">
                 <td className="px-4 py-3 font-medium text-gray-800">{req.company}</td>
                 <td className="px-4 py-3 font-mono text-gray-600">{req.gst}</td>
+                <td className="px-4 py-3 text-xs text-gray-600">
+                  {costItemLines(req.items).map((line, i) => (
+                    <div key={i}>{line}</div>
+                  ))}
+                </td>
                 <td className="px-4 py-3">
                   <span
                     className={`inline-block rounded-full px-2.5 py-0.5 text-xs font-bold ${STATUS_BADGE[req.status] ?? 'bg-gray-100 text-gray-600'}`}

@@ -37,17 +37,17 @@ export const valveDetailsData: Record<string, ValveDetail> = {
         "cards": [
           {
             "title": "Double Flanged Type",
-            "image": "/uploads/2025/04/double-flanged-type.png",
+            "image": "/uploads/2025/04/double-flanged-type.webp",
             "description": "A double flanged butterfly valve features flanges on both sides for secure, bolted connections. This design ensures robust sealing and alignment, making it ideal for high-pressure and high-temperature applications. It provides reliable flow control and easy maintenance."
           },
           {
             "title": "Lug Type",
-            "image": "/uploads/2025/04/lug-type.jpg",
+            "image": "/uploads/2025/04/lug-type.webp",
             "description": "A lug type butterfly valve includes threaded inserts for secure flange attachment, enabling simple installation and removal. It offers reliable flow control, with features such as bi-directional sealing and robust construction."
           },
           {
             "title": "Wafer Type",
-            "image": "/uploads/2025/04/water-type.jpg",
+            "image": "/uploads/2025/04/water-type.webp",
             "description": "A wafer type butterfly valve fits tightly between pipe flanges to maintain a seal against bi-directional pressure differentials. It is highly compact, lightweight, and economical for standard industrial pipelines."
           }
         ]
@@ -58,17 +58,17 @@ export const valveDetailsData: Record<string, ValveDetail> = {
         "cards": [
           {
             "title": "Concentric Type",
-            "image": "/uploads/2025/04/butterfly-valve-250x250-1.jpg",
+            "image": "/uploads/2025/04/butterfly-valve-250x250-1.webp",
             "description": "A concentric butterfly valve features a disc mounted on a central shaft that rotates within a single-plane body. This design ensures a tight seal and efficient flow control, ideal for low to moderate pressure applications."
           },
           {
             "title": "Resilient Seated Type",
-            "image": "/uploads/2025/04/1-500x500-1.png",
+            "image": "/uploads/2025/04/1-500x500-1.webp",
             "description": "A resilient seated butterfly valve utilizes a flexible rubber seat to ensure a tight seal, making it ideal for low-pressure applications. Its design provides excellent sealing performance, ease of operation, and cost-effective maintenance."
           },
           {
             "title": "Double Eccentric Type",
-            "image": "/uploads/2025/04/double-eccentric.jpg",
+            "image": "/uploads/2025/04/double-eccentric.webp",
             "description": "A double eccentric butterfly valve has two offset features: 1. The shaft is off-centre. 2. The disc axis is offset from the seat. This design minimizes seat wear and improves sealing, making it suitable for higher pressure and temperature applications."
           },
           {
@@ -111,17 +111,17 @@ export const valveDetailsData: Record<string, ValveDetail> = {
         "cards": [
           {
             "title": "Kinetic Air Valve",
-            "image": "/uploads/2025/04/DuPlate-1.jpg",
+            "image": "/uploads/2025/04/DuPlate-1.webp",
             "description": "Features high velocity air release and intake without premature closure, using buoyancy-operated floats to maintain pipeline hydraulic integrity."
           },
           {
             "title": "Tamper Proof Air Valve",
-            "image": "/uploads/2025/04/tamper-proof-air-valve-900.jpg",
+            "image": "/uploads/2025/04/tamper-proof-air-valve-900.webp",
             "description": "Equipped with protective outer cowls to prevent vandalism, unauthorized water tapping, or interference in public grids."
           },
           {
             "title": "Double Orifice Air Valve",
-            "image": "/uploads/2025/04/icon1.png",
+            "image": "/uploads/2025/04/icon1.webp",
             "description": "Combines a large orifice for bulk air handling during filling/draining and a small orifice for pressurized air release during operation."
           }
         ]
@@ -154,17 +154,17 @@ export const valveDetailsData: Record<string, ValveDetail> = {
         "cards": [
           {
             "title": "Manual Handwheel",
-            "image": "/uploads/2025/04/valve-1.jpg",
+            "image": "/uploads/2025/04/valve-1.webp",
             "description": "Equipped with traditional handwheels or cap tops for simple manual operation in standard pipeline networks."
           },
           {
             "title": "Gearbox Operated",
-            "image": "/uploads/2025/04/valve@2x.jpg",
+            "image": "/uploads/2025/04/valve@2x.webp",
             "description": "Equipped with bevel or spur gearboxes to reduce operating torque in high-pressure or large diameter pipelines."
           },
           {
             "title": "Electric Actuated",
-            "image": "/uploads/2025/04/Capture.JPG1_.jpg",
+            "image": "/uploads/2025/04/Capture.JPG1_.webp",
             "description": "Equipped with electric actuators for automated, remote control in industrial grids and purification processes."
           }
         ]
@@ -176,17 +176,17 @@ export const valveDetailsData: Record<string, ValveDetail> = {
           {
             "title": "Gate Valve",
             "description": "Ideal for on/off control and isolation in main distribution lines with minimum pressure drop.",
-            "image": "/uploads/2025/04/MANUAL.jpg"
+            "image": "/uploads/2025/04/MANUAL.webp"
           },
           {
             "title": "Sluice Gate",
             "description": "Slide-type gates used for flow control and sediment removal in open channels, channels, or wastewater stages.",
-            "image": "/uploads/2025/04/sluice-gate-avip-1.jpg"
+            "image": "/uploads/2025/04/sluice-gate-avip-1.webp"
           },
           {
             "title": "Scour Valve",
             "description": "Designed for pipeline maintenance and cleaning, allowing evacuation of silt and debris from low points.",
-            "image": "/uploads/2025/04/valve-1.jpg"
+            "image": "/uploads/2025/04/valve-1.webp"
           }
         ]
       }
@@ -223,17 +223,17 @@ export const valveDetailsData: Record<string, ValveDetail> = {
         "cards": [
           {
             "title": "Dual Plate Check Valve",
-            "image": "/uploads/2025/04/cast-iron-wafer-type-dual-plate-check-valve-500x500-1.png",
+            "image": "/uploads/2025/04/cast-iron-wafer-type-dual-plate-check-valve-500x500-1.webp",
             "description": "Two spring-loaded plates for efficient flow control, durability, and reliable, with bi-directional operation. Opens for forward flow and closes when reversed. It's compact, efficient design reduces pressure loss."
           },
           {
             "title": "Double Plate Flanged Type",
-            "image": "/uploads/2025/04/DuPlate.jpg",
+            "image": "/uploads/2025/04/DuPlate.webp",
             "description": "Features flanged connections on both sides, providing high mechanical integrity and easy pipeline integration in high-pressure grids."
           },
           {
             "title": "Wafer Type Double Plate",
-            "image": "/uploads/2025/04/DuPlate-1.jpg",
+            "image": "/uploads/2025/04/DuPlate-1.webp",
             "description": "Clamps tightly between pipeline flanges, offering an extremely compact and light-weight backflow prevention solution."
           }
         ]
@@ -266,17 +266,17 @@ export const valveDetailsData: Record<string, ValveDetail> = {
         "cards": [
           {
             "title": "Dual Plate Non-Return",
-            "image": "/uploads/2025/04/cast-iron-wafer-type-dual-plate-check-valve-500x500-1.png",
+            "image": "/uploads/2025/04/cast-iron-wafer-type-dual-plate-check-valve-500x500-1.webp",
             "description": "Two spring-loaded plates for efficient flow control, durability, and reliable, with bi-directional operation. Its compact design reduces pressure loss."
           },
           {
             "title": "Swing Check Valve",
-            "image": "/uploads/2025/05/swing-check-valve.jpg",
+            "image": "/uploads/2025/05/swing-check-valve.webp",
             "description": "Hinged disc for reliable flow control they ensure efficient, one-way flow. Commonly used in water and wastewater systems, and pump discharge lines."
           },
           {
             "title": "Hydraulic Actuated Non-Return",
-            "image": "/uploads/2025/04/LFC_3B-Water-Hydraulic-Actuated-Isolation-Valve-1200x900-1.jpg",
+            "image": "/uploads/2025/04/LFC_3B-Water-Hydraulic-Actuated-Isolation-Valve-1200x900-1.webp",
             "description": "Expertly manages fluid flow within pipelines, providing controlled slow-closing options to mitigate hydraulic shock and water hammer."
           }
         ]
@@ -309,12 +309,12 @@ export const valveDetailsData: Record<string, ValveDetail> = {
         "cards": [
           {
             "title": "Pneumatic Globe Control Valve",
-            "image": "/uploads/2025/05/glob-regulating-valve.jpg",
+            "image": "/uploads/2025/05/glob-regulating-valve.webp",
             "description": "Utilizes compressed air for operation, offering fast response, robust construction, and high-speed cycle throttling in chemical processes."
           },
           {
             "title": "Manual Globe Valve",
-            "image": "/uploads/2025/05/globocontrol-1.jpg",
+            "image": "/uploads/2025/05/globocontrol-1.webp",
             "description": "Features a spherical body and precise linear handwheel motion for fine throttling and secure shut-off in steam and power loops."
           },
           {
@@ -352,17 +352,17 @@ export const valveDetailsData: Record<string, ValveDetail> = {
         "cards": [
           {
             "title": "Manual Lever Ball Valve",
-            "image": "/uploads/2025/04/PLU.BAL_.64100812_1707203409634.png",
+            "image": "/uploads/2025/04/PLU.BAL_.64100812_1707203409634.webp",
             "description": "Designed with a hollow, perforated ball and a long lever for quick, quarter-turn manual operation in water and gas lines."
           },
           {
             "title": "Pneumatic / Electric Actuated Ball Valve",
-            "image": "/uploads/2025/05/Electric-Ball-Valves-4.jpg",
+            "image": "/uploads/2025/05/Electric-Ball-Valves-4.webp",
             "description": "Features automatic actuation for automated pipelines requiring swift, remote shut-off control and high reliability."
           },
           {
             "title": "Three-Way Ball Valve",
-            "image": "/uploads/2025/05/three-way-ball-valves.jpg",
+            "image": "/uploads/2025/05/three-way-ball-valves.webp",
             "description": "Allows for switching between different flow paths or combining multiple streams in petrochemical and process grids."
           }
         ]
@@ -395,17 +395,17 @@ export const valveDetailsData: Record<string, ValveDetail> = {
         "cards": [
           {
             "title": "Globe Control Valve",
-            "image": "/uploads/2025/05/globocontrol-1.jpg",
+            "image": "/uploads/2025/05/globocontrol-1.webp",
             "description": "Uses linear plug motion and automated controllers for precise pressure throttling in power and process plants."
           },
           {
             "title": "Pilot-Operated Diaphragm PRV",
-            "image": "/uploads/2025/05/Electric-Ball-Valves-4.jpg",
+            "image": "/uploads/2025/05/Electric-Ball-Valves-4.webp",
             "description": "Utilizes fluid energy and a sensitive pilot control system to modulate flow, maintaining constant downstream pressure."
           },
           {
             "title": "Self-Acting Pressure Regulator",
-            "image": "/uploads/2025/05/glob-regulating-valve.jpg",
+            "image": "/uploads/2025/05/glob-regulating-valve.webp",
             "description": "Directly controls system pressure via integrated diaphragm/spring mechanisms without external power grids."
           }
         ]
@@ -438,7 +438,7 @@ export const valveDetailsData: Record<string, ValveDetail> = {
         "cards": [
           {
             "title": "Standard Foot Valve",
-            "image": "/uploads/2025/05/others-valve.jpg",
+            "image": "/uploads/2025/05/others-valve.webp",
             "description": "Features a mesh strainer and spring-loaded lift disc mechanism, used at the inlet of a pump to maintain prime. Size Range: 26-600 mm."
           },
           {
@@ -486,7 +486,7 @@ export const valveDetailsData: Record<string, ValveDetail> = {
           },
           {
             "title": "Three-Way Safety Valve",
-            "image": "/uploads/2025/05/three-way-ball-valves.jpg",
+            "image": "/uploads/2025/05/three-way-ball-valves.webp",
             "description": "Enables switching between safety relief loops for uninterrupted system protection during maintenance."
           },
           {
@@ -524,17 +524,17 @@ export const valveDetailsData: Record<string, ValveDetail> = {
         "cards": [
           {
             "title": "Tamper Proof Security Valve",
-            "image": "/uploads/2025/04/tamper-proof-air-valve-900.jpg",
+            "image": "/uploads/2025/04/tamper-proof-air-valve-900.webp",
             "description": "Prevents unauthorized access with unique keycaps or locks, ensuring system integrity and safety. Size: 50-600 mm."
           },
           {
             "title": "Lockable Sluice Valve",
-            "image": "/uploads/2025/04/sluice-gate-avip-1.jpg",
+            "image": "/uploads/2025/04/sluice-gate-avip-1.webp",
             "description": "Includes a lockable handwheel or gearbox padlocking shroud to restrict control in municipal water grid junctions."
           },
           {
             "title": "Tamper Proof Kinetic Air Valve",
-            "image": "/uploads/2025/04/DuPlate-1.jpg",
+            "image": "/uploads/2025/04/DuPlate-1.webp",
             "description": "Provides high-speed air release and vacuum protection under a heavy security cowl that resists vandalism."
           }
         ]
@@ -572,7 +572,7 @@ export const valveDetailsData: Record<string, ValveDetail> = {
           },
           {
             "title": "Fabricated Basket Strainer",
-            "image": "/uploads/2025/05/others-valve.jpg",
+            "image": "/uploads/2025/05/others-valve.webp",
             "description": "Designed with reinforced structural cages for high flow rates and low pressure drop in municipal intake headers."
           },
           {

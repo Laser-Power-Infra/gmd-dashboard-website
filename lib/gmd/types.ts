@@ -1,11 +1,10 @@
 import type { EngineeringTab } from "./tableConfig";
 
 /**
- * An item drawing/photo linked to a Contract Review item code.
+ * An item drawing/photo linked to a single item code.
  *
- * Populated in Phase 2 from Google Drive. Until then the gallery dialog renders
- * its empty state, which is why the type is optional on the table props rather
- * than required.
+ * Not currently populated — no Engineering Data tab serves images yet — but the
+ * table supports an `imageButtonColumn`, so the shape is kept for when one does.
  */
 export type ItemImage = {
   /** Stable key used as a React key and shown as the fallback caption. */
@@ -33,11 +32,26 @@ export type EngineeringTableData = {
    */
   syncedAt?: string | null;
   totalRows: number;
+  /**
+   * Whether this tab has ever been synced into the database. When false the
+   * panel shows a "not synced yet" prompt rather than an empty table, which
+   * would otherwise be indistinguishable from a table whose sheet is empty.
+   */
+  synced: boolean;
 };
 
 export type EngineeringDataState =
   | { status: "loading" }
   | { status: "error"; message: string }
   | { status: "ready"; data: EngineeringTableData };
+
+/**
+ * One MATERIAL -> DENSITY reading, flattened out of the hidden DENSITY tab for
+ * the inline reference strip in the table toolbar.
+ */
+export type DensityPair = {
+  material: string;
+  density: string;
+};
 
 export type { EngineeringTab };

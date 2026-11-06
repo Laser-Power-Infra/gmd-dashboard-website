@@ -4,10 +4,6 @@ import { useState } from 'react';
 import type { ReactNode } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-// Temporarily disabled: the Get Quote button is hidden from the header for now.
-// Restore the import (and the `openQuote` binding in the component body) along
-// with the two commented buttons below to bring the feature back.
-// import { useQuote } from './QuoteProvider';
 
 function activePage(pathname: string): string {
   if (pathname === '/' || pathname === '') return 'home';
@@ -23,8 +19,6 @@ export default function Header({
   desktopAdminSlot?: ReactNode;
   mobileAdminSlot?: ReactNode;
 }) {
-  // Temporarily disabled: see the commented import above.
-  // const { openQuote } = useQuote();
   const pathname = usePathname();
   const currentPage = activePage(pathname);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -59,17 +53,6 @@ export default function Header({
             <a href="/Quality_Manual.pdf" target="_blank" rel="noopener noreferrer" style={{ backgroundColor: '#fb923c', color: '#fff', padding: '4px 12px', borderRadius: '4px', fontWeight: 'bold', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.85rem' }}>
               <i className="fas fa-download"></i> Download QA
             </a>
-            <div className="social-links">
-              <a href="https://twitter.com/sitepad" target="_blank" rel="noreferrer" aria-label="Twitter">
-                <i className="fab fa-twitter"></i>
-              </a>
-              <a href="https://facebook.com/sitepad" target="_blank" rel="noreferrer" aria-label="Facebook">
-                <i className="fab fa-facebook-f"></i>
-              </a>
-              <a href="https://linkedin.com/sitepad" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-                <i className="fab fa-linkedin-in"></i>
-              </a>
-            </div>
           </div>
         </div>
       </div>
@@ -78,7 +61,7 @@ export default function Header({
       <div className="main-nav-bar">
         <div className="container nav-container">
           <Link href="/" className="site-logo" onClick={handleLinkClick}>
-            <img src="/uploads/2025/04/header-final-logo.png" alt="GM Dalui & Sons Logo" />
+            <img src="/uploads/2025/04/header-final-logo.webp" alt="GM Dalui & Sons Logo" />
           </Link>
 
           {/* Desktop Navigation Links */}
@@ -185,15 +168,6 @@ export default function Header({
                         Development
                       </Link>
                     </li>
-                    <li>
-                      <Link
-                        href="/engineering-data"
-                        onClick={handleLinkClick}
-                        className={currentPage === 'engineering-data' ? 'active' : ''}
-                      >
-                        Engineering Data
-                      </Link>
-                    </li>
                   </ul>
                 </div>
               </li>
@@ -249,6 +223,15 @@ export default function Header({
                         Development
                       </Link>
                     </li>
+                    <li>
+                      <Link
+                        href="/engineering-data"
+                        onClick={handleLinkClick}
+                        className={currentPage === 'engineering-data' ? 'active' : ''}
+                      >
+                        Engineering Data
+                      </Link>
+                    </li>
                   </ul>
                 </div>
               </li>
@@ -273,14 +256,9 @@ export default function Header({
             </ul>
           </nav>
 
-          {/* Get Quote button and Hamburger Menu Toggler */}
+          {/* Hamburger Menu Toggler */}
           <div className="nav-actions">
             {desktopAdminSlot}
-{/* Temporarily disabled: Get Quote button.
-          <button className="btn-quote" onClick={() => { closeMobileMenu(); openQuote(); }}>
-            <span className="btn-quote-inner">Get Quote</span>
-          </button>
-          */}
             <button className="hamburger-menu" onClick={toggleMobileMenu} aria-label="Toggle navigation">
               <i className={isMobileMenuOpen ? 'fas fa-times' : 'fas fa-bars'}></i>
             </button>
@@ -331,13 +309,6 @@ export default function Header({
             <li><Link href="/#footer" onClick={handleLinkClick}>Contact</Link></li>
             <li><Link href="/cost" onClick={handleLinkClick}>Cost</Link></li>
             {mobileAdminSlot}
-            {/* Temporarily disabled: mobile Get Quote button.
-            <li className="mobile-action-li">
-              <button className="btn-mobile-quote" onClick={() => { closeMobileMenu(); openQuote(); }}>
-                Get Quote
-              </button>
-            </li>
-            */}
           </ul>
         </nav>
       </div>

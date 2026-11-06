@@ -11,12 +11,13 @@ export default function OtherProductsPage() {
       {/* Grid Section */}
       <section className="other-products-grid-section">
         <div className="container">
+          <h1 className="types-section-title">Valve Accessories &amp; Pipeline Products</h1>
           <p className="results-count">Showing {otherProducts.length} industrial products</p>
           <div className="other-products-grid">
             {otherProducts.map((p) => (
               <div className="other-product-card" key={p.id}>
                 <div className="card-image-wrapper">
-                  <img src={p.image} alt={p.name} className="card-product-img" />
+                  <img src={p.image} alt={p.name} className="card-product-img" loading="lazy" />
                 </div>
                 <div className="card-content-wrapper">
                   <span className="card-category-badge">Piping & Controls</span>

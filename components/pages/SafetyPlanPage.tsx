@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useEffect } from 'react';
 
 export default function SafetyPlanPage() {
@@ -75,7 +76,13 @@ export default function SafetyPlanPage() {
             </div>
           </div>
           <div className="safety-image hidden-slide-right">
-            <img src="/uploads/2025/03/aboutus01-600x480.jpg" alt="Safety and Health" />
+            <Image
+              src="/uploads/2025/03/aboutus01-600x480.webp"
+              alt="Safety officer briefing plant personnel on site health and safety rules"
+              width={600}
+              height={480}
+              sizes="(max-width: 992px) 100vw, 50vw"
+            />
           </div>
         </div>
       </section>
@@ -121,7 +128,13 @@ export default function SafetyPlanPage() {
             </div>
           </div>
           <div className="safety-image hidden-slide-left">
-            <img src="/uploads/2025/03/blog01-600x400.jpg" alt="Emergency Preparedness" />
+            <Image
+              src="/uploads/2025/03/blog01-600x400.webp"
+              alt="Emergency response team running a drill at an industrial site"
+              width={600}
+              height={400}
+              sizes="(max-width: 992px) 100vw, 50vw"
+            />
           </div>
         </div>
       </section>
@@ -145,7 +158,13 @@ export default function SafetyPlanPage() {
             </div>
           </div>
           <div className="safety-image hidden-slide-right">
-            <img src="/uploads/2025/03/blog02-1024x576.jpg" alt="Quality Assurance" />
+            <Image
+              src="/uploads/2025/03/blog02-1024x576.webp"
+              alt="Inspector checking a finished valve against quality assurance documentation"
+              width={1024}
+              height={576}
+              sizes="(max-width: 992px) 100vw, 50vw"
+            />
           </div>
         </div>
       </section>
