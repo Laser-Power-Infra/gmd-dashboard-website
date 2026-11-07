@@ -3,30 +3,24 @@ import path from 'path';
 import { z } from 'zod';
 
 import { cleanItemName, isExcludedItem, stockKey, type MasterRow } from '@/app/purchase/catalog';
-import { recordEnquiry } from '@/lib/enquiryStore';
+import { getCurrentUser } from '@/lib/auth/session';
+import { sendEnquiry } from '@/lib/notify';
+import { prisma } from '@/lib/prisma';
 
 /**
  * POST /api/purchase-enquiry
  *
- * Receives a stock enquiry from /purchase: buyer contact details plus the item
- * list they built. Buyer fields are validated with zod, and the item lines are
- * re-resolved against `public/purchaseItems.json` on the server, so the emailed
- * description/category/stock figure is ours and not whatever the browser sent.
+ * Receives the item list a signed-in customer built on /purchase. The item
+ * lines are re-resolved against `public/purchaseItems.json` on the server, so
+ * the saved description/category/stock figure is ours and not whatever the
+ * browser sent. Buyer identity comes from the account, not the form.
  *
- * The enquiry is saved through lib/enquiryStore.ts and only then emailed, so a
- * server with no ENQUIRY_* credentials still keeps every enquiry.
+ * The list is saved as a CostRequest (same table as /cost), so the admin can
+ * quote it on /admin/cost-requests and the customer can pay on /cost. The row
+ * is the record; the email is best-effort on top.
  */
 
 const enquirySchema = z.object({
-  name: z.string().trim().min(2, 'Name is required').max(100),
-  company: z.string().trim().max(150).optional().default(''),
-  email: z.string().trim().email('Enter a valid email address').max(254),
-  phone: z
-    .string()
-    .trim()
-    .min(6, 'Enter a valid phone number')
-    .max(20)
-    .regex(/^[0-9+\-()\s]+$/, 'Enter a valid phone number'),
   message: z.string().trim().max(2000).optional().default(''),
   items: z
     .array(
@@ -38,7 +32,7 @@ const enquirySchema = z.object({
       })
     )
     .min(1, 'Add at least one item to your list')
-    .max(100, 'Please split enquiries of more than 100 items'),
+    .max(50, 'Please split requests of more than 50 items'),
 });
 
 type StockEntry = { name: string; category: string; unit: string; inStock: number };
@@ -67,6 +61,11 @@ async function loadStock(): Promise<Map<string, StockEntry>> {
 }
 
 export async function POST(request: Request) {
+  const session = await getCurrentUser();
+  if (!session) {
+    return Response.json({ ok: false, error: 'Please sign in to submit a request.' }, { status: 401 });
+  }
+
   let body: unknown;
   try {
     body = await request.json();
@@ -111,52 +110,54 @@ export async function POST(request: Request) {
     );
   }
 
-  const { name, company, email, phone, message } = parsed.data;
-  const text = [
-    'New stock enquiry from the /purchase catalogue.',
-    '',
-    `Name:    ${name}`,
-    `Company: ${company || '-'}`,
-    `Email:   ${email}`,
-    `Phone:   ${phone}`,
-    '',
-    'Message:',
-    message || '-',
-    '',
-    `Items (${lines.length}):`,
-    ...lines.map(
-      (l) =>
-        `  ${l.itemCode}  ${l.itemName}  [${l.category}]  qty ${l.quantity} ${l.unit}  ` +
-        `(in stock: ${l.inStock})${l.remarks ? `  remarks: ${l.remarks}` : ''}`
-    ),
-    '',
-    `Received: ${new Date().toISOString()}`,
-  ].join('\n');
-
-  const { saved, sent } = await recordEnquiry({
-    kind: 'purchase',
-    name,
-    company,
-    email,
-    phone,
-    message,
-    subject: `Stock enquiry: ${lines.length} item(s) - ${name}`,
-    details: text,
+  const user = await prisma.user.findUnique({
+    where: { id: session.id },
+    select: { name: true, email: true, company: true, gstNumber: true, contactNumber: true },
   });
+  if (!user) {
+    return Response.json({ ok: false, error: 'Please sign in to submit a request.' }, { status: 401 });
+  }
 
-  // Only a lost enquiry is an error to the customer: a saved row is enough.
-  if (!saved && !sent.ok) {
+  const name = user.name ?? user.email;
+  const company = user.company ?? '';
+  try {
+    await prisma.costRequest.create({
+      data: { name, company, email: user.email, gst: user.gstNumber ?? '', items: lines, userId: session.id },
+    });
+  } catch (err) {
+    console.error('Failed to save purchase request:', err);
     return Response.json(
-      {
-        ok: false,
-        error:
-          sent.reason === 'not-configured'
-            ? 'Enquiries cannot be sent from this server yet. Please contact us directly so your request is not lost.'
-            : 'We could not send your enquiry just now. Please try again, or contact us directly.',
-      },
-      { status: 503 }
+      { ok: false, error: 'We could not save your request just now. Please try again.' },
+      { status: 500 }
     );
   }
+
+  const { message } = parsed.data;
+  // Best-effort notification; the saved row is the record and the customer sees it on /cost.
+  await sendEnquiry(
+    `Stock request: ${lines.length} item(s) - ${company || name}`,
+    [
+      'New stock request from the /purchase catalogue. Quote it on /admin/cost-requests.',
+      '',
+      `Name:    ${name}`,
+      `Company: ${company || '-'}`,
+      `Email:   ${user.email}`,
+      `Phone:   ${user.contactNumber ?? '-'}`,
+      `GSTIN:   ${user.gstNumber ?? '-'}`,
+      '',
+      'Message:',
+      message || '-',
+      '',
+      `Items (${lines.length}):`,
+      ...lines.map(
+        (l) =>
+          `  ${l.itemCode}  ${l.itemName}  [${l.category}]  qty ${l.quantity} ${l.unit}  ` +
+          `(in stock: ${l.inStock})${l.remarks ? `  remarks: ${l.remarks}` : ''}`
+      ),
+      '',
+      `Received: ${new Date().toISOString()}`,
+    ].join('\n')
+  );
 
   return Response.json({ ok: true, items: lines.length });
 }

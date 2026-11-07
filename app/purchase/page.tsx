@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 import type { Metadata } from 'next';
 import Purchase from '@/components/pages/Purchase';
 import AuthNavSlot from '@/components/layout/AuthNavSlot';
+import { requireAuth } from '@/lib/auth/require-auth';
 
 export const metadata: Metadata = {
   title: 'Request to Purchase Valves',
@@ -11,14 +12,16 @@ export const metadata: Metadata = {
 };
 
 /**
- * /purchase — catalog + purchase request flow.
+ * /purchase — catalog + purchase request flow. Sign-in required: a submitted
+ * list becomes a CostRequest the admin quotes and the customer pays on /cost.
  *
  * The Sign In / Sign Out control is rendered here (inside the purchase hero)
  * rather than in the site header. Purchase is a client component, so the
  * server-rendered AuthNavSlot is passed in as a slot prop, the same pattern the
  * header previously used.
  */
-export default function Page() {
+export default async function Page() {
+  await requireAuth('/purchase');
   return (
     <Purchase
       authSlot={

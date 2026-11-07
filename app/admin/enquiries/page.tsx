@@ -39,7 +39,7 @@ export default async function EnquiriesPage() {
         <div>
           <h1 className="text-2xl font-bold text-slate-800">Enquiries</h1>
           <p className="text-sm text-slate-500">
-            Quote, valve and purchase submissions from the website
+            Quote and valve submissions from the website
           </p>
         </div>
         <div className="flex items-center gap-2">

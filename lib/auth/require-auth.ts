@@ -17,10 +17,10 @@ import type { Role } from '@/lib/auth/schemas';
  *   const user = await requireDeveloper();  // DEVELOPER only
  */
 
-/** Any signed-in user (e.g. the /cost page). */
-export async function requireAuth() {
+/** Any signed-in user (e.g. the /cost page). `next` is where login returns to. */
+export async function requireAuth(next = '/cost') {
   const user = await getCurrentUser();
-  if (!user) redirect('/login?next=/cost');
+  if (!user) redirect(`/login?next=${next}`);
   return user;
 }
 

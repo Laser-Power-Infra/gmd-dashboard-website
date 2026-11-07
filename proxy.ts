@@ -3,7 +3,7 @@ import type { NextRequest } from 'next/server';
 import { getToken } from 'next-auth/jwt';
 
 /**
- * First-line gate: anonymous requests to /admin/* and /cost are redirected to
+ * First-line gate: anonymous requests to /admin/*, /cost and /purchase are redirected to
  * /login before any page renders. Role checks happen in the layouts
  * (requireAdmin / requireAuth), which remain the real security authority.
  */
@@ -17,5 +17,5 @@ export async function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/admin/:path*', '/cost'],
+  matcher: ['/admin/:path*', '/cost', '/purchase'],
 };
