@@ -81,7 +81,8 @@ model CostRequest {
   company   String
   email     String
   gst       String
-  /// [{ valveType, size, pressure, material, endConnection, quantity, remarks }] - see lib/schemas/cost.ts
+  /// /cost: [{ valveType, size, pressure, material, endConnection, quantity, remarks }]
+  /// /purchase: [{ itemCode, itemName, category, unit, inStock, quantity, remarks }] - see lib/schemas/cost.ts
   items     Json     @default("[]")
   /// NEW | CONTACTED | QUOTED | PAID | CLOSED
   status    String   @default("NEW")

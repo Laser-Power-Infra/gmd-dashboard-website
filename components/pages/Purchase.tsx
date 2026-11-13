@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import type { FormEvent, PointerEvent, ReactNode } from 'react';
+import Link from 'next/link';
 
 import DebouncedSearchInput from '@/components/technical/DebouncedSearchInput';
 import { buildStock, type MasterRow, type StockItem } from '@/app/purchase/catalog';
@@ -18,16 +19,6 @@ interface CartItem {
   quantity: string;
   remarks: string;
 }
-
-interface BuyerDetails {
-  name: string;
-  company: string;
-  email: string;
-  phone: string;
-  message: string;
-}
-
-const EMPTY_BUYER: BuyerDetails = { name: '', company: '', email: '', phone: '', message: '' };
 
 const ENQUIRY_EMAIL = 'info@gmdalui.co.in';
 const CART_STORAGE_KEY = 'gmd-enquiry-list';
@@ -186,25 +177,6 @@ function useCardTilt() {
 }
 
 /** Plain-text enquiry, used for the "email it yourself" fallback link. */
-function enquiryText(buyer: BuyerDetails, items: CartItem[]): string {
-  const lines = items.map(
-    (i, n) =>
-      `${n + 1}. ${i.name} [${i.itemCode}] - qty ${clampQty(i.quantity)} ${i.unit}` +
-      (i.remarks ? ` - ${i.remarks}` : '')
-  );
-  return [
-    `Name: ${buyer.name}`,
-    `Company: ${buyer.company || '-'}`,
-    `Email: ${buyer.email}`,
-    `Phone: ${buyer.phone}`,
-    '',
-    'Items:',
-    ...lines,
-    '',
-    buyer.message ? `Notes: ${buyer.message}` : '',
-  ].join('\n');
-}
-
 export default function Purchase({ authSlot }: { authSlot?: ReactNode }) {
   const [stock, setStock] = useState<StockItem[]>([]);
   const [loadError, setLoadError] = useState(false);
@@ -218,11 +190,9 @@ export default function Purchase({ authSlot }: { authSlot?: ReactNode }) {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [cartStep, setCartStep] = useState<'list' | 'form' | 'sent'>('list');
-  const [buyer, setBuyer] = useState<BuyerDetails>(EMPTY_BUYER);
-  const [formErrors, setFormErrors] = useState<Partial<Record<keyof BuyerDetails, string>>>({});
+  const [notes, setNotes] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
-  const [sentSnapshot, setSentSnapshot] = useState('');
   const [fabPulse, setFabPulse] = useState(0);
   const tilt = useCardTilt();
 
@@ -378,31 +348,16 @@ export default function Purchase({ authSlot }: { authSlot?: ReactNode }) {
     setCartItems((prev) => prev.map((item, i) => (i === index ? { ...item, [field]: value } : item)));
   };
 
-  const handleBuyerChange = (field: keyof BuyerDetails, value: string) => {
-    setBuyer((prev) => ({ ...prev, [field]: value }));
-    setFormErrors((prev) => (prev[field] ? { ...prev, [field]: undefined } : prev));
-  };
-
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setSubmitError(null);
-
-    const errors: Partial<Record<keyof BuyerDetails, string>> = {};
-    if (buyer.name.trim().length < 2) errors.name = 'Full name is required';
-    if (!/\S+@\S+\.\S+/.test(buyer.email.trim())) errors.email = 'Enter a valid email address';
-    if (buyer.phone.trim().length < 6) errors.phone = 'Enter a valid phone number';
-    if (Object.keys(errors).length > 0) {
-      setFormErrors(errors);
-      return;
-    }
-
     setSubmitting(true);
     try {
       const res = await fetch('/api/purchase-enquiry', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          ...buyer,
+          message: notes,
           items: cartItems.map((i) => ({
             itemCode: i.itemCode,
             itemName: i.name,
@@ -416,10 +371,9 @@ export default function Purchase({ authSlot }: { authSlot?: ReactNode }) {
         const fieldError = data.errors && Object.values(data.errors).flat()[0];
         throw new Error(fieldError || data.error || 'Could not send your enquiry.');
       }
-      setSentSnapshot(enquiryText(buyer, cartItems));
       setCartStep('sent');
       setCartItems([]);
-      setBuyer(EMPTY_BUYER);
+      setNotes('');
     } catch (err) {
       setSubmitError(err instanceof Error ? err.message : 'Could not send your enquiry.');
     } finally {
@@ -694,7 +648,7 @@ export default function Purchase({ authSlot }: { authSlot?: ReactNode }) {
                 )}
                 <div>
                   <h2 className="cart-drawer-title">
-                    {cartStep === 'sent' ? 'Enquiry Sent' : cartStep === 'form' ? 'Your Details' : 'Your Enquiry List'}
+                    {cartStep === 'sent' ? 'Request Sent' : cartStep === 'form' ? 'Confirm Request' : 'Your Enquiry List'}
                   </h2>
                   <span className="cart-drawer-sub">
                     {cartStep === 'sent'
@@ -715,19 +669,13 @@ export default function Purchase({ authSlot }: { authSlot?: ReactNode }) {
               {cartStep === 'sent' ? (
                 <div className="cart-drawer-empty">
                   <i className="fas fa-circle-check" aria-hidden="true"></i>
-                  <p>Thank you &mdash; your enquiry has been received.</p>
+                  <p>Thank you &mdash; your request has been received.</p>
                   <span>
-                    Our sales team will come back with a quotation. You can also send the same list straight from your
-                    mail app:
+                    Our sales team will quote it. Once quoted, you can view and pay for it under My Requests.
                   </span>
-                  <a
-                    className="btn-load-more"
-                    href={`mailto:${ENQUIRY_EMAIL}?subject=${encodeURIComponent(
-                      'Stock enquiry from gmdalui.co.in'
-                    )}&body=${encodeURIComponent(sentSnapshot)}`}
-                  >
-                    <i className="fas fa-envelope" aria-hidden="true"></i> Email a copy to {ENQUIRY_EMAIL}
-                  </a>
+                  <Link className="btn-load-more" href="/cost">
+                    <i className="fas fa-list-check" aria-hidden="true"></i> Go to My Requests
+                  </Link>
                 </div>
               ) : cartItems.length === 0 ? (
                 <div className="cart-drawer-empty">
@@ -843,69 +791,15 @@ export default function Purchase({ authSlot }: { authSlot?: ReactNode }) {
                   </ul>
 
                   <div className="enquiry-fields">
-                    <div className="purchase-form-group">
-                      <label htmlFor="enq-name">
-                        Full Name <span className="req">*</span>
-                      </label>
-                      <input
-                        id="enq-name"
-                        className={`purchase-input ${formErrors.name ? 'input-error' : ''}`}
-                        value={buyer.name}
-                        onChange={(e) => handleBuyerChange('name', e.target.value)}
-                        autoComplete="name"
-                      />
-                      {formErrors.name && <span className="error-text">{formErrors.name}</span>}
-                    </div>
-
-                    <div className="purchase-form-group">
-                      <label htmlFor="enq-company">Company</label>
-                      <input
-                        id="enq-company"
-                        className="purchase-input"
-                        value={buyer.company}
-                        onChange={(e) => handleBuyerChange('company', e.target.value)}
-                        autoComplete="organization"
-                      />
-                    </div>
-
-                    <div className="purchase-form-group">
-                      <label htmlFor="enq-email">
-                        Email <span className="req">*</span>
-                      </label>
-                      <input
-                        id="enq-email"
-                        type="email"
-                        className={`purchase-input ${formErrors.email ? 'input-error' : ''}`}
-                        value={buyer.email}
-                        onChange={(e) => handleBuyerChange('email', e.target.value)}
-                        autoComplete="email"
-                      />
-                      {formErrors.email && <span className="error-text">{formErrors.email}</span>}
-                    </div>
-
-                    <div className="purchase-form-group">
-                      <label htmlFor="enq-phone">
-                        Phone <span className="req">*</span>
-                      </label>
-                      <input
-                        id="enq-phone"
-                        type="tel"
-                        className={`purchase-input ${formErrors.phone ? 'input-error' : ''}`}
-                        value={buyer.phone}
-                        onChange={(e) => handleBuyerChange('phone', e.target.value)}
-                        autoComplete="tel"
-                      />
-                      {formErrors.phone && <span className="error-text">{formErrors.phone}</span>}
-                    </div>
-
+                    {/* Name, company, email, GST and phone come from the signed-in account. */}
                     <div className="purchase-form-group full-width-field">
                       <label htmlFor="enq-message">Requirement notes</label>
                       <textarea
                         id="enq-message"
                         className="purchase-textarea"
                         rows={3}
-                        value={buyer.message}
-                        onChange={(e) => handleBuyerChange('message', e.target.value)}
+                        value={notes}
+                        onChange={(e) => setNotes(e.target.value)}
                         placeholder="Delivery location, required despatch date, inspection or test certificate needs."
                       />
                     </div>
@@ -929,7 +823,7 @@ export default function Purchase({ authSlot }: { authSlot?: ReactNode }) {
                     className="btn-primary cart-footer-btn"
                     disabled={submitting}
                   >
-                    {submitting ? 'Sending…' : 'Send Enquiry'}{' '}
+                    {submitting ? 'Sending…' : 'Submit Request'}{' '}
                     <i className="fas fa-paper-plane" aria-hidden="true"></i>
                   </button>
                 )}

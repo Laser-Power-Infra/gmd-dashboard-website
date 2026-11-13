@@ -21,14 +21,25 @@ export const costItemSchema = z.object({
 
 export type CostItem = z.infer<typeof costItemSchema>;
 
+/** A /purchase catalogue line, saved on a CostRequest by app/api/purchase-enquiry. */
+export type PurchaseLine = {
+  itemCode: string;
+  itemName: string;
+  unit: string;
+  quantity: number;
+  remarks?: string;
+};
+
 /** One line per item for tables; rows saved before items existed hold []. */
 export function costItemLines(items: unknown): string[] {
   if (!Array.isArray(items)) return [];
-  return (items as CostItem[]).map(
-    (i) =>
-      `${i.valveType} · ${i.size} · ${i.pressure} · ${i.material} · ${i.endConnection} · qty ${i.quantity}` +
-      (i.remarks ? ` (${i.remarks})` : '')
-  );
+  return (items as (CostItem | PurchaseLine)[]).map((i) => {
+    const head =
+      'itemCode' in i
+        ? `${i.itemCode} · ${i.itemName} · qty ${i.quantity} ${i.unit}`
+        : `${i.valveType} · ${i.size} · ${i.pressure} · ${i.material} · ${i.endConnection} · qty ${i.quantity}`;
+    return head + (i.remarks ? ` (${i.remarks})` : '');
+  });
 }
 
 // Official GSTIN format: 2-digit state code + 10-char PAN + entity code + "Z" + check digit
