@@ -334,3 +334,13 @@ model LookupOption {
   @@unique([type, value])
   @@index([type, isActive])
 }
+model PurchaseItemPrice {
+  id        String   @id @default(cuid())
+  itemCode  String
+  itemName  String   // cleaned name, as cleanItemName() produces
+  price     Int      // paise, same as CostRequest.quotedAmount
+  updatedAt DateTime @updatedAt
+
+  @@unique([itemCode, itemName])
+  @@map("purchase_item_prices")
+}
