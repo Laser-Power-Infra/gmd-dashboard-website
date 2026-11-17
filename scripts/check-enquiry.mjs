@@ -229,7 +229,8 @@ saveThrows = false;
   const { POST: purchasePOST } = await import(
     pathToFileURL(path.join(root, 'app/api/purchase-enquiry/route.ts')).href
   );
-  const item = JSON.parse(fs.readFileSync(path.join(root, 'public', 'purchaseItems.json'), 'utf8'))[0];
+  // A real PurchaseItemPrice row (the old public/purchaseItems.json is gone).
+  const item = { itemCode: 'RSD120013', itemName: 'SLUICE VALVE 40MM PN-16 METAL TO RUBBER DUCTILE IRON NON-RISING' };
   rows = [];
   const res = await purchasePOST(
     new Request('http://localhost/api/purchase-enquiry', {

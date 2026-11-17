@@ -1,28 +1,14 @@
 /**
- * Display-layer catalogue logic for /purchase.
+ * Display-layer catalogue logic for /purchase. The data lives in PurchaseItemPrice
+ * (see app/purchase/data.ts); this file turns a row's name into card specs and the
+ * URL into a filter.
  *
- * `public/purchaseItems.json` is a raw dump of four columns - code, name,
- * category, unit - with no quantity and no date. Rows repeat, and the repeat
- * count was read as "units held". That reading is NOT established:
- *   - 94 of 125 distinct bolt lines appear exactly once (nobody stocks one bolt);
- *   - occurrences of one item are scattered across the file (index 4 and 1322),
- *     and the novelty curve has no step, so it is not per-location snapshots;
- *   - butterfly-valve DRIVE STUB appears exactly twice for all 10 sizes, which
- *     tracks the two stubs per valve rather than independent stock;
- *   - one itemCode is a leaked Excel "#N/A", so this is a hand-built sheet.
- * `qty` is therefore kept as a row count for grouping only and is not shown to
- * buyers. Nothing here mutates the file - names are cleaned and specs parsed on read.
+ * `metadata.rowCount` is how many times the item repeated in the original stock
+ * sheet. That was never confirmed to be units held, so it is not shown to buyers.
  *
  * Kept free of React and of `@/` aliases so `scripts/check-purchase-catalog.mjs`
  * can import it under plain node.
  */
-
-export interface MasterRow {
-  itemCode: string;
-  itemName: string;
-  category: string;
-  unit: string;
-}
 
 export interface StockItem {
   /** Unique listing key - item code alone is not unique (9 codes carry two different specs). */
@@ -32,7 +18,7 @@ export interface StockItem {
   name: string;
   category: string;
   unit: string;
-  /** Number of source rows that collapsed into this entry. NOT a confirmed stock figure. */
+  /** metadata.rowCount - repeats in the original sheet. NOT a confirmed stock figure. */
   qty: number;
   size: string | null;
   sizeMm: number | null;
@@ -132,156 +118,97 @@ export function parseItemSpecs(itemName: string): ParsedSpecs {
   return { size, sizeMm, pressure, moc, title: title || name, specs };
 }
 
-/* `public/purchase img/` holds photos of complete valves only. A line that is a
-   loose component of a valve must never borrow the photo of the valve it belongs
-   to: a buyer shown an assembled butterfly valve on a bare disc casting can order
-   the wrong part. These five categories hold components exclusively, so they are
-   rejected wholesale. */
-const COMPONENT_CATEGORIES = new Set([
-  'CASTING',
-  'SS SPARES',
-  'BRONZE ITEMS',
-  'RUBBER ITEMS',
-  'BOLTS & NUTS',
-]);
-
-/* SPARES mixes complete valves with components, so it is filtered on the
-   component noun instead. Verified against the whole dump: these fire on 19
-   genuine component lines and on no complete valve. "SPRING" is deliberately
-   absent - "PRESSURE REDUCING VALVE ... SPRING LOADED" is a whole valve.
-   shortcut: BBD is read as a Body/Bonnet/Disc casting set and so gets no photo;
-   if Puja confirms it means a light-duty complete valve, drop BBD from this list. */
-const COMPONENT_NOUN =
-  /\b(BODY|BONNET|DISC|WEDGE|GLAND|COVER|BUSH|SPINDLE|STUB|SEAT RING|SEAL KIT|GASKET|ROD|RETAINER|HEADSTOCK|NOZZLE|NIPPLE|BOLT|NUT|WASHER|SCREW|MOUNTAIN|ENDCAP|FLOAT GUIDE|BBD)\b/;
-
-/** True when the line is a part of a valve rather than a valve. */
-export function isComponentLine(itemName: string, category?: string): boolean {
-  if (category && COMPONENT_CATEGORIES.has(category.toUpperCase())) return true;
-  return COMPONENT_NOUN.test((itemName || '').toUpperCase());
-}
-
-/**
- * Keyword match against `public/purchase img/`. Returns null when the folder
- * has no photo that truthfully shows this line (components, bolts, actuators,
- * gear boxes) so the card can show the "Photo on request" panel instead.
- */
-export function getItemImage(itemName: string, category?: string): string | null {
-  const name = (itemName || '').toUpperCase();
-  if (!name) return null;
-  if (isComponentLine(name, category)) return null;
-
-  // A sluice gate is a penstock gate, not a sluice valve - and it is what
-  // "Sluice Gate Valve.webp" actually depicts.
-  if (name.includes('SLUICE GATE')) return '/purchase img/Sluice Gate Valve.webp';
-
-  if (name.includes('SLUICE VALVE') || name.includes('GATE VALVE')) {
-    if (name.includes('KNIFE GATE')) return '/purchase img/knife gate Valve.webp';
-    if (name.includes('METAL TO METAL') && name.includes('NON-RISING'))
-      return '/purchase img/Metal Seated Sluice Valve (non Rising).webp';
-    if (name.includes('METAL TO METAL')) return '/purchase img/Metal Seated Sluice Valve (Rising Spindle).webp';
-    if (name.includes('NON-RISING')) return '/purchase img/Sluice valve (non rising).webp';
-    if (name.includes('RISING')) return '/purchase img/Sluice valve (Rising Spindle) resilent Seated.webp';
-    // Rising vs non-rising is not stated, and the two look different - no honest pick.
-    return null;
-  }
-
-  if (name.includes('BUTTERFLY VALVE')) {
-    if (name.includes('WAFER TYPE')) return '/purchase img/Wafer Type butterfly valve.webp';
-    if (name.includes('LUG TYPE') && name.includes('METAL TO METAL'))
-      return '/purchase img/Lug type (Metal to Metal ) butterfly valve.webp';
-    if (name.includes('LUG TYPE')) return '/purchase img/Lug type (Metal to Rubber) butterfly valve.webp';
-    if (name.includes('METAL TO METAL')) return '/purchase img/Double Flange Metal Seated Butterfly Valve.webp';
-    return '/purchase img/Double Flange Resilent Seated Butterfly Valve.webp';
-  }
-
-  if (name.includes('BALL VALVE')) {
-    if (name.includes('2-PIECE')) return '/purchase img/2 piece ball valve.webp';
-    if (name.includes('SCREWED')) return '/purchase img/screw ball valve.webp';
-    return '/purchase img/3 piece ball valve.webp';
-  }
-
-  if (name.includes('DPCV')) return '/purchase img/Dual Plate Check Valve (API594).webp';
-  if (name.includes('CHECK VALVE') || name.includes('FOOT VALVE'))
-    return '/purchase img/Non return check valve (IS5312, Part-1.webp';
-  // "CONTROL-DIAPHRAGM TYPE" is the actuation of a PRV or solenoid valve, not a
-  // diaphragm valve - match the product, so those fall through to their own photo.
-  if (name.includes('DIAPHRAGM VALVE')) return '/purchase img/Diaphragm Valve.webp';
-  if (name.includes('DISMANTLING')) return '/purchase img/Dismantling joint.webp';
-  if (name.includes('FLOAT')) return '/purchase img/Float Valve.webp';
-  if (name.includes('GLOBE')) return '/purchase img/Globe Valve.webp';
-  // TPAV = tamper-proof air valve, same family as the kinetic air valve photo.
-  if (name.includes('AIR VALVE') || name.includes('KINETIC') || name.startsWith('TPAV'))
-    return '/purchase img/Kinetic Air Valve (DK type).webp';
-  if (name.includes('FLANGE')) return '/purchase img/MS companion flange.webp';
-  // The one "PRESSURE REDUCING VALVE ... SPRING LOADED ... SAFETY" line contradicts
-  // itself; SPRING LOADED + SAFETY match this photo and rule out the pilot PRV one.
-  if (name.includes('RELIEF') || (name.includes('SAFETY') && name.includes('SPRING LOADED')))
-    return '/purchase img/Pressure relief valve (Spring loaded).webp';
-  if (name.includes('NEEDLE')) return '/purchase img/needle valve.webp';
-  if (name.includes('REDUCING') || name.includes('PRV')) return '/purchase img/pressure reducing valve.webp';
-  if (name.includes('SOLENOID')) return '/purchase img/solenoid Valve.webp';
-
-  return null;
-}
-
-/* Consumables / tools / stationery lines that are not part of the sale catalogue.
-   Matched as a case-insensitive prefix so variants such as
-   "TOOLS & FIXTURES 6NM AIR WRENCH..." are covered too. */
-const EXCLUDED_ITEM_PREFIXES = [
-  'CONSUMABLES',
-  'OIL & LUBE',
-  'PRINTING & STATIONERY',
-  'WASTAGE BUBBLE WRAP PLASTIC',
-  'TOOLS & FIXTURES',
-];
-
-export function isExcludedItem(itemName: string): boolean {
-  const name = (itemName || '').toUpperCase();
-  return EXCLUDED_ITEM_PREFIXES.some((prefix) => name.startsWith(prefix));
-}
-
 /** Listing key. Code alone is not unique, so the cleaned name joins it. */
 export function stockKey(itemCode: string, cleanedName: string): string {
   return `${itemCode}|${cleanedName.toUpperCase()}`;
 }
 
+/** The PurchaseItemPrice columns a card needs. `itemName` is already cleaned. */
+export interface CatalogRow {
+  itemCode: string;
+  itemName: string;
+  imageUrl: string | null;
+  metadata: unknown;
+}
+
+/** Specs stored in metadata so the database can filter on them (written by the purchase-item seed). */
+export function filterableSpecs(itemName: string) {
+  const p = parseItemSpecs(itemName);
+  return { type: itemType(itemName), size: p.size, sizeMm: p.sizeMm, pressure: p.pressure, moc: p.moc };
+}
+
+/** One PurchaseItemPrice row -> card data. Specs are re-parsed from the name, the same way the seed stored them. */
+export function toStockItem(row: CatalogRow): StockItem {
+  const meta = (row.metadata ?? {}) as { category?: string; unit?: string; rowCount?: number };
+  const parsed = parseItemSpecs(row.itemName);
+  return {
+    key: stockKey(row.itemCode, row.itemName),
+    itemCode: row.itemCode,
+    name: row.itemName,
+    category: meta.category ?? '',
+    unit: meta.unit ?? '',
+    qty: meta.rowCount ?? 1,
+    size: parsed.size,
+    sizeMm: parsed.sizeMm,
+    pressure: parsed.pressure,
+    moc: parsed.moc,
+    type: itemType(row.itemName),
+    title: parsed.title,
+    specs: parsed.specs,
+    image: row.imageUrl,
+  };
+}
+
+export interface CatalogFilters {
+  q: string;
+  type: string;
+  size: string;
+  pn: string;
+  moc: string;
+  page: number;
+}
+
+/** URL search params -> filters. Trust boundary: anything a visitor can type into the address bar. */
+export function parseCatalogParams(sp: Record<string, string | string[] | undefined>): CatalogFilters {
+  const str = (k: string) => {
+    const v = sp[k];
+    return (Array.isArray(v) ? v[0] : v ?? '').trim().slice(0, 100);
+  };
+  const page = Math.floor(Number(str('page')));
+  return {
+    q: str('q'),
+    type: str('type'),
+    size: str('size'),
+    pn: str('pn'),
+    moc: str('moc'),
+    page: Number.isFinite(page) && page >= 1 ? page : 1,
+  };
+}
+
 /**
- * Collapses repeated rows into one entry per item, carrying the row count as
- * `qty`. Insertion order is preserved so the listing matches the source dump.
+ * Filters -> Prisma `where` for PurchaseItemPrice. type/size/pn/moc match the
+ * values filterableSpecs() stored in metadata; q searches name and code.
+ * Plain object (no Prisma import) so the check script can assert on it.
  */
-export function buildStock(rows: MasterRow[]): StockItem[] {
-  const byKey = new Map<string, StockItem>();
-
-  for (const row of rows) {
-    if (isExcludedItem(row.itemName)) continue;
-    const name = cleanItemName(row.itemName);
-    if (!name) continue;
-
-    const key = stockKey(row.itemCode, name);
-    const existing = byKey.get(key);
-    if (existing) {
-      existing.qty += 1;
-      continue;
-    }
-
-    const parsed = parseItemSpecs(name);
-    byKey.set(key, {
-      key,
-      itemCode: row.itemCode,
-      name,
-      category: row.category,
-      unit: row.unit,
-      qty: 1,
-      size: parsed.size,
-      sizeMm: parsed.sizeMm,
-      pressure: parsed.pressure,
-      moc: parsed.moc,
-      type: itemType(name),
-      title: parsed.title,
-      specs: parsed.specs,
-      image: getItemImage(name, row.category),
+export function catalogWhere(f: Omit<CatalogFilters, 'page'>) {
+  const and: object[] = [];
+  if (f.q)
+    and.push({
+      OR: [
+        { itemName: { contains: f.q, mode: 'insensitive' } },
+        { itemCode: { contains: f.q, mode: 'insensitive' } },
+      ],
     });
-  }
+  const json: [keyof typeof f, string][] = [['type', 'type'], ['size', 'size'], ['pn', 'pressure'], ['moc', 'moc']];
+  for (const [param, key] of json) if (f[param]) and.push({ metadata: { path: [key], equals: f[param] } });
+  return and.length ? { AND: and } : {};
+}
 
-  return [...byKey.values()];
+/** Query string for a filter state, dropping empty values and page 1. */
+export function catalogQuery(f: Partial<CatalogFilters>): string {
+  const sp = new URLSearchParams();
+  for (const k of ['q', 'type', 'size', 'pn', 'moc'] as const) if (f[k]) sp.set(k, f[k]);
+  if (f.page && f.page > 1) sp.set('page', String(f.page));
+  const s = sp.toString();
+  return s ? `?${s}` : '';
 }

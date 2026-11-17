@@ -1,8 +1,6 @@
-import fs from 'fs/promises';
-import path from 'path';
 import { z } from 'zod';
 
-import { cleanItemName, isExcludedItem, stockKey, type MasterRow } from '@/app/purchase/catalog';
+import { cleanItemName, stockKey } from '@/app/purchase/catalog';
 import { getCurrentUser } from '@/lib/auth/session';
 import { sendEnquiry } from '@/lib/notify';
 import { prisma } from '@/lib/prisma';
@@ -11,7 +9,7 @@ import { prisma } from '@/lib/prisma';
  * POST /api/purchase-enquiry
  *
  * Receives the item list a signed-in customer built on /purchase. The item
- * lines are re-resolved against `public/purchaseItems.json` on the server, so
+ * lines are re-resolved against the PurchaseItemPrice catalogue on the server, so
  * the saved description/category/stock figure is ours and not whatever the
  * browser sent. Buyer identity comes from the account, not the form.
  *
@@ -37,27 +35,24 @@ const enquirySchema = z.object({
 
 type StockEntry = { name: string; category: string; unit: string; inStock: number };
 
-let stockCache: Map<string, StockEntry> | null = null;
-
-async function loadStock(): Promise<Map<string, StockEntry>> {
-  if (stockCache) return stockCache;
-
-  const file = await fs.readFile(path.join(process.cwd(), 'public', 'purchaseItems.json'), 'utf8');
-  const rows: MasterRow[] = JSON.parse(file);
-
-  const map = new Map<string, StockEntry>();
-  for (const row of rows) {
-    if (isExcludedItem(row.itemName)) continue;
-    const name = cleanItemName(row.itemName);
-    if (!name) continue;
-    const key = stockKey(row.itemCode, name);
-    const existing = map.get(key);
-    if (existing) existing.inStock += 1;
-    else map.set(key, { name, category: row.category, unit: row.unit, inStock: 1 });
-  }
-
-  stockCache = map;
-  return map;
+/** Looks up only the submitted lines in PurchaseItemPrice (max 50), keyed by stockKey. */
+async function loadStock(lines: { itemCode: string; itemName: string }[]): Promise<Map<string, StockEntry>> {
+  const rows = await prisma.purchaseItemPrice.findMany({
+    where: {
+      OR: lines.map((l) => ({
+        itemCode: l.itemCode,
+        itemName: { equals: cleanItemName(l.itemName), mode: 'insensitive' as const },
+      })),
+    },
+    select: { itemCode: true, itemName: true, metadata: true },
+  });
+  return new Map(
+    rows.map((r) => {
+      const m = r.metadata as { category?: string; unit?: string; rowCount?: number };
+      const entry = { name: r.itemName, category: m.category ?? '', unit: m.unit ?? '', inStock: m.rowCount ?? 1 };
+      return [stockKey(r.itemCode, r.itemName), entry];
+    })
+  );
 }
 
 export async function POST(request: Request) {
@@ -81,7 +76,7 @@ export async function POST(request: Request) {
     );
   }
 
-  const stock = await loadStock();
+  const stock = await loadStock(parsed.data.items);
 
   // Never trust the client's description or stock figure - look each line up.
   const lines = [];

@@ -339,7 +339,7 @@ model PurchaseItemPrice {
   id        String   @id @default(cuid())
   itemCode  String
   itemName  String   // cleaned name, as cleanItemName() produces
-  price     Int      // paise, same as CostRequest.quotedAmount
+  price     Decimal  @db.Decimal(12, 2) // rupees (not paise, unlike CostRequest.quotedAmount)
   imageUrl  String?  // full CDN URL of the item photo; null = fall back to getItemImage()
   metadata  Json     @default("{}") // free-form extra details (HSN, weight, description, ...)
   updatedAt DateTime @updatedAt

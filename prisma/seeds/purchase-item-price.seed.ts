@@ -1,16 +1,28 @@
-// PurchaseItemPrice seed: one row per listed /purchase item (itemCode + cleaned name), price 0 = not priced yet.
+// PurchaseItemPrice spec backfill: parses each item's name into type/size/pressure/moc and stores them
+// in metadata, so /purchase can filter and paginate in the database. Touches only metadata - never
+// price or imageUrl. Safe to re-run; run it again after adding items.
+// (The original rows came from public/purchaseItems.json, now deleted - see git history.)
 // Run: npx tsx --env-file=.env prisma/seeds/purchase-item-price.seed.ts
-import fs from "node:fs";
-import path from "node:path";
-import { buildStock } from "../../app/purchase/catalog";
+import { filterableSpecs } from "../../app/purchase/catalog";
 import { prisma } from "../../lib/prisma";
 
+const BATCH = 100;
+
 async function main() {
-  const rows = JSON.parse(fs.readFileSync(path.join(__dirname, "../../public/purchaseItems.json"), "utf8"));
-  const data = buildStock(rows).map((i) => ({ itemCode: i.itemCode, itemName: i.name, price: 0 }));
-  // skipDuplicates: a re-run only adds new items, it never resets a price set since.
-  const { count } = await prisma.purchaseItemPrice.createMany({ data, skipDuplicates: true });
-  console.log(`inserted ${count} of ${data.length}; table now holds ${await prisma.purchaseItemPrice.count()}`);
+  const rows = await prisma.purchaseItemPrice.findMany({ select: { id: true, itemName: true, metadata: true } });
+
+  for (let n = 0; n < rows.length; n += BATCH) {
+    await prisma.$transaction(
+      rows.slice(n, n + BATCH).map((r) =>
+        prisma.purchaseItemPrice.update({
+          where: { id: r.id },
+          data: { metadata: { ...(r.metadata as object), ...filterableSpecs(r.itemName) } },
+        })
+      ),
+      { timeout: 60_000 } // 100 updates over Neon's network exceed the 5s default
+    );
+  }
+  console.log(`specs written to ${rows.length} rows`);
   await prisma.$disconnect();
 }
 

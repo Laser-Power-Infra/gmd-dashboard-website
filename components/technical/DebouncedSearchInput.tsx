@@ -14,12 +14,15 @@ export default function DebouncedSearchInput({
   placeholder,
   className,
   type = "text",
+  name,
 }: {
   value: string;
   onCommit: (val: string) => void;
   placeholder?: string;
   className?: string;
   type?: string;
+  /** Form field name, for use inside a plain GET form. */
+  name?: string;
 }) {
   const [local, setLocal] = useState(value);
   const [prevValue, setPrevValue] = useState(value);
@@ -48,6 +51,7 @@ export default function DebouncedSearchInput({
   return (
     <input
       type={type}
+      name={name}
       placeholder={placeholder}
       value={local}
       onChange={(e) => {

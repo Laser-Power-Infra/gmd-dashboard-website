@@ -1,11 +1,12 @@
 'use client';
 
-import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import type { FormEvent, PointerEvent, ReactNode } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 import DebouncedSearchInput from '@/components/technical/DebouncedSearchInput';
-import { buildStock, type MasterRow, type StockItem } from '@/app/purchase/catalog';
+import { catalogQuery, type CatalogFilters, type StockItem } from '@/app/purchase/catalog';
 
 interface CartItem {
   key: string;
@@ -26,8 +27,6 @@ const CART_STORAGE_KEY = 'gmd-enquiry-list';
 /** Whole number >= 1, as a string for the input; blank or junk becomes 1. */
 const clampQty = (value: string | number) => String(Math.max(1, Math.floor(Number(value)) || 1));
 
-const ALL = 'All';
-const PAGE_SIZE = 12;
 
 const TILT_MAX_DEG = 5;
 const TILT_EASE = 0.075;
@@ -177,15 +176,29 @@ function useCardTilt() {
 }
 
 /** Plain-text enquiry, used for the "email it yourself" fallback link. */
-export default function Purchase({ authSlot }: { authSlot?: ReactNode }) {
-  const [stock, setStock] = useState<StockItem[]>([]);
-  const [loadError, setLoadError] = useState(false);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [typeFilter, setTypeFilter] = useState(ALL);
-  const [sizeFilter, setSizeFilter] = useState(ALL);
-  const [pnFilter, setPnFilter] = useState(ALL);
-  const [mocFilter, setMocFilter] = useState(ALL);
-  const [displayCount, setDisplayCount] = useState(PAGE_SIZE);
+interface PurchaseProps {
+  /** The current page of filtered items - filtering and paging happen on the server. */
+  items: StockItem[];
+  total: number;
+  catalogSize: number;
+  options: { types: string[]; sizes: string[]; pns: string[]; mocs: string[] };
+  filters: CatalogFilters;
+  pageCount: number;
+  isSignedIn: boolean;
+  authSlot?: ReactNode;
+}
+
+export default function Purchase({
+  items: displayedItems,
+  total,
+  catalogSize,
+  options,
+  filters,
+  pageCount,
+  isSignedIn,
+  authSlot,
+}: PurchaseProps) {
+  const router = useRouter();
 
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -248,67 +261,18 @@ export default function Purchase({ authSlot }: { authSlot?: ReactNode }) {
     }
   }, [cartItems]);
 
-  // buildStock collapses repeated rows to one entry per item. `qty` counts those
-  // rows; it is not a confirmed stock figure, so it is not shown to buyers.
-  useEffect(() => {
-    fetch('/purchaseItems.json')
-      .then((res) => res.json())
-      .then((data: MasterRow[]) => setStock(buildStock(data)))
-      .catch((err) => {
-        console.error('Error loading stock list:', err);
-        setLoadError(true);
-      });
-  }, []);
+  const searchTerm = filters.q;
+  const activeFilters = [filters.type, filters.size, filters.pn, filters.moc].filter(Boolean).length;
+  const page = filters.page;
 
-  const options = useMemo(() => {
-    const types = new Set<string>();
-    const sizes = new Map<number, string>();
-    const pns = new Set<string>();
-    const mocs = new Set<string>();
-    for (const item of stock) {
-      types.add(item.type);
-      if (item.size && item.sizeMm !== null) sizes.set(item.sizeMm, item.size);
-      if (item.pressure) pns.add(item.pressure);
-      if (item.moc) mocs.add(item.moc);
-    }
-    return {
-      types: [...types].sort(),
-      sizes: [...sizes.entries()].sort((a, b) => a[0] - b[0]).map(([, label]) => label),
-      pns: [...pns].sort(),
-      mocs: [...mocs].sort(),
-    };
-  }, [stock]);
-
-  const filteredItems = useMemo(() => {
-    const term = searchTerm.trim().toLowerCase();
-    return stock.filter((item) => {
-      if (term && !item.name.toLowerCase().includes(term) && !item.itemCode.toLowerCase().includes(term))
-        return false;
-      if (typeFilter !== ALL && item.type !== typeFilter) return false;
-      if (sizeFilter !== ALL && item.size !== sizeFilter) return false;
-      if (pnFilter !== ALL && item.pressure !== pnFilter) return false;
-      if (mocFilter !== ALL && item.moc !== mocFilter) return false;
-      return true;
-    });
-  }, [stock, searchTerm, typeFilter, sizeFilter, pnFilter, mocFilter]);
-
-  const displayedItems = filteredItems.slice(0, displayCount);
-  const hasMore = displayCount < filteredItems.length;
-  const activeFilters = [typeFilter, sizeFilter, pnFilter, mocFilter].filter((f) => f !== ALL).length;
-
-  const commitSearch = useCallback((val: string) => {
-    setSearchTerm(val);
-    setDisplayCount(PAGE_SIZE);
-  }, []);
-
-  const resetFilters = () => {
-    setSearchTerm('');
-    setTypeFilter(ALL);
-    setSizeFilter(ALL);
-    setPnFilter(ALL);
-    setMocFilter(ALL);
-    setDisplayCount(PAGE_SIZE);
-  };
+  // Any filter change goes back to page 1 and lets the server render the new view.
+  const setFilter = useCallback(
+    (key: 'q' | 'type' | 'size' | 'pn' | 'moc', value: string) =>
+      router.push(`/purchase${catalogQuery({ ...filters, [key]: value, page: 1 })}`, { scroll: false }),
+    [router, filters]
+  );
+  const commitSearch = useCallback((val: string) => setFilter('q', val.trim()), [setFilter]);
+  const resetFilters = () => router.push('/purchase', { scroll: false });
 
   const handleAddItem = (item: StockItem, andEnquire = false) => {
     setCartItems((prev) => {
@@ -397,7 +361,18 @@ export default function Purchase({ authSlot }: { authSlot?: ReactNode }) {
       <div className="container">
         {/* Search & Filter Section */}
         <div className="purchase-search-section">
-          <div className="filter-controls-container">
+          {/* GET form: filtering still works with JS off; with JS, setFilter navigates instead. */}
+          <form
+            className="filter-controls-container"
+            method="get"
+            action="/purchase"
+            role="search"
+            onSubmit={(e) => {
+              // Enter in the search box: commit now instead of a full page reload.
+              e.preventDefault();
+              commitSearch(String(new FormData(e.currentTarget).get('q') ?? ''));
+            }}
+          >
             <div className="search-box-container static-search">
               <i className="fas fa-search search-icon" aria-hidden="true"></i>
               <DebouncedSearchInput
@@ -405,6 +380,7 @@ export default function Purchase({ authSlot }: { authSlot?: ReactNode }) {
                 onCommit={commitSearch}
                 placeholder="Search by item code or description (e.g. SLUICE VALVE 40MM)"
                 className="purchase-search-input"
+                name="q"
               />
               {searchTerm && (
                 <button className="clear-search-btn" onClick={() => commitSearch('')} aria-label="Clear search">
@@ -416,14 +392,8 @@ export default function Purchase({ authSlot }: { authSlot?: ReactNode }) {
             <div className="purchase-filter-row">
               <label className="purchase-filter">
                 <span>Type</span>
-                <select
-                  value={typeFilter}
-                  onChange={(e) => {
-                    setTypeFilter(e.target.value);
-                    setDisplayCount(PAGE_SIZE);
-                  }}
-                >
-                  <option value={ALL}>All types</option>
+                <select name="type" value={filters.type} onChange={(e) => setFilter('type', e.target.value)}>
+                  <option value="">All types</option>
                   {options.types.map((t) => (
                     <option key={t} value={t}>
                       {t}
@@ -434,14 +404,8 @@ export default function Purchase({ authSlot }: { authSlot?: ReactNode }) {
 
               <label className="purchase-filter">
                 <span>Size</span>
-                <select
-                  value={sizeFilter}
-                  onChange={(e) => {
-                    setSizeFilter(e.target.value);
-                    setDisplayCount(PAGE_SIZE);
-                  }}
-                >
-                  <option value={ALL}>All sizes</option>
+                <select name="size" value={filters.size} onChange={(e) => setFilter('size', e.target.value)}>
+                  <option value="">All sizes</option>
                   {options.sizes.map((s) => (
                     <option key={s} value={s}>
                       {s}
@@ -452,14 +416,8 @@ export default function Purchase({ authSlot }: { authSlot?: ReactNode }) {
 
               <label className="purchase-filter">
                 <span>Pressure</span>
-                <select
-                  value={pnFilter}
-                  onChange={(e) => {
-                    setPnFilter(e.target.value);
-                    setDisplayCount(PAGE_SIZE);
-                  }}
-                >
-                  <option value={ALL}>All ratings</option>
+                <select name="pn" value={filters.pn} onChange={(e) => setFilter('pn', e.target.value)}>
+                  <option value="">All ratings</option>
                   {options.pns.map((p) => (
                     <option key={p} value={p}>
                       {p}
@@ -470,14 +428,8 @@ export default function Purchase({ authSlot }: { authSlot?: ReactNode }) {
 
               <label className="purchase-filter">
                 <span>MOC</span>
-                <select
-                  value={mocFilter}
-                  onChange={(e) => {
-                    setMocFilter(e.target.value);
-                    setDisplayCount(PAGE_SIZE);
-                  }}
-                >
-                  <option value={ALL}>All materials</option>
+                <select name="moc" value={filters.moc} onChange={(e) => setFilter('moc', e.target.value)}>
+                  <option value="">All materials</option>
                   {options.mocs.map((m) => (
                     <option key={m} value={m}>
                       {m}
@@ -491,15 +443,22 @@ export default function Purchase({ authSlot }: { authSlot?: ReactNode }) {
                   <i className="fas fa-rotate-left" aria-hidden="true"></i> Reset
                 </button>
               )}
+              <noscript>
+                <button type="submit" className="purchase-filter-reset">
+                  Apply
+                </button>
+              </noscript>
             </div>
-          </div>
+          </form>
         </div>
 
         {/* Catalog Grid */}
         <div className="catalog-section">
           <h2 className="section-heading">
             Available Items
-            {stock.length > 0 && <span className="result-count">{filteredItems.length} of {stock.length}</span>}
+            <span className="result-count">
+              {total} of {catalogSize}
+            </span>
           </h2>
 
           <div className="purchase-grid">
@@ -582,13 +541,13 @@ export default function Purchase({ authSlot }: { authSlot?: ReactNode }) {
             ))}
           </div>
 
-          {loadError && (
+          {catalogSize === 0 && (
             <div className="empty-catalog-message">
-              <p>The stock list could not be loaded. Please refresh, or email {ENQUIRY_EMAIL}.</p>
+              <p>The stock list is being updated. Please check back shortly, or email {ENQUIRY_EMAIL}.</p>
             </div>
           )}
 
-          {!loadError && stock.length > 0 && filteredItems.length === 0 && (
+          {catalogSize > 0 && total === 0 && (
             <div className="empty-catalog-message">
               <p>No items match your filters.</p>
               <button type="button" className="btn-load-more" onClick={resetFilters}>
@@ -597,12 +556,23 @@ export default function Purchase({ authSlot }: { authSlot?: ReactNode }) {
             </div>
           )}
 
-          {hasMore && (
-            <div className="load-more-container">
-              <button className="btn-load-more" onClick={() => setDisplayCount((prev) => prev + PAGE_SIZE)}>
-                View More
-              </button>
-            </div>
+          {/* Real links, so crawlers can reach every item. */}
+          {pageCount > 1 && (
+            <nav className="load-more-container" aria-label="Catalogue pages">
+              {page > 1 && (
+                <Link className="btn-load-more" href={`/purchase${catalogQuery({ ...filters, page: page - 1 })}`} rel="prev">
+                  <i className="fas fa-arrow-left" aria-hidden="true"></i> Previous
+                </Link>
+              )}
+              <span className="result-count">
+                Page {page} of {pageCount}
+              </span>
+              {page < pageCount && (
+                <Link className="btn-load-more" href={`/purchase${catalogQuery({ ...filters, page: page + 1 })}`} rel="next">
+                  Next <i className="fas fa-arrow-right" aria-hidden="true"></i>
+                </Link>
+              )}
+            </nav>
           )}
         </div>
 
@@ -816,6 +786,11 @@ export default function Purchase({ authSlot }: { authSlot?: ReactNode }) {
                   <button type="button" className="btn-primary cart-footer-btn" onClick={() => setCartStep('form')}>
                     Request Quote <i className="fas fa-arrow-right" aria-hidden="true"></i>
                   </button>
+                ) : !isSignedIn ? (
+                  // The list is kept in localStorage, so it is still here after signing in.
+                  <Link href="/login?next=/purchase" className="btn-primary cart-footer-btn">
+                    Sign in to send request <i className="fas fa-right-to-bracket" aria-hidden="true"></i>
+                  </Link>
                 ) : (
                   <button
                     type="submit"
