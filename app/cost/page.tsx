@@ -1,61 +1,90 @@
 import type { Metadata } from 'next';
-import CostForm from '@/components/cost/CostForm';
-import MyCostRequests from '@/components/cost/MyCostRequests';
+import Link from 'next/link';
+
+import CostOrders from '@/components/cost/CostOrders';
+import EstimateForm from '@/components/cost/EstimateForm';
+import s from '@/components/cost/cost.module.css';
 import { requireAuth } from '@/lib/auth/require-auth';
+import { archivo } from '@/lib/fonts';
 import { getCostFormOptions } from '@/lib/lookupOptions';
+import { prisma } from '@/lib/prisma';
 
 export const metadata: Metadata = {
-  title: 'Request a Cost Estimate',
-  description:
-    'Request a tailored cost quotation for our high-performance valves and accessories.',
-  icons: {
-    icon: '/uploads/2025/04/header-final-logo.webp',
-  },
+  title: 'Quotes and orders',
+  description: 'Track your orders and quotes, pay quoted orders online, or request an estimate for a made-to-order valve.',
   robots: { index: false, follow: false },
 };
 
+type Props = { searchParams: Promise<{ tab?: string | string[] }> };
+
 /**
- * /cost — submission page for a signed-in USER.
+ * /cost - the signed-in buyer's quotes and orders.
  *
- * `requireAuth()` redirects anonymous visitors to /login (with ?next=/cost so
- * they come right back after signing in). The form submits cost requests that
- * are linked to the signed-in user, and the "My Requests" table shows that
- * user's own submissions. Admins/developers see everything at /admin/cost-requests.
+ * Orders: every request this user made (from /purchase or the estimate form),
+ * with the next step - pay a quote online (PayButton), wait for a quote, or done.
+ * New estimate: a made-to-order request through submitCostRequest; name and
+ * email come from the account. `requireAuth` redirects anonymous visitors to
+ * /login?next=/cost. Admins see everything at /admin/cost-requests.
  */
-export default async function CostPage() {
-  // Security gate: any signed-in user may view this page.
-  const user = await requireAuth();
-  const options = await getCostFormOptions();
+export default async function Page({ searchParams }: Props) {
+  const session = await requireAuth('/cost');
+  const [{ tab }, rows, account, options] = await Promise.all([
+    searchParams,
+    prisma.costRequest.findMany({
+      where: { userId: session.id },
+      orderBy: { createdAt: 'desc' },
+      select: { id: true, status: true, items: true, quotedAmount: true, createdAt: true, paidAt: true },
+    }),
+    prisma.user.findUnique({
+      where: { id: session.id },
+      select: { name: true, email: true, company: true, gstNumber: true },
+    }),
+    getCostFormOptions(),
+  ]);
+
+  // Orders first when there are any; a first-time visitor lands on the form.
+  const active = tab === 'new' || (tab !== 'orders' && rows.length === 0) ? 'new' : 'orders';
+  const toPay = rows.filter((r) => r.status === 'QUOTED').length;
 
   return (
-    <section className="flex min-h-screen items-start justify-center bg-[#f3f5f8] px-4 py-12">
-      <div className="w-full max-w-4xl flex flex-col items-center gap-10">
-        {/* Header */}
-        <div className="mb-4 text-center">
-          <div className="mb-4 flex items-center justify-center">
-            <div className="flex items-center rounded-full bg-gray-200 px-5 py-1 text-xs font-bold uppercase tracking-[0.2em] text-gray-700">
-              <span className="mx-3 h-0.5 w-10 bg-orange-500" />
-              VALUE ENGINEERING EXCELLENCE
-              <span className="mx-3 h-0.5 w-10 bg-orange-500" />
-            </div>
-          </div>
-
-          <h1 className="mb-4 text-4xl font-bold text-[#1e293b] md:text-5xl">
-            Request a Cost Estimate
-          </h1>
-
-          <p className="mx-auto max-w-2xl text-base text-[#64748b] md:text-lg">
-            Share your details below and our sales team will prepare a custom cost quotation for
-            your valve and accessory requirements.
+    <div className={`${archivo.variable} ${s.page}`}>
+      <div className={s.shell}>
+        <header className={s.intro}>
+          <h1 className={s.title}>Quotes and orders</h1>
+          <p className={s.lede}>
+            {toPay > 0
+              ? `${toPay} ${toPay === 1 ? 'quote is' : 'quotes are'} ready for you.`
+              : 'Track what you have ordered, or ask us to estimate a made-to-order valve.'}
           </p>
-        </div>
+        </header>
 
-        {/* Form Card */}
-        <CostForm options={options} />
+        <nav className={s.tabs} aria-label="Quotes and orders">
+          <Link href="/cost?tab=orders" aria-current={active === 'orders' ? 'page' : undefined} className={s.tab}>
+            Orders <span className={s.tabCount}>{rows.length}</span>
+          </Link>
+          <Link href="/cost?tab=new" aria-current={active === 'new' ? 'page' : undefined} className={s.tab}>
+            New estimate
+          </Link>
+        </nav>
 
-        {/* The signed-in user's own submissions */}
-        <MyCostRequests userId={user.id} />
+        {active === 'orders' ? (
+          <CostOrders rows={rows} />
+        ) : (
+          <EstimateForm
+            options={options}
+            account={{
+              name: account?.name ?? null,
+              email: account?.email ?? session.email ?? '',
+              company: account?.company ?? null,
+              gst: account?.gstNumber ?? null,
+            }}
+          />
+        )}
+
+        <p className={s.aside}>
+          Looking for ready stock? <Link href="/purchase">Browse the catalogue</Link>
+        </p>
       </div>
-    </section>
+    </div>
   );
 }

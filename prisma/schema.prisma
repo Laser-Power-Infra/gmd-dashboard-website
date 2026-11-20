@@ -339,8 +339,10 @@ model PurchaseItemPrice {
   id        String   @id @default(cuid())
   itemCode  String
   itemName  String   // cleaned name, as cleanItemName() produces
-  price     Decimal  @db.Decimal(12, 2) // rupees (not paise, unlike CostRequest.quotedAmount)
-  imageUrl  String?  // full CDN URL of the item photo; null = fall back to getItemImage()
+  /// Rupees, pushed hourly from gmd-quotation RawMaterial.cost (matched on erpItemCode).
+  /// null = no cost there yet: the card shows "Price on request" and the list goes to a quote.
+  price     Decimal? @db.Decimal(12, 2)
+  imageUrl  String?  // full URL of the item photo on S3; null = no photo
   metadata  Json     @default("{}") // free-form extra details (HSN, weight, description, ...)
   updatedAt DateTime @updatedAt
 

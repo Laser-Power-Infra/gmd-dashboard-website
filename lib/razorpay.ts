@@ -16,12 +16,7 @@ import { costItemLines } from '@/lib/schemas/cost';
 
 const ENDPOINT = 'https://api.razorpay.com/v1/orders';
 
-/** Quotes of 20 lakh and above are settled offline; only smaller ones get a Pay button. */
-export const ONLINE_PAYMENT_LIMIT_PAISE = 20_00_000 * 100;
-
-export function canPayOnline(amountPaise: number | null): amountPaise is number {
-  return amountPaise != null && amountPaise > 0 && amountPaise < ONLINE_PAYMENT_LIMIT_PAISE;
-}
+export { ONLINE_PAYMENT_LIMIT_PAISE, canPayOnline } from '@/lib/paymentLimit';
 
 export function formatRupees(paise: number): string {
   return `₹${(paise / 100).toLocaleString('en-IN')}`;

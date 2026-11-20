@@ -1,7 +1,8 @@
 import { z } from 'zod';
 
-import { cleanItemName, stockKey } from '@/app/purchase/catalog';
+import { resolveStockLines } from '@/app/purchase/data';
 import { getCurrentUser } from '@/lib/auth/session';
+import { purchaseLinesSchema } from '@/lib/schemas/cost';
 import { sendEnquiry } from '@/lib/notify';
 import { prisma } from '@/lib/prisma';
 
@@ -19,41 +20,9 @@ import { prisma } from '@/lib/prisma';
  */
 
 const enquirySchema = z.object({
-  message: z.string().trim().max(2000).optional().default(''),
-  items: z
-    .array(
-      z.object({
-        itemCode: z.string().trim().min(1).max(40),
-        itemName: z.string().trim().min(1).max(300),
-        quantity: z.coerce.number().int().min(1).max(9999),
-        remarks: z.string().trim().max(500).optional().default(''),
-      })
-    )
-    .min(1, 'Add at least one item to your list')
-    .max(50, 'Please split requests of more than 50 items'),
+  message: z.string().trim().max(2000, 'Notes must be 2000 characters or fewer').optional().default(''),
+  items: purchaseLinesSchema,
 });
-
-type StockEntry = { name: string; category: string; unit: string; inStock: number };
-
-/** Looks up only the submitted lines in PurchaseItemPrice (max 50), keyed by stockKey. */
-async function loadStock(lines: { itemCode: string; itemName: string }[]): Promise<Map<string, StockEntry>> {
-  const rows = await prisma.purchaseItemPrice.findMany({
-    where: {
-      OR: lines.map((l) => ({
-        itemCode: l.itemCode,
-        itemName: { equals: cleanItemName(l.itemName), mode: 'insensitive' as const },
-      })),
-    },
-    select: { itemCode: true, itemName: true, metadata: true },
-  });
-  return new Map(
-    rows.map((r) => {
-      const m = r.metadata as { category?: string; unit?: string; rowCount?: number };
-      const entry = { name: r.itemName, category: m.category ?? '', unit: m.unit ?? '', inStock: m.rowCount ?? 1 };
-      return [stockKey(r.itemCode, r.itemName), entry];
-    })
-  );
-}
 
 export async function POST(request: Request) {
   const session = await getCurrentUser();
@@ -76,27 +45,8 @@ export async function POST(request: Request) {
     );
   }
 
-  const stock = await loadStock(parsed.data.items);
-
-  // Never trust the client's description or stock figure - look each line up.
-  const lines = [];
-  const unknown: string[] = [];
-  for (const line of parsed.data.items) {
-    const entry = stock.get(stockKey(line.itemCode, cleanItemName(line.itemName)));
-    if (!entry) {
-      unknown.push(line.itemCode);
-      continue;
-    }
-    lines.push({
-      itemCode: line.itemCode,
-      itemName: entry.name,
-      category: entry.category,
-      unit: entry.unit,
-      inStock: entry.inStock,
-      quantity: line.quantity,
-      remarks: line.remarks,
-    });
-  }
+  // Never trust the client's description, stock figure or price - look each line up.
+  const { lines, unknown } = await resolveStockLines(parsed.data.items);
 
   if (unknown.length > 0) {
     return Response.json(

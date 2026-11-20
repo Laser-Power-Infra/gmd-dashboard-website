@@ -14,6 +14,15 @@ const nextConfig: NextConfig = {
   // render HTML but never hydrate (buttons/forms go dead).
   allowedDevOrigins: ['192.168.1.196','192.168.1.190','192.168.1.200'],
   // output:'standalone'
+
+  // The redesigned /purchase and /cost were reviewed at /purchase/v2 and /cost/v2.
+  // Keep those links working; Next passes the query string through.
+  async redirects() {
+    return [
+      { source: '/purchase/v2', destination: '/purchase', permanent: true },
+      { source: '/cost/v2', destination: '/cost', permanent: true },
+    ];
+  },
 };
 
 export default nextConfig;

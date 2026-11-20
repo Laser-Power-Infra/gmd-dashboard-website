@@ -29,6 +29,10 @@ export interface StockItem {
   title: string;
   specs: { label: string; value: string }[];
   image: string | null;
+  /** Display label from PurchaseItemPrice.price (rupees), formatted on the server so hydration matches. */
+  price: string | null;
+  /** Same price as a number (rupees), for the list total. The server re-prices on Buy Now. */
+  unitPrice: number | null;
 }
 
 /**
@@ -129,6 +133,8 @@ export interface CatalogRow {
   itemName: string;
   imageUrl: string | null;
   metadata: unknown;
+  /** Prisma Decimal (rupees) or number; omitted = no price shown. */
+  price?: { toString(): string } | number | null;
 }
 
 /** Specs stored in metadata so the database can filter on them (written by the purchase-item seed). */
@@ -141,6 +147,7 @@ export function filterableSpecs(itemName: string) {
 export function toStockItem(row: CatalogRow): StockItem {
   const meta = (row.metadata ?? {}) as { category?: string; unit?: string; rowCount?: number };
   const parsed = parseItemSpecs(row.itemName);
+  const unitPrice = row.price == null ? null : Number(row.price.toString());
   return {
     key: stockKey(row.itemCode, row.itemName),
     itemCode: row.itemCode,
@@ -156,38 +163,55 @@ export function toStockItem(row: CatalogRow): StockItem {
     title: parsed.title,
     specs: parsed.specs,
     image: row.imageUrl,
+    price: unitPrice == null ? null : `₹${unitPrice.toLocaleString('en-IN', { maximumFractionDigits: 2 })}`,
+    unitPrice,
   };
 }
 
+/** The multi-value facets. Within a facet values OR together; facets AND together. */
+export const FACETS = ['type', 'size', 'pn', 'moc'] as const;
+export type FacetKey = (typeof FACETS)[number];
+const MAX_VALUES_PER_FACET = 30;
+
 export interface CatalogFilters {
   q: string;
-  type: string;
-  size: string;
-  pn: string;
-  moc: string;
+  type: string[];
+  size: string[];
+  pn: string[];
+  moc: string[];
   page: number;
 }
 
 /** URL search params -> filters. Trust boundary: anything a visitor can type into the address bar. */
 export function parseCatalogParams(sp: Record<string, string | string[] | undefined>): CatalogFilters {
-  const str = (k: string) => {
+  const all = (k: string) => {
     const v = sp[k];
-    return (Array.isArray(v) ? v[0] : v ?? '').trim().slice(0, 100);
+    return (Array.isArray(v) ? v : v ? [v] : []).map((x) => x.trim().slice(0, 100));
   };
-  const page = Math.floor(Number(str('page')));
+  // Repeated params (?type=A&type=B) -> deduplicated, non-empty, capped list.
+  const list = (k: string) => [...new Set(all(k).filter(Boolean))].slice(0, MAX_VALUES_PER_FACET);
+  const page = Math.floor(Number(all('page')[0] ?? ''));
   return {
-    q: str('q'),
-    type: str('type'),
-    size: str('size'),
-    pn: str('pn'),
-    moc: str('moc'),
+    q: all('q')[0] ?? '',
+    type: list('type'),
+    size: list('size'),
+    pn: list('pn'),
+    moc: list('moc'),
     page: Number.isFinite(page) && page >= 1 ? page : 1,
   };
 }
 
+/** The list with `value` added, or removed if it was already there. */
+export function toggle(list: string[], value: string): string[] {
+  return list.includes(value) ? list.filter((v) => v !== value) : [...list, value];
+}
+
+// URL param -> key the seed stored in metadata (filterableSpecs).
+const METADATA_KEY: Record<FacetKey, string> = { type: 'type', size: 'size', pn: 'pressure', moc: 'moc' };
+
 /**
- * Filters -> Prisma `where` for PurchaseItemPrice. type/size/pn/moc match the
- * values filterableSpecs() stored in metadata; q searches name and code.
+ * Filters -> Prisma `where` for PurchaseItemPrice. Each facet matches any of its
+ * values (OR); facets combine with AND; q searches name and code.
  * Plain object (no Prisma import) so the check script can assert on it.
  */
 export function catalogWhere(f: Omit<CatalogFilters, 'page'>) {
@@ -199,16 +223,62 @@ export function catalogWhere(f: Omit<CatalogFilters, 'page'>) {
         { itemCode: { contains: f.q, mode: 'insensitive' } },
       ],
     });
-  const json: [keyof typeof f, string][] = [['type', 'type'], ['size', 'size'], ['pn', 'pressure'], ['moc', 'moc']];
-  for (const [param, key] of json) if (f[param]) and.push({ metadata: { path: [key], equals: f[param] } });
+  for (const facet of FACETS) {
+    const match = (v: string) => ({ metadata: { path: [METADATA_KEY[facet]], equals: v } });
+    const values = f[facet];
+    if (values.length === 1) and.push(match(values[0]));
+    else if (values.length > 1) and.push({ OR: values.map(match) });
+  }
   return and.length ? { AND: and } : {};
 }
 
-/** Query string for a filter state, dropping empty values and page 1. */
+/** Query string for a filter state: one param per value, empty values and page 1 dropped. */
 export function catalogQuery(f: Partial<CatalogFilters>): string {
   const sp = new URLSearchParams();
-  for (const k of ['q', 'type', 'size', 'pn', 'moc'] as const) if (f[k]) sp.set(k, f[k]);
+  if (f.q) sp.set('q', f.q);
+  for (const k of FACETS) for (const v of f[k] ?? []) if (v) sp.append(k, v);
   if (f.page && f.page > 1) sp.set('page', String(f.page));
   const s = sp.toString();
   return s ? `?${s}` : '';
+}
+
+// Shop-floor abbreviations that stay in capitals when a name is sentence-cased.
+const KEEP_CAPS = new Set([
+  'PN', 'DN', 'NB', 'MS', 'SS', 'DI', 'CI', 'CS', 'GM', 'AISI', 'EPDM', 'NBR', 'PVC', 'UPVC', 'HDPE',
+  'DPCV', 'BBD', 'TPAV', 'PRV', 'NRV', 'IS', 'BS', 'API', 'DIN', 'ANSI', 'HW', 'OP', 'DK', 'STD', 'RF', 'FF',
+]);
+// Words that open a new attribute (seat, material, rising, ends, operation), so a comma goes before them.
+const ATTRIBUTE_START =
+  /^(METAL|DUCTILE|CAST|STAINLESS|BRONZE|BRASS|GUN|MILD|CARBON|FORGED|RISING|NON-RISING|DOUBLE|FLANGE|FLANGED|WAFER|LUG|GEAR|LEVER|HANDWHEEL|SCREWED|THREADED|BUTT|SPRING|RESILENT|RESILIENT)$/;
+const CONNECTORS = new Set(['TO', 'AND', '&', 'WITH', 'OF']);
+// First words of two-word attributes ('double flange', 'gun metal'): no comma inside the pair.
+const PAIR_START = new Set(['DOUBLE', 'GUN', 'CAST', 'DUCTILE', 'STAINLESS', 'CARBON', 'MILD', 'FORGED', 'BUTT', 'SPRING', 'COMPANION']);
+
+/**
+ * ERP capitals -> a readable sentence-case name:
+ * "SLUICE VALVE 40MM PN-16 METAL TO RUBBER DUCTILE IRON NON-RISING"
+ *   -> "Sluice valve 40 mm PN 16, metal to rubber, ductile iron, non-rising".
+ * Codes, ratings and anything with a digit keep their capitals.
+ */
+export function displayName(raw: string): string {
+  const words = cleanItemName(raw)
+    .replace(/\b(\d+(?:\.\d+)?)\s*MM\b/gi, '$1 mm')
+    .replace(/\bPN-?\s*(\d+(?:\.\d+)?)\b/gi, 'PN $1')
+    .split(' ')
+    .filter(Boolean);
+
+  const out: string[] = [];
+  let prevUp = '';
+  for (const w of words) {
+    const up = w.toUpperCase();
+    const word =
+      w === 'mm' ? 'mm' : /\d/.test(w) || KEEP_CAPS.has(up.replace(/[^A-Z]/g, '')) ? up : w.toLowerCase();
+    const opensAttribute =
+      out.length > 0 && ATTRIBUTE_START.test(up) && !PAIR_START.has(prevUp) && !CONNECTORS.has(prevUp);
+    if (opensAttribute) out[out.length - 1] += ',';
+    out.push(word);
+    prevUp = up;
+  }
+  const s = out.join(' ');
+  return s.charAt(0).toUpperCase() + s.slice(1);
 }

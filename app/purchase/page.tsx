@@ -1,10 +1,8 @@
-import { Suspense } from 'react';
 import type { Metadata } from 'next';
-import Purchase from '@/components/pages/Purchase';
-import AuthNavSlot from '@/components/layout/AuthNavSlot';
+import PurchasePage from '@/components/purchase/PurchasePage';
 import { getCurrentUser } from '@/lib/auth/session';
 import { catalogQuery, parseCatalogParams } from '@/app/purchase/catalog';
-import { countCatalog, getCatalogOptions, getCatalogPage } from '@/app/purchase/data';
+import { countCatalog, getCatalogOptions, getCatalogPage, getTypeShowcase } from '@/app/purchase/data';
 
 const PAGE_SIZE = 24;
 
@@ -15,7 +13,7 @@ const titleCase = (s: string) => s.toLowerCase().replace(/\b\w/g, (c) => c.toUpp
 export async function generateMetadata({ searchParams }: Props): Promise<Metadata> {
   const f = parseCatalogParams(await searchParams);
   const pageCount = Math.max(1, Math.ceil((await countCatalog(f)) / PAGE_SIZE));
-  const subject = [f.type && titleCase(f.type), f.size, f.pn, f.moc].filter(Boolean).join(' ');
+  const subject = [f.type[0] && titleCase(f.type[0]), f.size[0], f.pn[0], f.moc[0]].filter(Boolean).join(' ');
   return {
     title: subject ? `${subject} - Ready Stock Valves` : 'Ready Stock Valves & Spares Catalogue',
     description: `Browse ${subject || 'GM Dalui industrial valves, spares and pipeline accessories'} in ready stock at our Howrah works. Build a list and request a quotation.`,
@@ -26,33 +24,31 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
 }
 
 /**
- * /purchase - public, server-rendered catalogue. The database filters and
- * paginates (see app/purchase/data.ts); filters and page live in the URL so
- * every view is crawlable. Signing in is only needed to send the request
- * (enforced again by /api/purchase-enquiry).
+ * /purchase - public, server-rendered catalogue: filter sidebar, cards and the
+ * list drawer. The database filters (multi-select per facet) and paginates
+ * (see app/purchase/data.ts); filters and page live in the URL so every view
+ * is crawlable. Signing in is only needed to buy or send a quote request
+ * (enforced again by startPurchase and /api/purchase-enquiry).
  */
 export default async function Page({ searchParams }: Props) {
   const filters = parseCatalogParams(await searchParams);
-  const [{ items, total, page, pageCount }, { catalogSize, ...options }, user] = await Promise.all([
+  const [{ items, total, page, pageCount }, { catalogSize, ...options }, showcase, user] = await Promise.all([
     getCatalogPage(filters, PAGE_SIZE),
     getCatalogOptions(),
+    getTypeShowcase(),
     getCurrentUser(),
   ]);
 
   return (
-    <Purchase
+    <PurchasePage
       items={items}
       total={total}
       catalogSize={catalogSize}
       options={options}
+      showcase={showcase}
       filters={{ ...filters, page }}
       pageCount={pageCount}
       isSignedIn={!!user}
-      authSlot={
-        <Suspense fallback={null}>
-          <AuthNavSlot variant="desktop" />
-        </Suspense>
-      }
     />
   );
 }

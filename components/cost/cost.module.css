@@ -1,0 +1,731 @@
+/* /cost - quotes and orders. Same tokens as purchase.module.css. */
+
+.page {
+  --paper: #f2f3f1;
+  --surface: #ffffff;
+  --ink: #1e2227;
+  --graphite: #626a72;
+  --rule: #d8dcdf;
+  --rule-soft: #e7e9eb;
+  --maroon: #8a4f50;
+  --maroon-deep: #6e3e3f;
+  --maroon-wash: #f4ecec;
+  --go: #2f7a4e;
+  --wait: #9a6b12;
+  --danger: #b42318;
+
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-archivo), system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: 44px 20px 96px;
+}
+
+.page *,
+.page *::before,
+.page *::after {
+  box-sizing: border-box;
+}
+
+.shell {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.intro {
+  margin-bottom: 24px;
+}
+
+.title {
+  margin: 0 0 6px;
+  font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+  font-weight: 650;
+  line-height: 1.08;
+  letter-spacing: -0.022em;
+}
+
+.lede {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--graphite);
+}
+
+/* ── Segmented control ─────────────────────────────────── */
+.tabs {
+  display: inline-flex;
+  gap: 2px;
+  padding: 3px;
+  margin-bottom: 22px;
+  border-radius: 11px;
+  background: #e4e6e5;
+}
+
+.tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 9px;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.tab:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.tab[aria-current='page'] {
+  background: var(--surface);
+  box-shadow: 0 1px 2px rgba(30, 34, 39, 0.12);
+}
+
+.tabCount {
+  min-width: 22px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: #e4e6e5;
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+
+.tab[aria-current='page'] .tabCount {
+  background: var(--maroon-wash);
+  color: var(--maroon);
+}
+
+/* ── Orders: one surface, hairline rows ───────────────── */
+.orders {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.order {
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.order:last-child {
+  border-bottom: 0;
+}
+
+.orderMain {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr) 110px 210px;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 22px 6px;
+}
+
+.when {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.92rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.ref {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--graphite);
+  letter-spacing: 0.02em;
+}
+
+.summary {
+  margin: 0;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-weight: 500;
+}
+
+.more {
+  color: var(--graphite);
+  font-weight: 400;
+}
+
+.amount {
+  margin: 0;
+  text-align: right;
+  font-size: 1.15rem;
+  font-weight: 750;
+  font-variant-numeric: tabular-nums;
+}
+
+.amount span {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--graphite);
+}
+
+.next {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.stage {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.stage::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.stage[data-tone='wait'] {
+  color: var(--wait);
+}
+
+.stage[data-tone='act'] {
+  color: var(--maroon);
+}
+
+.stage[data-tone='done'] {
+  color: var(--go);
+}
+
+.stage[data-tone='off'] {
+  color: var(--graphite);
+}
+
+/* When a Pay button is present, it carries the action; the label stays as context. */
+.next:has(.pay) .stage {
+  display: none;
+}
+
+.pay {
+  height: 38px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--maroon);
+  color: #fff;
+  font: inherit;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+  transition: transform 0.1s ease-out, background-color 0.15s ease;
+}
+
+.pay:hover {
+  background: var(--maroon-deep);
+}
+
+.pay:active {
+  transform: scale(0.97);
+}
+
+.pay:disabled {
+  opacity: 0.6;
+}
+
+/* Line items, disclosed in place */
+.details {
+  padding: 0 22px 14px 162px;
+}
+
+.details summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 32px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--maroon);
+  cursor: pointer;
+  list-style: none;
+}
+
+.details summary::-webkit-details-marker {
+  display: none;
+}
+
+.details summary::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-right: 1.8px solid currentColor;
+  border-bottom: 1.8px solid currentColor;
+  transform: rotate(-45deg);
+  transition: transform 0.15s ease;
+}
+
+.details[open] summary::before {
+  transform: rotate(45deg);
+}
+
+.lines {
+  list-style: none;
+  margin: 8px 0 4px;
+  padding: 0;
+  border-top: 1px solid var(--rule-soft);
+}
+
+.line {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.line:last-child {
+  border-bottom: 0;
+}
+
+.lineName {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.lineMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 14px;
+  margin: 3px 0 0;
+  font-size: 0.82rem;
+  color: var(--graphite);
+  font-variant-numeric: tabular-nums;
+}
+
+.linePrice {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.linePrice small {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--graphite);
+}
+
+.emptyOrders {
+  padding: 44px 24px;
+  border: 1px dashed var(--rule);
+  border-radius: 14px;
+  text-align: center;
+  color: var(--graphite);
+}
+
+.emptyOrders p {
+  margin: 0;
+}
+
+.emptyOrders p:first-child {
+  margin-bottom: 4px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.aside {
+  margin: 28px 0 0;
+  font-size: 0.92rem;
+  color: var(--graphite);
+}
+
+.aside a {
+  font-weight: 600;
+  color: var(--maroon);
+}
+
+/* ── Estimate form ─────────────────────────────────────── */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.block {
+  padding: 22px;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+}
+
+.blockTitle {
+  margin: 0 0 16px;
+  font-size: 1.1rem;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px 20px;
+}
+
+.readonly {
+  grid-column: 1 / -1;
+}
+
+.readonly p {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  margin: 4px 0 0;
+  font-weight: 600;
+}
+
+.readonly p span {
+  font-weight: 400;
+  color: var(--graphite);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--graphite);
+}
+
+.label span {
+  font-weight: 400;
+}
+
+.input {
+  width: 100%;
+  height: 44px;
+  padding: 0 12px;
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  background: var(--surface);
+  font: inherit;
+  color: var(--ink);
+}
+
+select.input {
+  padding-right: 34px;
+  appearance: none;
+  background: var(--surface)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M6 8l4 4 4-4' fill='none' stroke='%23626a72' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E")
+    no-repeat right 10px center / 16px;
+}
+
+.input[aria-invalid='true'] {
+  border-color: var(--danger);
+  box-shadow: 0 0 0 3px rgba(180, 35, 24, 0.12);
+}
+
+.upper {
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.num {
+  font-variant-numeric: tabular-nums;
+}
+
+.hint {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--graphite);
+}
+
+.fieldError {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--danger);
+}
+
+.valveList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.valve {
+  padding: 16px 0 20px;
+  border-top: 1px solid var(--rule-soft);
+}
+
+.valve:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.valveHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-weight: 650;
+}
+
+.valveGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px 16px;
+}
+
+.wide {
+  grid-column: span 2;
+}
+
+.full {
+  grid-column: 1 / -1;
+}
+
+.addValve {
+  width: 100%;
+  min-height: 46px;
+  margin-top: 4px;
+  border: 1px dashed var(--rule);
+  border-radius: 10px;
+  background: none;
+  font: inherit;
+  font-weight: 600;
+  color: var(--maroon);
+  cursor: pointer;
+}
+
+.addValve:hover {
+  border-color: var(--maroon);
+  background: var(--maroon-wash);
+}
+
+.submitRow {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  min-width: 240px;
+  padding: 0 24px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--maroon);
+  color: #fff;
+  font: inherit;
+  font-weight: 650;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.1s ease-out, background-color 0.15s ease;
+}
+
+.primary:hover {
+  background: var(--maroon-deep);
+  color: #fff;
+}
+
+.primary:active {
+  transform: scale(0.97);
+}
+
+.primary:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+.textButton,
+.textButtonSmall {
+  border: 0;
+  background: none;
+  font: inherit;
+  font-weight: 600;
+  color: var(--maroon);
+  cursor: pointer;
+}
+
+.textButton {
+  min-height: 44px;
+}
+
+.textButtonSmall {
+  font-size: 0.88rem;
+}
+
+.textButton:hover,
+.textButtonSmall:hover {
+  text-decoration: underline;
+}
+
+.formError {
+  margin: 0;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: #fdecea;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--danger);
+}
+
+.done {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 44px 24px;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  text-align: center;
+}
+
+.done h2 {
+  margin: 4px 0 0;
+  font-size: 1.35rem;
+  font-weight: 650;
+}
+
+.done p {
+  max-width: 40ch;
+  margin: 0 0 10px;
+  color: var(--graphite);
+}
+
+.doneMark {
+  width: 60px;
+  height: 60px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--maroon-wash);
+  animation: done-in 320ms cubic-bezier(0.2, 0.9, 0.3, 1) both;
+}
+
+.doneMark svg {
+  width: 26px;
+  height: 26px;
+  fill: none;
+  stroke: var(--maroon);
+  stroke-width: 2.2;
+  stroke-linejoin: round;
+}
+
+@keyframes done-in {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.page a:focus-visible,
+.page button:focus-visible,
+.page input:focus-visible,
+.page select:focus-visible,
+.page summary:focus-visible {
+  outline: 2px solid var(--maroon);
+  outline-offset: 2px;
+}
+
+/* ── Narrow screens ────────────────────────────────────── */
+@media (max-width: 760px) {
+  .page {
+    padding: 28px 16px 72px;
+  }
+
+  .orderMain {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      'when amount'
+      'summary summary'
+      'next next';
+    gap: 6px 12px;
+    padding: 16px 16px 4px;
+  }
+
+  .when {
+    grid-area: when;
+    flex-direction: row;
+    gap: 10px;
+    align-items: baseline;
+  }
+
+  .summary {
+    grid-area: summary;
+    white-space: normal;
+  }
+
+  .amount {
+    grid-area: amount;
+  }
+
+  .next {
+    grid-area: next;
+    justify-content: flex-start;
+  }
+
+  .next .pay {
+    flex: 1;
+  }
+
+  .details {
+    padding: 0 16px 12px;
+  }
+
+  .grid2,
+  .valveGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .wide,
+  .full {
+    grid-column: auto;
+  }
+
+  .block {
+    padding: 18px 16px;
+  }
+
+  .submitRow {
+    align-items: stretch;
+  }
+
+  .primary {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .doneMark {
+    animation: none;
+  }
+
+  .primary:active,
+  .pay:active {
+    transform: none;
+  }
+}

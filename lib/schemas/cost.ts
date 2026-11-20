@@ -21,13 +21,32 @@ export const costItemSchema = z.object({
 
 export type CostItem = z.infer<typeof costItemSchema>;
 
-/** A /purchase catalogue line, saved on a CostRequest by app/api/purchase-enquiry. */
+/** The /purchase list as the browser sends it (Request Quote and Buy Now). Prices are never taken from here. */
+const GONE = 'This item is no longer in the catalogue. Please remove it.';
+const QTY = 'Quantity must be a whole number from 1 to 9,999';
+
+export const purchaseLinesSchema = z
+  .array(
+    z.object({
+      itemCode: z.string({ message: GONE }).trim().min(1, GONE).max(40, GONE),
+      itemName: z.string({ message: GONE }).trim().min(1, GONE).max(300, GONE),
+      quantity: z.coerce.number({ message: QTY }).int(QTY).min(1, QTY).max(9999, QTY),
+      remarks: z.string().trim().max(500, 'Remarks must be 500 characters or fewer').optional().default(''),
+    }),
+    { message: 'Add at least one item to your list' }
+  )
+  .min(1, 'Add at least one item to your list')
+  .max(50, 'Please split requests of more than 50 items');
+
+/** A /purchase catalogue line, saved on a CostRequest by app/api/purchase-enquiry or Buy Now. */
 export type PurchaseLine = {
   itemCode: string;
   itemName: string;
   unit: string;
   quantity: number;
   remarks?: string;
+  /** Rupees, from PurchaseItemPrice at the time of the request. */
+  unitPrice?: number | null;
 };
 
 /** One line per item for tables; rows saved before items existed hold []. */
@@ -36,7 +55,8 @@ export function costItemLines(items: unknown): string[] {
   return (items as (CostItem | PurchaseLine)[]).map((i) => {
     const head =
       'itemCode' in i
-        ? `${i.itemCode} · ${i.itemName} · qty ${i.quantity} ${i.unit}`
+        ? `${i.itemCode} · ${i.itemName} · qty ${i.quantity} ${i.unit}` +
+          (i.unitPrice != null ? ` @ ₹${i.unitPrice.toLocaleString('en-IN')}` : '')
         : `${i.valveType} · ${i.size} · ${i.pressure} · ${i.material} · ${i.endConnection} · qty ${i.quantity}`;
     return head + (i.remarks ? ` (${i.remarks})` : '');
   });

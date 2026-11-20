@@ -30,7 +30,6 @@ import '@/styles/FormPage.css';
 import '@/styles/ModernManualLayout.css';
 import '@/styles/PrintableManual.css';
 import '@/styles/ValveManualSection.css';
-import '@/styles/Purchase.css';
 
 import { QuoteProvider } from '@/components/layout/QuoteProvider';
 import Header from '@/components/layout/Header';
