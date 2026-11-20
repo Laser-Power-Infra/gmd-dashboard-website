@@ -37,6 +37,7 @@ import Footer from '@/components/layout/Footer';
 import QuoteModalHost from '@/components/layout/QuoteModalHost';
 import AdminNavSlot from '@/components/layout/AdminNavSlot';
 import { Toaster } from 'sonner';
+import { Analytics } from '@vercel/analytics/next';
 import { Suspense } from 'react';
 import JsonLd, {
   SITE_URL,
@@ -121,6 +122,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             />
           </div>
         </QuoteProvider>
+        <Analytics />
       </body>
     </html>
   );
